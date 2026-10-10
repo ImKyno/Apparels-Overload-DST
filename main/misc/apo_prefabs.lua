@@ -22,4 +22,6 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
     table.insert(PrefabFiles, "apo_armor_vortex")
     table.insert(PrefabFiles, "apo_armor_weevole")
     table.insert(PrefabFiles, "apo_armor_windbreaker")
+    table.insert(PrefabFiles, "apo_piratepack")
+    table.insert(PrefabFiles, "apo_thatchsack")
 end

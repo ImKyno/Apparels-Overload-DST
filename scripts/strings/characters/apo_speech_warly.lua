@@ -27,3 +27,7 @@ WARLY.DESCRIBE.ARMOR_WEEVOLE = "It still smells of wetness."
 WARLY.DESCRIBE.ARMOR_WINDBREAKER = "While it is rude to break wind in public, I will make an exception."
 
 WARLY.DESCRIBE.PIGSKIN_DRIED = "I suppose it's important to use the whole animal."
+
+WARLY.DESCRIBE.PIRATEPACK = "This will straighten my back out."
+
+WARLY.DESCRIBE.THATCHSACK = "A very simple handmade satchel."

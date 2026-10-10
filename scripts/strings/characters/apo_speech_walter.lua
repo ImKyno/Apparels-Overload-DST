@@ -27,3 +27,7 @@ WALTER.DESCRIBE.ARMOR_WEEVOLE = "If only it had those mosquito wings."
 WALTER.DESCRIBE.ARMOR_WINDBREAKER = "Weeee!"
 
 WALTER.DESCRIBE.PIGSKIN_DRIED = "Good for clothing!"
+
+WALTER.DESCRIBE.PIRATEPACK = "Storage space that pays for itself!"
+
+WALTER.DESCRIBE.THATCHSACK = "You can never have enough storage space."

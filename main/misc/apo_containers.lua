@@ -18,3 +18,30 @@ function containers.widgetsetup(container, prefab, data, ...)
         _widgetsetup(container, prefab, data, ...)
     end
 end
+
+params.thatchsack =
+{
+    widget =
+    {
+        slotpos =
+        {
+            Vector3(0,   32 + 4,  0),
+            Vector3(0, -(32 + 4), 0),
+        },
+
+        slotbg = {},
+
+        animbank = "ui_chest_1x2",
+        animbuild = "ui_chest_1x2",
+
+        pos = Vector3(0, 175, 0),
+        side_align_tip = 160,
+
+    },
+
+    type = "chest",
+}
+
+function params.thatchsack.itemtestfn(container, item, slot)
+    return true
+end

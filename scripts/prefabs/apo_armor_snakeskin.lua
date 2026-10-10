@@ -64,6 +64,8 @@ local function fn()
     inst.AnimState:SetBuild("armor_snakeskin")
     inst.AnimState:PlayAnimation("anim")
 
+    inst:AddTag("waterproofer")
+
     inst.foleysound = "apo_sounds/common/armor_snakeskin/foley"
 
     inst.entity:SetPristine()
@@ -92,6 +94,9 @@ local function fn()
 	inst.components.fueled.fueltype = FUELTYPE.USAGE
 	inst.components.fueled:InitializeFuelLevel(TUNING.APO_ARMOR_SNAKESKIN.PERISHTIME)
 	inst.components.fueled:SetDepletedFn(inst.Remove)
+
+    MakeSmallBurnable(inst)
+    MakeSmallPropagator(inst)
 
     MakeHauntableLaunch(inst)
 

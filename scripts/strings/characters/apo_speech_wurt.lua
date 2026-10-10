@@ -27,3 +27,7 @@ WURT.DESCRIBE.ARMOR_WEEVOLE = "Clothes from annoying mosquitos, flort."
 WURT.DESCRIBE.ARMOR_WINDBREAKER = "Weeee!!!"
 
 WURT.DESCRIBE.PIGSKIN_DRIED = "Take this, pigs!"
+
+WURT.DESCRIBE.PIRATEPACK = "Must been bag from pirates, flort!"
+
+WURT.DESCRIBE.THATCHSACK = "Tiny bag for my stuff, florp."

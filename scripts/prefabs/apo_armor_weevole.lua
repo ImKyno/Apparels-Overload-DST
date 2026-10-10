@@ -90,6 +90,7 @@ local function fn()
     inst.AnimState:SetBuild("armor_weevole")
     inst.AnimState:PlayAnimation("anim")
 
+    inst:AddTag("waterproofer")
     inst:AddTag("mosquitoarmor")
 
     inst.foleysound = "apo_sounds/common/armor_ant/foley"
@@ -106,6 +107,9 @@ local function fn()
     inst:AddComponent("waterproofer")
     inst.components.waterproofer.effectiveness = TUNING.WATERPROOFNESS_MED
 
+    inst:AddComponent("fuel")
+    inst.components.fuel.fuelvalue = TUNING.LARGE_FUEL
+
     inst:AddComponent("armor")
     inst.components.armor:InitCondition(TUNING.APO_ARMOR_WEEVOLE.CONDITION, TUNING.APO_ARMOR_WEEVOLE.ABSORPTION)
 
@@ -113,6 +117,9 @@ local function fn()
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
+
+    MakeSmallBurnable(inst)
+    MakeSmallPropagator(inst)
 
     MakeHauntableLaunch(inst)
 

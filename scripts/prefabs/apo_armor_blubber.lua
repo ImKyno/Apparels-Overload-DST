@@ -60,6 +60,8 @@ local function fn()
     inst.AnimState:SetBuild("armor_blubber")
     inst.AnimState:PlayAnimation("anim")
 
+    inst:AddTag("waterproofer")
+
     inst.foleysound = "apo_sounds/common/armor_blubber/foley"
 
     inst.entity:SetPristine()
@@ -74,6 +76,9 @@ local function fn()
     inst:AddComponent("waterproofer")
     inst.components.waterproofer.effectiveness = TUNING.WATERPROOFNESS_ABSOLUTE
 
+    inst:AddComponent("fuel")
+    inst.components.fuel.fuelvalue = TUNING.LARGE_FUEL
+
     inst:AddComponent("armor")
     inst.components.armor:InitCondition(TUNING.APO_ARMOR_BLUBBER.CONDITION, TUNING.APO_ARMOR_BLUBBER.ABSORPTION)
 
@@ -86,6 +91,9 @@ local function fn()
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
     inst.components.equippable.insulated = true
+
+    MakeSmallBurnable(inst, TUNING.LARGE_BURNTIME)
+    MakeSmallPropagator(inst)
 
     MakeHauntableLaunch(inst)
 

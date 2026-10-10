@@ -36,6 +36,8 @@ local APO_ICONS =
     "armor_weevole",
     "armor_windbreaker",
     "pigskin_dried",
+    "piratepack",
+    "thatchsack",
 
     -- Modded Skins.
     "ms_armor_snakeskin_scaly",

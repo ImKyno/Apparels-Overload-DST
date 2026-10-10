@@ -27,3 +27,7 @@ WILSON.DESCRIBE.ARMOR_WEEVOLE = "Yeesh. This is kinda creepy."
 WILSON.DESCRIBE.ARMOR_WINDBREAKER = "The wind doesn't stand a chance!"
 
 WILSON.DESCRIBE.PIGSKIN_DRIED = "Leather for all kinds of weather."
+
+WILSON.DESCRIBE.PIRATEPACK = "I can keep my booty in here."
+
+WILSON.DESCRIBE.THATCHSACK = "I call it a tatchel."

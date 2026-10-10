@@ -60,6 +60,7 @@ local function fn()
     inst.AnimState:SetBuild("armor_seashell")
     inst.AnimState:PlayAnimation("anim")
 
+    inst:AddTag("waterproofer")
     inst:AddTag("explosionarmor")
 
     inst.foleysound = "apo_sounds/common/armor_seashell/foley"

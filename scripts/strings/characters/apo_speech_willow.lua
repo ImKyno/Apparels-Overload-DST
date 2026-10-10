@@ -27,3 +27,7 @@ WILLOW.DESCRIBE.ARMOR_WEEVOLE = "This feels gross. I hope it works."
 WILLOW.DESCRIBE.ARMOR_WINDBREAKER = "Wind is the enemy of fire."
 
 WILLOW.DESCRIBE.PIGSKIN_DRIED = "I might need this for something."
+
+WILLOW.DESCRIBE.PIRATEPACK = "Carrying this will build chest muscles."
+
+WILLOW.DESCRIBE.THATCHSACK = "Thatch you very much."

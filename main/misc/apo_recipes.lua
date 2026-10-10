@@ -143,3 +143,13 @@ AddRecipeAPO(ABCEnabled or IASEnabled, "armor_windbreaker",
 
     TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
 )
+
+AddRecipe2("thatchsack",
+    {
+        Ingredient("cutreeds", 4),
+        Ingredient("twigs", 2),
+        Ingredient("rope", 1),
+    },
+
+    TECH.SCIENCE_ONE, {}, { "CONTAINERS" }
+)

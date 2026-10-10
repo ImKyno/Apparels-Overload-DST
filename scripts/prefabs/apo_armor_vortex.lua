@@ -2,6 +2,7 @@ local assets =
 {
     Asset("ANIM", "anim/armor_vortex.zip"),
     Asset("ANIM", "anim/armor_vortex_fx.zip"),
+    Asset("ANIM", "anim/ui_krampusbag_2x8.zip"),
 
     Asset("IMAGE", "images/inventoryimages/apo_inventoryimages.tex"),
     Asset("ATLAS", "images/inventoryimages/apo_inventoryimages.xml"),
@@ -29,6 +30,34 @@ for j = 0, 3, 3 do
     for i = 1, SHIELD_VARIATIONS do
         table.insert(prefabs, "shadow_shield"..tostring(j + i))
     end
+end
+
+local function OnStartRechargeVisual(inst, duration)
+    local time = GetTime()
+
+    inst.rechargetimestart = time
+    inst.rechargetimeend = time + duration
+
+    inst.rechargevisualduration:set(duration)
+
+    inst:PushEvent("armor_vortex_rechargetimechange", { t = duration })
+    inst:PushEvent("armor_vortex_rechargechange", { percent = 0 })
+
+    inst.rechargevisual:push()
+end
+
+local function OnGetRechargeTime(inst)
+    return math.max(0, (inst.rechargetimeend or 0) - (inst.rechargetimestart or 0))
+end
+
+local function OnGetRechargePercent(inst)
+    local duration = OnGetRechargeTime(inst)
+
+    if duration <= 0 then
+        return 0
+    end
+
+    return math.max(0, math.min(1, ((inst.rechargetimeend or 0) - GetTime()) / duration))
 end
 
 local function OnPickShield(inst)
@@ -88,6 +117,8 @@ local function OnResistDamage(inst, damage_amount, attacker)
 
     if inst.components.cooldown.onchargedfn ~= nil then
         inst.components.cooldown:StartCharging()
+
+        OnStartRechargeVisual(inst, TUNING.APO_ARMOR_VORTEX.COOLDOWN.NORMAL)
     end
 
     if owner ~= nil and owner.components.sanity ~= nil and damage_amount ~= nil and damage_amount > 0 then
@@ -319,6 +350,14 @@ local function fn()
     inst.foleysound = "dontstarve/movement/foley/shadowcloth_armour"
 
     inst.playfuelsound = net_event(inst.GUID, "armor_vortex.playfuelsound")
+    inst.rechargevisualduration = net_float(inst.GUID, "armor_vortex.rechargevisualduration")
+    inst.rechargevisual = net_event(inst.GUID, "armor_vortex.rechargevisual")
+
+    inst.rechargetimestart = 0
+    inst.rechargetimeend = 0
+
+    inst.GetRechargeTime = OnGetRechargeTime
+    inst.GetRechargePercent = OnGetRechargePercent
 
     inst.entity:SetPristine()
 
@@ -328,6 +367,22 @@ local function fn()
         end
 
         inst:DoTaskInTime(0, inst.ListenForEvent, "armor_vortex.playfuelsound", CLIENT_PlayFuelSound)
+
+        inst:ListenForEvent("armor_vortex.rechargevisual", function(inst)
+            local duration = inst.rechargevisualduration:value()
+
+            if duration == nil or duration <= 0 then
+                return
+            end
+
+            local time = GetTime()
+
+            inst.rechargetimestart = time
+            inst.rechargetimeend = time + duration
+
+            inst:PushEvent("armor_vortex_rechargetimechange", { t = duration })
+            inst:PushEvent("armor_vortex_rechargechange", { percent = 0 })
+        end)
 
         return inst
     end
@@ -342,6 +397,15 @@ local function fn()
 
     inst:AddComponent("waterproofer")
     inst.components.waterproofer:SetEffectiveness(0)
+
+    inst:AddComponent("container")
+    inst.components.container:WidgetSetup("krampus_sack")
+
+    inst:AddComponent("cooldown")
+    inst.components.cooldown.cooldown_duration = TUNING.APO_ARMOR_VORTEX.COOLDOWN.NORMAL
+
+    inst:AddComponent("shadowlevel")
+    inst.components.shadowlevel:SetDefaultLevel(TUNING.APO_ARMOR_VORTEX.SHADOWLEVEL)
 
     inst:AddComponent("resistance")
     inst.components.resistance:SetShouldResistFn(OnShouldResist)
@@ -359,15 +423,6 @@ local function fn()
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
     inst.components.equippable:SetOnEquipToModel(OnEquipToModel)
-
-    inst:AddComponent("container")
-    inst.components.container:WidgetSetup("krampus_sack")
-
-    inst:AddComponent("cooldown")
-    inst.components.cooldown.cooldown_duration = TUNING.APO_ARMOR_VORTEX.COOLDOWN.NORMAL
-
-    inst:AddComponent("shadowlevel")
-    inst.components.shadowlevel:SetDefaultLevel(TUNING.APO_ARMOR_VORTEX.SHADOWLEVEL)
 
     MakeHauntableLaunchAndDropFirstItem(inst)
 

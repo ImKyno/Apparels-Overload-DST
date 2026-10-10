@@ -114,6 +114,8 @@ local function fn()
     inst.AnimState:SetBuild("armor_windbreaker")
     inst.AnimState:PlayAnimation("anim")
 
+    inst:AddTag("waterproofer")
+
     inst.foleysound = "apo_sounds/common/armor_windbreaker/foley"
 
     inst.entity:SetPristine()
@@ -141,9 +143,12 @@ local function fn()
     inst.components.equippable.dapperness = TUNING.DAPPERNESS_SMALL
     inst.components.equippable.walkspeedmult = TUNING.APO_ARMOR_WINDBREAKER.WALKSPEEDMULT.NORMAL
 
+    MakeSmallBurnable(inst)
+    MakeSmallPropagator(inst)
+
     MakeHauntableLaunch(inst)
 
     return inst
 end
 
-return Prefab("armor_windbreaker", fn, assets)
+return Prefab("armor_windbreaker", fn, assets, prefabs)

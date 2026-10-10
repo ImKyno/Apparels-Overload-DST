@@ -62,6 +62,7 @@ local function fn()
 
     inst:AddTag("heavyarmor")
     inst:AddTag("hardarmor")
+    inst:AddTag("waterproofer")
 
     inst.foleysound = "apo_sounds/common/armor_limestone/foley"
 

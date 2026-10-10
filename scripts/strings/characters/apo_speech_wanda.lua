@@ -27,3 +27,7 @@ WANDA.DESCRIBE.ARMOR_WEEVOLE = "Kinda disgusting."
 WANDA.DESCRIBE.ARMOR_WINDBREAKER = "I'll never get blown off course with this jacket."
 
 WANDA.DESCRIBE.PIGSKIN_DRIED = "Looks like your time has finally come."
+
+WANDA.DESCRIBE.PIRATEPACK = "For carrying more watches!"
+
+WANDA.DESCRIBE.THATCHSACK = "An ordinary handmade satchel."

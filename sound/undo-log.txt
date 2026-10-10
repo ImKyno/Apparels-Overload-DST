@@ -1,0 +1,4 @@
+07:53:36 c:\anthill_jobs\job504524\fmod4\tools\fmod_designer\src\eventform.ui.h:1638 BZ: Add Event Group
+07:53:50 c:\anthill_jobs\job504524\fmod4\tools\fmod_designer\src\eventform.ui.h:1983 CG: Paste Event
+07:53:55 ..\..\src\simpleeventcontroller.cpp:1310 IR: Remove Sounds from Playlist
+07:54:00 ..\..\src\simpleeventcontroller.cpp:1734 IS: Add Sounds to Playlist

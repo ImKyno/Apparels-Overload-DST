@@ -27,3 +27,7 @@ WICKERBOTTOM.DESCRIBE.ARMOR_WEEVOLE = "Armour made from mosquitos."
 WICKERBOTTOM.DESCRIBE.ARMOR_WINDBREAKER = "Pink is not really my color."
 
 WICKERBOTTOM.DESCRIBE.PIGSKIN_DRIED = "A resilient material."
+
+WICKERBOTTOM.DESCRIBE.PIRATEPACK = "A treasure carrying case."
+
+WICKERBOTTOM.DESCRIBE.THATCHSACK = "I can store a few books in here."

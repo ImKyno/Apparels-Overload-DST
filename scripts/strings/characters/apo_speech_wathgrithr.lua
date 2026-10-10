@@ -27,3 +27,7 @@ WATHGRITHR.DESCRIBE.ARMOR_WEEVOLE = "Armor made from the skin of mine enemy."
 WATHGRITHR.DESCRIBE.ARMOR_WINDBREAKER = "I shall break the wind with every step!"
 
 WATHGRITHR.DESCRIBE.PIGSKIN_DRIED = "Deceit is the tactic of cowards."
+
+WATHGRITHR.DESCRIBE.PIRATEPACK = "Builds chest muscles."
+
+WATHGRITHR.DESCRIBE.THATCHSACK = "I hope my spear doesn't poke a hole in it."

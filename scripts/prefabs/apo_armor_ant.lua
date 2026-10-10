@@ -89,7 +89,7 @@ local function fn()
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
 
-    MakeSmallBurnable(inst, TUNING.SMALL_BURNTIME)
+    MakeSmallBurnable(inst)
     MakeSmallPropagator(inst)
 
     MakeHauntableLaunch(inst)

@@ -27,3 +27,7 @@ WEBBER.DESCRIBE.ARMOR_WEEVOLE = "For when we need protection."
 WEBBER.DESCRIBE.ARMOR_WINDBREAKER = "Wind can't hold us back!"
 
 WEBBER.DESCRIBE.PIGSKIN_DRIED = "It's pretty strong material."
+
+WEBBER.DESCRIBE.PIRATEPACK = "A booty bundle."
+
+WEBBER.DESCRIBE.THATCHSACK = "Helps carry goodies!"

@@ -145,6 +145,9 @@ local function fn()
     inst:AddComponent("inspectable")
     inst:AddComponent("inventoryitem")
 
+    inst:AddComponent("fuel")
+    inst.components.fuel.fuelvalue = TUNING.LARGE_FUEL
+
     inst:AddComponent("armor")
     inst.components.armor:InitIndestructible(TUNING.APO_ARMOR_CACTUS.ABSORPTION)
     inst.components.armor:AddWeakness("beaver", TUNING.BEAVER_WOOD_DAMAGE)
@@ -166,6 +169,9 @@ local function fn()
     inst._onattackother = function(owner, data)
         OnAttackOther(owner, data, inst)
     end
+
+    MakeSmallBurnable(inst)
+    MakeSmallPropagator(inst)
 
     MakeHauntableLaunch(inst)
 

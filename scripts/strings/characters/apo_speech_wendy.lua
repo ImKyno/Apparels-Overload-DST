@@ -27,3 +27,7 @@ WENDY.DESCRIBE.ARMOR_WEEVOLE = "Something died so that this armor may exist."
 WENDY.DESCRIBE.ARMOR_WINDBREAKER = "The wind's tendrils cannot hold me!"
 
 WENDY.DESCRIBE.PIGSKIN_DRIED = "The result of many deaths."
+
+WENDY.DESCRIBE.PIRATEPACK = "This should help me carry more junk."
+
+WENDY.DESCRIBE.THATCHSACK = "I was always destined to carry a heavy load."

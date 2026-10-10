@@ -27,3 +27,7 @@ WAXWELL.DESCRIBE.ARMOR_WEEVOLE = "This is not a good look."
 WAXWELL.DESCRIBE.ARMOR_WINDBREAKER = "Sigh."
 
 WAXWELL.DESCRIBE.PIGSKIN_DRIED = "Soft. Malleable."
+
+WAXWELL.DESCRIBE.PIRATEPACK = "I suppose it will do."
+
+WAXWELL.DESCRIBE.THATCHSACK = "Not much, but the extra space is better than nothing."

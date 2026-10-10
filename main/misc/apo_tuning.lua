@@ -133,3 +133,64 @@ TUNING.APO_ARMOR_WINDBREAKER =
         RAIN = 1.50,
     },
 }
+
+TUNING.PIRATEPACK =
+{
+    COOLDOWN = 480 * 3,
+
+    LOOT_WEIGHTS =
+    {
+        COMMON = 70,
+        UNCOMMON = 20,
+        RARE = 8,
+        ULTRA_RARE = 2,
+    },
+
+    LOOT =
+    {
+        COMMON =
+        {
+            "boneshard",
+            "cookiecuttershell",
+            "driftwood_log",
+            "goldnugget",
+            "houndstooth",
+            "slurtle_shellpieces",
+            "spoiled_fish",
+            "spoiled_fish_small",
+            "stinger",
+        },
+
+        UNCOMMON =
+        {
+            "feather_crow",
+            "feather_robin",
+            "marble",
+            "moonglass",
+            "moonrocknugget",
+            "saltrock",
+        },
+
+        RARE =
+        {
+            "bluegem",
+            "feather_robin_winter",
+            "livinglog",
+            "malbatross_feather",
+            "redgem",
+            "stash_map",
+            "thulecite_pieces",
+        },
+
+        ULTRA_RARE =
+        {
+            "feather_canary",
+            "greengem",
+            "nightmarefuel",
+            "orangegem",
+            "purplegem",
+            "thulecite",
+            "yellowgem",
+        },
+    },
+}

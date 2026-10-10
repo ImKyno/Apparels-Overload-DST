@@ -27,3 +27,7 @@ WOODIE.DESCRIBE.ARMOR_WEEVOLE = "Nice use of mosquitos."
 WOODIE.DESCRIBE.ARMOR_WINDBREAKER = "I feel right at home in this, eh."
 
 WOODIE.DESCRIBE.PIGSKIN_DRIED = "Nice hide."
+
+WOODIE.DESCRIBE.PIRATEPACK = "A bag for my booty."
+
+WOODIE.DESCRIBE.THATCHSACK = "Now I can carry more delicious wood."

@@ -48,6 +48,7 @@ SortAfter("armor_tar",         "armor_blubber",     "ARMOUR")
 SortAfter("armor_snakeskin",   "raincoat",          "CLOTHING")
 SortAfter("armor_windbreaker", "armor_snakeskin",   "CLOTHING")
 
+SortAfter("thatchsack",        "giftwrap",          "CONTAINERS")
 SortAfter("armor_vortex",      "candybag",          "CONTAINERS")
 
 SortAfter("armor_vortex",      "nightlight",        "MAGIC")

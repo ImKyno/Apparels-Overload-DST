@@ -27,3 +27,7 @@ WINONA.DESCRIBE.ARMOR_WEEVOLE = "Ew. It's all creepy-crawly."
 WINONA.DESCRIBE.ARMOR_WINDBREAKER = "The wind slips right around me!"
 
 WINONA.DESCRIBE.PIGSKIN_DRIED = "Hide from an animal."
+
+WINONA.DESCRIBE.PIRATEPACK = "Booty in the back."
+
+WINONA.DESCRIBE.THATCHSACK = "For when my pockets are full."

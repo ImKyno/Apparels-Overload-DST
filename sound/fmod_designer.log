@@ -3,3 +3,337 @@ Warning: QPainter::setPen: Painter not active
 Warning: QPainter::setBrush: Painter not active
 Warning: QPainter::setRenderHint: Painter must be active to set rendering hints
 Warning: QPainter::setPen: Painter not active
+Debug: "07:53:36 c:\anthill_jobs\job504524\fmod4\tools\fmod_designer\src\eventform.ui.h:1638 BZ: Add Event Group" 
+Debug: "07:53:50 c:\anthill_jobs\job504524\fmod4\tools\fmod_designer\src\eventform.ui.h:1983 CG: Paste Event" 
+Debug: "07:53:55 ..\..\src\simpleeventcontroller.cpp:1310 IR: Remove Sounds from Playlist" 
+Debug: "07:54:00 ..\..\src\simpleeventcontroller.cpp:1734 IS: Add Sounds to Playlist" 
+Debug: 
+Building project 'apo_sounds'...
+Debug: Building project C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\The-Apparels-Overload\sound\apo_sounds.fev...
+Debug: Unique sound defs 1/17
+Debug: Retrieving sound file info...
+Debug: Retrieving reverb info...
+Debug: FEV file written ok
+Debug: Unique Envelope Points: 0 of 0
+Debug: Unique Strings: 797 characters of 867
+Debug: Caching sound file details for ''...
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-04.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-05.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-06.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-07.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-08.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-09.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-10.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-11.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-04.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-05.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-06.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-07.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-08.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-09.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-10.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-11.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-12.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-13.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-14.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-15.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-04.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-05.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-06.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-07.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-08.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-09.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-10.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-11.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-12.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-13.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-14.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-04.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-05.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-06.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-07.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-08.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-09.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-10.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-11.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-12.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-13.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-14.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-15.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-16.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-17.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-04.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-05.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-06.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-04.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-05.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-06.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-07.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-08.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-09.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-10.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\hit-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\hit-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\hit-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-04.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-05.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-06.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-07.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-08.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-09.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-10.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\hit-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\hit-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\hit-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-04.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-05.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-06.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-07.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-08.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-09.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-10.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-11.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-12.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-13.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-14.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\hit-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\hit-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\hit-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-04.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-05.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-06.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-07.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-08.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-09.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-10.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-11.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-12.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-13.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-14.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-15.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_vortex\turn_off.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_vortex\turn_on.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-04.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-05.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-06.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-07.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-08.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-09.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-10.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-11.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-12.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-13.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-14.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-15.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-01.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-02.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-03.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-04.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-05.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-06.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-07.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-08.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-09.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-10.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-11.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-12.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-13.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-14.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-15.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-16.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-17.ogg
+Debug: ..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-18.ogg
+Debug: Building 'apo_sfx.fsb'
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-04.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-06.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-05.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-07.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-09.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-10.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-08.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\foley-11.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-04.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-06.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-05.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-08.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-07.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-10.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-09.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-11.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-12.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-13.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-14.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_ant\hit-15.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-04.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-05.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-06.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-07.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-08.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-10.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-11.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-09.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-12.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-13.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_blubber\foley-14.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-05.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-04.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-06.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-07.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-09.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-08.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-10.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-11.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-12.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-13.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-14.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-15.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-17.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_lifejacket\foley-16.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-04.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-05.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_limestone\foley-06.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-04.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-05.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-06.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-07.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-08.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-09.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\foley-10.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\hit-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\hit-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_metalplate\hit-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-04.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-05.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-06.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-07.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-09.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-08.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\hit-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\foley-10.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\hit-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_obsidian\hit-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-04.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-06.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-05.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-07.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-08.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-10.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-09.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-11.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-12.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-13.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\foley-14.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\hit-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\hit-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_seashell\hit-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-04.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-05.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-07.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-06.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-08.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-09.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-10.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-11.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-12.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-13.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-15.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_snakeskin\foley-14.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_vortex\turn_off.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_vortex\turn_on.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-04.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-05.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-06.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-07.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-08.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-09.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-10.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-11.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-12.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-13.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-14.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-01.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\armor_windbreaker\foley-15.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-02.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-03.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-04.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-05.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-06.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-07.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-08.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-10.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-09.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-11.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-12.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-14.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-13.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-15.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-16.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-17.ogg
+Debug: Encoded C:\Program Files (x86)\Steam\steamapps\common\Don't Starve Together\mods\Project-Everything-DST\sound\..\..\..\..\..\..\..\..\users\kyno\desktop\minha pasta\mods\the-clothes-pack\sound\samples\piratepack\foley-18.ogg
+Debug: Writing FSB...
+Debug: Finished building FSB
+Debug: 
+Debug: 
+Summary of build:
+SUCCESS: C:/Program Files (x86)/Steam/steamapps/common/Don't Starve Together/mods/The-Apparels-Overload/sound/apo_sounds.fev
+SUCCESS: apo_sfx.fsb

@@ -27,3 +27,7 @@ WOLFGANG.DESCRIBE.ARMOR_WEEVOLE = "Wolfgang win!"
 WOLFGANG.DESCRIBE.ARMOR_WINDBREAKER = "Wolfgang master of breaking wind!"
 
 WOLFGANG.DESCRIBE.PIGSKIN_DRIED = "Is from animal Wolfgang kill."
+
+WOLFGANG.DESCRIBE.PIRATEPACK = "Sounds like jingles."
+
+WOLFGANG.DESCRIBE.THATCHSACK = "Wolfgang can carry more on powerful shoulders!"

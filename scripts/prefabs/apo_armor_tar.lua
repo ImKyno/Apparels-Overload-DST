@@ -62,6 +62,7 @@ local function fn()
 
     inst:AddTag("shadow_item")
     inst:AddTag("shadowlevel")
+    inst:AddTag("waterproofer")
 
     inst.foleysound = "apo_sounds/common/armor_blubber/foley"
 

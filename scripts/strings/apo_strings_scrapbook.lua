@@ -54,3 +54,13 @@ SPECIALINFO.ARMOR_WINDBREAKER =
 [[
 Increases movement speed by 25% when worn, up to 50% when it's raining or the wearer's moisture is above 50%.
 ]]
+
+SPECIALINFO.PIRATEPACK =
+[[
+A 12 slot container that drops a random reward every 3 days.
+]]
+
+SPECIALINFO.THATCHSACK =
+[[
+A 2 slot carryable container.
+]]
