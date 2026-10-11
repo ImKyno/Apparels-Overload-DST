@@ -56,8 +56,10 @@ end
 -- Register the entries in the Scrapbook.
 local function AddExtraScrapBookItem(sbdata, sbprefab, sbtable)
     for k, v in pairs(sbtable) do
-        sbprefab[k] = true
-        sbdata[k] = v
+        if v.condition == nil or v.condition then
+            sbprefab[k] = true
+            sbdata[k] = v
+        end
     end
 end
 
@@ -80,6 +82,7 @@ local APO_SCRAPBOOK_BODY =
         anim                = "anim",
         deps                = { "silk", "stinger", "armorwood", "bee", "killerbee", "researchlab2" },
         specialinfo         = "ARMOR_ANT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_blubber =
@@ -104,6 +107,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsety         = 10,
         animoffsetbgy       = -20,
         deps                = { "fishmeat", "glommerfuel", "armorwood", "researchlab2" },
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_cactus =
@@ -124,6 +128,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsetbgy       = 30,
         deps                = { "cactus_meat", "stinger", "livinglog", "researchlab2" },
         specialinfo         = "ARMOR_CACTUS",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_lifejacket =
@@ -144,6 +149,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsetbgy       = -20,
         deps                = { "silk", "mosquitosack", "rope", "seafaring_prototyper" },
         specialinfo         = "ARMOR_LIFEJACKET",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_limestone =
@@ -164,6 +170,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsetbgy       = -20,
         deps                = { "marble", "cutreeds", "rope", "researchlab2" },
         specialinfo         = "ARMOR_LIMESTONE",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_metalplate =
@@ -182,6 +189,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsetbgy       = -20,
         deps                = { "cutstone", "rope", "hammer", "researchlab2" },
         specialinfo         = "ARMOR_METALPLATE",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_obsidian =
@@ -201,6 +209,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsetbgy       = -60,
         deps                = { "armordragonfly", "mitegland", "redgem", "researchlab2" },
         specialinfo         = "ARMOR_OBSIDIAN",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_seashell =
@@ -220,6 +229,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsetbgy       = -10,
         deps                = { "slurtle_shellpieces", "kelp", "rope", "researchlab2" },
         specialinfo         = "ARMOR_SEASHELL",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_snakeskin =
@@ -239,6 +249,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsetx         = 3,
         animoffsety         = 10,
         deps                = { "pigskin_dried", "rope", "boneshard", "researchlab2" },
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_tar =
@@ -259,6 +270,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsety         = 15,
         animoffsetbgy       = -25,
         deps                = { "gelblob_bottle", "armorwood", "researchlab2" },
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_vortex =
@@ -278,6 +290,7 @@ local APO_SCRAPBOOK_BODY =
         anim                = "anim",
         deps                = { "daywalker", "horrorfuel", "voidcloth", "armorskeleton" },
         specialinfo         = "ARMOR_VORTEX",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_weevole =
@@ -300,6 +313,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsety         = 3,
         deps                = { "mosquitosack", "pigskin_dried", "rope", "researchlab2" },
         specialinfo         = "ARMOR_WEEVOLE",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     armor_windbreaker =
@@ -320,6 +334,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsetbgy       = -20,
         deps                = { "pigskin_dried", "rope", "researchlab2" },
         specialinfo         = "ARMOR_WINDBREAKER",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     piratepack =
@@ -336,6 +351,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsetx         = 5,
         deps                = { "sunkenchest", "prime_mate" },
         specialinfo         = "PIRATEPACK",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 }
 
@@ -346,7 +362,67 @@ local APO_SCRAPBOOK_HANDS =
 
 local APO_SCRAPBOOK_HEAD =
 {
+    aerodynamichat =
+    {
+        name                = "aerodynamichat",
+        prefab              = "aerodynamichat",
+        tex                 = "aerodynamichat.tex",
+        type                = "item",
+        subcat              = "hat",
+        fueledmax           = TUNING.APO_HATS.AERODYNAMIC.PERISHTIME,
+        fueledrate          = 1,
+        fueledtype1         = "USAGE",
+        dapperness          = TUNING.DAPPERNESS_SMALL,
+        sewable             = true,
+        bank                = "aerodynamichat",
+        build               = "hat_aerodynamic",
+        anim                = "anim",
+        animoffsety         = 10,
+        animoffsetbgy       = -30,
+        deps                = TUNING.APO_IS_HOF_ENABLED and { "kyno_shark_fin", "kyno_kokonut", "twigs", "researchlab2" }
+        or { "shark_fin", "log", "twigs", "researchlab2" },
+        specialinfo         = "AERODYNAMICHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
 
+    antmaskhat =
+    {
+        name                = "antmaskhat",
+        prefab              = "antmaskhat",
+        tex                 = "antmaskhat.tex",
+        type                = "item",
+        subcat              = "hat",
+        armor               = TUNING.APO_HATS.ANTMASK.CONDITION,
+        absorb_percent      = TUNING.APO_HATS.ANTMASK.ABSORPTION,
+        waterproofer        = TUNING.WATERPROOFNESS_SMALL,
+        bank                = "antmaskhat",
+        build               = "hat_antmask",
+        anim                = "anim",
+        deps                = { "silk", "stinger", "footballhat", "bee", "killerbee", "researchlab2" },
+        specialinfo         = "ANTMASKHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
+
+    bandithat =
+    {
+        name                = "bandithat",
+        prefab              = "bandithat",
+        tex                 = "bandithat.tex",
+        type                = "item",
+        subcat              = "hat",
+        fueledmax           = TUNING.APO_HATS.BANDIT.PERISHTIME,
+        fueledrate          = 1,
+        fueledtype1         = "USAGE",
+        dapperness          = TUNING.DAPPERNESS_SMALL,
+        waterproofer        = TUNING.WATERPROOFNESS_SMALL,
+        sewable             = true,
+        bank                = "bandithat",
+        build               = "hat_bandit",
+        anim                = "anim",
+        deps                = { "slurper_pelt", "rope", "feather_crow", "researchlab2" },
+        specialinfo         = "BANDITHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
 }
 
 local APO_SCRAPBOOK_ITEMS =
@@ -365,6 +441,29 @@ local APO_SCRAPBOOK_ITEMS =
         deps                = { "pigskin" },
     },
 
+    shark_fin =
+    {
+        name                = "shark_fin",
+        prefab              = "shark_fin",
+        tex                 = "shark_fin.tex",
+        type                = "food",
+        stacksize           = TUNING.STACK_SIZE_MEDITEM,
+        perishable          = TUNING.PERISH_FAST,
+        healthvalue         = TUNING.APO_MISC.SHARK_FIN.HEALTH,
+        hungervalue         = TUNING.APO_MISC.SHARK_FIN.HUNGER,
+        sanityvalue         = TUNING.APO_MISC.SHARK_FIN.SANITY,
+        foodtype            = "MEAT",
+        burnable            = true,
+        bank                = "shark_fin",
+        build               = "shark_fin",
+        anim                = "idle",
+        animoffsetx         = -3,
+        animoffsety         = 20,
+        animoffsetbgy       = -50,
+        deps                = { "shark" },
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED or TUNING.APO_IS_HOF_ENABLED,
+    },
+
     thatchsack =
     {
         name                = "thatchsack",
@@ -377,11 +476,12 @@ local APO_SCRAPBOOK_ITEMS =
         anim                = "idle",
         deps                = { "cutreeds", "twigs", "rope", "researchlab1" },
         specialinfo         = "THATCHSACK",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 }
 
 -- Add our entries to the Scrapbook.
 AddExtraScrapBookItem(ScrapbookData, ScrapbookPrefabs, APO_SCRAPBOOK_BODY)
 -- AddExtraScrapBookItem(ScrapbookData, ScrapbookPrefabs, APO_SCRAPBOOK_HANDS)
--- AddExtraScrapBookItem(ScrapbookData, ScrapbookPrefabs, APO_SCRAPBOOK_HEAD)
+AddExtraScrapBookItem(ScrapbookData, ScrapbookPrefabs, APO_SCRAPBOOK_HEAD)
 AddExtraScrapBookItem(ScrapbookData, ScrapbookPrefabs, APO_SCRAPBOOK_ITEMS)

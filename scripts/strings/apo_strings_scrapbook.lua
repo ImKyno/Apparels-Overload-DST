@@ -1,6 +1,16 @@
 local SUBCATS = STRINGS.SCRAPBOOK.SUBCATS
 local SPECIALINFO = STRINGS.SCRAPBOOK.SPECIALINFO
 
+SPECIALINFO.AERODYNAMICHAT =
+[[
+Increases movement speed by 25% when worn.
+]]
+
+SPECIALINFO.ANTMASKHAT =
+[[
+The protection this armor offers only really works on Bees and Bee-like creatures. It also pacifies them.
+]]
+
 SPECIALINFO.ARMOR_ANT =
 [[
 The protection this armor offers only really works on Bees and Bee-like creatures. It also pacifies them.
@@ -53,6 +63,13 @@ Killing creatures restores health.
 SPECIALINFO.ARMOR_WINDBREAKER =
 [[
 Increases movement speed by 25% when worn, up to 50% when it's raining or the wearer's moisture is above 50%.
+]]
+
+SPECIALINFO.BANDITHAT =
+[[
+Creatures will drop one additional loot when killed.
+
+This hat provides increased movement speed on creep and will not trigger traps when worn.
 ]]
 
 SPECIALINFO.PIRATEPACK =

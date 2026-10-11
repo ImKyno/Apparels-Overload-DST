@@ -1,5 +1,9 @@
 local WENDY = STRINGS.CHARACTERS.WENDY
 
+WENDY.DESCRIBE.AERODYNAMICHAT = "I cut through the air!"
+
+WENDY.DESCRIBE.ANTMASKHAT = "The mind that dwelt within is long gone."
+
 WENDY.DESCRIBE.ARMOR_ANT = "As hollow as my heart."
 
 WENDY.DESCRIBE.ARMOR_BLUBBER = "Disturbing, but cozy."
@@ -26,8 +30,12 @@ WENDY.DESCRIBE.ARMOR_WEEVOLE = "Something died so that this armor may exist."
 
 WENDY.DESCRIBE.ARMOR_WINDBREAKER = "The wind's tendrils cannot hold me!"
 
+WENDY.DESCRIBE.BANDITHAT = "A big hat to hide from the world."
+
 WENDY.DESCRIBE.PIGSKIN_DRIED = "The result of many deaths."
 
 WENDY.DESCRIBE.PIRATEPACK = "This should help me carry more junk."
+
+WENDY.DESCRIBE.SHARK_FIN = "It won't be needing this anymore."
 
 WENDY.DESCRIBE.THATCHSACK = "I was always destined to carry a heavy load."

@@ -1,5 +1,9 @@
 local WILLOW = STRINGS.CHARACTERS.WILLOW
 
+WILLOW.DESCRIBE.AERODYNAMICHAT = "Brisk movement snuffs fires."
+
+WILLOW.DESCRIBE.ANTMASKHAT = "This is the nastiest thing I've ever made."
+
 WILLOW.DESCRIBE.ARMOR_ANT = "This is the worst."
 
 WILLOW.DESCRIBE.ARMOR_BLUBBER = "It squishes when I move..."
@@ -26,8 +30,12 @@ WILLOW.DESCRIBE.ARMOR_WEEVOLE = "This feels gross. I hope it works."
 
 WILLOW.DESCRIBE.ARMOR_WINDBREAKER = "Wind is the enemy of fire."
 
+WILLOW.DESCRIBE.BANDITHAT = "Sneaky!"
+
 WILLOW.DESCRIBE.PIGSKIN_DRIED = "I might need this for something."
 
 WILLOW.DESCRIBE.PIRATEPACK = "Carrying this will build chest muscles."
+
+WILLOW.DESCRIBE.SHARK_FIN = "The fin fell off."
 
 WILLOW.DESCRIBE.THATCHSACK = "Thatch you very much."

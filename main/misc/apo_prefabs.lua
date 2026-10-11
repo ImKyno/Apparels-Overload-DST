@@ -9,19 +9,31 @@ PrefabFiles =
 }
 
 if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
-    table.insert(PrefabFiles, "apo_armor_ant")
-    table.insert(PrefabFiles, "apo_armor_blubber")
-    table.insert(PrefabFiles, "apo_armor_cactus")
-    table.insert(PrefabFiles, "apo_armor_lifejacket")
-    table.insert(PrefabFiles, "apo_armor_limestone")
-    table.insert(PrefabFiles, "apo_armor_metalplate")
-    table.insert(PrefabFiles, "apo_armor_obsidian")
-    table.insert(PrefabFiles, "apo_armor_seashell")
-    table.insert(PrefabFiles, "apo_armor_snakeskin")
-    table.insert(PrefabFiles, "apo_armor_tar")
-    table.insert(PrefabFiles, "apo_armor_vortex")
-    table.insert(PrefabFiles, "apo_armor_weevole")
-    table.insert(PrefabFiles, "apo_armor_windbreaker")
-    table.insert(PrefabFiles, "apo_piratepack")
-    table.insert(PrefabFiles, "apo_thatchsack")
+    local PREFABS =
+    {
+        "apo_armor_ant",
+        "apo_armor_blubber",
+        "apo_armor_cactus",
+        "apo_armor_lifejacket",
+        "apo_armor_limestone",
+        "apo_armor_metalplate",
+        "apo_armor_obsidian",
+        "apo_armor_seashell",
+        "apo_armor_snakeskin",
+        "apo_armor_tar",
+        "apo_armor_vortex",
+        "apo_armor_weevole",
+        "apo_armor_windbreaker",
+        "apo_hats",
+        "apo_piratepack",
+        "apo_thatchsack",
+    }
+
+    for k, v in pairs(PREFABS) do
+        table.insert(PrefabFiles, v)
+    end
+end
+
+if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED or TUNING.APO_IS_HOF_ENABLED then
+    table.insert(PrefabFiles, "apo_shark_fin")
 end

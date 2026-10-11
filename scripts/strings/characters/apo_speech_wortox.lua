@@ -1,5 +1,9 @@
 local WORTOX = STRINGS.CHARACTERS.WORTOX
 
+WORTOX.DESCRIBE.AERODYNAMICHAT = "Cuts the walking a half!"
+
+WORTOX.DESCRIBE.ANTMASKHAT = "Mask of a ugly bug!"
+
 WORTOX.DESCRIBE.ARMOR_ANT = "Unpleasant suit."
 
 WORTOX.DESCRIBE.ARMOR_BLUBBER = "What a kidder!"
@@ -26,8 +30,12 @@ WORTOX.DESCRIBE.ARMOR_WEEVOLE = "A fine armor made of mosquito skin."
 
 WORTOX.DESCRIBE.ARMOR_WINDBREAKER = "I'm a expert windbreaker!"
 
+WORTOX.DESCRIBE.BANDITHAT = "A sneaky hat. Hyuyu!"
+
 WORTOX.DESCRIBE.PIGSKIN_DRIED = "A little more than skin, a little less than hide! Hyuyu!"
 
 WORTOX.DESCRIBE.PIRATEPACK = "Treasures!"
+
+WORTOX.DESCRIBE.SHARK_FIN = "The shark left his rudder!"
 
 WORTOX.DESCRIBE.THATCHSACK = "Thatch that satchel! Hyuyu!"

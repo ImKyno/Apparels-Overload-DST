@@ -1,5 +1,9 @@
 local WAXWELL = STRINGS.CHARACTERS.WAXWELL
 
+WAXWELL.DESCRIBE.AERODYNAMICHAT = "Quite sleek, if not elegant."
+
+WAXWELL.DESCRIBE.ANTMASKHAT = "A hallowed out head. Don't ask where I got it."
+
 WAXWELL.DESCRIBE.ARMOR_ANT = "The indignities I've suffered..."
 
 WAXWELL.DESCRIBE.ARMOR_BLUBBER = "This is undignified."
@@ -26,8 +30,12 @@ WAXWELL.DESCRIBE.ARMOR_WEEVOLE = "This is not a good look."
 
 WAXWELL.DESCRIBE.ARMOR_WINDBREAKER = "Sigh."
 
+WAXWELL.DESCRIBE.BANDITHAT = "A nice hat to hide under."
+
 WAXWELL.DESCRIBE.PIGSKIN_DRIED = "Soft. Malleable."
 
 WAXWELL.DESCRIBE.PIRATEPACK = "I suppose it will do."
+
+WAXWELL.DESCRIBE.SHARK_FIN = "A trophy from a most excellent kill."
 
 WAXWELL.DESCRIBE.THATCHSACK = "Not much, but the extra space is better than nothing."

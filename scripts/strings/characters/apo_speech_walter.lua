@@ -1,5 +1,9 @@
 local WALTER = STRINGS.CHARACTERS.WALTER
 
+WALTER.DESCRIBE.AERODYNAMICHAT = "I wonder if this would work on Woby too."
+
+WALTER.DESCRIBE.ANTMASKHAT = "I feel like a mant now."
+
 WALTER.DESCRIBE.ARMOR_ANT = "All dressed up and ready to cr'kit."
 
 WALTER.DESCRIBE.ARMOR_BLUBBER = "Every adventure has a low point. This may be it."
@@ -26,8 +30,12 @@ WALTER.DESCRIBE.ARMOR_WEEVOLE = "If only it had those mosquito wings."
 
 WALTER.DESCRIBE.ARMOR_WINDBREAKER = "Weeee!"
 
+WALTER.DESCRIBE.BANDITHAT = "Bravo six, going dark!"
+
 WALTER.DESCRIBE.PIGSKIN_DRIED = "Good for clothing!"
 
 WALTER.DESCRIBE.PIRATEPACK = "Storage space that pays for itself!"
+
+WALTER.DESCRIBE.SHARK_FIN = "I'm still missing the shark!"
 
 WALTER.DESCRIBE.THATCHSACK = "You can never have enough storage space."

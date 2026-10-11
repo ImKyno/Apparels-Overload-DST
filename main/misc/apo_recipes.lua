@@ -4,8 +4,9 @@ local Ingredient   = _G.Ingredient
 local TechTree     = require("techtree")
 local RecipeFilter = require("recipes_filter")
 
-local ABCEnabled   = _G.APORecipeAlreadyExists("cork_bat", "corkchest")
-local IASEnabled   = _G.APORecipeAlreadyExists("chiminea", "limestone")
+local ABCEnabled   = _G.APORecipeAlreadyExists("cork_bat",       "corkchest")
+local IASEnabled   = _G.APORecipeAlreadyExists("chiminea",       "limestone")
+local HOFEnabled   = _G.APORecipeAlreadyExists("kyno_woodenkeg", "kyno_preservesjar")
 
 local function AddRecipeAPO(condition, ...)
     if not condition then
@@ -14,6 +15,32 @@ local function AddRecipeAPO(condition, ...)
 end
 
 -- Hats.
+AddRecipeAPO(ABCEnabled or IASEnabled, "aerodynamichat",
+    HOFEnabled and
+    {
+        Ingredient("kyno_shark_fin", 1),
+        Ingredient("kyno_kokonut", 1),
+        Ingredient("twigs", 3),
+    }
+    or
+    {
+        Ingredient("shark_fin", 1),
+        Ingredient("log", 2),
+        Ingredient("twigs", 3),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING" }
+)
+
+AddRecipeAPO(ABCEnabled or IASEnabled, "antmaskhat",
+    {
+        Ingredient("silk", 3),
+        Ingredient("stinger", 3),
+        Ingredient("footballhat", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN" }
+)
 
 -- Clothing.
 AddRecipeAPO(ABCEnabled or IASEnabled, "armor_ant",
@@ -144,7 +171,17 @@ AddRecipeAPO(ABCEnabled or IASEnabled, "armor_windbreaker",
     TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
 )
 
-AddRecipe2("thatchsack",
+AddRecipeAPO(ABCEnabled or IASEnabled, "bandithat",
+    {
+        Ingredient("slurper_pelt", 6),
+        Ingredient("rope", 2),
+        Ingredient("feather_crow", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
+)
+
+AddRecipeAPO(ABCEnabled or IASEnabled, "thatchsack",
     {
         Ingredient("cutreeds", 4),
         Ingredient("twigs", 2),

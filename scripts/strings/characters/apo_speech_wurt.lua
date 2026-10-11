@@ -1,5 +1,9 @@
 local WURT = STRINGS.CHARACTERS.WURT
 
+WURT.DESCRIBE.AERODYNAMICHAT = "Zoom powers, florp!"
+
+WURT.DESCRIBE.ANTMASKHAT = "I wear the head of my enemies, flort!!"
+
 WURT.DESCRIBE.ARMOR_ANT = "Cr'kit, florp!"
 
 WURT.DESCRIBE.ARMOR_BLUBBER = "Squishy, glorp..."
@@ -26,8 +30,12 @@ WURT.DESCRIBE.ARMOR_WEEVOLE = "Clothes from annoying mosquitos, flort."
 
 WURT.DESCRIBE.ARMOR_WINDBREAKER = "Weeee!!!"
 
+WURT.DESCRIBE.BANDITHAT = "Shhh!"
+
 WURT.DESCRIBE.PIGSKIN_DRIED = "Take this, pigs!"
 
 WURT.DESCRIBE.PIRATEPACK = "Must been bag from pirates, flort!"
+
+WURT.DESCRIBE.SHARK_FIN = "Poor little shark, florp."
 
 WURT.DESCRIBE.THATCHSACK = "Tiny bag for my stuff, florp."

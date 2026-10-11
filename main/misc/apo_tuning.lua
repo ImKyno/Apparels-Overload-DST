@@ -8,8 +8,8 @@ TUNING.APO_DEFAULT_FLOATER = { "med", nil, 0.65 }
 
 TUNING.APO_SCRAPBOOK = GetModConfigData("MOD_SCRAPBOOK")
 
-TUNING.APO_IS_HOF_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-2334209327") -- Heap of Foods.
 TUNING.APO_IS_ABC_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-3322803908") -- Above the Clouds.
+TUNING.APO_IS_HOF_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-2334209327") or _G.KnownModIndex:IsModEnabled("Heap-of-Foods-Workshop-Main") -- Heap of Foods.
 TUNING.APO_IS_OAE_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-3815942726") or _G.KnownModIndex:IsModEnabled("Project-Everything-DST") -- Odds and Ends.
 TUNING.APO_IS_IAS_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModEnabled("workshop-3435352667") -- Island Adventures.
 
@@ -23,6 +23,29 @@ TUNING.APO_MISC =
             PIRATE = 1,
             NORMAL = 0.66,
         },
+    },
+
+    EXTRALOOTDROPPER =
+    {
+        TAGS_BLACKLIST =
+        {
+            "irreplaceable",
+            "sketch", -- Uh, I don't think people would want extra sketches...?
+        },
+
+        PREFABS_BLACKLIST =
+        {
+            "klaussackkey",
+            "security_pulse_cage",
+            "security_pulse_cage_full",
+        },
+    },
+
+    SHARK_FIN =
+    {
+        HEALTH = 20,
+        HUNGER = 25,
+        SANITY = -15,
     },
 }
 
@@ -131,6 +154,32 @@ TUNING.APO_ARMOR_WINDBREAKER =
     {
         NORMAL = 1.25,
         RAIN = 1.50,
+    },
+}
+
+TUNING.APO_HATS =
+{
+    AERODYNAMIC =
+    {
+        PERISHTIME = 480 * 3,
+        WALKSPEEDMULT = 1.25,
+    },
+
+    ANTMASK =
+    {
+        CONDITION = 450,
+        ABSORPTION = 0.80,
+        CONSUPTION = 0.05, -- For Bee Box.
+
+        TAGS =
+        {
+            "bee",
+        },
+    },
+
+    BANDIT =
+    {
+        PERISHTIME = 480,
     },
 }
 

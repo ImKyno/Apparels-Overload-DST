@@ -1,5 +1,9 @@
 local WINONA = STRINGS.CHARACTERS.WINONA
 
+WINONA.DESCRIBE.AERODYNAMICHAT = "very aerodynamic."
+
+WINONA.DESCRIBE.ANTMASKHAT = "Sorry bug-dude."
+
 WINONA.DESCRIBE.ARMOR_ANT = "Nice threads!"
 
 WINONA.DESCRIBE.ARMOR_BLUBBER = "Gross, but effective."
@@ -26,8 +30,12 @@ WINONA.DESCRIBE.ARMOR_WEEVOLE = "Ew. It's all creepy-crawly."
 
 WINONA.DESCRIBE.ARMOR_WINDBREAKER = "The wind slips right around me!"
 
+WINONA.DESCRIBE.BANDITHAT = "I look a little too shady in this."
+
 WINONA.DESCRIBE.PIGSKIN_DRIED = "Hide from an animal."
 
 WINONA.DESCRIBE.PIRATEPACK = "Booty in the back."
+
+WINONA.DESCRIBE.SHARK_FIN = "The only kind of fin I wanna see."
 
 WINONA.DESCRIBE.THATCHSACK = "For when my pockets are full."

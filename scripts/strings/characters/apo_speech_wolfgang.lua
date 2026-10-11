@@ -1,5 +1,9 @@
 local WOLFGANG = STRINGS.CHARACTERS.WOLFGANG
 
+WOLFGANG.DESCRIBE.AERODYNAMICHAT = "Keeps mighty legs free to run!"
+
+WOLFGANG.DESCRIBE.ANTMASKHAT = "Make Wolfgang look like bug man."
+
 WOLFGANG.DESCRIBE.ARMOR_ANT = "Wolfgang just want to fit in."
 
 WOLFGANG.DESCRIBE.ARMOR_BLUBBER = "Would rather wear a muscle suit!"
@@ -26,8 +30,12 @@ WOLFGANG.DESCRIBE.ARMOR_WEEVOLE = "Wolfgang win!"
 
 WOLFGANG.DESCRIBE.ARMOR_WINDBREAKER = "Wolfgang master of breaking wind!"
 
+WOLFGANG.DESCRIBE.BANDITHAT = "Wolfgang win at hide-and-seek now."
+
 WOLFGANG.DESCRIBE.PIGSKIN_DRIED = "Is from animal Wolfgang kill."
 
 WOLFGANG.DESCRIBE.PIRATEPACK = "Sounds like jingles."
+
+WOLFGANG.DESCRIBE.SHARK_FIN = "I lost rest of shark."
 
 WOLFGANG.DESCRIBE.THATCHSACK = "Wolfgang can carry more on powerful shoulders!"

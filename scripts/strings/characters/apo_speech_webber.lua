@@ -1,5 +1,9 @@
 local WEBBER = STRINGS.CHARACTERS.WEBBER
 
+WEBBER.DESCRIBE.AERODYNAMICHAT = "We feel light on our feet."
+
+WEBBER.DESCRIBE.ANTMASKHAT = "This seems a little mean."
+
 WEBBER.DESCRIBE.ARMOR_ANT = "We could always use a spare thorax."
 
 WEBBER.DESCRIBE.ARMOR_BLUBBER = "A boy inside a spider inside a whale."
@@ -26,8 +30,12 @@ WEBBER.DESCRIBE.ARMOR_WEEVOLE = "For when we need protection."
 
 WEBBER.DESCRIBE.ARMOR_WINDBREAKER = "Wind can't hold us back!"
 
+WEBBER.DESCRIBE.BANDITHAT = "This would be great for hide and seek."
+
 WEBBER.DESCRIBE.PIGSKIN_DRIED = "It's pretty strong material."
 
 WEBBER.DESCRIBE.PIRATEPACK = "A booty bundle."
+
+WEBBER.DESCRIBE.SHARK_FIN = "Do we touch it?"
 
 WEBBER.DESCRIBE.THATCHSACK = "Helps carry goodies!"

@@ -1,5 +1,9 @@
 local WILSON = STRINGS.CHARACTERS.GENERIC
 
+WILSON.DESCRIBE.AERODYNAMICHAT = "It really cuts through the air!"
+
+WILSON.DESCRIBE.ANTMASKHAT = "There's still some goo stuck to the insides."
+
 WILSON.DESCRIBE.ARMOR_ANT = "It's brittle."
 
 WILSON.DESCRIBE.ARMOR_BLUBBER = "Well, it's something."
@@ -26,8 +30,12 @@ WILSON.DESCRIBE.ARMOR_WEEVOLE = "Yeesh. This is kinda creepy."
 
 WILSON.DESCRIBE.ARMOR_WINDBREAKER = "The wind doesn't stand a chance!"
 
+WILSON.DESCRIBE.BANDITHAT = "A shadowy chapeau."
+
 WILSON.DESCRIBE.PIGSKIN_DRIED = "Leather for all kinds of weather."
 
 WILSON.DESCRIBE.PIRATEPACK = "I can keep my booty in here."
+
+WILSON.DESCRIBE.SHARK_FIN = "A sleek fin."
 
 WILSON.DESCRIBE.THATCHSACK = "I call it a tatchel."

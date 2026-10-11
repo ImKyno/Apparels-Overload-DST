@@ -1,5 +1,9 @@
 local WARLY = STRINGS.CHARACTERS.WARLY
 
+WARLY.DESCRIBE.AERODYNAMICHAT = "Speeds me on my way."
+
+WARLY.DESCRIBE.ANTMASKHAT = "The pith has been removed."
+
 WARLY.DESCRIBE.ARMOR_ANT = "There's no meat inside."
 
 WARLY.DESCRIBE.ARMOR_BLUBBER = "Desperate times call for desperate attire."
@@ -26,8 +30,12 @@ WARLY.DESCRIBE.ARMOR_WEEVOLE = "It still smells of wetness."
 
 WARLY.DESCRIBE.ARMOR_WINDBREAKER = "While it is rude to break wind in public, I will make an exception."
 
+WARLY.DESCRIBE.BANDITHAT = "A mysterious hat."
+
 WARLY.DESCRIBE.PIGSKIN_DRIED = "I suppose it's important to use the whole animal."
 
 WARLY.DESCRIBE.PIRATEPACK = "This will straighten my back out."
+
+WARLY.DESCRIBE.SHARK_FIN = "This looks rather blond."
 
 WARLY.DESCRIBE.THATCHSACK = "A very simple handmade satchel."

@@ -8,7 +8,7 @@ local INIT_POSTINIT_MISC =
 local INIT_POSTINIT_COMPONENTS =
 {
     "drownable",
-    "itemtile",
+    "lootdropper",
     "temperature",
 }
 
@@ -20,6 +20,12 @@ local INIT_POSTINIT_PREFABS =
     "hats",
     "pigskin",
     "prime_mate",
+    "shark",
+}
+
+local INIT_POSTINIT_WIDGETS =
+{
+    "itemtile",
 }
 
 for _, v in pairs(INIT_POSTINIT_MISC) do
@@ -32,4 +38,8 @@ end
 
 for _, v in pairs(INIT_POSTINIT_PREFABS) do
     modimport("postinit/prefabs/"..v)
+end
+
+for _, v in pairs(INIT_POSTINIT_WIDGETS) do
+    modimport("postinit/widgets/"..v)
 end

@@ -22,26 +22,41 @@ AddMinimapAtlas("images/minimapimages/apo_minimapimages.xml")
 -- Mod Icons.
 local APO_ICONS =
 {
-    "armor_ant",
-    "armor_blubber",
-    "armor_cactus",
-    "armor_lifejacket",
-    "armor_limestone",
-    "armor_metalplate",
-    "armor_obsidian",
-    "armor_seashell",
-    "armor_snakeskin",
-    "armor_tar",
-    "armor_vortex",
-    "armor_weevole",
-    "armor_windbreaker",
     "pigskin_dried",
-    "piratepack",
-    "thatchsack",
 
     -- Modded Skins.
+    "ms_aerodynamichat_tropical",
     "ms_armor_snakeskin_scaly",
 }
+
+if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
+    local ICONS =
+    {
+        "aerodynamichat",
+        "antmaskhat",
+        "armor_ant",
+        "armor_blubber",
+        "armor_cactus",
+        "armor_lifejacket",
+        "armor_limestone",
+        "armor_metalplate",
+        "armor_obsidian",
+        "armor_seashell",
+        "armor_snakeskin",
+        "armor_tar",
+        "armor_vortex",
+        "armor_weevole",
+        "armor_windbreaker",
+        "bandithat",
+        "piratepack",
+        "shark_fin",
+        "thatchsack",
+    }
+
+    for k, v in pairs(ICONS) do
+        table.insert(APO_ICONS, v)
+    end
+end
 
 for k, v in pairs(APO_ICONS) do
     RegisterInventoryItemAtlas(resolvefilepath("images/inventoryimages/apo_inventoryimages.xml"), v..".tex")

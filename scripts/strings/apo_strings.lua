@@ -1,3 +1,9 @@
+STRINGS.NAMES.AERODYNAMICHAT = "Sleek Hat"
+STRINGS.RECIPE_DESC.AERODYNAMICHAT = "Aerodynamic design for efficient travel."
+
+STRINGS.NAMES.ANTMASKHAT = "Mant Mask"
+STRINGS.RECIPE_DESC.ANTMASKHAT = "A face only a Mant could love."
+
 STRINGS.NAMES.ARMOR_ANT = "Mant Suit"
 STRINGS.RECIPE_DESC.ARMOR_ANT = "Walk a mile in a Mant's carapace."
 
@@ -37,9 +43,14 @@ STRINGS.RECIPE_DESC.ARMOR_WEEVOLE = "Draw vitality from the fallen."
 STRINGS.NAMES.ARMOR_WINDBREAKER = "Windbreaker"
 STRINGS.RECIPE_DESC.ARMOR_WINDBREAKER = "Break some wind!"
 
+STRINGS.NAMES.BANDITHAT = "Swashy Hat"
+STRINGS.RECIPE_DESC.BANDITHAT = "Take the spoils from the rich!"
+
 STRINGS.NAMES.PIGSKIN_DRIED = "Tanned Leather"
 
 STRINGS.NAMES.PIRATEPACK = "Booty Bag"
+
+STRINGS.NAMES.SHARK_FIN = "Rockjaw Fin"
 
 STRINGS.NAMES.THATCHSACK = "Reeds Satchel"
 STRINGS.RECIPE_DESC.THATCHSACK = "Carry a light load."

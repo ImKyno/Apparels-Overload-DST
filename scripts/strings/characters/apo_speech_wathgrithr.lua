@@ -1,5 +1,9 @@
 local WATHGRITHR = STRINGS.CHARACTERS.WATHGRITHR
 
+WATHGRITHR.DESCRIBE.AERODYNAMICHAT = "My head shall cut the air!"
+
+WATHGRITHR.DESCRIBE.ANTMASKHAT = "Mine helm would have sufficed."
+
 WATHGRITHR.DESCRIBE.ARMOR_ANT = "This armor is not worthy of a shieldmaiden!"
 
 WATHGRITHR.DESCRIBE.ARMOR_BLUBBER = "Rue my suit of fat, moisture."
@@ -26,8 +30,12 @@ WATHGRITHR.DESCRIBE.ARMOR_WEEVOLE = "Armor made from the skin of mine enemy."
 
 WATHGRITHR.DESCRIBE.ARMOR_WINDBREAKER = "I shall break the wind with every step!"
 
+WATHGRITHR.DESCRIBE.BANDITHAT = "'Tis full of Loki's trickery."
+
 WATHGRITHR.DESCRIBE.PIGSKIN_DRIED = "Deceit is the tactic of cowards."
 
 WATHGRITHR.DESCRIBE.PIRATEPACK = "Builds chest muscles."
+
+WATHGRITHR.DESCRIBE.SHARK_FIN = "A token from a fallen warrior."
 
 WATHGRITHR.DESCRIBE.THATCHSACK = "I hope my spear doesn't poke a hole in it."

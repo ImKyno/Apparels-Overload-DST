@@ -36,7 +36,8 @@ end
 
 SortAfter("armor_weevole",     "armorwood",         "ARMOUR")
 SortAfter("armor_ant",         "armor_weevole",     "ARMOUR")
-SortAfter("armor_blubber",     "armor_ant",         "ARMOUR")
+SortAfter("antmaskhat",        "armor_ant",         "ARMOUR")
+SortAfter("armor_blubber",     "antmaskhat",        "ARMOUR")
 SortAfter("armor_cactus",      "armor_bramble",     "ARMOUR")
 SortAfter("armor_vortex",      "armor_sanity",      "ARMOUR")
 SortAfter("armor_seashell",    "armor_vortex",      "ARMOUR")
@@ -45,6 +46,8 @@ SortAfter("armor_metalplate",  "armor_limestone",   "ARMOUR")
 SortAfter("armor_obsidian",    "armordragonfly",    "ARMOUR")
 SortAfter("armor_tar",         "armor_blubber",     "ARMOUR")
 
+SortAfter("aerodynamichat",    "bushhat",           "CLOTHING")
+SortAfter("bandithat",         "aerodynamichat",    "CLOTHING")
 SortAfter("armor_snakeskin",   "raincoat",          "CLOTHING")
 SortAfter("armor_windbreaker", "armor_snakeskin",   "CLOTHING")
 
@@ -53,6 +56,8 @@ SortAfter("armor_vortex",      "candybag",          "CONTAINERS")
 
 SortAfter("armor_vortex",      "nightlight",        "MAGIC")
 
+SortAfter("antmaskhat",        "tophat",            "RAIN")
+SortAfter("bandithat",         "antmaskhat",        "RAIN")
 SortAfter("armor_lifejacket",  "umbrella",          "RAIN")
 SortAfter("armor_weevole",     "raincoat",          "RAIN")
 SortAfter("armor_snakeskin",   "armor_weevole",     "RAIN")
