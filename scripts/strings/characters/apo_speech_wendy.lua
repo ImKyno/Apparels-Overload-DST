@@ -10,6 +10,8 @@ WENDY.DESCRIBE.ARMOR_BLUBBER = "Disturbing, but cozy."
 
 WENDY.DESCRIBE.ARMOR_CACTUS = "It makes me as prickly outside as I am inside!"
 
+WENDY.DESCRIBE.ARMOR_FLOWERS = "Flowers to ward off the sting of nature."
+
 WENDY.DESCRIBE.ARMOR_LIFEJACKET = "I'd prefer a dry grave, thank you."
 
 WENDY.DESCRIBE.ARMOR_LIMESTONE = "Heavy..."
@@ -31,6 +33,16 @@ WENDY.DESCRIBE.ARMOR_WEEVOLE = "Something died so that this armor may exist."
 WENDY.DESCRIBE.ARMOR_WINDBREAKER = "The wind's tendrils cannot hold me!"
 
 WENDY.DESCRIBE.BANDITHAT = "A big hat to hide from the world."
+
+WENDY.DESCRIBE.BATHAT = "Peers into the darkness."
+
+WENDY.DESCRIBE.BRAINJELLYHAT = "Does this make my brain look big?"
+
+WENDY.DESCRIBE.BUCKETHAT = "Even the sky wishes to bury us."
+
+WENDY.DESCRIBE.CANDLEHAT = "Only Abigail can light up my life."
+
+WENDY.DESCRIBE.CAPTAINHAT = "No living soul commands the sea..."
 
 WENDY.DESCRIBE.PIGSKIN_DRIED = "The result of many deaths."
 

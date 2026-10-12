@@ -3,15 +3,20 @@ local resolvefilepath = _G.resolvefilepath
 
 Assets =
 {
+    Asset("IMAGE", "images/colour_cubes/batvision_cc.tex"),
+
+    Asset("IMAGE", "images/hudimages/batvision_over.tex"),
+    Asset("ATLAS", "images/hudimages/batvision_over.xml"),
+
+    Asset("IMAGE", "images/hudimages/visor_over.tex"),
+    Asset("ATLAS", "images/hudimages/visor_over.xml"),
+
     Asset("IMAGE", "images/inventoryimages/apo_inventoryimages.tex"),
     Asset("ATLAS", "images/inventoryimages/apo_inventoryimages.xml"),
     Asset("ATLAS_BUILD", "images/inventoryimages/apo_inventoryimages.xml", 256),
 
     Asset("IMAGE", "images/minimapimages/apo_minimapimages.tex"),
     Asset("ATLAS", "images/minimapimages/apo_minimapimages.xml"),
-
-    -- Asset("IMAGE", "images/hudimages/apo_hudimages.tex"),
-    -- Asset("ATLAS", "images/hudimages/apo_hudimages.xml"),
 
     Asset("SOUNDPACKAGE", "sound/apo_sounds.fev"),
     Asset("SOUND", "sound/apo_sfx.fsb"),
@@ -22,6 +27,8 @@ AddMinimapAtlas("images/minimapimages/apo_minimapimages.xml")
 -- Mod Icons.
 local APO_ICONS =
 {
+    "armor_flowers",
+    "buckethat",
     "pigskin_dried",
 
     -- Modded Skins.
@@ -48,6 +55,10 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         "armor_weevole",
         "armor_windbreaker",
         "bandithat",
+        "bathat",
+        "brainjellyhat",
+        "candlehat",
+        "captainhat",
         "piratepack",
         "shark_fin",
         "thatchsack",

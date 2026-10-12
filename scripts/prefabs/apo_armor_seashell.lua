@@ -78,10 +78,10 @@ local function fn()
     inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
 
     inst:AddComponent("armor")
-    inst.components.armor:InitCondition(TUNING.APO_ARMOR_SEASHELL.CONDITION, TUNING.APO_ARMOR_SEASHELL.ABSORPTION)
+    inst.components.armor:InitCondition(TUNING.APO_ARMORS.SEASHELL.CONDITION, TUNING.APO_ARMORS.SEASHELL.ABSORPTION)
 
     inst:AddComponent("damagetyperesist")
-    inst.components.damagetyperesist:AddResist("explosive", inst, TUNING.APO_ARMOR_SEASHELL.DAMAGETYPE_RESIST)
+    inst.components.damagetyperesist:AddResist("explosive", inst, TUNING.APO_ARMORS.SEASHELL.DAMAGETYPE_RESIST)
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY

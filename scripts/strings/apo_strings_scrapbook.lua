@@ -23,6 +23,13 @@ This thorny husk deals its damage when attacked.
 Taking damage reduces the spoilage time of the armor.
 ]]
 
+SPECIALINFO.ARMOR_FLOWERS =
+[[
+Pacifies nearby Bee-like creatures and Butterflies.
+
+Taking damage reduces the spoilage time of the armor.
+]]
+
 SPECIALINFO.ARMOR_LIFEJACKET =
 [[
 Upon drowning, prevents loss of items, damage and moisture.
@@ -70,6 +77,31 @@ SPECIALINFO.BANDITHAT =
 Creatures will drop one additional loot when killed.
 
 This hat provides increased movement speed on creep and will not trigger traps when worn.
+]]
+
+SPECIALINFO.BATHAT =
+[[
+Allows the wearer to view the world in a sonar vision mode that can see in the dark.
+]]
+
+SPECIALINFO.BRAINJELLYHAT =
+[[
+Allows the wearer to prototype items and structures without being near a crafting station.
+]]
+
+SPECIALINFO.BUCKETHAT =
+[[
+Protects the wearer against falling debris.
+]]
+
+SPECIALINFO.CANDLEHAT =
+[[
+Creates light when worn.
+]]
+
+SPECIALINFO.CAPTAINHAT =
+[[
+Decreases hunger rate by 25% and provides a sanity boost while the wearer is on a boat.
 ]]
 
 SPECIALINFO.PIRATEPACK =

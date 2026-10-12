@@ -92,7 +92,7 @@ local function fn()
 
     inst:AddComponent("fueled")
 	inst.components.fueled.fueltype = FUELTYPE.USAGE
-	inst.components.fueled:InitializeFuelLevel(TUNING.APO_ARMOR_SNAKESKIN.PERISHTIME)
+	inst.components.fueled:InitializeFuelLevel(TUNING.APO_ARMORS.SNAKESKIN.PERISHTIME)
 	inst.components.fueled:SetDepletedFn(inst.Remove)
 
     MakeSmallBurnable(inst)

@@ -15,6 +15,20 @@ TUNING.APO_IS_IAS_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-1467214795")
 
 TUNING.APO_MISC =
 {
+    BATVISION =
+    {
+        VISION_RANGE_SQ = 36,
+        CUT_OFF_RANGE = 0.7,
+
+        CC_TABLE =
+        {
+            day       = _G.resolvefilepath("images/colour_cubes/batvision_cc.tex"),
+            dusk      = _G.resolvefilepath("images/colour_cubes/batvision_cc.tex"),
+            night     = _G.resolvefilepath("images/colour_cubes/batvision_cc.tex"),
+            full_moon = _G.resolvefilepath("images/colour_cubes/batvision_cc.tex"),
+        },
+    },
+
     BURIEDTREASUREFINDER =
     {
         CHANCE =
@@ -49,111 +63,121 @@ TUNING.APO_MISC =
     },
 }
 
-TUNING.APO_ARMOR_ANT =
+TUNING.APO_ARMORS =
 {
-    CONDITION = 450,
-    ABSORPTION = 0.80,
-    CONSUPTION = 0.05, -- For Bee Box.
-
-    TAGS =
+    ANT =
     {
-        "bee",
+        CONDITION = 450,
+        ABSORPTION = 0.80,
+        CONSUPTION = 0.05, -- For Bee Box.
+        PERISHTIME = 480 * 10,
+
+        TAGS =
+        {
+            "bee",
+        },
     },
-}
 
-TUNING.APO_ARMOR_BLUBBER =
-{
-    CONDITION = 450,
-    ABSORPTION = 0.80,
-}
-
-TUNING.APO_ARMOR_CACTUS =
-{
-    CONDITION = 450,
-    ABSORPTION = 0.80,
-}
-
-TUNING.APO_ARMOR_LIMESTONE =
-{
-    CONDITION = 735,
-    ABSORPTION = 0.95,
-    WALKSPEEDMULT = 0.70,
-}
-
-TUNING.APO_ARMOR_METALPLATE =
-{
-    CONDITION = 525,
-    ABSORPTION = 0.70,
-    WALKSPEEDMULT = 0.90,
-}
-
-TUNING.APO_ARMOR_OBSIDIAN =
-{
-    CONDITION = 1050,
-    ABSORPTION = 0.95,
-    WALKSPEEDMULT = 0.70,
-    FIRERESIST = 1,
-    OVERHEAT_DAMAGE = 5,
-    LIGHT_OVERRIDE = 0.35,
-    HEAT = 15,
-}
-
-TUNING.APO_ARMOR_SEASHELL =
-{
-    CONDITION = 625,
-    ABSORPTION = 0.70,
-    DAMAGETYPE_RESIST = 0.85,
-}
-
-TUNING.APO_ARMOR_SNAKESKIN =
-{
-    PERISHTIME = 480 * 8,
-}
-
-TUNING.APO_ARMOR_TAR =
-{
-    CONDITION = 525,
-    ABSORPTION = 0.80,
-    PLANAR_ABSORPTION = 5,
-    DAMAGETYPE_RESIST = 0.80,
-    SHADOWLEVEL = 1,
-}
-
-TUNING.APO_ARMOR_VORTEX =
-{
-    FUEL = 720,
-    FUEL_RATE = 45,
-    SANITY = 0.20,
-    SHADOWLEVEL = 3,
-
-    COOLDOWN =
+    BLUBBER =
     {
-        INITIAL = 1,
-        NORMAL = 5,
+        CONDITION = 450,
+        ABSORPTION = 0.80,
     },
-}
 
-TUNING.APO_ARMOR_WEEVOLE =
-{
-    CONDITION = 450,
-    ABSORPTION = 0.60,
-
-    HEALTH =
+    CACTUS =
     {
-        MIN = 1,
-        MAX = 2,
+        CONDITION = 450,
+        ABSORPTION = 0.80,
     },
-}
 
-TUNING.APO_ARMOR_WINDBREAKER =
-{
-    PERISHTIME = 480 * 10,
-    THRESHOLD = 50,
-
-    WALKSPEEDMULT =
+    FLOWERS =
     {
-        NORMAL = 1.25,
-        RAIN = 1.50,
+        CONDITION = 250,
+        ABSORPTION = 0.60,
+    },
+
+    LIMESTONE =
+    {
+        CONDITION = 735,
+        ABSORPTION = 0.95,
+        WALKSPEEDMULT = 0.70,
+    },
+
+    METALPLATE =
+    {
+        CONDITION = 525,
+        ABSORPTION = 0.70,
+        WALKSPEEDMULT = 0.90,
+    },
+
+    OBSIDIAN =
+    {
+        CONDITION = 1050,
+        ABSORPTION = 0.95,
+        WALKSPEEDMULT = 0.70,
+        FIRERESIST = 1,
+        OVERHEAT_DAMAGE = 5,
+        LIGHT_OVERRIDE = 0.35,
+        HEAT = 15,
+    },
+
+    SEASHELL =
+    {
+        CONDITION = 625,
+        ABSORPTION = 0.70,
+        DAMAGETYPE_RESIST = 0.85,
+    },
+
+    SNAKESKIN =
+    {
+        PERISHTIME = 480 * 8,
+    },
+
+    TAR =
+    {
+        CONDITION = 525,
+        ABSORPTION = 0.80,
+        PLANAR_ABSORPTION = 5,
+        DAMAGETYPE_RESIST = 0.80,
+        SHADOWLEVEL = 1,
+    },
+
+    VORTEX =
+    {
+        FUEL = 720,
+        FUEL_RATE = 45,
+        SANITY = 0.20,
+        SHADOWLEVEL = 3,
+
+        COOLDOWN =
+        {
+            INITIAL = 1,
+            NORMAL = 5,
+        },
+    },
+
+    WEEVOLE =
+    {
+        CONDITION = 450,
+        ABSORPTION = 0.60,
+
+        HEALTH =
+        {
+            MIN = 1,
+            MAX = 2,
+        },
+    },
+
+    WINDBREAKER =
+    {
+        PERISHTIME = 480 * 10,
+        MOISTURE_THRESHOLD = 50,
+
+        WALKSPEEDMULT =
+        {
+            NORMAL = 1.25,
+            RAIN = 1.50,
+        },
     },
 }
 
@@ -170,6 +194,7 @@ TUNING.APO_HATS =
         CONDITION = 450,
         ABSORPTION = 0.80,
         CONSUPTION = 0.05, -- For Bee Box.
+        PERISHTIME = 480 * 10,
 
         TAGS =
         {
@@ -180,6 +205,33 @@ TUNING.APO_HATS =
     BANDIT =
     {
         PERISHTIME = 480,
+    },
+
+    BAT =
+    {
+        PERISHTIME = 480 * 2,
+    },
+
+    BRAINJELLY =
+    {
+        USES = 4,
+    },
+
+    BUCKET =
+    {
+        CONDITION = 262.5,
+        ABSORPTION = 0.70,
+    },
+
+    CANDLE =
+    {
+        PERISHTIME = 200,
+    },
+
+    CAPTAIN =
+    {
+        PERISHTIME = 480 * 3,
+        HUNGER_MODIFIER = 0.70,
     },
 }
 

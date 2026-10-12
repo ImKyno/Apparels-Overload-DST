@@ -10,6 +10,8 @@ WILSON.DESCRIBE.ARMOR_BLUBBER = "Well, it's something."
 
 WILSON.DESCRIBE.ARMOR_CACTUS = "The best defense is a good offense."
 
+WILSON.DESCRIBE.ARMOR_FLOWERS = "A light layer of floral protection."
+
 WILSON.DESCRIBE.ARMOR_LIFEJACKET = "Keeps me afloat, without my boat!"
 
 WILSON.DESCRIBE.ARMOR_LIMESTONE = "I'm sure this will hold up great!"
@@ -31,6 +33,16 @@ WILSON.DESCRIBE.ARMOR_WEEVOLE = "Yeesh. This is kinda creepy."
 WILSON.DESCRIBE.ARMOR_WINDBREAKER = "The wind doesn't stand a chance!"
 
 WILSON.DESCRIBE.BANDITHAT = "A shadowy chapeau."
+
+WILSON.DESCRIBE.BATHAT = "A hat, made of bat."
+
+WILSON.DESCRIBE.BRAINJELLYHAT = "Two brains means double the ideas!"
+
+WILSON.DESCRIBE.BUCKETHAT = "A little protection from things falling on my head."
+
+WILSON.DESCRIBE.CANDLEHAT = "What a bright idea!"
+
+WILSON.DESCRIBE.CAPTAINHAT = "The proper boating attire!"
 
 WILSON.DESCRIBE.PIGSKIN_DRIED = "Leather for all kinds of weather."
 

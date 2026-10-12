@@ -8,14 +8,162 @@ local ABCEnabled   = _G.APORecipeAlreadyExists("cork_bat",       "corkchest")
 local IASEnabled   = _G.APORecipeAlreadyExists("chiminea",       "limestone")
 local HOFEnabled   = _G.APORecipeAlreadyExists("kyno_woodenkeg", "kyno_preservesjar")
 
-local function AddRecipeAPO(condition, ...)
+local function APOAddRecipe(condition, ...)
     if not condition then
         AddRecipe2(...)
     end
 end
 
+-- Clothing.
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_ant",
+    {
+        Ingredient("silk", 3),
+        Ingredient("stinger", 3),
+        Ingredient("armorwood", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_blubber",
+    {
+        Ingredient("fishmeat", 4),
+        Ingredient("glommerfuel", 1),
+        Ingredient("armorwood", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN", "SUMMER" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_cactus",
+    {
+        Ingredient("cactus_meat", 4),
+        Ingredient("stinger", 4),
+        Ingredient("livinglog", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR" }
+)
+
+AddRecipe2("armor_flowers",
+    {
+        Ingredient("armorgrass", 1),
+        Ingredient("petals", 12),
+    },
+
+    TECH.NONE, {}, { "ARMOUR" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_lifejacket",
+    {
+        Ingredient("silk", 1),
+        Ingredient("mosquitosack", 1),
+        Ingredient("rope", 1),
+    },
+
+    TECH.SEAFARING_ONE, {}, { "RAIN", "SEAFARING", "SUMMER" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_limestone",
+    {
+        Ingredient("marble", 6),
+        Ingredient("cutreeds", 2),
+        Ingredient("rope", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_metalplate",
+    {
+        Ingredient("cutstone", 3),
+        Ingredient("rope", 2),
+        Ingredient("hammer", 0),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_obsidian",
+    {
+        Ingredient("armordragonfly", 1),
+        Ingredient("mitegland", 2),
+        Ingredient("redgem", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR", "WINTER" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_seashell",
+    {
+        Ingredient("slurtle_shellpieces", 10),
+        Ingredient("kelp", 2),
+        Ingredient("rope", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_snakeskin",
+    {
+        Ingredient("pigskin_dried", 2),
+        Ingredient("rope", 2),
+        Ingredient("boneshard", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN", "WINTER" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_tar",
+    {
+        Ingredient("gelblob_bottle", 3),
+        Ingredient("armorwood", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_vortex",
+    {
+        Ingredient("horrorfuel", 12),
+        Ingredient("voidcloth", 6),
+        Ingredient("armorskeleton", 1),
+    },
+
+    TECH.LOST, {}, { "ARMOUR", "CONTAINERS", "MAGIC" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_weevole",
+    {
+        Ingredient("mosquito", 4),
+        Ingredient("pigskin_dried", 2),
+        Ingredient("rope", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN", "RESTORATION" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "armor_windbreaker",
+    {
+        Ingredient("pigskin_dried", 3),
+        Ingredient("rope", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "bandithat",
+    {
+        Ingredient("slurper_pelt", 6),
+        Ingredient("rope", 2),
+        Ingredient("feather_crow", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
+)
+
 -- Hats.
-AddRecipeAPO(ABCEnabled or IASEnabled, "aerodynamichat",
+APOAddRecipe(ABCEnabled or IASEnabled, "aerodynamichat",
     HOFEnabled and
     {
         Ingredient("kyno_shark_fin", 1),
@@ -32,7 +180,7 @@ AddRecipeAPO(ABCEnabled or IASEnabled, "aerodynamichat",
     TECH.SCIENCE_TWO, {}, { "CLOTHING" }
 )
 
-AddRecipeAPO(ABCEnabled or IASEnabled, "antmaskhat",
+APOAddRecipe(ABCEnabled or IASEnabled, "antmaskhat",
     {
         Ingredient("silk", 3),
         Ingredient("stinger", 3),
@@ -42,146 +190,65 @@ AddRecipeAPO(ABCEnabled or IASEnabled, "antmaskhat",
     TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN" }
 )
 
--- Clothing.
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_ant",
+APOAddRecipe(ABCEnabled or IASEnabled, "bathat",
     {
-        Ingredient("silk", 3),
-        Ingredient("stinger", 3),
-        Ingredient("armorwood", 1),
+        Ingredient("pigskin", 2),
+        Ingredient("batwing", 1),
+        Ingredient("compass", 1),
     },
 
-    TECH.SCIENCE_TWO, {}, { "ARMOUR" }
+    TECH.SCIENCE_TWO, {}, { "LIGHT" }
 )
 
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_blubber",
+APOAddRecipe(ABCEnabled or IASEnabled, "brainjellyhat",
+    HOFEnabled and
     {
-        Ingredient("fishmeat", 4),
-        Ingredient("glommerfuel", 1),
-        Ingredient("armorwood", 1),
-    },
-
-    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN", "SUMMER" }
-)
-
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_cactus",
+        Ingredient("kyno_brainrock_coral", 1),
+        Ingredient("kyno_jellyfish", 1),
+        Ingredient("rope", 2),
+    }
+    or
     {
-        Ingredient("cactus_meat", 4),
-        Ingredient("stinger", 4),
-        Ingredient("livinglog", 2),
-    },
-
-    TECH.SCIENCE_TWO, {}, { "ARMOUR" }
-)
-
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_lifejacket",
-    {
-        Ingredient("silk", 1),
-        Ingredient("mosquitosack", 1),
-        Ingredient("rope", 1),
-    },
-
-    TECH.SEAFARING_ONE, {}, { "RAIN", "SEAFARING", "SUMMER" }
-)
-
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_limestone",
-    {
-        Ingredient("marble", 6),
-        Ingredient("cutreeds", 2),
+        Ingredient("barnacle", 6),
+        Ingredient("kelp", 3),
         Ingredient("rope", 2),
     },
 
-    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN" }
+    TECH.SCIENCE_TWO, {}, { "CLOTHING" }
 )
 
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_metalplate",
+AddRecipe2("buckethat",
     {
-        Ingredient("cutstone", 3),
-        Ingredient("rope", 2),
-        Ingredient("hammer", 0),
-    },
-
-    TECH.SCIENCE_TWO, {}, { "ARMOUR" }
-)
-
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_obsidian",
-    {
-        Ingredient("armordragonfly", 1),
-        Ingredient("mitegland", 2),
-        Ingredient("redgem", 2),
-    },
-
-    TECH.SCIENCE_TWO, {}, { "ARMOUR", "WINTER" }
-)
-
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_seashell",
-    {
-        Ingredient("slurtle_shellpieces", 10),
-        Ingredient("kelp", 2),
-        Ingredient("rope", 2),
-    },
-
-    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN" }
-)
-
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_snakeskin",
-    {
-        Ingredient("pigskin_dried", 2),
-        Ingredient("rope", 2),
+        Ingredient("log", 4),
         Ingredient("boneshard", 2),
-    },
-
-    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN", "WINTER" }
-)
-
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_tar",
-    {
-        Ingredient("gelblob_bottle", 3),
-        Ingredient("armorwood", 1),
-    },
-
-    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN" }
-)
-
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_vortex",
-    {
-        Ingredient("horrorfuel", 12),
-        Ingredient("voidcloth", 6),
-        Ingredient("armorskeleton", 1),
-    },
-
-    TECH.LOST, {}, { "ARMOUR", "CONTAINERS", "MAGIC" }
-)
-
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_weevole",
-    {
-        Ingredient("mosquito", 4),
-        Ingredient("pigskin_dried", 2),
         Ingredient("rope", 2),
     },
 
-    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN", "RESTORATION" }
+    TECH.SCIENCE_TWO, {}, { "ARMOUR" }
 )
 
-AddRecipeAPO(ABCEnabled or IASEnabled, "armor_windbreaker",
+APOAddRecipe(ABCEnabled or IASEnabled, "candlehat",
     {
-        Ingredient("pigskin_dried", 3),
-        Ingredient("rope", 1),
+        Ingredient("torch", 1),
+        Ingredient("log", 3),
+        Ingredient("rocks", 3),
     },
 
-    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
+    TECH.SCIENCE_TWO, {}, { "LIGHT", "RAIN" }
 )
 
-AddRecipeAPO(ABCEnabled or IASEnabled, "bandithat",
+APOAddRecipe(ABCEnabled or IASEnabled, "captainhat",
     {
-        Ingredient("slurper_pelt", 6),
-        Ingredient("rope", 2),
-        Ingredient("feather_crow", 1),
+        Ingredient("silk", 4),
+        Ingredient("kelp", 2),
+        Ingredient("strawhat", 1),
     },
 
-    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
+    TECH.SEAFARING_ONE, {}, { "SEAFARING", "CLOTHING" }
 )
 
-AddRecipeAPO(ABCEnabled or IASEnabled, "thatchsack",
+-- Everything else.
+APOAddRecipe(ABCEnabled or IASEnabled, "thatchsack",
     {
         Ingredient("cutreeds", 4),
         Ingredient("twigs", 2),

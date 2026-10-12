@@ -10,6 +10,8 @@ WANDA.DESCRIBE.ARMOR_BLUBBER = "Slippery!"
 
 WANDA.DESCRIBE.ARMOR_CACTUS = "All the rage with the dangerous vegetation crowd."
 
+WANDA.DESCRIBE.ARMOR_FLOWERS = "A surprisingly effective disguise."
+
 WANDA.DESCRIBE.ARMOR_LIFEJACKET = "This should give me more time."
 
 WANDA.DESCRIBE.ARMOR_LIMESTONE = "Limy."
@@ -31,6 +33,16 @@ WANDA.DESCRIBE.ARMOR_WEEVOLE = "Kinda disgusting."
 WANDA.DESCRIBE.ARMOR_WINDBREAKER = "I'll never get blown off course with this jacket."
 
 WANDA.DESCRIBE.BANDITHAT = "I shall become one with the shadows."
+
+WANDA.DESCRIBE.BATHAT = "A hat that looks like a bat, wise."
+
+WANDA.DESCRIBE.BRAINJELLYHAT = "I'm getting some ideas!"
+
+WANDA.DESCRIBE.BUCKETHAT = "I'd rather not have my head crushed before my time."
+
+WANDA.DESCRIBE.CANDLEHAT = "For seeing in the dark."
+
+WANDA.DESCRIBE.CAPTAINHAT = "I am the captain of the time!"
 
 WANDA.DESCRIBE.PIGSKIN_DRIED = "Looks like your time has finally come."
 

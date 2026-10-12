@@ -80,7 +80,7 @@ local function fn()
     inst.components.fuel.fuelvalue = TUNING.LARGE_FUEL
 
     inst:AddComponent("armor")
-    inst.components.armor:InitCondition(TUNING.APO_ARMOR_BLUBBER.CONDITION, TUNING.APO_ARMOR_BLUBBER.ABSORPTION)
+    inst.components.armor:InitCondition(TUNING.APO_ARMORS.BLUBBER.CONDITION, TUNING.APO_ARMORS.BLUBBER.ABSORPTION)
 
     inst:AddComponent("insulator")
     inst.components.insulator:SetInsulation(TUNING.INSULATION_MED)

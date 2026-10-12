@@ -16,6 +16,24 @@ local function OnBlocked(owner)
     end
 end
 
+local function OnUpdate(inst)
+    if inst.components.armor ~= nil then
+        inst.components.armor:SetPercent(inst.components.fueled:GetPercent())
+    end
+end
+
+local function OnTakeDamage(inst, damage_amount, absorbed, leftover)
+    if inst.components.armor ~= nil and inst.components.fueled ~= nil then
+        local absorbed = damage_amount * TUNING.APO_ARMORS.ANT.ABSORPTION
+        local absorbed_dmg = absorbed / inst.components.armor.maxcondition
+
+        local percent = inst.components.fueled:GetPercent()
+        local newpercent = percent - absorbed_dmg
+
+        inst.components.fueled:SetPercent(newpercent)
+    end
+end
+
 local function OnEquip(inst, owner)
     if owner ~= nil then
         local skin_build = inst:GetSkinBuild()
@@ -26,8 +44,6 @@ local function OnEquip(inst, owner)
         else
             owner.AnimState:OverrideSymbol("swap_body", "armor_ant", "swap_body")
         end
-
-        owner:AddTag("beefriend")
 
         inst:ListenForEvent("blocked", OnBlocked, owner)
     end
@@ -42,8 +58,6 @@ local function OnUnequip(inst, owner)
         end
 
         owner.AnimState:ClearOverrideSymbol("swap_body")
-
-        owner:RemoveTag("beefriend")
 
         inst:RemoveEventCallback("blocked", OnBlocked, owner)
     end
@@ -81,13 +95,21 @@ local function fn()
     inst.components.fuel.fuelvalue = TUNING.LARGE_FUEL
 
     inst:AddComponent("armor")
-    inst.components.armor:InitCondition(TUNING.APO_ARMOR_ANT.CONDITION, TUNING.APO_ARMOR_ANT.ABSORPTION)
-    inst.components.armor:SetTags(TUNING.APO_ARMOR_ANT.TAGS)
+    inst.components.armor:InitCondition(TUNING.APO_ARMORS.ANT.CONDITION, TUNING.APO_ARMORS.ANT.ABSORPTION)
+    inst.components.armor:SetTags(TUNING.APO_ARMORS.ANT.TAGS)
+    inst.components.armor.ontakedamage = OnTakeDamage
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
+
+    inst:AddComponent("fueled")
+    inst.components.fueled.fueltype = FUELTYPE.USAGE
+    inst.components.fueled:InitializeFuelLevel(TUNING.APO_ARMORS.ANT.PERISHTIME)
+    inst.components.fueled:SetFirstPeriod(TUNING.TURNON_FUELED_CONSUMPTION, TUNING.TURNON_FULL_FUELED_CONSUMPTION)
+    inst.components.fueled:SetUpdateFn(OnUpdate)
+    inst.components.fueled:SetDepletedFn(inst.Remove)
 
     MakeSmallBurnable(inst)
     MakeSmallPropagator(inst)

@@ -79,19 +79,19 @@ local function fn()
     inst.components.waterproofer.effectiveness = TUNING.WATERPROOFNESS_ABSOLUTE
 
     inst:AddComponent("shadowlevel")
-    inst.components.shadowlevel:SetDefaultLevel(TUNING.APO_ARMOR_TAR.SHADOWLEVEL)
+    inst.components.shadowlevel:SetDefaultLevel(TUNING.APO_ARMORS.TAR.SHADOWLEVEL)
 
     inst:AddComponent("insulator")
     inst.components.insulator:SetInsulation(TUNING.INSULATION_MED)
 
     inst:AddComponent("armor")
-    inst.components.armor:InitCondition(TUNING.APO_ARMOR_TAR.CONDITION, TUNING.APO_ARMOR_TAR.ABSORPTION)
+    inst.components.armor:InitCondition(TUNING.APO_ARMORS.TAR.CONDITION, TUNING.APO_ARMORS.TAR.ABSORPTION)
 
     inst:AddComponent("planardefense")
-    inst.components.planardefense:SetBaseDefense(TUNING.APO_ARMOR_TAR.PLANAR_ABSORPTION)
+    inst.components.planardefense:SetBaseDefense(TUNING.APO_ARMORS.TAR.PLANAR_ABSORPTION)
 
     inst:AddComponent("damagetyperesist")
-    inst.components.damagetyperesist:AddResist("shadow_aligned", inst, TUNING.APO_ARMOR_TAR.DAMAGETYPE_RESIST)
+    inst.components.damagetyperesist:AddResist("shadow_aligned", inst, TUNING.APO_ARMORS.TAR.DAMAGETYPE_RESIST)
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY

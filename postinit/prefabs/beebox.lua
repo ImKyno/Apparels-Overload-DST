@@ -28,7 +28,7 @@ local function FriendlyBee(inst, picker)
         if head ~= nil and head:HasTag("beefriend") then
             if head.components.armor ~= nil then
                 local percent = head.components.armor:GetPercent()
-                head.components.armor:SetPercent(percent - TUNING.APO_ARMOR_ANT.CONSUPTION)
+                head.components.armor:SetPercent(percent - TUNING.APO_HATS.ANTMASK.CONSUPTION)
             end
 
             if head.prefab == "hivehat" then
@@ -41,7 +41,7 @@ local function FriendlyBee(inst, picker)
         if body ~= nil and body:HasTag("beefriend") then
             if body.components.armor ~= nil then
                 local percent = body.components.armor:GetPercent()
-                body.components.armor:SetPercent(percent - TUNING.APO_ARMOR_ANT.CONSUPTION)
+                body.components.armor:SetPercent(percent - TUNING.APO_ARMORS.ANT.CONSUPTION)
             end
         end
     end

@@ -5,6 +5,7 @@ local INIT_MAIN_MISC =
     "tuning",
     "assets",
     "constants",
+    "simutil",
     "prefabs",
     "containers",
     "recipes",

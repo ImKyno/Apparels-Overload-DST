@@ -1,2 +1,32 @@
-local _G      = GLOBAL
-local require = _G.require
+local _G         = GLOBAL
+local require    = _G.require
+local TECH       = _G.TECH
+local RECIPETABS = _G.RECIPETABS
+
+_G.BRAINJELLY_TECH_BLACKLIST = {}
+
+if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
+    for techname, data in pairs(RECIPETABS) do
+        if data.shop then
+            _G.BRAINJELLY_TECH_BLACKLIST[techname] = true
+        end
+    end
+
+    TECH.BRAINJELLY = _G.setmetatable({}, { __index = TECH.LOST })
+
+    TECH.BRAINJELLY.SEAFARING        = 10
+    TECH.BRAINJELLY.CELESTIAL        = 10
+    TECH.BRAINJELLY.MASHTURFCRAFTING = 10
+    TECH.BRAINJELLY.TURFCRAFTING     = 10
+    TECH.BRAINJELLY.FISHING          = 10
+    TECH.BRAINJELLY.SPIDERCRAFT      = 10
+    TECH.BRAINJELLY.ROBOTMODULECRAFT = 10
+    TECH.BRAINJELLY.CARTOGRAPHY      = 10
+    TECH.BRAINJELLY.LUNARFORGING     = 10
+    TECH.BRAINJELLY.SHADOWFORGING    = 10
+    TECH.BRAINJELLY.BOOKCRAFT        = 10
+
+    if TUNING.APO_IS_HOF_ENABLED then
+        TECH.BRAINJELLY.MEALING      = 10
+    end
+end

@@ -10,8 +10,8 @@ local assets =
     Asset("SOUND", "sound/apo_sfx.fsb"),
 }
 
-local HEALTH_MIN = TUNING.APO_ARMOR_WEEVOLE.HEALTH.MIN
-local HEALTH_MAX = TUNING.APO_ARMOR_WEEVOLE.HEALTH.MAX
+local HEALTH_MIN = TUNING.APO_ARMORS.WEEVOLE.HEALTH.MIN
+local HEALTH_MAX = TUNING.APO_ARMORS.WEEVOLE.HEALTH.MAX
 
 local function IsLifeDrainable(target)
     return target ~= nil and (not target:HasAnyTag(NON_LIFEFORM_TARGET_TAGS) or target:HasTag("lifedrainable"))
@@ -111,7 +111,7 @@ local function fn()
     inst.components.fuel.fuelvalue = TUNING.LARGE_FUEL
 
     inst:AddComponent("armor")
-    inst.components.armor:InitCondition(TUNING.APO_ARMOR_WEEVOLE.CONDITION, TUNING.APO_ARMOR_WEEVOLE.ABSORPTION)
+    inst.components.armor:InitCondition(TUNING.APO_ARMORS.WEEVOLE.CONDITION, TUNING.APO_ARMORS.WEEVOLE.ABSORPTION)
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY

@@ -52,7 +52,7 @@ end
 local function OnArmorDamaged(inst, damage)
     if inst.components.perishable ~= nil and damage ~= nil and damage > 0 then
         local perishable = inst.components.perishable
-        local reduction = damage / TUNING.APO_ARMOR_CACTUS.CONDITION
+        local reduction = damage / TUNING.APO_ARMORS.CACTUS.CONDITION
 
         if perishable:GetPercent() <= reduction then
             perishable:SetPercent(0)
@@ -149,7 +149,7 @@ local function fn()
     inst.components.fuel.fuelvalue = TUNING.LARGE_FUEL
 
     inst:AddComponent("armor")
-    inst.components.armor:InitIndestructible(TUNING.APO_ARMOR_CACTUS.ABSORPTION)
+    inst.components.armor:InitIndestructible(TUNING.APO_ARMORS.CACTUS.ABSORPTION)
     inst.components.armor:AddWeakness("beaver", TUNING.BEAVER_WOOD_DAMAGE)
 
     inst:AddComponent("perishable")

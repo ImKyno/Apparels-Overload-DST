@@ -39,7 +39,7 @@ local function OnEquip(inst, owner)
             owner.AnimState:OverrideSymbol("swap_body", "armor_obsidian", "swap_body")
         end
 
-        owner.AnimState:SetSymbolLightOverride("swap_body", TUNING.APO_ARMOR_OBSIDIAN.LIGHT_OVERRIDE)
+        owner.AnimState:SetSymbolLightOverride("swap_body", TUNING.APO_ARMORS.OBSIDIAN.LIGHT_OVERRIDE)
 
         inst:ListenForEvent("attacked", OnBlocked, owner)
         inst:ListenForEvent("blocked", OnBlocked, owner)
@@ -49,7 +49,7 @@ local function OnEquip(inst, owner)
         end
 
         if owner.components.health ~= nil then
-            owner.components.health.externalfiredamagemultipliers:SetModifier(inst, 1 - TUNING.APO_ARMOR_OBSIDIAN.FIRERESIST)
+            owner.components.health.externalfiredamagemultipliers:SetModifier(inst, 1 - TUNING.APO_ARMORS.OBSIDIAN.FIRERESIST)
         end
 
         inst._light = SpawnPrefab("heatrocklight")
@@ -113,7 +113,7 @@ local function fn()
     inst.AnimState:PlayAnimation("anim")
 
     inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
-    inst.AnimState:SetLightOverride(TUNING.APO_ARMOR_OBSIDIAN.LIGHT_OVERRIDE)
+    inst.AnimState:SetLightOverride(TUNING.APO_ARMORS.OBSIDIAN.LIGHT_OVERRIDE)
 
     inst:AddTag("HASHEATER")
     inst:AddTag("heavyarmor")
@@ -128,23 +128,23 @@ local function fn()
         return inst
     end
 
-    inst.overheat_damage = TUNING.APO_ARMOR_OBSIDIAN.OVERHEAT_DAMAGE
+    inst.overheat_damage = TUNING.APO_ARMORS.OBSIDIAN.OVERHEAT_DAMAGE
 
     inst:AddComponent("inspectable")
     inst:AddComponent("inventoryitem")
 
     inst:AddComponent("heater")
-    inst.components.heater.equippedheat = TUNING.APO_ARMOR_OBSIDIAN.HEAT
+    inst.components.heater.equippedheat = TUNING.APO_ARMORS.OBSIDIAN.HEAT
 
     inst:AddComponent("armor")
-    inst.components.armor:InitCondition(TUNING.APO_ARMOR_OBSIDIAN.CONDITION, TUNING.APO_ARMOR_OBSIDIAN.ABSORPTION)
+    inst.components.armor:InitCondition(TUNING.APO_ARMORS.OBSIDIAN.CONDITION, TUNING.APO_ARMORS.OBSIDIAN.ABSORPTION)
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
     inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED
-    inst.components.equippable.walkspeedmult = TUNING.APO_ARMOR_OBSIDIAN.WALKSPEEDMULT
+    inst.components.equippable.walkspeedmult = TUNING.APO_ARMORS.OBSIDIAN.WALKSPEEDMULT
 
     MakeHauntableLaunch(inst)
 

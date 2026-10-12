@@ -10,6 +10,8 @@ WAXWELL.DESCRIBE.ARMOR_BLUBBER = "This is undignified."
 
 WAXWELL.DESCRIBE.ARMOR_CACTUS = "Nothing says \"stay away\" quite like this."
 
+WAXWELL.DESCRIBE.ARMOR_FLOWERS = "A way to avoid being stung."
+
 WAXWELL.DESCRIBE.ARMOR_LIFEJACKET = "Sadly my cultured countenance must take a backseat to sensibility."
 
 WAXWELL.DESCRIBE.ARMOR_LIMESTONE = "It renders me... sluggish."
@@ -31,6 +33,16 @@ WAXWELL.DESCRIBE.ARMOR_WEEVOLE = "This is not a good look."
 WAXWELL.DESCRIBE.ARMOR_WINDBREAKER = "Sigh."
 
 WAXWELL.DESCRIBE.BANDITHAT = "A nice hat to hide under."
+
+WAXWELL.DESCRIBE.BATHAT = "How delightfully horrific."
+
+WAXWELL.DESCRIBE.BRAINJELLYHAT = "I feel inspired."
+
+WAXWELL.DESCRIBE.BUCKETHAT = "One must protect one's head from falling masonry."
+
+WAXWELL.DESCRIBE.CANDLEHAT = "The wax better not drip on my suit."
+
+WAXWELL.DESCRIBE.CAPTAINHAT = "It makes me feel commanding."
 
 WAXWELL.DESCRIBE.PIGSKIN_DRIED = "Soft. Malleable."
 

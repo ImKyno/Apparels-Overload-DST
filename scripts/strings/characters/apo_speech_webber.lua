@@ -10,6 +10,8 @@ WEBBER.DESCRIBE.ARMOR_BLUBBER = "A boy inside a spider inside a whale."
 
 WEBBER.DESCRIBE.ARMOR_CACTUS = "Weaponized hugs!"
 
+WEBBER.DESCRIBE.ARMOR_FLOWERS = "Maybe the bees will think we're flowers!"
+
 WEBBER.DESCRIBE.ARMOR_LIFEJACKET = "It pays to be safe."
 
 WEBBER.DESCRIBE.ARMOR_LIMESTONE = "Our back hurts..."
@@ -31,6 +33,16 @@ WEBBER.DESCRIBE.ARMOR_WEEVOLE = "For when we need protection."
 WEBBER.DESCRIBE.ARMOR_WINDBREAKER = "Wind can't hold us back!"
 
 WEBBER.DESCRIBE.BANDITHAT = "This would be great for hide and seek."
+
+WEBBER.DESCRIBE.BATHAT = "Cool. Now we're like a bat-spider boy."
+
+WEBBER.DESCRIBE.BRAINJELLYHAT = "It feels smart and squishy on our head."
+
+WEBBER.DESCRIBE.BUCKETHAT = "Now we don't have to worry so much about rocks falling on us!"
+
+WEBBER.DESCRIBE.CANDLEHAT = "Cool hat! Now our hands are free."
+
+WEBBER.DESCRIBE.CAPTAINHAT = "Just like a real boatguy!"
 
 WEBBER.DESCRIBE.PIGSKIN_DRIED = "It's pretty strong material."
 

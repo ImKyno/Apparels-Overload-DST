@@ -75,13 +75,13 @@ local function fn()
     inst:AddComponent("inventoryitem")
 
     inst:AddComponent("armor")
-    inst.components.armor:InitCondition(TUNING.APO_ARMOR_METALPLATE.CONDITION, TUNING.APO_ARMOR_METALPLATE.ABSORPTION)
+    inst.components.armor:InitCondition(TUNING.APO_ARMORS.METALPLATE.CONDITION, TUNING.APO_ARMORS.METALPLATE.ABSORPTION)
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
-    inst.components.equippable.walkspeedmult = TUNING.APO_ARMOR_METALPLATE.WALKSPEEDMULT
+    inst.components.equippable.walkspeedmult = TUNING.APO_ARMORS.METALPLATE.WALKSPEEDMULT
 
     MakeHauntableLaunch(inst)
 

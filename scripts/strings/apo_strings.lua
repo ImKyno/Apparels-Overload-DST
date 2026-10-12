@@ -1,3 +1,5 @@
+STRINGS.BRAINJELLYHAT_TOOLTIP = "Craft aynthing without restrictions!"
+
 STRINGS.NAMES.AERODYNAMICHAT = "Sleek Hat"
 STRINGS.RECIPE_DESC.AERODYNAMICHAT = "Aerodynamic design for efficient travel."
 
@@ -12,6 +14,9 @@ STRINGS.RECIPE_DESC.ARMOR_BLUBBER = "A disgusting way to stay dry."
 
 STRINGS.NAMES.ARMOR_CACTUS = "Cactus Husk"
 STRINGS.RECIPE_DESC.ARMOR_CACTUS = "Prickly to the touch."
+
+STRINGS.NAMES.ARMOR_FLOWERS = "Floral Shroud"
+STRINGS.RECIPE_DESC.ARMOR_FLOWERS = "Nature wants to protect you."
 
 STRINGS.NAMES.ARMOR_LIFEJACKET = "Life Jacket"
 STRINGS.RECIPE_DESC.ARMOR_LIFEJACKET = "Safety first, even when drowning!"
@@ -45,6 +50,21 @@ STRINGS.RECIPE_DESC.ARMOR_WINDBREAKER = "Break some wind!"
 
 STRINGS.NAMES.BANDITHAT = "Swashy Hat"
 STRINGS.RECIPE_DESC.BANDITHAT = "Take the spoils from the rich!"
+
+STRINGS.NAMES.BATHAT = "Cowl"
+STRINGS.RECIPE_DESC.BATHAT = "Harness the power of sonar."
+
+STRINGS.NAMES.BRAINJELLYHAT = "Brain of Thought"
+STRINGS.RECIPE_DESC.BRAINJELLYHAT = "Well aren't you clever?"
+
+STRINGS.NAMES.BUCKETHAT = "Bucket Hat"
+STRINGS.RECIPE_DESC.BUCKETHAT = "Protects your head from debris."
+
+STRINGS.NAMES.CANDLEHAT = "Wood Candle Hat"
+STRINGS.RECIPE_DESC.CANDLEHAT = "Hands free spelunking on shoe string."
+
+STRINGS.NAMES.CAPTAINHAT = "Captain Hat"
+STRINGS.RECIPE_DESC.CAPTAINHAT = "Wear one. Your boat will respect you more."
 
 STRINGS.NAMES.PIGSKIN_DRIED = "Tanned Leather"
 

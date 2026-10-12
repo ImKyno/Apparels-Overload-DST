@@ -94,7 +94,11 @@ local function MakeHat(name)
         end
     end
 
-    hat_fns.simple_onequip =  function(inst, owner, from_ground)
+    hat_fns.simple_onperish = function(inst, owner)
+        inst:Remove()
+    end
+
+    hat_fns.simple_onequip = function(inst, owner, from_ground)
         if owner ~= nil then
             _onequip(inst, owner)
         end
@@ -179,6 +183,7 @@ local function MakeHat(name)
 
     local _skinhat_fns =
     {
+        simple_onperish       = hat_fns.simple_onperish,
         simple_onequip        = hat_fns.simple_onequip,
         simple_onunequip      = hat_fns.simple_onunequip,
         opentop_onequip       = hat_fns.opentop_onequip,
@@ -250,26 +255,33 @@ local function MakeHat(name)
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.USAGE
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.AERODYNAMIC.PERISHTIME)
-        inst.components.fueled:SetDepletedFn(inst.Remove)
+        inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
 
         return inst
     end
 
-    hat_fns.antmask_onequip = function(inst, owner)
-        hat_fns.simple_onequip(inst, owner)
-
-        owner:AddTag("beefriend")
+    hat_fns.antmask_onupdate = function(inst)
+        if inst.components.armor ~= nil then
+            inst.components.armor:SetPercent(inst.components.fueled:GetPercent())
+        end
     end
 
-    hat_fns.antmask_onunequip = function(inst, owner)
-        hat_fns.simple_onunequip(inst, owner)
+    hat_fns.antmask_ontakedamage = function(inst, damage_amount, absorbed, leftover)
+        if inst.components.armor ~= nil and inst.components.fueled ~= nil then
+            local absorbed = damage_amount * TUNING.APO_HATS.ANTMASK.ABSORPTION
+            local absorbed_dmg = absorbed / inst.components.armor.maxcondition
 
-        owner:RemoveTag("beefriend")
+            local percent = inst.components.fueled:GetPercent()
+            local newpercent = percent - absorbed_dmg
+
+            inst.components.fueled:SetPercent(newpercent)
+        end
     end
 
     hat_fns.antmask_custom_init = function(inst)
         inst.AnimState:SetRayTestOnBB(true)
 
+        inst:AddTag("beefriend")
         inst:AddTag("waterproofer")
     end
 
@@ -284,15 +296,23 @@ local function MakeHat(name)
             return inst
         end
 
-        inst.components.equippable:SetOnEquip(hat_fns.antmask_onequip)
-        inst.components.equippable:SetOnUnequip(hat_fns.antmask_onunequip)
-
         inst:AddComponent("waterproofer")
         inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
 
         inst:AddComponent("armor")
         inst.components.armor:InitCondition(TUNING.APO_HATS.ANTMASK.CONDITION, TUNING.APO_HATS.ANTMASK.ABSORPTION)
         inst.components.armor:SetTags(TUNING.APO_HATS.ANTMASK.TAGS)
+        inst.components.armor.ontakedamage = hat_fns.antmask_ontakedamage
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.ANTMASK.PERISHTIME)
+        inst.components.fueled:SetFirstPeriod(TUNING.TURNON_FUELED_CONSUMPTION, TUNING.TURNON_FULL_FUELED_CONSUMPTION)
+        inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
+        inst.components.fueled:SetUpdateFn(hat_fns.antmask_onupdate)
+
+        MakeSmallBurnable(inst)
+        MakeSmallPropagator(inst)
 
         return inst
     end
@@ -353,6 +373,10 @@ local function MakeHat(name)
         if inst.components.fueled ~= nil then
             inst.components.fueled:StopConsuming()
         end
+
+        if inst.components.extralootdropper ~= nil then
+            inst.components.extralootdropper:StopListening()
+        end
     end
 
     hat_fns.bandit_custom_init = function(inst)
@@ -388,6 +412,369 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.bat_onturnon = function(owner)
+        if owner ~= nil and owner.SoundEmitter ~= nil then
+            owner.SoundEmitter:PlaySound("apo_sounds/common/hat_bat/turn_on")
+        end
+    end
+
+    hat_fns.bat_onturnoff = function(owner)
+        if owner ~= nil and owner.SoundEmitter ~= nil then
+            owner.SoundEmitter:PlaySound("apo_sounds/common/hat_bat/turn_off")
+        end
+    end
+
+    hat_fns.bat_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+        hat_fns.bat_onturnon(owner)
+
+        if owner ~= nil then
+            if owner.components.grue ~= nil then
+                owner.components.grue:AddImmunity("bathat")
+            end
+        end
+    end
+
+    hat_fns.bat_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+        hat_fns.bat_onturnoff(owner)
+
+        if owner ~= nil then
+            if owner.components.grue ~= nil then
+                owner.components.grue:RemoveImmunity("bathat")
+            end
+        end
+    end
+
+    hat_fns.bat_onperish = function(inst)
+        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+            if owner ~= nil then
+                hat_fns.bat_onturnoff(owner)
+            end
+        end
+
+        hat_fns.simple_onperish(inst)
+    end
+
+    hat_fns.bat_custom_init = function(inst)
+        inst.entity:AddSoundEmitter()
+
+        inst:AddTag("no_sewing")
+        inst:AddTag("batvision")
+    end
+
+    hat_fns.bat = function()
+        local inst = simple(hat_fns.bat_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.bat_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.bat_onunequip)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.BAT.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
+        inst.components.fueled.no_sewing = true
+
+        return inst
+    end
+
+    hat_fns.brainjelly_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner.components.builder ~= nil then
+            owner.components.builder.brainjellyhat = true
+
+            owner:PushEvent("techlevelchange")
+            owner:PushEvent("unlockrecipe")
+
+            owner:ListenForEvent("builditem", inst.brainjelly_onbuild)
+            owner:ListenForEvent("bufferbuild", inst.brainjelly_onbuild)
+            owner:ListenForEvent("buildstructure", inst.brainjelly_onbuildstructure)
+        end
+    end
+
+    hat_fns.brainjelly_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner.components.builder ~= nil then
+            owner.components.builder.brainjellyhat = false
+
+            owner:PushEvent("techlevelchange")
+            owner:PushEvent("unlockrecipe")
+
+            owner:RemoveEventCallback("builditem", inst.brainjelly_onbuild)
+            owner:RemoveEventCallback("bufferbuild", inst.brainjelly_onbuild)
+            owner:RemoveEventCallback("buildstructure", inst.brainjelly_onbuildstructure)
+
+            if owner.bufferedaction and owner.bufferedaction.action == ACTIONS.BUILD then
+                owner:ClearBufferedAction()
+            end
+        end
+    end
+
+    hat_fns.brainjelly_custom_init = function(inst)
+        inst:AddTag("smarthat")
+    end
+
+    hat_fns.brainjelly = function()
+        local inst = simple(hat_fns.brainjelly_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.brainjelly_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.brainjelly_onunequip)
+
+        inst:AddComponent("finiteuses")
+        inst.components.finiteuses:SetMaxUses(TUNING.APO_HATS.BRAINJELLY.USES)
+        inst.components.finiteuses:SetUses(TUNING.APO_HATS.BRAINJELLY.USES)
+        inst.components.finiteuses:SetOnFinished(inst.Remove)
+
+        inst.brainjelly_onbuild = function(_, data)
+            local owner = inst.components.inventoryitem:GetGrandOwner()
+
+            if data and data.recipe and not owner.components.builder:KnowsRecipeWithoutBrainJellyHat(data.recipe, true) then
+                if not owner.components.builder.current_prototyper or not CanPrototypeRecipe(data.recipe.level,
+                owner.components.builder.current_prototyper.components.prototyper.trees) then
+                    inst.components.finiteuses:Use(1)
+                else
+                    owner.components.builder:UnlockRecipe(data.recipe.name)
+                    owner.components.builder:ActivateCurrentResearchMachine()
+                    owner.components.builder:ForceAddRecipe(data.recipe.name)
+                end
+            end
+        end
+
+        inst.brainjelly_onbuildstructure = function(_, data)
+            if data and data.item and data.item.prefab and (string.sub(data.item.prefab, 1, 10) == "chesspiece"
+            or string.sub(data.item.prefab, 1, 21) == "blueprint_craftingset") then
+                inst.brainjelly_onbuild(_, data)
+            end
+        end
+
+        return inst
+    end
+
+    hat_fns.candle_onturnon = function(inst, owner)
+        if owner ~= nil then
+            if inst.components.fueled ~= nil then
+                if not inst.components.fueled:IsEmpty() then
+                    inst.components.fueled:StartConsuming()
+
+                    inst.SoundEmitter:PlaySound("dontstarve/wilson/torch_LP", "torch")
+                    inst.SoundEmitter:SetParameter("torch", "intensity", 1)
+
+                    if not inst.candlefire then
+                        inst.candlefire = SpawnPrefab("torchfire_rag")
+
+                        local follower = inst.candlefire.entity:AddFollower()
+                        follower:FollowSymbol(owner.GUID, "swap_hat", 0, -250, 0)
+                    end
+                end
+            end
+        end
+    end
+
+    hat_fns.candle_onturnoff = function(inst, owner)
+        if owner ~= nil then
+            if inst.components.fueled ~= nil then
+                inst.components.fueled:StopConsuming()
+
+                if inst.candlefire then
+                    inst.candlefire:Remove()
+                    inst.candlefire = nil
+                end
+
+                inst.SoundEmitter:KillSound("torch")
+                inst.SoundEmitter:PlaySound("dontstarve/common/fireOut")
+            end
+        end
+    end
+
+    hat_fns.candle_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+        hat_fns.candle_onturnon(inst, owner)
+    end
+
+    hat_fns.candle_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+        hat_fns.candle_onturnoff(inst, owner)
+    end
+
+    hat_fns.candle_onequiptomodel = function(inst, owner, from_ground)
+        hat_fns.candle_onturnoff(inst, owner)
+    end
+
+    hat_fns.candle_onperish = function(inst)
+        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+            if owner ~= nil then
+                hat_fns.candle_onturnoff(inst, owner)
+                owner:PushEvent("torchranout", { torch = inst })
+            end
+        end
+
+        hat_fns.simple_onperish(inst)
+    end
+
+    hat_fns.candle_ondropped = function(inst, owner)
+        hat_fns.candle_onturnoff(inst, owner)
+    end
+
+    hat_fns.candle_ontakefuel = function(inst, owner)
+        inst.SoundEmitter:PlaySound("dontstarve/common/fireAddFuel")
+
+        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+            hat_fns.candle_onturnon(inst, owner)
+        end
+    end
+
+    hat_fns.candle_custom_init = function(inst)
+        inst.entity:AddSoundEmitter()
+
+        inst:AddTag("torch")
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.candle = function()
+        local inst = simple(hat_fns.candle_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.inventoryitem:SetOnDroppedFn(hat_fns.candle_ondropped)
+
+        inst.components.equippable:SetOnEquip(hat_fns.candle_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.candle_onunequip)
+        inst.components.equippable:SetOnEquipToModel(hat_fns.candle_onequiptomodel)
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.BURNABLE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.CANDLE.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(hat_fns.candle_onperish)
+        inst.components.fueled.ontakefuelfn = hat_fns.candle_ontakefuel
+        inst.components.fueled.accepting = true
+
+        MakeSmallBurnable(inst)
+        MakeSmallPropagator(inst)
+
+        return inst
+    end
+
+    hat_fns.captain_onupdate = function(inst, owner)
+        if owner ~= nil then
+            if owner:GetCurrentPlatform() then
+                if owner.components.hunger ~= nil then
+                    owner.components.hunger.burnratemodifiers:SetModifier(inst, TUNING.APO_HATS.CAPTAIN.HUNGER_MODIFIER)
+                end
+
+                if inst.components.equippable ~= nil then
+                    inst.components.equippable.dapperness = TUNING.DAPPERNESS_LARGE
+                end
+            else
+                if owner.components.hunger ~= nil then
+                    owner.components.hunger.burnratemodifiers:RemoveModifier(inst)
+                end
+
+                if inst.components.equippable ~= nil then
+                    inst.components.equippable.dapperness = 0
+                end
+            end
+        end
+    end
+
+    hat_fns.captain_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            inst:ListenForEvent("player_on_platform", inst.captain_onplatform, owner)
+            inst:ListenForEvent("player_off_platform", inst.captain_offplatform, owner)
+
+            hat_fns.captain_onupdate(inst, owner)
+        end
+    end
+
+    hat_fns.captain_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            if owner.components.hunger ~= nil then
+                owner.components.hunger.burnratemodifiers:RemoveModifier(inst)
+            end
+
+            if inst.components.equippable ~= nil then
+                inst.components.equippable.dapperness = 0
+            end
+
+            inst:RemoveEventCallback("player_on_platform", inst.captain_onplatform, owner)
+            inst:RemoveEventCallback("player_off_platform", inst.captain_offplatform, owner)
+        end
+    end
+
+    hat_fns.captain_onequiptomodel = function(inst, owner, from_ground)
+        if owner ~= nil then
+            if inst.components.fueled ~= nil then
+                inst.components.fueled:StopConsuming()
+            end
+
+            if owner.components.hunger ~= nil then
+                owner.components.hunger.burnratemodifiers:RemoveModifier(inst)
+            end
+
+            if inst.components.equippable ~= nil then
+                inst.components.equippable.dapperness = 0
+            end
+        end
+    end
+
+    hat_fns.captain_custom_init = function(inst)
+        inst:AddTag("boatcaptain")
+    end
+
+    hat_fns.captain = function()
+        local inst = simple(hat_fns.captain_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.captain_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.captain_onunequip)
+        inst.components.equippable:SetOnEquipToModel(hat_fns.captain_onequiptomodel)
+        inst.components.equippable.dapperness = 0
+
+        inst:AddComponent("insulator")
+        inst.components.insulator:SetInsulation(TUNING.INSULATION_MED)
+        inst.components.insulator:SetSummer()
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.CAPTAIN.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(inst.Remove)
+
+        inst.captain_onplatform = function(owner)
+            hat_fns.captain_onupdate(inst, owner)
+        end
+
+        inst.captain_offplatform = function(owner)
+            hat_fns.captain_onupdate(inst, owner)
+        end
+
+        return inst
+    end
+
     local hat_fn  = nil
 
     local assets  =
@@ -406,7 +793,16 @@ local function MakeHat(name)
     elseif name == "antmask" then
         hat_fn = hat_fns.antmask
     elseif name == "bandit" then
-        hat_fn = hat_fns.bandit 
+        hat_fn = hat_fns.bandit
+    elseif name == "bat" then
+        hat_fn = hat_fns.bat
+    elseif name == "brainjelly" then
+        hat_fn = hat_fns.brainjelly
+    elseif name == "candle" then
+        prefabs = { "torchfire_rag" }
+        hat_fn = hat_fns.candle
+    elseif name == "captain" then
+        hat_fn = hat_fns.captain
     end
 
     table.insert(ALL_HAT_PREFAB_NAMES, prefabname)
@@ -416,4 +812,8 @@ end
 
 return MakeHat("aerodynamic"),
 MakeHat("antmask"),
-MakeHat("bandit")
+MakeHat("bandit"),
+MakeHat("bat"),
+MakeHat("brainjelly"),
+MakeHat("candle"),
+MakeHat("captain")

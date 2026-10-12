@@ -10,6 +10,8 @@ WILLOW.DESCRIBE.ARMOR_BLUBBER = "It squishes when I move..."
 
 WILLOW.DESCRIBE.ARMOR_CACTUS = "This way I won't get burned by those cacti."
 
+WILLOW.DESCRIBE.ARMOR_FLOWERS = "Flowers won't stop a bee from stinging me, will they?"
+
 WILLOW.DESCRIBE.ARMOR_LIFEJACKET = "But will it keep my lighter dry?"
 
 WILLOW.DESCRIBE.ARMOR_LIMESTONE = "It's so... heavy."
@@ -31,6 +33,16 @@ WILLOW.DESCRIBE.ARMOR_WEEVOLE = "This feels gross. I hope it works."
 WILLOW.DESCRIBE.ARMOR_WINDBREAKER = "Wind is the enemy of fire."
 
 WILLOW.DESCRIBE.BANDITHAT = "Sneaky!"
+
+WILLOW.DESCRIBE.BATHAT = "Ugh. I can still smell the jerkiness."
+
+WILLOW.DESCRIBE.BRAINJELLYHAT = "I feel smarter, but also grosser..."
+
+WILLOW.DESCRIBE.BUCKETHAT = "Keeps the rocks off my head."
+
+WILLOW.DESCRIBE.CANDLEHAT = "A little fire hat."
+
+WILLOW.DESCRIBE.CAPTAINHAT = "I no longer have that sinking feeling."
 
 WILLOW.DESCRIBE.PIGSKIN_DRIED = "I might need this for something."
 

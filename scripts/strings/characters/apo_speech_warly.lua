@@ -10,6 +10,8 @@ WARLY.DESCRIBE.ARMOR_BLUBBER = "Desperate times call for desperate attire."
 
 WARLY.DESCRIBE.ARMOR_CACTUS = "If the enemies are pricked half as much as I was making it, it's worth it."
 
+WARLY.DESCRIBE.ARMOR_FLOWERS = "A fashionable solution to an irritating problem."
+
 WARLY.DESCRIBE.ARMOR_LIFEJACKET = "Better safe than sorry."
 
 WARLY.DESCRIBE.ARMOR_LIMESTONE = "With this I will be a stone man."
@@ -31,6 +33,16 @@ WARLY.DESCRIBE.ARMOR_WEEVOLE = "It still smells of wetness."
 WARLY.DESCRIBE.ARMOR_WINDBREAKER = "While it is rude to break wind in public, I will make an exception."
 
 WARLY.DESCRIBE.BANDITHAT = "A mysterious hat."
+
+WARLY.DESCRIBE.BATHAT = "Ah, I can see through the eyes of a bat."
+
+WARLY.DESCRIBE.BRAINJELLYHAT = "I can feel inspiration seeping into me! Wait, that's brain juice."
+
+WARLY.DESCRIBE.BUCKETHAT = "A rather crude hat, but one must protect the head."
+
+WARLY.DESCRIBE.CANDLEHAT = "Handy for some nighttime cooking."
+
+WARLY.DESCRIBE.CAPTAINHAT = "I have been promoted!"
 
 WARLY.DESCRIBE.PIGSKIN_DRIED = "I suppose it's important to use the whole animal."
 

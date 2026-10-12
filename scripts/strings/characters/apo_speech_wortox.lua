@@ -10,6 +10,8 @@ WORTOX.DESCRIBE.ARMOR_BLUBBER = "What a kidder!"
 
 WORTOX.DESCRIBE.ARMOR_CACTUS = "I'd like to see them try to hit me now. Hyuyu!"
 
+WORTOX.DESCRIBE.ARMOR_FLOWERS = "Flowers to fool the buzzing fools!"
+
 WORTOX.DESCRIBE.ARMOR_LIFEJACKET = "Bah! For swabs only!"
 
 WORTOX.DESCRIBE.ARMOR_LIMESTONE = "Like a stone of the sea!"
@@ -31,6 +33,16 @@ WORTOX.DESCRIBE.ARMOR_WEEVOLE = "A fine armor made of mosquito skin."
 WORTOX.DESCRIBE.ARMOR_WINDBREAKER = "I'm a expert windbreaker!"
 
 WORTOX.DESCRIBE.BANDITHAT = "A sneaky hat. Hyuyu!"
+
+WORTOX.DESCRIBE.BATHAT = "Has the look of the flying beasts."
+
+WORTOX.DESCRIBE.BRAINJELLYHAT = "I'm the smartest now!"
+
+WORTOX.DESCRIBE.BUCKETHAT = "A bucket for the head, so rocks won't make you dead! Hyuyu!"
+
+WORTOX.DESCRIBE.CANDLEHAT = "A fine fire hat for looting ruins."
+
+WORTOX.DESCRIBE.CAPTAINHAT = "Captain on deck!"
 
 WORTOX.DESCRIBE.PIGSKIN_DRIED = "A little more than skin, a little less than hide! Hyuyu!"
 

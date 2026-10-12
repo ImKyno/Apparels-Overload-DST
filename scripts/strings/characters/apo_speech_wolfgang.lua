@@ -10,6 +10,8 @@ WOLFGANG.DESCRIBE.ARMOR_BLUBBER = "Would rather wear a muscle suit!"
 
 WOLFGANG.DESCRIBE.ARMOR_CACTUS = "Hah! Try hit Wolfgang now."
 
+WOLFGANG.DESCRIBE.ARMOR_FLOWERS = "Pretty flowers protect Wolfgang from buzzy bugs!"
+
 WOLFGANG.DESCRIBE.ARMOR_LIFEJACKET = "Ocean will not take Wolfgang now!"
 
 WOLFGANG.DESCRIBE.ARMOR_LIMESTONE = "This mighty armor will protect me!"
@@ -31,6 +33,16 @@ WOLFGANG.DESCRIBE.ARMOR_WEEVOLE = "Wolfgang win!"
 WOLFGANG.DESCRIBE.ARMOR_WINDBREAKER = "Wolfgang master of breaking wind!"
 
 WOLFGANG.DESCRIBE.BANDITHAT = "Wolfgang win at hide-and-seek now."
+
+WOLFGANG.DESCRIBE.BATHAT = "Is funny little bat hat."
+
+WOLFGANG.DESCRIBE.BRAINJELLYHAT = "Agh! Is making Wolfgang think!"
+
+WOLFGANG.DESCRIBE.BUCKETHAT = "Strong bucket hat protects Wolfgang's strong head!"
+
+WOLFGANG.DESCRIBE.CANDLEHAT = "Now Wolfgang hands free for punching."
+
+WOLFGANG.DESCRIBE.CAPTAINHAT = "Look at Wolfgang! He is captain now!"
 
 WOLFGANG.DESCRIBE.PIGSKIN_DRIED = "Is from animal Wolfgang kill."
 

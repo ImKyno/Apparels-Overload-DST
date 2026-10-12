@@ -56,6 +56,21 @@ local STRINGS =
             },
         },
 
+        VANILLA =
+        {
+            NAME =
+            {
+                "Vanilla Options",
+                pt  = "Opções do Vanilla",
+            },
+
+            HOVER =
+            {
+                "Options for the Vanilla Content.",
+                pt  = "Opções para o Conteúdo do Vanilla.",
+            },
+        },
+
         LANGUAGE =
         {
             NAME =
@@ -110,21 +125,6 @@ local STRINGS =
                     "Mod's contents will be added to the Scrapbook.",
                     pt  = "Os conteúdos do Mod serão adicionados ao Scrapbook.",
                 },
-            },
-        },
-
-        VANILLA =
-        {
-            NAME =
-            {
-                "Vanilla Options",
-                pt  = "Opções do Vanilla",
-            },
-
-            HOVER =
-            {
-                "Options for the Vanilla Content.",
-                pt  = "Opções para o Conteúdo do Vanilla.",
             },
         },
     },

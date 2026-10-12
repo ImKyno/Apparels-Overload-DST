@@ -5,11 +5,22 @@ local INIT_POSTINIT_MISC =
     "messagebottletreasures",
 }
 
+local INIT_POSTINIT_BRAINS =
+{
+    "beebrain",
+    "butterflybrain",
+}
+
 local INIT_POSTINIT_COMPONENTS =
 {
+    "builder",
+    "builder_replica",
     "drownable",
     "lootdropper",
+    "playeractionpicker",
+    "playervision",
     "temperature",
+    "walkableplatformplayer",
 }
 
 local INIT_POSTINIT_PREFABS =
@@ -19,17 +30,30 @@ local INIT_POSTINIT_PREFABS =
     "daywalker",
     "hats",
     "pigskin",
+    "player_classified",
     "prime_mate",
     "shark",
 }
 
+local INIT_POSTINIT_SCREENS =
+{
+    "playerhud",
+}
+
 local INIT_POSTINIT_WIDGETS =
 {
+    "craftingmenu_hud",
+    "craftingmenu_ingredients",
+    "craftingmenu_widget",
     "itemtile",
 }
 
 for _, v in pairs(INIT_POSTINIT_MISC) do
     modimport("postinit/apo_"..v)
+end
+
+for _, v in pairs(INIT_POSTINIT_BRAINS) do
+    modimport("postinit/brains/"..v)
 end
 
 for _, v in pairs(INIT_POSTINIT_COMPONENTS) do
@@ -38,6 +62,10 @@ end
 
 for _, v in pairs(INIT_POSTINIT_PREFABS) do
     modimport("postinit/prefabs/"..v)
+end
+
+for _, v in pairs(INIT_POSTINIT_SCREENS) do
+    modimport("postinit/screens/"..v)
 end
 
 for _, v in pairs(INIT_POSTINIT_WIDGETS) do

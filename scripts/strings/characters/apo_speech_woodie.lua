@@ -10,6 +10,8 @@ WOODIE.DESCRIBE.ARMOR_BLUBBER = "It's not very flattering."
 
 WOODIE.DESCRIBE.ARMOR_CACTUS = "Pretty prickly protection, eh?"
 
+WOODIE.DESCRIBE.ARMOR_FLOWERS = "I guess the bees don't mind the flowers."
+
 WOODIE.DESCRIBE.ARMOR_LIFEJACKET = "A lil reassurance."
 
 WOODIE.DESCRIBE.ARMOR_LIMESTONE = "Makes me feel sorta tough."
@@ -31,6 +33,16 @@ WOODIE.DESCRIBE.ARMOR_WEEVOLE = "Nice use of mosquitos."
 WOODIE.DESCRIBE.ARMOR_WINDBREAKER = "I feel right at home in this, eh."
 
 WOODIE.DESCRIBE.BANDITHAT = "Neat."
+
+WOODIE.DESCRIBE.BATHAT = "It's a little batty."
+
+WOODIE.DESCRIBE.BRAINJELLYHAT = "I feel like a keener when I put it on."
+
+WOODIE.DESCRIBE.BUCKETHAT = "Better this than a rock to the noggin, eh?"
+
+WOODIE.DESCRIBE.CANDLEHAT = "Now I can chop trees in the dark."
+
+WOODIE.DESCRIBE.CAPTAINHAT = "I hope I don't have to go down with the ship."
 
 WOODIE.DESCRIBE.PIGSKIN_DRIED = "Nice hide."
 

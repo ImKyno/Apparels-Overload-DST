@@ -13,15 +13,15 @@ local assets =
 local function OnCheckSpeed(owner)
     return TheWorld.state.israining
     or (owner ~= nil and owner.components.moisture ~= nil
-    and owner.components.moisture:GetMoisture() >= TUNING.APO_ARMOR_WINDBREAKER.THRESHOLD)
+    and owner.components.moisture:GetMoisture() >= TUNING.APO_ARMORS.WINDBREAKER.MOISTURE_THRESHOLD)
 end
 
 local function OnUpdateSpeed(inst, owner)
     if owner ~= nil then
         if OnCheckSpeed(owner) then
-            inst.components.equippable.walkspeedmult = TUNING.APO_ARMOR_WINDBREAKER.WALKSPEEDMULT.RAIN
+            inst.components.equippable.walkspeedmult = TUNING.APO_ARMORS.WINDBREAKER.WALKSPEEDMULT.RAIN
         else
-            inst.components.equippable.walkspeedmult = TUNING.APO_ARMOR_WINDBREAKER.WALKSPEEDMULT.NORMAL
+            inst.components.equippable.walkspeedmult = TUNING.APO_ARMORS.WINDBREAKER.WALKSPEEDMULT.NORMAL
         end
     end
 end
@@ -132,7 +132,7 @@ local function fn()
 
     inst:AddComponent("fueled")
     inst.components.fueled.fueltype = FUELTYPE.USAGE
-    inst.components.fueled:InitializeFuelLevel(TUNING.APO_ARMOR_WINDBREAKER.PERISHTIME)
+    inst.components.fueled:InitializeFuelLevel(TUNING.APO_ARMORS.WINDBREAKER.PERISHTIME)
     inst.components.fueled:SetDepletedFn(inst.Remove)
 
     inst:AddComponent("equippable")
@@ -141,7 +141,7 @@ local function fn()
     inst.components.equippable:SetOnUnequip(OnUnequip)
     inst.components.equippable:SetOnEquipToModel(OnEquipToModel)
     inst.components.equippable.dapperness = TUNING.DAPPERNESS_SMALL
-    inst.components.equippable.walkspeedmult = TUNING.APO_ARMOR_WINDBREAKER.WALKSPEEDMULT.NORMAL
+    inst.components.equippable.walkspeedmult = TUNING.APO_ARMORS.WINDBREAKER.WALKSPEEDMULT.NORMAL
 
     MakeSmallBurnable(inst)
     MakeSmallPropagator(inst)

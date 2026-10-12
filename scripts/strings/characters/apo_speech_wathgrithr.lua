@@ -10,6 +10,8 @@ WATHGRITHR.DESCRIBE.ARMOR_BLUBBER = "Rue my suit of fat, moisture."
 
 WATHGRITHR.DESCRIBE.ARMOR_CACTUS = "It will make of me a friend to the cactus."
 
+WATHGRITHR.DESCRIBE.ARMOR_FLOWERS = "Floral armor against the buzzing horde!"
+
 WATHGRITHR.DESCRIBE.ARMOR_LIFEJACKET = "Adventure offers no true safety!"
 
 WATHGRITHR.DESCRIBE.ARMOR_LIMESTONE = "It's heft is reassuring on my bones."
@@ -31,6 +33,16 @@ WATHGRITHR.DESCRIBE.ARMOR_WEEVOLE = "Armor made from the skin of mine enemy."
 WATHGRITHR.DESCRIBE.ARMOR_WINDBREAKER = "I shall break the wind with every step!"
 
 WATHGRITHR.DESCRIBE.BANDITHAT = "'Tis full of Loki's trickery."
+
+WATHGRITHR.DESCRIBE.BATHAT = "To see through the eyes of mine enemy!"
+
+WATHGRITHR.DESCRIBE.BRAINJELLYHAT = "My brain has the might of my sword!"
+
+WATHGRITHR.DESCRIBE.BUCKETHAT = "Let the stones rain down! My head shall endure!"
+
+WATHGRITHR.DESCRIBE.CANDLEHAT = "Mine hands are now free to pillage ruins!"
+
+WATHGRITHR.DESCRIBE.CAPTAINHAT = "It would be better with horns."
 
 WATHGRITHR.DESCRIBE.PIGSKIN_DRIED = "Deceit is the tactic of cowards."
 

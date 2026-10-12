@@ -21,7 +21,7 @@ AddClassPostConstruct("widgets/itemtile", function(self)
     end
 
     self.rechargepct = 1
-    self.rechargetime = TUNING.APO_ARMOR_VORTEX.COOLDOWN.NORMAL
+    self.rechargetime = TUNING.APO_ARMORS.VORTEX.COOLDOWN.NORMAL
 
     self.rechargeframe = self:AddChild(UIAnim())
     self.rechargeframe:GetAnimState():SetBank("recharge_meter")
@@ -45,7 +45,7 @@ AddClassPostConstruct("widgets/itemtile", function(self)
         self:SetChargeTime(duration)
         self:SetChargePercent(1 - remaining)
     else
-        self:SetChargeTime(TUNING.APO_ARMOR_VORTEX.COOLDOWN.NORMAL)
+        self:SetChargeTime(TUNING.APO_ARMORS.VORTEX.COOLDOWN.NORMAL)
         self:SetChargePercent(1)
     end
 

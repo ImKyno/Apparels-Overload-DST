@@ -10,6 +10,8 @@ WICKERBOTTOM.DESCRIBE.ARMOR_BLUBBER = "My mother would have been pround, I've pu
 
 WICKERBOTTOM.DESCRIBE.ARMOR_CACTUS = "This allows for anonymity among the cacti."
 
+WICKERBOTTOM.DESCRIBE.ARMOR_FLOWERS = "A lightweight garment designed to deter hostile bees."
+
 WICKERBOTTOM.DESCRIBE.ARMOR_LIFEJACKET = "Safety first!"
 
 WICKERBOTTOM.DESCRIBE.ARMOR_LIMESTONE = "A suit of skeletal fragments from the ocean floor."
@@ -31,6 +33,16 @@ WICKERBOTTOM.DESCRIBE.ARMOR_WEEVOLE = "Armour made from mosquitos."
 WICKERBOTTOM.DESCRIBE.ARMOR_WINDBREAKER = "Pink is not really my color."
 
 WICKERBOTTOM.DESCRIBE.BANDITHAT = "Perhaps it has hidden strengths."
+
+WICKERBOTTOM.DESCRIBE.BATHAT = "Rather clever use of echolocation."
+
+WICKERBOTTOM.DESCRIBE.BRAINJELLYHAT = "Bright ideas shape the future!"
+
+WICKERBOTTOM.DESCRIBE.BUCKETHAT = "A practical measure against cranial trauma from falling debris."
+
+WICKERBOTTOM.DESCRIBE.CANDLEHAT = "A portable reading light."
+
+WICKERBOTTOM.DESCRIBE.CAPTAINHAT = "The cap of a true boatswoman."
 
 WICKERBOTTOM.DESCRIBE.PIGSKIN_DRIED = "A resilient material."
 

@@ -1,3 +1,18 @@
+local APOCheckLocalCanSee = 1
+
+function APOGetCheckLocalCanSee()
+    return APOCheckLocalCanSee
+end
+
+function APOPushCheckLocalEntityCanSee()
+    APOCheckLocalCanSee = APOCheckLocalCanSee + 1
+end
+
+function APOPopCheckLocalEntityCanSee()
+    APOCheckLocalCanSee = APOCheckLocalCanSee - 1
+    assert(APOCheckLocalCanSee >= 0)
+end
+
 -- Client-side checks for Island Adventures and Above the Couds Mods.
 function APORecipeAlreadyExists(...)
     for _, recipe in ipairs({...}) do
@@ -70,4 +85,40 @@ function APOAbsorbTemperatureDamage(inst, damage, damage_per_use, tag)
     end
 
     return damage
+end
+
+function APOCanBrainJellyHatUnlockRecipe(builder, recipe)
+    if recipe.nobrainjelly then
+        return false
+    end
+
+    if recipe.actionstr ~= nil and string.find(recipe.actionstr, "SHOP") then
+        return false
+    end
+
+    if recipe.name ~= nil and string.find(recipe.name, "shop") then
+        return false
+    end
+
+    if recipe.hint_msg ~= nil and string.find(recipe.hint_msg, "HERMITCRAB") then
+        return false
+    end
+
+    if recipe.name ~= nil and string.find(recipe.name, "hermitcrab") then
+        return false
+    end
+
+    for techname, level in pairs(recipe.level) do
+        if level ~= 0 and (BRAINJELLY_TECH_BLACKLIST[techname] or (TECH.BRAINJELLY[techname] or 0) == 0) then
+            return false
+        end
+    end
+
+    for i, v in ipairs(recipe.tech_ingredients) do
+        if not builder:HasTechIngredient(v) then
+            return false
+        end
+    end
+
+    return (recipe.builder_tag == nil or builder.inst:HasTag(recipe.builder_tag))
 end

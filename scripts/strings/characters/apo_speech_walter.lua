@@ -10,6 +10,8 @@ WALTER.DESCRIBE.ARMOR_BLUBBER = "Every adventure has a low point. This may be it
 
 WALTER.DESCRIBE.ARMOR_CACTUS = "Ouch!"
 
+WALTER.DESCRIBE.ARMOR_FLOWERS = "Looks like the bees might mistake me for one of their own."
+
 WALTER.DESCRIBE.ARMOR_LIFEJACKET = "You gonna need one too, Woby!"
 
 WALTER.DESCRIBE.ARMOR_LIMESTONE = "It's heavier than the sandbags on the scout base."
@@ -31,6 +33,16 @@ WALTER.DESCRIBE.ARMOR_WEEVOLE = "If only it had those mosquito wings."
 WALTER.DESCRIBE.ARMOR_WINDBREAKER = "Weeee!"
 
 WALTER.DESCRIBE.BANDITHAT = "Bravo six, going dark!"
+
+WALTER.DESCRIBE.BATHAT = "Aw... It doesn't even let me fly."
+
+WALTER.DESCRIBE.BRAINJELLYHAT = "Look Woby, I'm even smarter now!"
+
+WALTER.DESCRIBE.BUCKETHAT = "A good idea when the whole place starts coming down!"
+
+WALTER.DESCRIBE.CANDLEHAT = "This could be useful during the night!"
+
+WALTER.DESCRIBE.CAPTAINHAT = "Captain Walter at your disposal!"
 
 WALTER.DESCRIBE.PIGSKIN_DRIED = "Good for clothing!"
 

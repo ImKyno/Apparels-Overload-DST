@@ -112,17 +112,17 @@ local function OnResistDamage(inst, damage_amount, attacker)
     end
 
     if inst.components.fueled ~= nil then
-        inst.components.fueled:DoDelta(-TUNING.APO_ARMOR_VORTEX.FUEL_RATE)
+        inst.components.fueled:DoDelta(-TUNING.APO_ARMORS.VORTEX.FUEL_RATE)
     end
 
     if inst.components.cooldown.onchargedfn ~= nil then
         inst.components.cooldown:StartCharging()
 
-        OnStartRechargeVisual(inst, TUNING.APO_ARMOR_VORTEX.COOLDOWN.NORMAL)
+        OnStartRechargeVisual(inst, TUNING.APO_ARMORS.VORTEX.COOLDOWN.NORMAL)
     end
 
     if owner ~= nil and owner.components.sanity ~= nil and damage_amount ~= nil and damage_amount > 0 then
-        owner.components.sanity:DoDelta(-damage_amount * TUNING.APO_ARMOR_VORTEX.SANITY)
+        owner.components.sanity:DoDelta(-damage_amount * TUNING.APO_ARMORS.VORTEX.SANITY)
     end
 end
 
@@ -189,7 +189,7 @@ local function OnTakeFuel(inst)
     and inst.components.fueled ~= nil and not inst.components.fueled:IsEmpty()
     and inst.components.cooldown ~= nil and inst.components.cooldown.onchargedfn == nil then
         inst.components.cooldown.onchargedfn = OnCharged
-        inst.components.cooldown:StartCharging(TUNING.APO_ARMOR_VORTEX.COOLDOWN.INITIAL)
+        inst.components.cooldown:StartCharging(TUNING.APO_ARMORS.VORTEX.COOLDOWN.INITIAL)
     end
 
     SERVER_PlayFuelSound(inst)
@@ -231,7 +231,7 @@ local function OnEquip(inst, owner)
         if inst.components.fueled ~= nil and not inst.components.fueled:IsEmpty() then
             if inst.components.cooldown ~= nil then
                 inst.components.cooldown.onchargedfn = OnCharged
-                inst.components.cooldown:StartCharging(math.max(TUNING.APO_ARMOR_VORTEX.COOLDOWN.INITIAL,
+                inst.components.cooldown:StartCharging(math.max(TUNING.APO_ARMORS.VORTEX.COOLDOWN.INITIAL,
                 inst.components.cooldown:GetTimeToCharged()))
             end
         end
@@ -402,10 +402,10 @@ local function fn()
     inst.components.container:WidgetSetup("krampus_sack")
 
     inst:AddComponent("cooldown")
-    inst.components.cooldown.cooldown_duration = TUNING.APO_ARMOR_VORTEX.COOLDOWN.NORMAL
+    inst.components.cooldown.cooldown_duration = TUNING.APO_ARMORS.VORTEX.COOLDOWN.NORMAL
 
     inst:AddComponent("shadowlevel")
-    inst.components.shadowlevel:SetDefaultLevel(TUNING.APO_ARMOR_VORTEX.SHADOWLEVEL)
+    inst.components.shadowlevel:SetDefaultLevel(TUNING.APO_ARMORS.VORTEX.SHADOWLEVEL)
 
     inst:AddComponent("resistance")
     inst.components.resistance:SetShouldResistFn(OnShouldResist)
@@ -413,7 +413,7 @@ local function fn()
 
     inst:AddComponent("fueled")
     inst.components.fueled.fueltype = FUELTYPE.NIGHTMARE
-    inst.components.fueled:InitializeFuelLevel(TUNING.APO_ARMOR_VORTEX.FUEL)
+    inst.components.fueled:InitializeFuelLevel(TUNING.APO_ARMORS.VORTEX.FUEL)
     inst.components.fueled:SetDepletedFn(OnDepleted)
     inst.components.fueled:SetTakeFuelFn(OnTakeFuel)
     inst.components.fueled.accepting = true
