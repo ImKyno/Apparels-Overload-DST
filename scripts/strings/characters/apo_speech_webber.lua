@@ -44,6 +44,14 @@ WEBBER.DESCRIBE.CANDLEHAT = "Cool hat! Now our hands are free."
 
 WEBBER.DESCRIBE.CAPTAINHAT = "Just like a real boatguy!"
 
+WEBBER.DESCRIBE.CARNIVAL_HOSTHAT = "We look just like the fancy bird who runs the Carnival!"
+
+WEBBER.DESCRIBE.DISGUISEHAT = "I bet we can fool those pigs with this!"
+
+WEBBER.DESCRIBE.DOUBLE_UMBRELLAHAT = "One for each of us!"
+
+WEBBER.DESCRIBE.EXTRAHEAVYHAT = "It's really heavy, but it makes our head feel safe!"
+
 WEBBER.DESCRIBE.PIGSKIN_DRIED = "It's pretty strong material."
 
 WEBBER.DESCRIBE.PIRATEPACK = "A booty bundle."

@@ -273,6 +273,60 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.carnival_host_custom_init = function(inst)
+        inst:AddTag("carnivalwinner")
+    end
+
+    hat_fns.carnival_host = function()
+        local inst = simple(hat_fns.carnival_host_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable.dapperness = TUNING.DAPPERNESS_LARGE
+        inst.components.equippable.walkspeedmult = TUNING.APO_HATS.CARNIVAL_HOST.WALKSPEEDMULT
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.CARNIVAL_HOST.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(inst.Remove)
+
+        return inst
+    end
+
+    hat_fns.extraheavy_getsetbonusequip = function(inst, owner)
+        local body = owner.components.inventory ~= nil and owner.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY) or nil
+        return body ~= nil and body.prefab == "armormarble" and body or nil
+    end
+
+    hat_fns.extraheavy_custom_init = function(inst)
+        inst:AddTag("marble")
+        inst:AddTag("heavyarmor")
+        inst:AddTag("hardarmor")
+    end
+
+    hat_fns.extraheavy = function()
+        local inst = simple(hat_fns.extraheavy_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable.walkspeedmult = TUNING.APO_HATS.EXTRAHEAVY.WALKSPEEDMULT
+
+        inst:AddComponent("armor")
+        inst.components.armor:InitCondition(TUNING.APO_HATS.EXTRAHEAVY.CONDITION, TUNING.APO_HATS.EXTRAHEAVY.ABSORPTION)
+
+        inst:AddComponent("setbonus")
+        inst.components.setbonus:SetSetName(EQUIPMENTSETNAMES.MARBLE)
+
+        return inst
+    end
+
     local hat_fn  = nil
 
     local assets  =
@@ -288,6 +342,10 @@ local function MakeHat(name)
 
     if name == "bucket" then
         hat_fn = hat_fns.bucket
+    elseif name == "carnival_host" then
+        hat_fn = hat_fns.carnival_host
+    elseif name == "extraheavy" then
+        hat_fn = hat_fns.extraheavy
     end
 
     table.insert(ALL_HAT_PREFAB_NAMES, prefabname)
@@ -295,4 +353,6 @@ local function MakeHat(name)
     return Prefab(prefabname, hat_fn, assets, prefabs)
 end
 
-return MakeHat("bucket")
+return MakeHat("bucket"),
+MakeHat("carnival_host"),
+MakeHat("extraheavy")

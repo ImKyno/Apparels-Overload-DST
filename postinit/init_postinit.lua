@@ -15,7 +15,9 @@ local INIT_POSTINIT_COMPONENTS =
 {
     "builder",
     "builder_replica",
+    "combat",
     "drownable",
+    "health",
     "lootdropper",
     "playeractionpicker",
     "playervision",
@@ -25,11 +27,13 @@ local INIT_POSTINIT_COMPONENTS =
 
 local INIT_POSTINIT_PREFABS =
 {
+    "armor_marble",
     "bee",
     "beebox",
     "daywalker",
     "hats",
     "pigskin",
+    "player",
     "player_classified",
     "prime_mate",
     "shark",
@@ -45,6 +49,7 @@ local INIT_POSTINIT_WIDGETS =
     "craftingmenu_hud",
     "craftingmenu_ingredients",
     "craftingmenu_widget",
+    "healthbadge",
     "itemtile",
 }
 

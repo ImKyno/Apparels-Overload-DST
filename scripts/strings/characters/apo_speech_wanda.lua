@@ -44,6 +44,14 @@ WANDA.DESCRIBE.CANDLEHAT = "For seeing in the dark."
 
 WANDA.DESCRIBE.CAPTAINHAT = "I am the captain of the time!"
 
+WANDA.DESCRIBE.CARNIVAL_HOSTHAT = "All those tickets for a hat. I certainly hope it never goes out of style."
+
+WANDA.DESCRIBE.DISGUISEHAT = "Pigs does not seem to recognize me when I wear this disguise."
+
+WANDA.DESCRIBE.DOUBLE_UMBRELLAHAT = "Double protection against rain."
+
+WANDA.DESCRIBE.EXTRAHEAVYHAT = "Built to last. Though I may grow old waiting for my neck to adjust."
+
 WANDA.DESCRIBE.PIGSKIN_DRIED = "Looks like your time has finally come."
 
 WANDA.DESCRIBE.PIRATEPACK = "For carrying more watches!"

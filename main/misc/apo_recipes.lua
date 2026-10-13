@@ -14,6 +14,12 @@ local function APOAddRecipe(condition, ...)
     end
 end
 
+local function APOAddCharacterRecipe(condition, ...)
+    if not condition then
+        AddCharacterRecipe(...)
+    end
+end
+
 -- Clothing.
 APOAddRecipe(ABCEnabled or IASEnabled, "armor_ant",
     {
@@ -67,7 +73,7 @@ APOAddRecipe(ABCEnabled or IASEnabled, "armor_lifejacket",
 APOAddRecipe(ABCEnabled or IASEnabled, "armor_limestone",
     {
         Ingredient("marble", 6),
-        Ingredient("cutreeds", 2),
+        Ingredient("cutreeds", 4),
         Ingredient("rope", 2),
     },
 
@@ -245,6 +251,43 @@ APOAddRecipe(ABCEnabled or IASEnabled, "captainhat",
     },
 
     TECH.SEAFARING_ONE, {}, { "SEAFARING", "CLOTHING" }
+)
+
+AddRecipe2("carnival_hosthat",
+    {
+        Ingredient("carnival_prizeticket", 144),
+    },
+
+    TECH.CARNIVAL_PRIZESHOP_ONE, { nounlock = true }, { "CRAFTING_STATION" }
+)
+
+APOAddCharacterRecipe(ABCEnabled or IASEnabled, "disguisehat",
+    {
+        Ingredient("pigskin", 1),
+        Ingredient("beardhair", 1),
+        Ingredient("twigs", 2),
+    },
+
+    TECH.NONE, { builder_tag = "spiderwhisperer" }, { "CHARACTER", "CLOTHING" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "double_umbrellahat",
+    {
+        Ingredient("eyebrellahat", 1),
+        Ingredient("pigskin_dried", 3),
+        Ingredient("rope", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN", "SUMMER" }
+)
+
+AddRecipe2("extraheavyhat",
+    {
+        Ingredient("marble", 6),
+        Ingredient("rope", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR" }
 )
 
 -- Everything else.

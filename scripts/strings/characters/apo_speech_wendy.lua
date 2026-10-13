@@ -44,6 +44,14 @@ WENDY.DESCRIBE.CANDLEHAT = "Only Abigail can light up my life."
 
 WENDY.DESCRIBE.CAPTAINHAT = "No living soul commands the sea..."
 
+WENDY.DESCRIBE.CARNIVAL_HOSTHAT = "A fine hat for a master of ceremonies. How wonderfully superficial."
+
+WENDY.DESCRIBE.DISGUISEHAT = "Full of deception."
+
+WENDY.DESCRIBE.DOUBLE_UMBRELLAHAT = "This seems excessive."
+
+WENDY.DESCRIBE.EXTRAHEAVYHAT = "A heavy burden to bear."
+
 WENDY.DESCRIBE.PIGSKIN_DRIED = "The result of many deaths."
 
 WENDY.DESCRIBE.PIRATEPACK = "This should help me carry more junk."

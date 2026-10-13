@@ -104,6 +104,21 @@ SPECIALINFO.CAPTAINHAT =
 Decreases hunger rate by 25% and provides a sanity boost while the wearer is on a boat.
 ]]
 
+SPECIALINFO.CARNIVAL_HOSTHAT =
+[[
+Increases movement speed by 20% when worn.
+]]
+
+SPECIALINFO.DISGUISEHAT =
+[[
+Pigs and Bunnymen will treat the wearer like one of them.
+]]
+
+SPECIALINFO.EXTRAHEAVYHAT =
+[[
+This armor is durable but heavy, and slows its wearer.
+]]
+
 SPECIALINFO.PIRATEPACK =
 [[
 A 12 slot container that drops a random reward every 3 days.

@@ -775,6 +775,178 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.disguise_onremovefollowers = function(owner)
+        if owner ~= nil then
+            if owner.components.leader ~= nil then
+                owner.components.leader:RemoveFollowersByTag("pig")
+                owner.components.leader:RemoveFollowersByTag("bunnyman")
+            end
+        end
+    end
+
+    hat_fns.disguise_ondisable = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        if owner ~= nil then
+            if owner.disguise_wasmonster then
+                owner:AddTag("monster")
+                owner.disguise_wasmonster = nil
+            end
+
+            if owner.disguise_wasmerm then
+                owner:AddTag("merm")
+                owner.disguise_wasmerm = nil
+            end
+
+            if owner.disguised then
+                owner:RemoveTag("monsterdisguise")
+                owner:RemoveTag("pigdisguise")
+
+                owner.disguised = nil
+
+                if owner.disguise_task ~= nil then
+                    owner.disguise_task:Cancel()
+                    owner.disguise_task = nil
+                end
+            end
+
+            hat_fns.disguise_onremovefollowers(owner)
+        end
+    end
+
+    hat_fns.disguise_onenable = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        if owner ~= nil then
+            if owner.components.leader ~= nil then
+                owner.components.leader:RemoveFollowersByTag("merm")
+            end
+
+            if owner:HasTag("monster") then
+                owner.disguise_wasmonster = true
+                owner:RemoveTag("monster")
+            end
+
+            if owner:HasTag("merm") then
+                owner.disguise_wasmerm = true
+                owner:RemoveTag("merm")
+            end
+
+            owner.disguised = true
+
+            if owner.disguise_task ~= nil then
+                owner.disguise_task:Cancel()
+                owner.disguise_task = nil
+            end
+
+            owner:AddTag("pigdisguise")
+        end
+    end
+
+    hat_fns.disguise_onequip = function(inst, owner)
+        hat_fns.opentop_onequip(inst, owner)
+        hat_fns.disguise_onenable(inst)
+    end
+
+    hat_fns.disguise_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+        hat_fns.disguise_ondisable(inst)
+    end
+
+    hat_fns.disguise_onequiptomodel = function(inst, owner, from_ground)
+        hat_fns.simple_onequiptomodel(inst, owner, from_ground)
+        hat_fns.disguise_ondisable(inst)
+    end
+
+    hat_fns.disguise_custom_init = function(inst)
+        inst:AddTag("open_top_hat")
+        inst:AddTag("disguise")
+    end
+
+    hat_fns.disguise = function()
+        local inst = simple(hat_fns.disguise_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.disguise_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.disguise_onunequip)
+        inst.components.equippable:SetOnEquipToModel(hat_fns.disguise_onequiptomodel)
+
+        return inst
+    end
+
+    hat_fns.double_umbrella_onequip = function(inst, owner)
+        hat_fns.opentop_onequip(inst, owner)
+
+        if owner.DynamicShadow ~= nil then
+            owner.DynamicShadow:SetSize(2.2, 1.4)
+        end
+    end
+
+    hat_fns.double_umbrella_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner.DynamicShadow ~= nil then
+            owner.DynamicShadow:SetSize(1.3, 0.6)
+        end
+    end
+
+    hat_fns.double_umbrella_onperish = function(inst)
+        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+            if owner ~= nil then
+                if owner.DynamicShadow ~= nil then
+                    owner.DynamicShadow:SetSize(1.3, 0.6)
+                end
+
+                local data = { prefab = inst.prefab, equipslot = equippable.equipslot }
+
+                inst:Remove()
+
+                owner:PushEvent("umbrellaranout", data)
+
+                return
+            end
+        end
+
+        inst:Remove()
+    end
+
+    hat_fns.double_umbrella_custom_init = function(inst)
+        inst:AddTag("open_top_hat")
+        inst:AddTag("umbrella")
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.double_umbrella = function()
+        local inst = simple(hat_fns.double_umbrella_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.double_umbrella_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.double_umbrella_onunequip)
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_ABSOLUTE)
+
+        inst:AddComponent("insulator")
+        inst.components.insulator:SetInsulation(TUNING.INSULATION_LARGE)
+        inst.components.insulator:SetSummer()
+        inst.components.equippable.insulated = true
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.DOUBLE_UMBRELLA.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(hat_fns.double_umbrella_onperish)
+
+        return inst
+    end
+
     local hat_fn  = nil
 
     local assets  =
@@ -803,6 +975,10 @@ local function MakeHat(name)
         hat_fn = hat_fns.candle
     elseif name == "captain" then
         hat_fn = hat_fns.captain
+    elseif name == "disguise" then
+        hat_fn = hat_fns.disguise
+    elseif name == "double_umbrella" then
+        hat_fn = hat_fns.double_umbrella
     end
 
     table.insert(ALL_HAT_PREFAB_NAMES, prefabname)
@@ -816,4 +992,6 @@ MakeHat("bandit"),
 MakeHat("bat"),
 MakeHat("brainjelly"),
 MakeHat("candle"),
-MakeHat("captain")
+MakeHat("captain"),
+MakeHat("disguise"),
+MakeHat("double_umbrella")

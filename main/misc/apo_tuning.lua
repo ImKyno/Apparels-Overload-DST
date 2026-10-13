@@ -39,6 +39,12 @@ TUNING.APO_MISC =
         },
     },
 
+    DAMAGEOVERTIME =
+    {
+        DURATION = 4,
+        INTERVAL = 0.5,
+    },
+
     EXTRALOOTDROPPER =
     {
         TAGS_BLACKLIST =
@@ -103,11 +109,18 @@ TUNING.APO_ARMORS =
         WALKSPEEDMULT = 0.70,
     },
 
+    MARBLE = -- This is for the Set Bonus.
+    {
+        THRESHOLD = 0.50,
+        DURATION = 4,
+        INTERVAL = 0.5,
+    },
+
     METALPLATE =
     {
-        CONDITION = 525,
-        ABSORPTION = 0.70,
-        WALKSPEEDMULT = 0.90,
+        CONDITION = 550,
+        ABSORPTION = 0.85,
+        WALKSPEEDMULT = 0.85,
     },
 
     OBSIDIAN =
@@ -232,6 +245,24 @@ TUNING.APO_HATS =
     {
         PERISHTIME = 480 * 3,
         HUNGER_MODIFIER = 0.70,
+    },
+
+    CARNIVAL_HOST =
+    {
+        PERISHTIME = 480 * 5,
+        WALKSPEEDMULT = 1.20,
+    },
+
+    DOUBLE_UMBRELLA =
+    {
+        PERISHTIME = 480 * 12,
+    },
+
+    EXTRAHEAVY =
+    {
+        CONDITION = 735,
+        ABSORPTION = 0.95,
+        WALKSPEEDMULT = 0.70,
     },
 }
 

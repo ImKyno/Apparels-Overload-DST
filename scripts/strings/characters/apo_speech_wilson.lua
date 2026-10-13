@@ -44,6 +44,14 @@ WILSON.DESCRIBE.CANDLEHAT = "What a bright idea!"
 
 WILSON.DESCRIBE.CAPTAINHAT = "The proper boating attire!"
 
+WILSON.DESCRIBE.CARNIVAL_HOSTHAT = "Now that's a fancy hat! I must have spent a fortune in tickets."
+
+WILSON.DESCRIBE.DISGUISEHAT = "For swindling a swine."
+
+WILSON.DESCRIBE.DOUBLE_UMBRELLAHAT = "The second umbrella keeps the first umbrella dry."
+
+WILSON.DESCRIBE.EXTRAHEAVYHAT = "Sturdy, but my neck might regret this."
+
 WILSON.DESCRIBE.PIGSKIN_DRIED = "Leather for all kinds of weather."
 
 WILSON.DESCRIBE.PIRATEPACK = "I can keep my booty in here."

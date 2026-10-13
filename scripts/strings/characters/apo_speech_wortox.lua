@@ -44,6 +44,14 @@ WORTOX.DESCRIBE.CANDLEHAT = "A fine fire hat for looting ruins."
 
 WORTOX.DESCRIBE.CAPTAINHAT = "Captain on deck!"
 
+WORTOX.DESCRIBE.CARNIVAL_HOSTHAT = "A feathered gent with a hat so grand! How many tickets changed hands? Hyuyu!"
+
+WORTOX.DESCRIBE.DISGUISEHAT = "For fooling the pigs. Hyuyu!"
+
+WORTOX.DESCRIBE.DOUBLE_UMBRELLAHAT = "Work of a madman."
+
+WORTOX.DESCRIBE.EXTRAHEAVYHAT = "Heavy is the crown!"
+
 WORTOX.DESCRIBE.PIGSKIN_DRIED = "A little more than skin, a little less than hide! Hyuyu!"
 
 WORTOX.DESCRIBE.PIRATEPACK = "Treasures!"

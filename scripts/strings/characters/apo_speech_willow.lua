@@ -44,6 +44,14 @@ WILLOW.DESCRIBE.CANDLEHAT = "A little fire hat."
 
 WILLOW.DESCRIBE.CAPTAINHAT = "I no longer have that sinking feeling."
 
+WILLOW.DESCRIBE.CARNIVAL_HOSTHAT = "All those tickets for a hat? Okay, it does look pretty good."
+
+WILLOW.DESCRIBE.DISGUISEHAT = "Who would fall for that disguise?"
+
+WILLOW.DESCRIBE.DOUBLE_UMBRELLAHAT = "If I bought this in a store I'd feel burned."
+
+WILLOW.DESCRIBE.EXTRAHEAVYHAT = "A rock on my head."
+
 WILLOW.DESCRIBE.PIGSKIN_DRIED = "I might need this for something."
 
 WILLOW.DESCRIBE.PIRATEPACK = "Carrying this will build chest muscles."

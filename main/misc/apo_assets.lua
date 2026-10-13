@@ -29,11 +29,16 @@ local APO_ICONS =
 {
     "armor_flowers",
     "buckethat",
+    "carnival_hosthat",
+    "extraheavyhat",
     "pigskin_dried",
 
     -- Modded Skins.
     "ms_aerodynamichat_tropical",
     "ms_armor_snakeskin_scaly",
+    "ms_double_umbrellahat_black",
+    "ms_double_umbrellahat_cyan",
+    "ms_double_umbrellahat_red",
 }
 
 if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
@@ -59,6 +64,8 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         "brainjellyhat",
         "candlehat",
         "captainhat",
+        "disguisehat",
+        "double_umbrellahat",
         "piratepack",
         "shark_fin",
         "thatchsack",

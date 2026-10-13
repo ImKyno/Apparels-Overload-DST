@@ -44,6 +44,14 @@ WURT.DESCRIBE.CANDLEHAT = "On, on, brief candle!"
 
 WURT.DESCRIBE.CAPTAINHAT = "Ahoy! captain Wurt is here, florp!"
 
+WURT.DESCRIBE.CARNIVAL_HOSTHAT = "Needed lots of tickets for this!"
+
+WURT.DESCRIBE.DISGUISEHAT = "Spider boy can fool pigfolk, but not me!"
+
+WURT.DESCRIBE.DOUBLE_UMBRELLAHAT = "Twice the fancy!"
+
+WURT.DESCRIBE.EXTRAHEAVYHAT = "Keeps head safe, glorp!"
+
 WURT.DESCRIBE.PIGSKIN_DRIED = "Take this, pigs!"
 
 WURT.DESCRIBE.PIRATEPACK = "Must been bag from pirates, flort!"

@@ -44,6 +44,14 @@ WOLFGANG.DESCRIBE.CANDLEHAT = "Now Wolfgang hands free for punching."
 
 WOLFGANG.DESCRIBE.CAPTAINHAT = "Look at Wolfgang! He is captain now!"
 
+WOLFGANG.DESCRIBE.CARNIVAL_HOSTHAT = "Is mighty hat! Wolfgang looks like important gentleman!"
+
+WOLFGANG.DESCRIBE.DISGUISEHAT = "Hehe. Is funny little pig mask."
+
+WOLFGANG.DESCRIBE.DOUBLE_UMBRELLAHAT = "Two umbrellas is better than one."
+
+WOLFGANG.DESCRIBE.EXTRAHEAVYHAT = "Wolfgang's head is strong enough!"
+
 WOLFGANG.DESCRIBE.PIGSKIN_DRIED = "Is from animal Wolfgang kill."
 
 WOLFGANG.DESCRIBE.PIRATEPACK = "Sounds like jingles."

@@ -44,6 +44,14 @@ WATHGRITHR.DESCRIBE.CANDLEHAT = "Mine hands are now free to pillage ruins!"
 
 WATHGRITHR.DESCRIBE.CAPTAINHAT = "It would be better with horns."
 
+WATHGRITHR.DESCRIBE.CARNIVAL_HOSTHAT = "A grand hat for one who commands the stage!"
+
+WATHGRITHR.DESCRIBE.DISGUISEHAT = "One of Loki's tricks."
+
+WATHGRITHR.DESCRIBE.DOUBLE_UMBRELLAHAT = "What kind of strange helm is this?"
+
+WATHGRITHR.DESCRIBE.EXTRAHEAVYHAT = "A helm of stone! Let the blows of mine foes shatter upon it!"
+
 WATHGRITHR.DESCRIBE.PIGSKIN_DRIED = "Deceit is the tactic of cowards."
 
 WATHGRITHR.DESCRIBE.PIRATEPACK = "Builds chest muscles."

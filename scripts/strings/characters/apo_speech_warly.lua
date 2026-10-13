@@ -44,6 +44,14 @@ WARLY.DESCRIBE.CANDLEHAT = "Handy for some nighttime cooking."
 
 WARLY.DESCRIBE.CAPTAINHAT = "I have been promoted!"
 
+WARLY.DESCRIBE.CARNIVAL_HOSTHAT = "Magnifique! A touch of theatrical elegance."
+
+WARLY.DESCRIBE.DISGUISEHAT = "It is the icing on the face."
+
+WARLY.DESCRIBE.DOUBLE_UMBRELLAHAT = "Ridiculous! I want one."
+
+WARLY.DESCRIBE.EXTRAHEAVYHAT = "A bit too heavy for my taste, but quite sturdy."
+
 WARLY.DESCRIBE.PIGSKIN_DRIED = "I suppose it's important to use the whole animal."
 
 WARLY.DESCRIBE.PIRATEPACK = "This will straighten my back out."

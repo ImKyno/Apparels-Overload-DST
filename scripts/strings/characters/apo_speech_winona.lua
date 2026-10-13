@@ -44,6 +44,14 @@ WINONA.DESCRIBE.CANDLEHAT = "For late night shifts."
 
 WINONA.DESCRIBE.CAPTAINHAT = "If only boss could see me now."
 
+WINONA.DESCRIBE.CARNIVAL_HOSTHAT = "That must've cost a mountain of tickets. Looks sharp, though!"
+
+WINONA.DESCRIBE.DISGUISEHAT = "Ha! It's kinda cute!"
+
+WINONA.DESCRIBE.DOUBLE_UMBRELLAHAT = "This should keep me at least twice as dry."
+
+WINONA.DESCRIBE.EXTRAHEAVYHAT = "Built like a brick outhouse. Weighs about as much, too."
+
 WINONA.DESCRIBE.PIGSKIN_DRIED = "Hide from an animal."
 
 WINONA.DESCRIBE.PIRATEPACK = "Booty in the back."

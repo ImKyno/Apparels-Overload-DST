@@ -3,6 +3,7 @@ local require    = _G.require
 local TECH       = _G.TECH
 local RECIPETABS = _G.RECIPETABS
 
+-- Brain of Thought.
 _G.BRAINJELLY_TECH_BLACKLIST = {}
 
 if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
@@ -30,3 +31,6 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         TECH.BRAINJELLY.MEALING      = 10
     end
 end
+
+-- New Set Bonus.
+_G.EQUIPMENTSETNAMES.MARBLE = "marble"

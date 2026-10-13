@@ -44,6 +44,14 @@ WOODIE.DESCRIBE.CANDLEHAT = "Now I can chop trees in the dark."
 
 WOODIE.DESCRIBE.CAPTAINHAT = "I hope I don't have to go down with the ship."
 
+WOODIE.DESCRIBE.CARNIVAL_HOSTHAT = "I don't like this hat. It reminds me of them..."
+
+WOODIE.DESCRIBE.DISGUISEHAT = "Hehe. It's like a halloween mask."
+
+WOODIE.DESCRIBE.DOUBLE_UMBRELLAHAT = "Double the protection!"
+
+WOODIE.DESCRIBE.EXTRAHEAVYHAT = "That's a lot of rock to have on yer noggin."
+
 WOODIE.DESCRIBE.PIGSKIN_DRIED = "Nice hide."
 
 WOODIE.DESCRIBE.PIRATEPACK = "A bag for my booty."

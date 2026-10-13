@@ -44,6 +44,14 @@ WALTER.DESCRIBE.CANDLEHAT = "This could be useful during the night!"
 
 WALTER.DESCRIBE.CAPTAINHAT = "Captain Walter at your disposal!"
 
+WALTER.DESCRIBE.CARNIVAL_HOSTHAT = "Just like Corvus Goodfeather's hat! Must be a pretty rare prize."
+
+WALTER.DESCRIBE.DISGUISEHAT = "A disguise sneaky enough to fool those pigs."
+
+WALTER.DESCRIBE.DOUBLE_UMBRELLAHAT = "I'll be twice as sure to forget it at home now."
+
+WALTER.DESCRIBE.EXTRAHEAVYHAT = "Marble armor for your head! Bet it could take quite a beating."
+
 WALTER.DESCRIBE.PIGSKIN_DRIED = "Good for clothing!"
 
 WALTER.DESCRIBE.PIRATEPACK = "Storage space that pays for itself!"

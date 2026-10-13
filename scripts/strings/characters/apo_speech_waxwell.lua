@@ -44,6 +44,14 @@ WAXWELL.DESCRIBE.CANDLEHAT = "The wax better not drip on my suit."
 
 WAXWELL.DESCRIBE.CAPTAINHAT = "It makes me feel commanding."
 
+WAXWELL.DESCRIBE.CARNIVAL_HOSTHAT = "At last, a hat worthy of my distinguished appearance."
+
+WAXWELL.DESCRIBE.DISGUISEHAT = "Doesn't fool me."
+
+WAXWELL.DESCRIBE.DOUBLE_UMBRELLAHAT = "This looks silly."
+
+WAXWELL.DESCRIBE.EXTRAHEAVYHAT = "Impenetrable, perhaps. Comfortable, certainly not."
+
 WAXWELL.DESCRIBE.PIGSKIN_DRIED = "Soft. Malleable."
 
 WAXWELL.DESCRIBE.PIRATEPACK = "I suppose it will do."

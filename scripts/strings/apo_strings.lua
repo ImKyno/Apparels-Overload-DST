@@ -66,6 +66,18 @@ STRINGS.RECIPE_DESC.CANDLEHAT = "Hands free spelunking on shoe string."
 STRINGS.NAMES.CAPTAINHAT = "Captain Hat"
 STRINGS.RECIPE_DESC.CAPTAINHAT = "Wear one. Your boat will respect you more."
 
+STRINGS.NAMES.CARNIVAL_HOSTHAT = "Goodfeather Top Hat"
+STRINGS.RECIPE_DESC.CARNIVAL_HOSTHAT = "You wish to look like someone so handsome..."
+
+STRINGS.NAMES.DISGUISEHAT = "Shamlet Mask"
+STRINGS.RECIPE_DESC.DISGUISEHAT = "A fresh face."
+
+STRINGS.NAMES.DOUBLE_UMBRELLAHAT = "Dumbrella"
+STRINGS.RECIPE_DESC.DOUBLE_UMBRELLAHAT = "Definitely function over fashion."
+
+STRINGS.NAMES.EXTRAHEAVYHAT = "Marble Helmet"
+STRINGS.RECIPE_DESC.EXTRAHEAVYHAT = "Sturdy and heavy!"
+
 STRINGS.NAMES.PIGSKIN_DRIED = "Tanned Leather"
 
 STRINGS.NAMES.PIRATEPACK = "Booty Bag"

@@ -44,6 +44,14 @@ WICKERBOTTOM.DESCRIBE.CANDLEHAT = "A portable reading light."
 
 WICKERBOTTOM.DESCRIBE.CAPTAINHAT = "The cap of a true boatswoman."
 
+WICKERBOTTOM.DESCRIBE.CARNIVAL_HOSTHAT = "A rather extravagant hat, apparently modeled after the host's own attire."
+
+WICKERBOTTOM.DESCRIBE.DISGUISEHAT = "Clever."
+
+WICKERBOTTOM.DESCRIBE.DOUBLE_UMBRELLAHAT = "Two tiers of shelter!"
+
+WICKERBOTTOM.DESCRIBE.EXTRAHEAVYHAT = "A durable headpiece, though its considerable weight may strain the neck."
+
 WICKERBOTTOM.DESCRIBE.PIGSKIN_DRIED = "A resilient material."
 
 WICKERBOTTOM.DESCRIBE.PIRATEPACK = "A treasure carrying case."

@@ -34,6 +34,57 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
 
         skin_tags = { "ARMOR_SNAKESKIN" },
     }))
+
+    -- Noir Dumbrella Skin for the Dumbrella.
+    table.insert(prefabs, CreatePrefabSkin("ms_double_umbrellahat_black",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_hat_double_umbrella_black.zip"),
+        },
+
+        base_prefab = "double_umbrellahat",
+        build_name_override = "ms_hat_double_umbrella_black",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "DOUBLE_UMBRELLAHAT" },
+    }))
+
+    -- Cerulean Dumbrella Skin for the Dumbrella.
+    table.insert(prefabs, CreatePrefabSkin("ms_double_umbrellahat_cyan",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_hat_double_umbrella_cyan.zip"),
+        },
+
+        base_prefab = "double_umbrellahat",
+        build_name_override = "ms_hat_double_umbrella_cyan",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "DOUBLE_UMBRELLAHAT" },
+    }))
+
+    -- Scarlet Dumbrella Skin for the Dumbrella.
+    table.insert(prefabs, CreatePrefabSkin("ms_double_umbrellahat_red",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_hat_double_umbrella_red.zip"),
+        },
+
+        base_prefab = "double_umbrellahat",
+        build_name_override = "ms_hat_double_umbrella_red",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "DOUBLE_UMBRELLAHAT" },
+    }))
 end
 
 return unpack(prefabs)
