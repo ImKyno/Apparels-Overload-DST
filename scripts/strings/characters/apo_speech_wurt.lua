@@ -52,10 +52,34 @@ WURT.DESCRIBE.DOUBLE_UMBRELLAHAT = "Twice the fancy!"
 
 WURT.DESCRIBE.EXTRAHEAVYHAT = "Keeps head safe, glorp!"
 
+WURT.DESCRIBE.GASHAT = "Keeps nasty smell out!"
+
+WURT.DESCRIBE.GASMASKHAT = "It's weird, florp."
+
+WURT.DESCRIBE.JIAOLIANHAT = "Scary pigfolk mask... Glurp..."
+
+WURT.DESCRIBE.METALPLATEHAT = "Shiny hat protects me, florp."
+
+WURT.DESCRIBE.OXHAT = "Looks good on me, hehe."
+
+WURT.DESCRIBE.PEAGAWKFEATHERHAT = "Look like bird, think like bird."
+
+WURT.DESCRIBE.PIGCROWNHAT = "I am the queen!!!"
+
 WURT.DESCRIBE.PIGSKIN_DRIED = "Take this, pigs!"
+
+WURT.DESCRIBE.PIRATEHAT = "Arrgh!"
 
 WURT.DESCRIBE.PIRATEPACK = "Must been bag from pirates, flort!"
 
+WURT.DESCRIBE.PITHHAT = "Helps walking a bit faster, florp."
+
+WURT.DESCRIBE.PROPELLERHAT = "Spinny hat make cool breeze when running, flort."
+
+WURT.DESCRIBE.PUMPKINHEADHAT = "Has a friendly face, flort."
+
 WURT.DESCRIBE.SHARK_FIN = "Poor little shark, florp."
+
+WURT.DESCRIBE.SHARK_TEETHHAT = "Hat of teeth, florp."
 
 WURT.DESCRIBE.THATCHSACK = "Tiny bag for my stuff, florp."

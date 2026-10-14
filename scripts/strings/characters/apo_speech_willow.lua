@@ -52,10 +52,34 @@ WILLOW.DESCRIBE.DOUBLE_UMBRELLAHAT = "If I bought this in a store I'd feel burne
 
 WILLOW.DESCRIBE.EXTRAHEAVYHAT = "A rock on my head."
 
+WILLOW.DESCRIBE.GASHAT = "I like not smelling smelly smells."
+
+WILLOW.DESCRIBE.GASMASKHAT = "Cuts down on the coughing."
+
+WILLOW.DESCRIBE.JIAOLIANHAT = "I should prank someone using this!"
+
+WILLOW.DESCRIBE.METALPLATEHAT = "This protects my brain."
+
+WILLOW.DESCRIBE.OXHAT = "Ox-cellent!"
+
+WILLOW.DESCRIBE.PEAGAWKFEATHERHAT = "I am a phoenix!"
+
+WILLOW.DESCRIBE.PIGCROWNHAT = "I think it suits me."
+
 WILLOW.DESCRIBE.PIGSKIN_DRIED = "I might need this for something."
+
+WILLOW.DESCRIBE.PIRATEHAT = "I feel so piratey."
 
 WILLOW.DESCRIBE.PIRATEPACK = "Carrying this will build chest muscles."
 
+WILLOW.DESCRIBE.PITHHAT = "Meh. Not my style, but I'll wear it."
+
+WILLOW.DESCRIBE.PROPELLERHAT = "A spinning hat? Silly, but cool."
+
+WILLOW.DESCRIBE.PUMPKINHEADHAT = "Amazing!"
+
 WILLOW.DESCRIBE.SHARK_FIN = "The fin fell off."
+
+WILLOW.DESCRIBE.SHARK_TEETHHAT = "Wearing this gives me a toothy grin."
 
 WILLOW.DESCRIBE.THATCHSACK = "Thatch you very much."

@@ -52,10 +52,34 @@ WAXWELL.DESCRIBE.DOUBLE_UMBRELLAHAT = "This looks silly."
 
 WAXWELL.DESCRIBE.EXTRAHEAVYHAT = "Impenetrable, perhaps. Comfortable, certainly not."
 
+WAXWELL.DESCRIBE.GASHAT = "Cleans the stench away."
+
+WAXWELL.DESCRIBE.GASMASKHAT = "This clears the vapors."
+
+WAXWELL.DESCRIBE.JIAOLIANHAT = "Doesn't fit me."
+
+WAXWELL.DESCRIBE.METALPLATEHAT = "How very conquistadorian."
+
+WAXWELL.DESCRIBE.OXHAT = "Sometimes one must sacrifice form for function."
+
+WAXWELL.DESCRIBE.PEAGAWKFEATHERHAT = "I will lure them in with my plumage."
+
+WAXWELL.DESCRIBE.PIGCROWNHAT = "I was meant to be king."
+
 WAXWELL.DESCRIBE.PIGSKIN_DRIED = "Soft. Malleable."
+
+WAXWELL.DESCRIBE.PIRATEHAT = "Is this amusing?"
 
 WAXWELL.DESCRIBE.PIRATEPACK = "I suppose it will do."
 
+WAXWELL.DESCRIBE.PITHHAT = "Protects my most important part."
+
+WAXWELL.DESCRIBE.PROPELLERHAT = "Higgsbury, this is a ridiculous contraption."
+
+WAXWELL.DESCRIBE.PUMPKINHEADHAT = "Why hello, Mr. Crane."
+
 WAXWELL.DESCRIBE.SHARK_FIN = "A trophy from a most excellent kill."
+
+WAXWELL.DESCRIBE.SHARK_TEETHHAT = "I respect this fashion choice."
 
 WAXWELL.DESCRIBE.THATCHSACK = "Not much, but the extra space is better than nothing."

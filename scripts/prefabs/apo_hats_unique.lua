@@ -327,6 +327,274 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.jiaolian_custom_init = function(inst)
+        inst:AddTag("open_top_hat")
+    end
+
+    hat_fns.jiaolian = function()
+        local inst = simple(hat_fns.jiaolian_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.opentop_onequip)
+
+        inst:AddComponent("armor")
+        inst.components.armor:InitCondition(TUNING.APO_HATS.JIAOLIAN.CONDITION, TUNING.APO_HATS.JIAOLIAN.ABSORPTION)
+        inst.components.armor:SetTags(TUNING.APO_HATS.JIAOLIAN.TAGS)
+
+        MakeSmallBurnable(inst)
+        MakeSmallPropagator(inst)
+
+        return inst
+    end
+
+    hat_fns.peagawkfeather_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            local birdattractor = owner.components.birdattractor
+
+            if birdattractor ~= nil then
+                birdattractor.spawnmodifier:SetModifier(inst, TUNING.APO_HATS.PEAGAWKFEATHER.BIRD_SPAWN_MAXDELTA, "maxbirds")
+                birdattractor.spawnmodifier:SetModifier(inst, TUNING.APO_HATS.PEAGAWKFEATHER.BIRD_SPAWN_DELAYDELTA.MIN, "mindelay")
+                birdattractor.spawnmodifier:SetModifier(inst, TUNING.APO_HATS.PEAGAWKFEATHER.BIRD_SPAWN_DELAYDELTA.MAX, "maxdelay")
+
+                if TheWorld.components.birdspawner ~= nil then
+                    TheWorld.components.birdspawner:ToggleUpdate(true)
+                end
+
+                -- Heap of Foods Nocturnal Birds...
+                if TheWorld.components.nightbirdspawner ~= nil then
+                    TheWorld.components.nightbirdspawner:ToggleUpdate(true)
+                end
+            end
+        end
+    end
+
+    hat_fns.peagawkfeather_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            local attractor = owner.components.birdattractor
+
+            if attractor ~= nil then
+                attractor.spawnmodifier:RemoveModifier(inst)
+
+                if TheWorld.components.birdspawner ~= nil then
+                    TheWorld.components.birdspawner:ToggleUpdate(true)
+                end
+
+                if TheWorld.components.nightbirdspawner ~= nil then
+                    TheWorld.components.nightbirdspawner:ToggleUpdate(true)
+                end
+            end
+        end
+    end
+
+    hat_fns.peagawkfeather = function()
+        local inst = simple()
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.peagawkfeather_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.peagawkfeather_onunequip)
+        inst.components.equippable.dapperness = TUNING.DAPPERNESS_SMALL
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.PEAGAWKFEATHER.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(inst.Remove)
+
+        return inst
+    end
+
+    hat_fns.propeller_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            if inst.propeller_fan ~= nil then
+                inst.propeller_fan:Remove()
+            end
+
+            inst.propeller_fan = SpawnPrefab("propeller_fan")
+            inst.propeller_fan.entity:SetParent(owner.entity)
+
+            inst.propeller_fan:OnSetSpinning(true)
+
+            if inst.components.heater ~= nil then
+                inst.components.heater:SetThermics(false, true)
+            end
+        end
+    end
+
+    hat_fns.propeller_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            if inst.propeller_fan ~= nil then
+                inst.propeller_fan:OnStartUnequipping(inst)
+                inst.propeller_fan = nil
+            end
+
+            if inst.components.heater ~= nil then
+                inst.components.heater:SetThermics(false, false)
+            end
+        end
+    end
+
+    hat_fns.propeller_onequiptomodel = function(inst, owner, from_ground)
+        if owner ~= nil then
+            if inst.propeller_fan ~= nil then
+                inst.propeller_fan:Remove()
+            end
+
+            inst.propeller_fan = SpawnPrefab("propeller_fan")
+            inst.propeller_fan.entity:SetParent(owner.entity)
+
+            inst.propeller_fan:OnSetSpinning(false)
+
+            if inst.components.fueled ~= nil then
+                inst.components.fueled:StopConsuming()
+            end
+
+            if inst.components.heater ~= nil then
+                inst.components.heater:SetThermics(false, false)
+            end
+        end
+    end
+
+    hat_fns.propeller_onperish = function(inst)
+        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+            if owner ~= nil then
+                owner:PushEvent("itemranout",
+                {
+                    prefab    = inst.prefab,
+                    equipslot = inst.components.equippable.equipslot,
+                    announce  = "ANNOUNCE_FAN_OUT",
+                })
+            end
+        end
+
+        hat_fns.simple_onperish(inst)
+    end
+
+    hat_fns.propeller_custom_init = function(inst)
+        inst.entity:AddSoundEmitter()
+
+        inst:AddTag("HASHEATER")
+    end
+
+    hat_fns.propeller = function()
+        local inst = simple(hat_fns.propeller_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.propeller_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.propeller_onunequip)
+        inst.components.equippable:SetOnEquipToModel(hat_fns.propeller_onequiptomodel)
+        inst.components.equippable.walkspeedmult = TUNING.APO_HATS.PROPELLER.WALKSPEEDMULT
+
+        inst:AddComponent("heater")
+        inst.components.heater:SetThermics(false, false)
+        inst.components.heater.equippedheat = TUNING.APO_HATS.PROPELLER.HEAT
+
+        inst:AddComponent("insulator")
+        inst.components.insulator:SetInsulation(TUNING.INSULATION_MED)
+        inst.components.insulator:SetSummer()
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.GEARS
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.PROPELLER.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(hat_fns.propeller_onperish)
+        inst.components.fueled.no_sewing = true
+
+        return inst
+    end
+
+    hat_fns.pumpkinhead_onwaxed = function(inst)
+        inst.pumpkinhead_iswaxed = true
+
+        if inst.components.perishable ~= nil then
+            inst:RemoveComponent("perishable")
+        end
+
+        if inst.components.waxable ~= nil then
+            inst:RemoveComponent("waxable")
+        end
+
+        inst:RemoveTag("show_spoilage")
+        inst:RemoveTag("icebox_valid")
+        inst:RemoveTag("waxable")
+    end
+
+    hat_fns.pumpkinhead_onwax = function(inst, doer, waxitem)
+        if doer == nil then
+            return false
+        end
+
+        hat_fns.pumpkinhead_onwaxed(hat)
+
+        return true
+    end
+
+    hat_fns.pumpkinhead_onsave = function(inst, data)
+        if inst.pumpkinhead_iswaxed then
+            data.pumpkinhead_iswaxed = true
+        end
+    end
+
+    hat_fns.pumpkinhead_onload = function(inst, data)
+        if data ~= nil and data.pumpkinhead_iswaxed then
+            inst.pumpkinhead_iswaxed = true
+
+            inst:DoTaskInTime(0, function()
+                hat_fns.pumpkinhead_onwaxed(inst)
+            end)
+        end
+    end
+
+    hat_fns.pumpkinhead_custom_init = function(inst)
+        inst:AddTag("show_spoilage")
+        inst:AddTag("icebox_valid")
+        inst:AddTag("waxable")
+    end
+
+    hat_fns.pumpkinhead = function()
+        local inst = simple(hat_fns.pumpkinhead_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        if inst:HasTag("waxable") then
+            inst.components.equippable.dapperness = TUNING.CRAZINESS_SMALL
+        end
+
+        inst:AddComponent("waxable")
+        inst.components.waxable:SetWaxfn(hat_fns.pumpkinhead_onwax)
+
+        inst:AddComponent("perishable")
+        inst.components.perishable:SetPerishTime(TUNING.PERISH_FAST)
+        inst.components.perishable:StartPerishing()
+        inst.components.perishable:SetOnPerishFn(inst.Remove)
+
+        inst.OnSave = hat_fns.pumpkinhead_onsave
+        inst.OnLoad = hat_fns.pumpkinhead_onload
+
+        MakeMediumBurnable(inst)
+        MakeSmallPropagator(inst)
+
+        return inst
+    end
+
     local hat_fn  = nil
 
     local assets  =
@@ -346,6 +614,15 @@ local function MakeHat(name)
         hat_fn = hat_fns.carnival_host
     elseif name == "extraheavy" then
         hat_fn = hat_fns.extraheavy
+    elseif name == "jiaolian" then
+        hat_fn = hat_fns.jiaolian
+    elseif name == "peagawkfeather" then
+        hat_fn = hat_fns.peagawkfeather
+    elseif name == "propeller" then
+        prefabs = { "propeller_fan" }
+        hat_fn = hat_fns.propeller
+    elseif name == "pumpkinhead" then
+        hat_fn = hat_fns.pumpkinhead
     end
 
     table.insert(ALL_HAT_PREFAB_NAMES, prefabname)
@@ -355,4 +632,8 @@ end
 
 return MakeHat("bucket"),
 MakeHat("carnival_host"),
-MakeHat("extraheavy")
+MakeHat("extraheavy"),
+MakeHat("jiaolian"),
+MakeHat("peagawkfeather"),
+MakeHat("propeller"),
+MakeHat("pumpkinhead")

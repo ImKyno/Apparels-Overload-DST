@@ -52,10 +52,34 @@ WOODIE.DESCRIBE.DOUBLE_UMBRELLAHAT = "Double the protection!"
 
 WOODIE.DESCRIBE.EXTRAHEAVYHAT = "That's a lot of rock to have on yer noggin."
 
+WOODIE.DESCRIBE.GASHAT = "Nothin' stinks when I got this on."
+
+WOODIE.DESCRIBE.GASMASKHAT = "Keeps my lungs clear."
+
+WOODIE.DESCRIBE.JIAOLIANHAT = "Hehe. It's like a halloween mask."
+
+WOODIE.DESCRIBE.METALPLATEHAT = "It's a little cold."
+
+WOODIE.DESCRIBE.OXHAT = "This is a hat befitting a Northerner."
+
+WOODIE.DESCRIBE.PEAGAWKFEATHERHAT = "I want nothing to do with that... thing."
+
+WOODIE.DESCRIBE.PIGCROWNHAT = "It's nice to be appreciated."
+
 WOODIE.DESCRIBE.PIGSKIN_DRIED = "Nice hide."
+
+WOODIE.DESCRIBE.PIRATEHAT = "It's the pirate's life for me now."
 
 WOODIE.DESCRIBE.PIRATEPACK = "A bag for my booty."
 
+WOODIE.DESCRIBE.PITHHAT = "It's tougher than a touque."
+
+WOODIE.DESCRIBE.PROPELLERHAT = "Keeps a fellow cool while he's on the move. Not bad!"
+
+WOODIE.DESCRIBE.PUMPKINHEADHAT = "It'd better not tip over."
+
 WOODIE.DESCRIBE.SHARK_FIN = "I'm sure the shark won't miss this."
+
+WOODIE.DESCRIBE.SHARK_TEETHHAT = "It's a hat made of teeth."
 
 WOODIE.DESCRIBE.THATCHSACK = "Now I can carry more delicious wood."

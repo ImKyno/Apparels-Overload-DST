@@ -15,3 +15,6 @@ SKIN_DESCRIPTIONS.ms_double_umbrellahat_cyan = "There are moments when you lose 
 
 SKIN_NAMES.ms_double_umbrellahat_red = "Scarlet Dumbrella"
 SKIN_DESCRIPTIONS.ms_double_umbrellahat_red = "The Crimson Curse will always be above your head."
+
+SKIN_NAMES.ms_gasmaskhat_hazard = "Hazard Mask"
+SKIN_DESCRIPTIONS.ms_gasmaskhat_hazard = "For when the fallout has settle, you must rebuild what is left."

@@ -31,7 +31,11 @@ local APO_ICONS =
     "buckethat",
     "carnival_hosthat",
     "extraheavyhat",
+    "jiaolianhat",
+    "peagawkfeatherhat",
     "pigskin_dried",
+    "propellerhat",
+    "pumpkinheadhat",
 
     -- Modded Skins.
     "ms_aerodynamichat_tropical",
@@ -39,6 +43,7 @@ local APO_ICONS =
     "ms_double_umbrellahat_black",
     "ms_double_umbrellahat_cyan",
     "ms_double_umbrellahat_red",
+    "ms_gasmaskhat_hazard",
 }
 
 if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
@@ -66,8 +71,16 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         "captainhat",
         "disguisehat",
         "double_umbrellahat",
+        "gashat",
+        "gasmaskhat",
+        "metalplatehat",
+        "oxhat",
+        "pigcrownhat",
+        "piratehat",
         "piratepack",
+        "pithhat",
         "shark_fin",
+        "shark_teethhat",
         "thatchsack",
     }
 

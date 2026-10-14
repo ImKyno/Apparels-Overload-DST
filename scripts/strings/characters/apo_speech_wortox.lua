@@ -52,10 +52,34 @@ WORTOX.DESCRIBE.DOUBLE_UMBRELLAHAT = "Work of a madman."
 
 WORTOX.DESCRIBE.EXTRAHEAVYHAT = "Heavy is the crown!"
 
+WORTOX.DESCRIBE.GASHAT = "Smells of freshness when I wear it!"
+
+WORTOX.DESCRIBE.GASMASKHAT = "This will cut down my coughing."
+
+WORTOX.DESCRIBE.JIAOLIANHAT = "A merry visage! Hyuyu!"
+
+WORTOX.DESCRIBE.METALPLATEHAT = "I prefer the other one."
+
+WORTOX.DESCRIBE.OXHAT = "Hat of an ox."
+
+WORTOX.DESCRIBE.PEAGAWKFEATHERHAT = "Feathers and horns go well together."
+
+WORTOX.DESCRIBE.PIGCROWNHAT = "Heavy is the crown."
+
 WORTOX.DESCRIBE.PIGSKIN_DRIED = "A little more than skin, a little less than hide! Hyuyu!"
+
+WORTOX.DESCRIBE.PIRATEHAT = "Yo-ho-ho!"
 
 WORTOX.DESCRIBE.PIRATEPACK = "Treasures!"
 
+WORTOX.DESCRIBE.PITHHAT = "Not as tough as my horns!"
+
+WORTOX.DESCRIBE.PROPELLERHAT = "Spin and run, let the cool breeze flow! Hyuyu!"
+
+WORTOX.DESCRIBE.PUMPKINHEADHAT = "How delightfully spooky! Hyuyu!"
+
 WORTOX.DESCRIBE.SHARK_FIN = "The shark left his rudder!"
+
+WORTOX.DESCRIBE.SHARK_TEETHHAT = "Madness put the devils in my head! Hyuyu!"
 
 WORTOX.DESCRIBE.THATCHSACK = "Thatch that satchel! Hyuyu!"

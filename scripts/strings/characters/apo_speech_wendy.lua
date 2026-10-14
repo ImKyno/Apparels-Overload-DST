@@ -52,10 +52,34 @@ WENDY.DESCRIBE.DOUBLE_UMBRELLAHAT = "This seems excessive."
 
 WENDY.DESCRIBE.EXTRAHEAVYHAT = "A heavy burden to bear."
 
+WENDY.DESCRIBE.GASHAT = "This hat prevents me from breathing in death."
+
+WENDY.DESCRIBE.GASMASKHAT = "It keeps out the gas, but no the despair."
+
+WENDY.DESCRIBE.JIAOLIANHAT = "It is not really that scary."
+
+WENDY.DESCRIBE.METALPLATEHAT = "It'll protect my head but not my heart."
+
+WENDY.DESCRIBE.OXHAT = "Dashing."
+
+WENDY.DESCRIBE.PEAGAWKFEATHERHAT = "Ca-caw!"
+
+WENDY.DESCRIBE.PIGCROWNHAT = "Heavy hangs the crown."
+
 WENDY.DESCRIBE.PIGSKIN_DRIED = "The result of many deaths."
+
+WENDY.DESCRIBE.PIRATEHAT = "That hat of a cutthroat killer. I admire it."
 
 WENDY.DESCRIBE.PIRATEPACK = "This should help me carry more junk."
 
+WENDY.DESCRIBE.PITHHAT = "As hard as my existence."
+
+WENDY.DESCRIBE.PROPELLERHAT = "Even the wind conspires to keep me moving."
+
+WENDY.DESCRIBE.PUMPKINHEADHAT = "You're not so scary."
+
 WENDY.DESCRIBE.SHARK_FIN = "It won't be needing this anymore."
+
+WENDY.DESCRIBE.SHARK_TEETHHAT = "Chic, yet fearsome."
 
 WENDY.DESCRIBE.THATCHSACK = "I was always destined to carry a heavy load."

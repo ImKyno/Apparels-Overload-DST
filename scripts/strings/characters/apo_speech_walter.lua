@@ -52,10 +52,34 @@ WALTER.DESCRIBE.DOUBLE_UMBRELLAHAT = "I'll be twice as sure to forget it at home
 
 WALTER.DESCRIBE.EXTRAHEAVYHAT = "Marble armor for your head! Bet it could take quite a beating."
 
+WALTER.DESCRIBE.GASHAT = "Might be a good idea to have this with me when it's starts raining."
+
+WALTER.DESCRIBE.GASMASKHAT = "Could be useful for exploring zones filled with gas or miasma."
+
+WALTER.DESCRIBE.JIAOLIANHAT = "A mask to fight ghosts!"
+
+WALTER.DESCRIBE.METALPLATEHAT = "It's a bit heavy."
+
+WALTER.DESCRIBE.OXHAT = "All the rage with the \"not dying\" crowd."
+
+WALTER.DESCRIBE.PEAGAWKFEATHERHAT = "And I thought my bird watching badge was a feather in my cap!"
+
+WALTER.DESCRIBE.PIGCROWNHAT = "Something about this tells me it belongs to royalty."
+
 WALTER.DESCRIBE.PIGSKIN_DRIED = "Good for clothing!"
+
+WALTER.DESCRIBE.PIRATEHAT = "This hat just got pirated."
 
 WALTER.DESCRIBE.PIRATEPACK = "Storage space that pays for itself!"
 
+WALTER.DESCRIBE.PITHHAT = "A true explorer hat!"
+
+WALTER.DESCRIBE.PROPELLERHAT = "A built-in breeze! Perfect for keeping cool on the trail."
+
+WALTER.DESCRIBE.PUMPKINHEADHAT = "It has a face! Look, Woby!"
+
 WALTER.DESCRIBE.SHARK_FIN = "I'm still missing the shark!"
+
+WALTER.DESCRIBE.SHARK_TEETHHAT = "The gold tooth is a nice touch."
 
 WALTER.DESCRIBE.THATCHSACK = "You can never have enough storage space."

@@ -85,6 +85,23 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
 
         skin_tags = { "DOUBLE_UMBRELLAHAT" },
     }))
+
+    -- Hazard Mask Skin for the Gas Mask.
+    table.insert(prefabs, CreatePrefabSkin("ms_gasmaskhat_hazard",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_hat_gasmask_hazard.zip"),
+        },
+
+        base_prefab = "gasmaskhat",
+        build_name_override = "ms_hat_gasmask_hazard",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "GASMASKHAT" },
+    }))
 end
 
 return unpack(prefabs)

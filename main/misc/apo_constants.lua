@@ -34,3 +34,4 @@ end
 
 -- New Set Bonus.
 _G.EQUIPMENTSETNAMES.MARBLE = "marble"
+_G.EQUIPMENTSETNAMES.METALPLATE = "metalplate"

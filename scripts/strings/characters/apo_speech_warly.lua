@@ -52,10 +52,34 @@ WARLY.DESCRIBE.DOUBLE_UMBRELLAHAT = "Ridiculous! I want one."
 
 WARLY.DESCRIBE.EXTRAHEAVYHAT = "A bit too heavy for my taste, but quite sturdy."
 
+WARLY.DESCRIBE.GASHAT = "Anything to keep acid out of my dinner!"
+
+WARLY.DESCRIBE.GASMASKHAT = "I could use this in the smoke house."
+
+WARLY.DESCRIBE.JIAOLIANHAT = "Ah, a halloween mask."
+
+WARLY.DESCRIBE.METALPLATEHAT = "I prefer a chef hat."
+
+WARLY.DESCRIBE.OXHAT = "Much more waterproof than a chef's hat."
+
+WARLY.DESCRIBE.PEAGAWKFEATHERHAT = "What am I supposed to do with this?"
+
+WARLY.DESCRIBE.PIGCROWNHAT = "I have no desire to be a leader."
+
 WARLY.DESCRIBE.PIGSKIN_DRIED = "I suppose it's important to use the whole animal."
+
+WARLY.DESCRIBE.PIRATEHAT = "I do not throw in with these scoundrels. But I like the hat."
 
 WARLY.DESCRIBE.PIRATEPACK = "This will straighten my back out."
 
+WARLY.DESCRIBE.PITHHAT = "Orange pith?"
+
+WARLY.DESCRIBE.PROPELLERHAT = "A refreshing breeze without having to stop for a break. Magnifique!"
+
+WARLY.DESCRIBE.PUMPKINHEADHAT = "Trick and neat!"
+
 WARLY.DESCRIBE.SHARK_FIN = "This looks rather blond."
+
+WARLY.DESCRIBE.SHARK_TEETHHAT = "Look upon your king!"
 
 WARLY.DESCRIBE.THATCHSACK = "A very simple handmade satchel."

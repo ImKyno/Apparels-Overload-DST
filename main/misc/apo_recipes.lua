@@ -290,6 +290,121 @@ AddRecipe2("extraheavyhat",
     TECH.SCIENCE_TWO, {}, { "ARMOUR" }
 )
 
+APOAddRecipe(ABCEnabled or IASEnabled, "gashat",
+    HOFEnabled and
+    {
+        Ingredient("kyno_messagebottle_empty", 1),
+        Ingredient("barnacle", 3),
+        Ingredient("kyno_jellyfish", 1),
+    }
+    or
+    {
+        Ingredient("messagebottleempty", 1),
+        Ingredient("barnacle", 3),
+        Ingredient("kelp", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "gasmaskhat",
+    {
+        Ingredient("goose_feather", 4),
+        Ingredient("pigskin_dried", 2),
+        Ingredient("moonglass", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
+)
+
+AddRecipe2("jiaolianhat",
+    {
+        Ingredient("driftwood_log", 4),
+        Ingredient("nightmarefuel", 2),
+        Ingredient("rope", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "metalplatehat",
+    {
+        Ingredient("cutstone", 2),
+        Ingredient("rope", 1),
+        Ingredient("hammer", 0),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "oxhat",
+    {
+        Ingredient("horn", 1),
+        Ingredient("footballhat", 1),
+        Ingredient("slurtle_shellpieces", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "ARMOUR", "RAIN" }
+)
+
+AddRecipe2("peagawkfeatherhat",
+    {
+        Ingredient("feather_crow", 3),
+        Ingredient("feather_robin", 2),
+        Ingredient("tentaclespots", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "piratehat",
+    {
+        Ingredient("boneshard", 2),
+        Ingredient("pigskin_dried", 2),
+        Ingredient("rope", 1),
+    },
+
+    TECH.SEAFARING_ONE, {}, { "CLOTHING", "SEAFARING" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "pithhat",
+    {
+        Ingredient("pigskin_dried", 2),
+        Ingredient("twigs", 3),
+        Ingredient("rope", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING" }
+)
+
+AddRecipe2("propellerhat",
+    {
+        Ingredient("minifan", 1),
+        Ingredient("gears", 3),
+        Ingredient("transistor", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "SUMMER" }
+)
+
+AddRecipe2("pumpkinheadhat",
+    {
+        Ingredient("pumpkin", 1),
+        Ingredient("axe", 0),
+    },
+
+    TECH.SCIENCE_ONE, {}, { "CLOTHING" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "shark_teethhat",
+    {
+        Ingredient("houndstooth", 9),
+        Ingredient("goldnugget", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING" }
+)
+
 -- Everything else.
 APOAddRecipe(ABCEnabled or IASEnabled, "thatchsack",
     {

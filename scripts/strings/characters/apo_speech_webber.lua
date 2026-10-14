@@ -52,10 +52,34 @@ WEBBER.DESCRIBE.DOUBLE_UMBRELLAHAT = "One for each of us!"
 
 WEBBER.DESCRIBE.EXTRAHEAVYHAT = "It's really heavy, but it makes our head feel safe!"
 
+WEBBER.DESCRIBE.GASHAT = "We are protected from sick smells."
+
+WEBBER.DESCRIBE.GASMASKHAT = "Now that gas won't make us cough."
+
+WEBBER.DESCRIBE.JIAOLIANHAT = "I bet we can scary everyone with this!"
+
+WEBBER.DESCRIBE.METALPLATEHAT = "A fancy helmet to protect our head."
+
+WEBBER.DESCRIBE.OXHAT = "How do we look?"
+
+WEBBER.DESCRIBE.PEAGAWKFEATHERHAT = "Feathers enough to cover our spiderness."
+
+WEBBER.DESCRIBE.PIGCROWNHAT = "Haha! We're the king!"
+
 WEBBER.DESCRIBE.PIGSKIN_DRIED = "It's pretty strong material."
+
+WEBBER.DESCRIBE.PIRATEHAT = "Aaaargh, we feel so salty!"
 
 WEBBER.DESCRIBE.PIRATEPACK = "A booty bundle."
 
+WEBBER.DESCRIBE.PITHHAT = "A safari hat!"
+
+WEBBER.DESCRIBE.PROPELLERHAT = "We go faster, and the hat spins faster! Wheee!"
+
+WEBBER.DESCRIBE.PUMPKINHEADHAT = "Just like we used to make at home!"
+
 WEBBER.DESCRIBE.SHARK_FIN = "Do we touch it?"
+
+WEBBER.DESCRIBE.SHARK_TEETHHAT = "A smile to wear on our forehead!"
 
 WEBBER.DESCRIBE.THATCHSACK = "Helps carry goodies!"

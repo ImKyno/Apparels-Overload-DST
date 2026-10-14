@@ -52,10 +52,34 @@ WATHGRITHR.DESCRIBE.DOUBLE_UMBRELLAHAT = "What kind of strange helm is this?"
 
 WATHGRITHR.DESCRIBE.EXTRAHEAVYHAT = "A helm of stone! Let the blows of mine foes shatter upon it!"
 
+WATHGRITHR.DESCRIBE.GASHAT = "Armor of sorts for my nose and throat!"
+
+WATHGRITHR.DESCRIBE.GASMASKHAT = "Poisonous air shall not consume me!"
+
+WATHGRITHR.DESCRIBE.JIAOLIANHAT = "The face of a criminal!"
+
+WATHGRITHR.DESCRIBE.METALPLATEHAT = "Heavy head protection!"
+
+WATHGRITHR.DESCRIBE.OXHAT = "This helm will keep my scalp dry."
+
+WATHGRITHR.DESCRIBE.PEAGAWKFEATHERHAT = "Seems a bit flashy for battle."
+
+WATHGRITHR.DESCRIBE.PIGCROWNHAT = "Power gifted by the gods."
+
 WATHGRITHR.DESCRIBE.PIGSKIN_DRIED = "Deceit is the tactic of cowards."
+
+WATHGRITHR.DESCRIBE.PIRATEHAT = "This hat confuses my character... I mean, my soul."
 
 WATHGRITHR.DESCRIBE.PIRATEPACK = "Builds chest muscles."
 
+WATHGRITHR.DESCRIBE.PITHHAT = "A helm. Not mine own."
+
+WATHGRITHR.DESCRIBE.PROPELLERHAT = "The whirling winds shall cool me as I charge!"
+
+WATHGRITHR.DESCRIBE.PUMPKINHEADHAT = "Do you wish to fight, vegetable?"
+
 WATHGRITHR.DESCRIBE.SHARK_FIN = "A token from a fallen warrior."
+
+WATHGRITHR.DESCRIBE.SHARK_TEETHHAT = "A helm after my warriors heart!"
 
 WATHGRITHR.DESCRIBE.THATCHSACK = "I hope my spear doesn't poke a hole in it."

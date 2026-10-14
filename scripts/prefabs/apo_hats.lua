@@ -181,6 +181,16 @@ local function MakeHat(name)
         end
     end
 
+    hat_fns.simple_onisacidraining = function(inst, isacidraining)
+        if inst.components.fueled ~= nil then
+            if isacidraining then
+                inst.components.fueled.rate_modifiers:SetModifier(inst, -1, "acidrain")
+            else
+                inst.components.fueled.rate_modifiers:RemoveModifier(inst, "acidrain")
+            end
+        end
+    end
+
     local _skinhat_fns =
     {
         simple_onperish       = hat_fns.simple_onperish,
@@ -321,13 +331,13 @@ local function MakeHat(name)
         hat_fns.simple_onequip(inst, owner)
 
         if owner ~= nil then
-            inst._notraptrigger = owner:HasTag("notraptrigger")
+            inst.notraptrigger = owner:HasTag("notraptrigger")
 
             owner:AddTag("notraptrigger")
 
             if owner.components.locomotor ~= nil then
-                inst._triggerscreep = owner.components.locomotor.triggerscreep
-                inst._fasteroncreep = owner.components.locomotor.fasteroncreep
+                inst.triggerscreep = owner.components.locomotor.triggerscreep
+                inst.fasteroncreep = owner.components.locomotor.fasteroncreep
 
                 owner.components.locomotor:SetTriggersCreep(false)
                 owner.components.locomotor:SetFasterOnCreep(true)
@@ -343,19 +353,19 @@ local function MakeHat(name)
         hat_fns.simple_onunequip(inst, owner)
 
         if owner ~= nil then
-            if inst._notraptrigger then
+            if inst.notraptrigger then
                 owner:AddTag("notraptrigger")
             else
                 owner:RemoveTag("notraptrigger")
             end
 
             if owner.components.locomotor ~= nil then
-                if inst._triggerscreep ~= nil then
-                    owner.components.locomotor:SetTriggersCreep(inst._triggerscreep)
+                if inst.triggerscreep ~= nil then
+                    owner.components.locomotor:SetTriggersCreep(inst.triggerscreep)
                 end
 
-                if inst._fasteroncreep ~= nil then
-                    owner.components.locomotor:SetFasterOnCreep(inst._fasteroncreep)
+                if inst.fasteroncreep ~= nil then
+                    owner.components.locomotor:SetFasterOnCreep(inst.fasteroncreep)
                 end
             end
 
@@ -364,9 +374,9 @@ local function MakeHat(name)
             end
         end
 
-        inst._notraptrigger = nil
-        inst._triggerscreep = nil
-        inst._fasteroncreep = nil
+        inst.notraptrigger = nil
+        inst.triggerscreep = nil
+        inst.fasteroncreep = nil
     end
 
     hat_fns.bandit_onequiptomodel = function(inst, owner, from_ground)
@@ -736,6 +746,9 @@ local function MakeHat(name)
             if inst.components.equippable ~= nil then
                 inst.components.equippable.dapperness = 0
             end
+
+            inst:RemoveEventCallback("player_on_platform", inst.captain_onplatform, owner)
+            inst:RemoveEventCallback("player_off_platform", inst.captain_offplatform, owner)
         end
     end
 
@@ -947,6 +960,527 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.gas_custom_init = function(inst)
+        inst:AddTag("acidrainimmune")
+    end
+
+    hat_fns.gas = function()
+        local inst = simple(hat_fns.gas_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable.dapperness = TUNING.DAPPERNESS_TINY
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.GAS.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(inst.Remove)
+
+        return inst
+    end
+
+    hat_fns.gasmask_onequip = function(inst, owner)
+        hat_fns.opentop_onequip(inst, owner)
+
+        if owner ~= nil then
+            owner:AddTag("gasimmune")
+        end
+    end
+
+    hat_fns.gasmask_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            owner:RemoveTag("gasimmune")
+        end
+    end
+
+    hat_fns.gasmask_custom_init = function(inst)
+        inst:AddTag("goggles")
+        inst:AddTag("gasmask")
+        inst:AddTag("miasmaimmune")
+        inst:AddTag("open_top_hat")
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.gasmask = function()
+        local inst = simple(hat_fns.gasmask_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable.dapperness = TUNING.CRAZINESS_SMALL
+        inst.components.equippable:SetOnEquip(hat_fns.gasmask_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.gasmask_onunequip)
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.GASMASK.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(inst.Remove)
+
+        return inst
+    end
+
+    hat_fns.metalplate_getsetbonusequip = function(inst, owner)
+        local body = owner.components.inventory ~= nil and owner.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY) or nil
+        return body ~= nil and body.prefab == "armor_metalplate" and body or nil
+    end
+
+    hat_fns.metalplate_custom_init = function(inst)
+        inst:AddTag("heavyarmor")
+        inst:AddTag("hardarmor")
+    end
+
+    hat_fns.metalplate = function()
+        local inst = simple(hat_fns.metalplate_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable.walkspeedmult = TUNING.APO_HATS.METALPLATE.WALKSPEEDMULT
+
+        inst:AddComponent("armor")
+        inst.components.armor:InitCondition(TUNING.APO_HATS.METALPLATE.CONDITION, TUNING.APO_HATS.METALPLATE.ABSORPTION)
+
+        inst:AddComponent("setbonus")
+        inst.components.setbonus:SetSetName(EQUIPMENTSETNAMES.METALPLATE)
+
+        return inst
+    end
+
+    hat_fns.ox_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            owner:AddTag("beefalo")
+        end
+    end
+
+    hat_fns.ox_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            owner:RemoveTag("beefalo")
+        end
+    end
+
+    hat_fns.ox_onequiptomodel = function(inst, owner, from_ground)
+        if owner ~= nil then
+            owner:RemoveTag("beefalo")
+        end
+    end
+
+    hat_fns.ox_custom_init = function(inst)
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.ox = function()
+        local inst = simple(hat_fns.ox_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.ox_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.ox_onunequip)
+        inst.components.equippable:SetOnEquipToModel(hat_fns.ox_onequiptomodel)
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
+
+        inst:AddComponent("armor")
+        inst.components.armor:InitCondition(TUNING.APO_HATS.OX.CONDITION, TUNING.APO_HATS.OX.ABSORPTION)
+
+        return inst
+    end
+
+    hat_fns.pigcrown_onapplyhealthbuff = function(follower)
+        if follower.pigcrown_bonushealth then
+            return
+        end
+
+        if follower.components.health ~= nil and not follower.components.health:IsDead() then
+            local current_health = follower.components.health:GetPercent()
+            local bonus = follower.components.health.maxhealth * (TUNING.APO_HATS.PIGCROWN.MODIFIERS.HEALTH - 1)
+
+            follower.pigcrown_bonushealth = bonus
+
+            follower.components.health:SetMaxHealth(follower.components.health.maxhealth + bonus)
+            follower.components.health:SetPercent(current_health)
+        end
+    end
+
+    hat_fns.pigcrown_onremovehealthbuff = function(follower)
+        local bonus = follower.pigcrown_bonushealth
+
+        if bonus == nil then
+            return
+        end
+
+        if follower.components.health ~= nil then
+            local current_health = follower.components.health:GetPercent()
+
+            follower.components.health:SetMaxHealth(math.max(1, follower.components.health.maxhealth - bonus))
+            follower.components.health:SetPercent(current_health)
+        end
+
+        follower.pigcrown_bonushealth = nil
+    end
+
+    hat_fns.pigcrown_onapplyfollowerbuff = function(follower)
+        local MODIFIER = TUNING.APO_HATS.PIGCROWN.MODIFIERS.DAMAGE
+
+        if follower.components.combat ~= nil then
+            follower.components.combat.externaldamagemultipliers:SetModifier(follower, MODIFIER, "pigcrownhat")
+        end
+
+        hat_fns.pigcrown_onapplyhealthbuff(follower)
+    end
+
+    hat_fns.pigcrown_onremovefollowerbuff = function(follower)
+        if follower.components.combat ~= nil then
+            follower.components.combat.externaldamagemultipliers:RemoveModifier(follower, "pigcrownhat")
+        end
+
+        hat_fns.pigcrown_onremovehealthbuff(follower)
+    end
+
+    hat_fns.pigcrown_onupdatefollowers = function(owner, fn)
+        local leader = owner.components.leader
+
+        if leader ~= nil and leader.followers ~= nil then
+            for follower in pairs(leader.followers) do
+                if follower ~= nil and follower.components.combat ~= nil
+                and follower.components.health ~= nil and not follower.components.health:IsDead() then
+                    fn(follower)
+                end
+            end
+        end
+    end
+
+    hat_fns.pigcrown_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            hat_fns.pigcrown_onupdatefollowers(owner, hat_fns.pigcrown_onapplyfollowerbuff)
+
+            owner:ListenForEvent("followeradded", inst.pigcrown_onfolloweradded)
+        end
+    end
+
+    hat_fns.pigcrown_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            hat_fns.pigcrown_onupdatefollowers(owner, hat_fns.pigcrown_onremovefollowerbuff)
+
+            owner:RemoveEventCallback("followeradded", inst.pigcrown_onfolloweradded)
+        end
+    end
+
+    hat_fns.pigcrown_custom_init = function(inst, owner)
+        inst:AddTag("regal")
+        inst:AddTag("followeramplifier")
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.pigcrown = function()
+        local inst = simple(hat_fns.pigcrown_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.tradable.goldvalue = TUNING.APO_HATS.PIGCROWN.GOLDVALUE
+
+        inst.components.equippable:SetOnEquip(hat_fns.pigcrown_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.pigcrown_onunequip)
+        inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED_LARGE
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_MED)
+
+        inst.pigcrown_onfolloweradded = function(owner, data)
+            local follower = data ~= nil and data.follower or nil
+
+            if follower ~= nil and follower.components.combat ~= nil
+            and follower.components.health ~= nil and not follower.components.health:IsDead() then
+                hat_fns.pigcrown_onapplyfollowerbuff(follower)
+            end
+        end
+
+        return inst
+    end
+
+    hat_fns.pirate_onupdate = function(inst, owner)
+        local MODIFIER = TUNING.APO_HATS.PIRATE.MODIFIER
+
+        if owner ~= nil then
+            if owner:GetCurrentPlatform() then
+                if owner.components.combat ~= nil then
+                    owner.components.combat.externaldamagemultipliers:SetModifier(owner, MODIFIER, "piratehat")
+                end
+
+                if inst.components.equippable ~= nil then
+                    inst.components.equippable.dapperness = TUNING.DAPPERNESS_SMALL
+                end
+            else
+                if owner.components.combat ~= nil then
+                    owner.components.combat.externaldamagemultipliers:RemoveModifier(owner, "piratehat")
+                end
+
+                if inst.components.equippable ~= nil then
+                    inst.components.equippable.dapperness = 0
+                end
+            end
+        end
+    end
+
+    hat_fns.pirate_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            inst:ListenForEvent("player_on_platform", inst.pirate_onplatform, owner)
+            inst:ListenForEvent("player_off_platform", inst.pirate_offplatform, owner)
+
+            hat_fns.pirate_onupdate(inst, owner)
+        end
+    end
+
+    hat_fns.pirate_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            if owner.components.combat ~= nil then
+                owner.components.combat.externaldamagemultipliers:RemoveModifier(owner, "piratehat")
+            end
+
+            if inst.components.equippable ~= nil then
+                inst.components.equippable.dapperness = 0
+            end
+
+            inst:RemoveEventCallback("player_on_platform", inst.pirate_onplatform, owner)
+            inst:RemoveEventCallback("player_off_platform", inst.pirate_offplatform, owner)
+        end
+    end
+
+    hat_fns.pirate_onequiptomodel = function(inst, owner, from_ground)
+        if owner ~= nil then
+            if inst.components.fueled ~= nil then
+                inst.components.fueled:StopConsuming()
+            end
+
+            if owner.components.combat ~= nil then
+                owner.components.combat.externaldamagemultipliers:RemoveModifier(owner, "piratehat")
+            end
+
+            if inst.components.equippable ~= nil then
+                inst.components.equippable.dapperness = 0
+            end
+
+            inst:RemoveEventCallback("player_on_platform", inst.pirate_onplatform, owner)
+            inst:RemoveEventCallback("player_off_platform", inst.pirate_offplatform, owner)
+        end
+    end
+
+    hat_fns.pirate_custom_init = function(inst)
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.pirate = function()
+        local inst = simple(hat_fns.pirate_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.pirate_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.pirate_onunequip)
+        inst.components.equippable:SetOnEquipToModel(hat_fns.pirate_onequiptomodel)
+        inst.components.equippable.dapperness = 0
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.PIRATE.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(inst.Remove)
+
+        inst.pirate_onplatform = function(owner)
+            hat_fns.pirate_onupdate(inst, owner)
+        end
+
+        inst.pirate_offplatform = function(owner)
+            hat_fns.pirate_onupdate(inst, owner)
+        end
+
+        MakeSmallBurnable(inst)
+        MakeSmallPropagator(inst)
+
+        return inst
+    end
+
+    hat_fns.pith_onslowmult = function(mult, reduction)
+        if mult < 1 then
+            local reclaim_speed_penalty = (1 - mult) * TUNING.APO_HATS.PITH.SLOWMULTIPLIER
+            return math.min(mult + reclaim_speed_penalty, 1)
+        end
+
+        return mult
+    end
+
+    hat_fns.pith_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            if owner.components.locomotor ~= nil then
+                if owner.pith_slowmultiplier == nil then
+                    owner.pith_slowmultiplier = owner.components.locomotor.slowmultiplier
+                end
+
+                local SLOWMULTIPLIER = TUNING.APO_HATS.PITH.SLOWMULTIPLIER
+
+                owner.components.locomotor:SetSlowMultiplier(hat_fns.pith_onslowmult(owner.pith_slowmultiplier, SLOWMULTIPLIER))
+
+                if owner.pith_original_speed_modifier == nil then
+                    owner.pith_original_speed_modifier = owner.ModifySpeedMultiplier
+                    owner.pith_original_equippable_speed_modifier = owner.inventory_EquippableWalkSpeedMultModifier
+                end
+
+                local original_modify = owner.pith_original_speed_modifier
+                local original_equippable_modify = owner.pith_original_equippable_speed_modifier
+
+                owner.pith_speed_modifier = function(ent, mult, ...)
+                    if original_modify ~= nil then
+                        mult = original_modify(ent, mult, ...)
+                    end
+
+                    return hat_fns.pith_onslowmult(mult, SLOWMULTIPLIER)
+                end
+
+                owner.pith_equippable_speed_modifier = function(ent, mult, ...)
+                    if original_equippable_modify ~= nil then
+                        mult = original_equippable_modify(ent, mult, ...)
+                    end
+
+                    return hat_fns.pith_onslowmult(mult, SLOWMULTIPLIER)
+                end
+
+                owner.ModifySpeedMultiplier = owner.pith_speed_modifier
+                owner.inventory_EquippableWalkSpeedMultModifier = owner.pith_equippable_speed_modifier
+
+                owner.components.locomotor:SetTempGroundSpeedMultiplierModifier(owner.ModifySpeedMultiplier)
+            end
+        end
+    end
+
+    hat_fns.pith_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            if owner.components.locomotor ~= nil then
+                if owner.pith_slowmultiplier ~= nil then
+                    owner.components.locomotor:SetSlowMultiplier(owner.pith_slowmultiplier)
+                    owner.pith_slowmultiplier = nil
+                end
+
+                owner.ModifySpeedMultiplier = owner.pith_original_speed_modifier
+                owner.inventory_EquippableWalkSpeedMultModifier = owner.pith_original_equippable_speed_modifier
+
+                owner.components.locomotor:SetTempGroundSpeedMultiplierModifier(owner.ModifySpeedMultiplier)
+
+                owner.pith_original_speed_modifier = nil
+                owner.pith_original_equippable_speed_modifier = nil
+                owner.pith_speed_modifier = nil
+                owner.pith_equippable_speed_modifier = nil
+            end
+        end
+    end
+
+    hat_fns.pith_custom_init = function(inst)
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.pith = function()
+        local inst = simple(hat_fns.pith_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.pith_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.pith_onunequip)
+        inst.components.equippable.dapperness = TUNING.DAPPERNESS_SMALL
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.PITH.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(inst.Remove)
+
+        MakeSmallBurnable(inst)
+        MakeSmallPropagator(inst)
+
+        return inst
+    end
+
+    hat_fns.shark_teeth_onequip = function(inst, owner)
+        hat_fns.opentop_onequip(inst, owner)
+
+        if owner ~= nil then
+            inst:AddTag("luckysource")
+
+            if owner.components.luckuser ~= nil then
+                owner.components.luckuser:SetLuckSource(TUNING.APO_HATS.SHARK_TEETH.LUCK, inst)
+            end
+        end
+    end
+
+    hat_fns.shark_teeth_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            inst:RemoveTag("luckysource")
+
+            if owner.components.luckuser ~= nil then
+                owner.components.luckuser:RemoveLuckSource(inst)
+            end
+        end
+    end
+
+    hat_fns.shark_teeth_custom_init = function(inst)
+        inst:AddTag("open_top_hat")
+    end
+
+    hat_fns.shark_teeth = function()
+        local inst = simple(hat_fns.shark_teeth_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.shark_teeth_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.shark_teeth_onunequip)
+        inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED_LARGE
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.SHARK_TEETH.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(inst.Remove)
+
+        return inst
+    end
+
     local hat_fn  = nil
 
     local assets  =
@@ -979,6 +1513,22 @@ local function MakeHat(name)
         hat_fn = hat_fns.disguise
     elseif name == "double_umbrella" then
         hat_fn = hat_fns.double_umbrella
+    elseif name == "gas" then
+        hat_fn = hat_fns.gas
+    elseif name == "gasmask" then
+        hat_fn = hat_fns.gasmask
+    elseif name == "metalplate" then
+        hat_fn = hat_fns.metalplate
+    elseif name == "ox" then
+        hat_fn = hat_fns.ox
+    elseif name == "pigcrown" then
+        hat_fn = hat_fns.pigcrown
+    elseif name == "pirate" then
+        hat_fn = hat_fns.pirate
+    elseif name == "pith" then
+        hat_fn = hat_fns.pith
+    elseif name == "shark_teeth" then
+        hat_fn = hat_fns.shark_teeth
     end
 
     table.insert(ALL_HAT_PREFAB_NAMES, prefabname)
@@ -994,4 +1544,12 @@ MakeHat("brainjelly"),
 MakeHat("candle"),
 MakeHat("captain"),
 MakeHat("disguise"),
-MakeHat("double_umbrella")
+MakeHat("double_umbrella"),
+MakeHat("gas"),
+MakeHat("gasmask"),
+MakeHat("metalplate"),
+MakeHat("ox"),
+MakeHat("pigcrown"),
+MakeHat("pirate"),
+MakeHat("pith"),
+MakeHat("shark_teeth")

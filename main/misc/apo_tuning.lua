@@ -121,6 +121,8 @@ TUNING.APO_ARMORS =
         CONDITION = 550,
         ABSORPTION = 0.85,
         WALKSPEEDMULT = 0.85,
+        THRESHOLD = 0.50,
+        MODIFIER = 1.20,
     },
 
     OBSIDIAN =
@@ -263,6 +265,94 @@ TUNING.APO_HATS =
         CONDITION = 735,
         ABSORPTION = 0.95,
         WALKSPEEDMULT = 0.70,
+    },
+
+    GAS =
+    {
+        PERISHTIME = 480 * 10,
+    },
+
+    GASMASK =
+    {
+        PERISHTIME = 480 * 3,
+    },
+
+    JIAOLIAN =
+    {
+        CONDITION = 450,
+        ABSORPTION = 0.80,
+
+        TAGS =
+        {
+            "ghost",
+            "hallowed_merm",
+            "herald_frog",
+            "merm",
+            "pig",
+            "shadowcreature",
+            "shadow_aligned",
+        },
+    },
+
+    METALPLATE =
+    {
+        CONDITION = 550,
+        ABSORPTION = 0.85,
+        WALKSPEEDMULT = 0.85,
+    },
+
+    PEAGAWKFEATHER =
+    {
+        PERISHTIME = 480 * 8,
+        BIRD_SPAWN_MAXDELTA = 3,
+
+        BIRD_SPAWN_DELAYDELTA =
+        {
+            MIN = -3,
+            MAX = -5,
+        },
+    },
+
+    OX =
+    {
+        CONDITION = 500,
+        ABSORPTION = 0.80,
+    },
+
+    PIGCROWN =
+    {
+        GOLDVALUE = 100,
+
+        MODIFIERS =
+        {
+            DAMAGE = 1.25,
+            HEALTH = 1.25,
+        },
+    },
+
+    PIRATE =
+    {
+        PERISHTIME = 480 * 3,
+        MODIFIER = 1.25,
+    },
+
+    PITH =
+    {
+        PERISHTIME = 480 * 6,
+        SLOWMULTIPLIER = 0.25,
+    },
+
+    PROPELLER =
+    {
+        PERISHTIME = 480 * 4,
+        WALKSPEEDMULT = 1.10,
+        HEAT = 110,
+    },
+
+    SHARK_TEETH =
+    {
+        PERISHTIME = 480 * 6,
+        LUCK = 2.0,
     },
 }
 

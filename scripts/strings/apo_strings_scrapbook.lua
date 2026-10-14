@@ -40,9 +40,18 @@ SPECIALINFO.ARMOR_LIMESTONE =
 This armor is durable but heavy, and slows its wearer.
 ]]
 
+SPECIALINFO.ARMOR_MARBLE =
+[[
+This armor is durable but heavy, and slows its wearer.
+
+When paired with Marble Helmet damage taken becomes damage over time when health is below 50%.
+]]
+
 SPECIALINFO.ARMOR_METALPLATE =
 [[
 This armor is durable but heavy, and slows its wearer.
+
+When paired with Fancy Helmet increases damage dealt by 10% and decreases damage taken by 10%.
 ]]
 
 SPECIALINFO.ARMOR_OBSIDIAN =
@@ -117,11 +126,75 @@ Pigs and Bunnymen will treat the wearer like one of them.
 SPECIALINFO.EXTRAHEAVYHAT =
 [[
 This armor is durable but heavy, and slows its wearer.
+
+When paired with Marble Suit damage taken becomes damage over time when health is below 50%.
+]]
+
+SPECIALINFO.GASHAT =
+[[
+This hat makes the wearer immune to acid rain.
+]]
+
+SPECIALINFO.GASMASKHAT =
+[[
+This hat allows the wearer to see and breath while inside harsh environments.
+]]
+
+SPECIALINFO.JIAOLIANHAT =
+[[
+The protection this armor offers only really works on Ghosts, Merms, Pigs and Shadow Creatures.
+]]
+
+SPECIALINFO.METALPLATEHAT =
+[[
+This armor is durable but heavy, and slows its wearer.
+
+When paired with Fancy Suit increases damage by 10% and decreases damage taken by 10%.
+]]
+
+SPECIALINFO.OXHAT =
+[[
+Makes the wearer friendly to Beefalo in heat.
+]]
+
+SPECIALINFO.PEAGAWKFEATHERHAT =
+[[
+Roughly doubles the number of birds that will land near the wearer.
+]]
+
+SPECIALINFO.PIGCROWNHAT =
+[[
+This noble crown shows supreme authority, boosting the wearer's companions damage and health by 25%.
+]]
+
+SPECIALINFO.PIRATEHAT =
+[[
+Increases damage by 25% and provides a sanity boost while the wearer is on a boat.
 ]]
 
 SPECIALINFO.PIRATEPACK =
 [[
 A 12 slot container that drops a random reward every 3 days.
+]]
+
+SPECIALINFO.PITHHAT =
+[[
+Decreases slowness by 25% when worn. 
+]]
+
+SPECIALINFO.PROPELLERHAT =
+[[
+Cools the wearer while they run.
+]]
+
+SPECIALINFO.PUMPKINHEADHAT =
+[[
+Can be waxed to last forever.
+]]
+
+SPECIALINFO.SHARK_TEETHHAT =
+[[
+Increases luck by 2 when worn.
 ]]
 
 SPECIALINFO.THATCHSACK =

@@ -27,4 +27,19 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
     _G.double_umbrellahat_clear_fn = function(inst)
         _G.basic_clear_fn(inst, "hat_double_umbrella")
     end
+
+    -- Gas Mask.
+    _G.gasmaskhat_init_fn = function(inst, build_name)
+        _G.basic_init_fn(inst, build_name, "hat_gasmask")
+
+        if build_name == "ms_hat_gasmask_hazard" then
+            inst:AddTag("mufflehat")
+        end
+    end
+
+    _G.gasmaskhat_clear_fn = function(inst)
+        _G.basic_clear_fn(inst, "hat_gasmask")
+
+        inst:RemoveTag("mufflehat")
+    end
 end

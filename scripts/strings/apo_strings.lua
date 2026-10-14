@@ -78,11 +78,46 @@ STRINGS.RECIPE_DESC.DOUBLE_UMBRELLAHAT = "Definitely function over fashion."
 STRINGS.NAMES.EXTRAHEAVYHAT = "Marble Helmet"
 STRINGS.RECIPE_DESC.EXTRAHEAVYHAT = "Sturdy and heavy!"
 
+STRINGS.NAMES.GASHAT = "Particulate Purifier"
+STRINGS.RECIPE_DESC.GASHAT = "Keep nasty airborne particulates away!"
+
+STRINGS.NAMES.GASMASKHAT = "Gas Mask"
+STRINGS.RECIPE_DESC.GASMASKHAT = "Makes everything smell like bird."
+
+STRINGS.NAMES.JIAOLIANHAT = "Jiaolian's Mask"
+STRINGS.RECIPE_DESC.JIAOLIANHAT = "Protection against paranormal activity!"
+
+STRINGS.NAMES.METALPLATEHAT = "Fancy Helmet"
+STRINGS.RECIPE_DESC.METALPLATEHAT = "Strong, sturdy and classy."
+
+STRINGS.NAMES.OXHAT = "Horned Helmet"
+STRINGS.RECIPE_DESC.OXHAT = "Shell out for some beefalo protection."
+
+STRINGS.NAMES.PEAGAWKFEATHERHAT = "Peagawk Feather Hat"
+STRINGS.RECIPE_DESC.PEAGAWKFEATHERHAT = "Some stylish feathers."
+
+STRINGS.NAMES.PIGCROWNHAT = "Royal Crown"
+
 STRINGS.NAMES.PIGSKIN_DRIED = "Tanned Leather"
+
+STRINGS.NAMES.PIRATEHAT = "Pirate Hat"
+STRINGS.RECIPE_DESC.PIRATEHAT = "It's a pirate's life for ye!"
 
 STRINGS.NAMES.PIRATEPACK = "Booty Bag"
 
+STRINGS.NAMES.PITHHAT = "Pith Hat"
+STRINGS.RECIPE_DESC.PITHHAT = "Keeps your hair easy and breezy."
+
+STRINGS.NAMES.PROPELLERHAT = "Propeller Hat"
+STRINGS.RECIPE_DESC.PROPELLERHAT = "Running around has never been so refreshing!"
+
+STRINGS.NAMES.PUMPKINHEADHAT = "Jack o' Head"
+STRINGS.RECIPE_DESC.PUMPKINHEADHAT = "Better wax before it spoils!"
+
 STRINGS.NAMES.SHARK_FIN = "Rockjaw Fin"
+
+STRINGS.NAMES.SHARK_TEETHHAT = "Lucky Tooth Crown"
+STRINGS.RECIPE_DESC.SHARK_TEETHHAT = "Luck makes you look formidable."
 
 STRINGS.NAMES.THATCHSACK = "Reeds Satchel"
 STRINGS.RECIPE_DESC.THATCHSACK = "Carry a light load."

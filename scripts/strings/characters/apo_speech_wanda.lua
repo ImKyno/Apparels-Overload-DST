@@ -52,10 +52,34 @@ WANDA.DESCRIBE.DOUBLE_UMBRELLAHAT = "Double protection against rain."
 
 WANDA.DESCRIBE.EXTRAHEAVYHAT = "Built to last. Though I may grow old waiting for my neck to adjust."
 
+WANDA.DESCRIBE.GASHAT = "This hat can purify my surroundings."
+
+WANDA.DESCRIBE.GASMASKHAT = "Total fallout."
+
+WANDA.DESCRIBE.JIAOLIANHAT = "Boo!"
+
+WANDA.DESCRIBE.METALPLATEHAT = "It's heavy...!"
+
+WANDA.DESCRIBE.OXHAT = "Horns to the sky."
+
+WANDA.DESCRIBE.PEAGAWKFEATHERHAT = "Feathered!"
+
+WANDA.DESCRIBE.PIGCROWNHAT = "A crown fit for a majestic queen."
+
 WANDA.DESCRIBE.PIGSKIN_DRIED = "Looks like your time has finally come."
+
+WANDA.DESCRIBE.PIRATEHAT = "I am a pirate now! I'll rob your time!"
 
 WANDA.DESCRIBE.PIRATEPACK = "For carrying more watches!"
 
+WANDA.DESCRIBE.PITHHAT = "Adventure takes time."
+
+WANDA.DESCRIBE.PROPELLERHAT = "A little breeze can make all the difference when you're in a hurry."
+
+WANDA.DESCRIBE.PUMPKINHEADHAT = "It's honestly one of the least spooky things around here."
+
 WANDA.DESCRIBE.SHARK_FIN = "A shark fin."
+
+WANDA.DESCRIBE.SHARK_TEETHHAT = "A crown made out of teeth."
 
 WANDA.DESCRIBE.THATCHSACK = "An ordinary handmade satchel."

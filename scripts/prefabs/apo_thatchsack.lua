@@ -46,6 +46,14 @@ local function OnPutInInventory(inst)
     inst.AnimState:PushAnimation("idle", true)
 end
 
+local function OnDropped(inst)
+    if inst.components.container ~= nil then
+        inst.components.container:Close()
+    end
+
+    inst.AnimState:PushAnimation("idle", true)
+end
+
 local function OnBurnt(inst)
     if inst.components.container ~= nil then
         inst.components.container:DropEverything()
@@ -103,6 +111,7 @@ local function fn()
 
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem:SetOnPutInInventoryFn(OnPutInInventory)
+    inst.components.inventoryitem:SetOnDroppedFn(OnDropped)
 
     inst:AddComponent("fuel")
     inst.components.fuel.fuelvalue = TUNING.LARGE_FUEL

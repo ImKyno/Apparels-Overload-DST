@@ -30,6 +30,7 @@ local INIT_POSTINIT_PREFABS =
     "armor_marble",
     "bee",
     "beebox",
+    "beequeen",
     "daywalker",
     "hats",
     "pigskin",
@@ -37,6 +38,8 @@ local INIT_POSTINIT_PREFABS =
     "player_classified",
     "prime_mate",
     "shark",
+    "sleepcloud",
+    "sporecloud",
 }
 
 local INIT_POSTINIT_SCREENS =

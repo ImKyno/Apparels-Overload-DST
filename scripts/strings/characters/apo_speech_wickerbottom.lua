@@ -52,10 +52,34 @@ WICKERBOTTOM.DESCRIBE.DOUBLE_UMBRELLAHAT = "Two tiers of shelter!"
 
 WICKERBOTTOM.DESCRIBE.EXTRAHEAVYHAT = "A durable headpiece, though its considerable weight may strain the neck."
 
+WICKERBOTTOM.DESCRIBE.GASHAT = "The calcium carbonate purifies the surrounding air particles."
+
+WICKERBOTTOM.DESCRIBE.GASMASKHAT = "For investigating dangerous areas."
+
+WICKERBOTTOM.DESCRIBE.JIAOLIANHAT = "A classic mask for scary criminal tales."
+
+WICKERBOTTOM.DESCRIBE.METALPLATEHAT = "It's similar to the Spanish colonials."
+
+WICKERBOTTOM.DESCRIBE.OXHAT = "A sturdy head covering."
+
+WICKERBOTTOM.DESCRIBE.PEAGAWKFEATHERHAT = "Not quite the genuine article, but I might fool some birds."
+
+WICKERBOTTOM.DESCRIBE.PIGCROWNHAT = "A valued relic of wealth and authority here."
+
 WICKERBOTTOM.DESCRIBE.PIGSKIN_DRIED = "A resilient material."
+
+WICKERBOTTOM.DESCRIBE.PIRATEHAT = "When in Rome!"
 
 WICKERBOTTOM.DESCRIBE.PIRATEPACK = "A treasure carrying case."
 
+WICKERBOTTOM.DESCRIBE.PITHHAT = "Historically accurate and functionally imperative."
+
+WICKERBOTTOM.DESCRIBE.PROPELLERHAT = "An ingenious way to encourage convective cooling through movement."
+
+WICKERBOTTOM.DESCRIBE.PUMPKINHEADHAT = "Carving the Cucurbita pepo is such a nice pastime."
+
 WICKERBOTTOM.DESCRIBE.SHARK_FIN = "The dorsal fin functions as an aquatic stabilizer."
+
+WICKERBOTTOM.DESCRIBE.SHARK_TEETHHAT = "A crown of teeth."
 
 WICKERBOTTOM.DESCRIBE.THATCHSACK = "I can store a few books in here."

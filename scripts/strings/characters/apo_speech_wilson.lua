@@ -52,10 +52,34 @@ WILSON.DESCRIBE.DOUBLE_UMBRELLAHAT = "The second umbrella keeps the first umbrel
 
 WILSON.DESCRIBE.EXTRAHEAVYHAT = "Sturdy, but my neck might regret this."
 
+WILSON.DESCRIBE.GASHAT = "Sucks all the stink out."
+
+WILSON.DESCRIBE.GASMASKHAT = "Now I can breath anywhere."
+
+WILSON.DESCRIBE.JIAOLIANHAT = "Looks like a halloween mask."
+
+WILSON.DESCRIBE.METALPLATEHAT = "A knight's helmet!"
+
+WILSON.DESCRIBE.OXHAT = "Nice and dry. This helmet will protect me from the beefalos."
+
+WILSON.DESCRIBE.PEAGAWKFEATHERHAT = "I AM A BIRD!"
+
+WILSON.DESCRIBE.PIGCROWNHAT = "Don't mess up my hair, crown."
+
 WILSON.DESCRIBE.PIGSKIN_DRIED = "Leather for all kinds of weather."
+
+WILSON.DESCRIBE.PIRATEHAT = "Fit for a cutthroat scallywag. Or me."
 
 WILSON.DESCRIBE.PIRATEPACK = "I can keep my booty in here."
 
+WILSON.DESCRIBE.PITHHAT = "Pithy."
+
+WILSON.DESCRIBE.PROPELLERHAT = "I've made it so the fans keeps spinning forever!"
+
+WILSON.DESCRIBE.PUMPKINHEADHAT = "Spooky!"
+
 WILSON.DESCRIBE.SHARK_FIN = "A sleek fin."
+
+WILSON.DESCRIBE.SHARK_TEETHHAT = "What a dangerous looking hat."
 
 WILSON.DESCRIBE.THATCHSACK = "I call it a tatchel."

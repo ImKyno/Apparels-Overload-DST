@@ -52,10 +52,34 @@ WOLFGANG.DESCRIBE.DOUBLE_UMBRELLAHAT = "Two umbrellas is better than one."
 
 WOLFGANG.DESCRIBE.EXTRAHEAVYHAT = "Wolfgang's head is strong enough!"
 
+WOLFGANG.DESCRIBE.GASHAT = "Little hat is very colorful."
+
+WOLFGANG.DESCRIBE.GASMASKHAT = "Is good for Wolfgang lungs."
+
+WOLFGANG.DESCRIBE.JIAOLIANHAT = "Hehe. Is funny spook mask."
+
+WOLFGANG.DESCRIBE.METALPLATEHAT = "Is funny little tin hat."
+
+WOLFGANG.DESCRIBE.OXHAT = "I have become more mighty!"
+
+WOLFGANG.DESCRIBE.PEAGAWKFEATHERHAT = "Is silly hat of feather. Is Wolfgang bird now?"
+
+WOLFGANG.DESCRIBE.PIGCROWNHAT = "Little crown for mighty head."
+
 WOLFGANG.DESCRIBE.PIGSKIN_DRIED = "Is from animal Wolfgang kill."
+
+WOLFGANG.DESCRIBE.PIRATEHAT = "Ha ha! I like!"
 
 WOLFGANG.DESCRIBE.PIRATEPACK = "Sounds like jingles."
 
+WOLFGANG.DESCRIBE.PITHHAT = "Is hard like Wolfgang head."
+
+WOLFGANG.DESCRIBE.PROPELLERHAT = "Little hat fan makes Wolfgang cool when running!"
+
+WOLFGANG.DESCRIBE.PUMPKINHEADHAT = "Now is actual head! Wolfgang afraid!"
+
 WOLFGANG.DESCRIBE.SHARK_FIN = "I lost rest of shark."
+
+WOLFGANG.DESCRIBE.SHARK_TEETHHAT = "Wolfgang's favorite hat!"
 
 WOLFGANG.DESCRIBE.THATCHSACK = "Wolfgang can carry more on powerful shoulders!"

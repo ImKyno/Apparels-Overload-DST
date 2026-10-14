@@ -52,10 +52,34 @@ WINONA.DESCRIBE.DOUBLE_UMBRELLAHAT = "This should keep me at least twice as dry.
 
 WINONA.DESCRIBE.EXTRAHEAVYHAT = "Built like a brick outhouse. Weighs about as much, too."
 
+WINONA.DESCRIBE.GASHAT = "Keeps acid away."
+
+WINONA.DESCRIBE.GASMASKHAT = "Out with the bad air, in with the good."
+
+WINONA.DESCRIBE.JIAOLIANHAT = "Ha! It's kinda scary!"
+
+WINONA.DESCRIBE.METALPLATEHAT = "Keeps my noggin safe."
+
+WINONA.DESCRIBE.OXHAT = "I hope it doesn't mess up my hair."
+
+WINONA.DESCRIBE.PEAGAWKFEATHERHAT = "Well la-dee-da."
+
+WINONA.DESCRIBE.PIGCROWNHAT = "This seems like way too much responsibility."
+
 WINONA.DESCRIBE.PIGSKIN_DRIED = "Hide from an animal."
+
+WINONA.DESCRIBE.PIRATEHAT = "High fashion for the high seas."
 
 WINONA.DESCRIBE.PIRATEPACK = "Booty in the back."
 
+WINONA.DESCRIBE.PITHHAT = "A hard hat!"
+
+WINONA.DESCRIBE.PROPELLERHAT = "Clever! Turns a little running into a cooling breeze."
+
+WINONA.DESCRIBE.PUMPKINHEADHAT = "It's cool."
+
 WINONA.DESCRIBE.SHARK_FIN = "The only kind of fin I wanna see."
+
+WINONA.DESCRIBE.SHARK_TEETHHAT = "Feels wrong having these on my head."
 
 WINONA.DESCRIBE.THATCHSACK = "For when my pockets are full."

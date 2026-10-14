@@ -13,7 +13,7 @@ local APO_PRESETS =
             boatpatch           = { 3, 6 },
             messagebottle       = { 1, 3 },
             oar_monkey          = 1,
-            -- piratehat        = 1,
+            piratehat           = 1,
             slurtle_shellpieces = { 2, 4 },
             stash_map           = 1,
         },
