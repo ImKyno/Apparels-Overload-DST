@@ -9,11 +9,15 @@ Increases movement speed by 25% when worn.
 SPECIALINFO.ANTMASKHAT =
 [[
 The protection this armor offers only really works on Bees and Bee-like creatures. It also pacifies them.
+
+Allows the wearer to safely harvest bee boxes.
 ]]
 
 SPECIALINFO.ARMOR_ANT =
 [[
 The protection this armor offers only really works on Bees and Bee-like creatures. It also pacifies them.
+
+Allows the wearer to safely harvest bee boxes.
 ]]
 
 SPECIALINFO.ARMOR_CACTUS =
@@ -66,6 +70,11 @@ SPECIALINFO.ARMOR_SEASHELL =
 This armor can protect the wearer against explosive damage.
 ]]
 
+SPECIALINFO.ARMOR_SNAKESKIN =
+[[
+When paired with Leather Hat restores a small amount of sanity every 5 seconds when it's raining.
+]]
+
 SPECIALINFO.ARMOR_VORTEX =
 [[
 "Every 5 seconds, one incoming hit will be completely ignored.
@@ -91,6 +100,11 @@ This hat provides increased movement speed on creep and will not trigger traps w
 SPECIALINFO.BATHAT =
 [[
 Allows the wearer to view the world in a sonar vision mode that can see in the dark.
+]]
+
+SPECIALINFO.BEEHAT =
+[[
+Allows the wearer to safely harvest bee boxes.
 ]]
 
 SPECIALINFO.BRAINJELLYHAT =
@@ -123,11 +137,15 @@ SPECIALINFO.DISGUISEHAT =
 Pigs and Bunnymen will treat the wearer like one of them.
 ]]
 
-SPECIALINFO.EXTRAHEAVYHAT =
+SPECIALINFO.EXTRAHEAVYHAT = TUNING.APO_ARMOR_MARBLE_CHANGES and
 [[
 This armor is durable but heavy, and slows its wearer.
 
 When paired with Marble Suit damage taken becomes damage over time when health is below 50%.
+]]
+or
+[[
+This armor is durable but heavy, and slows its wearer.
 ]]
 
 SPECIALINFO.GASHAT =
@@ -138,6 +156,13 @@ This hat makes the wearer immune to acid rain.
 SPECIALINFO.GASMASKHAT =
 [[
 This hat allows the wearer to see and breath while inside harsh environments.
+]]
+
+SPECIALINFO.HIVEHAT =
+[[
+Makes scary things around you relaxing instead.
+
+Allows the wearer to safely harvest bee boxes.
 ]]
 
 SPECIALINFO.JIAOLIANHAT =
@@ -182,11 +207,6 @@ SPECIALINFO.PITHHAT =
 Decreases slowness by 25% when worn. 
 ]]
 
-SPECIALINFO.PROPELLERHAT =
-[[
-Cools the wearer while they run.
-]]
-
 SPECIALINFO.PUMPKINHEADHAT =
 [[
 Can be waxed to last forever.
@@ -197,7 +217,21 @@ SPECIALINFO.SHARK_TEETHHAT =
 Increases luck by 2 when worn.
 ]]
 
+SPECIALINFO.SNAKESKINHAT =
+[[
+When paired with Leather Jacket restores a small amount of sanity every 5 seconds when it's raining.
+]]
+
 SPECIALINFO.THATCHSACK =
 [[
 A 2 slot carryable container.
+]]
+
+SPECIALINFO.THUNDERHAT =
+[[
+Lightning that would strike nearby will instead strike this hat, charging it and repairing a bit of durability.
+
+When charged provides light and discharges electricity to nearby creatures when the wearer attacks them.
+
+Each lightning provides charge for nearly one day.
 ]]

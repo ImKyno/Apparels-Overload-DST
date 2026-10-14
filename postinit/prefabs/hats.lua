@@ -10,6 +10,8 @@ local function HatsBeePostInit(inst)
     inst:AddTag("beefriend")
 end
 
-for k, v in pairs(HATS_BEE) do
-    AddPrefabPostInit(v, HatsBeePostInit)
+if TUNING.APO_BEEHATS_CHANGES then
+    for k, v in pairs(HATS_BEE) do
+        AddPrefabPostInit(v, HatsBeePostInit)
+    end
 end

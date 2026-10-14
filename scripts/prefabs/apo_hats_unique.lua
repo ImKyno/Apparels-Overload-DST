@@ -39,7 +39,7 @@ local function MakeHat(name)
                 local skin_build = owner.AnimState:GetSkinBuild()
 
                 if skin_build ~= "" then
-                    owner.AnimState:OverrideSkinSymbol("headbase_hat", skin_build, headbase_hat_override )
+                    owner.AnimState:OverrideSkinSymbol("headbase_hat", skin_build, headbase_hat_override)
                 else
                     local build = owner.AnimState:GetBuild()
                     owner.AnimState:OverrideSymbol("headbase_hat", build, headbase_hat_override)
@@ -416,6 +416,10 @@ local function MakeHat(name)
         hat_fns.simple_onequip(inst, owner)
 
         if owner ~= nil then
+            if inst.components.heater ~= nil then
+                inst.components.heater:SetThermics(false, true)
+            end
+
             if inst.propeller_fan ~= nil then
                 inst.propeller_fan:Remove()
             end
@@ -424,10 +428,6 @@ local function MakeHat(name)
             inst.propeller_fan.entity:SetParent(owner.entity)
 
             inst.propeller_fan:OnSetSpinning(true)
-
-            if inst.components.heater ~= nil then
-                inst.components.heater:SetThermics(false, true)
-            end
         end
     end
 
@@ -435,19 +435,23 @@ local function MakeHat(name)
         hat_fns.simple_onunequip(inst, owner)
 
         if owner ~= nil then
+            if inst.components.heater ~= nil then
+                inst.components.heater:SetThermics(false, false)
+            end
+
             if inst.propeller_fan ~= nil then
                 inst.propeller_fan:OnStartUnequipping(inst)
                 inst.propeller_fan = nil
-            end
-
-            if inst.components.heater ~= nil then
-                inst.components.heater:SetThermics(false, false)
             end
         end
     end
 
     hat_fns.propeller_onequiptomodel = function(inst, owner, from_ground)
         if owner ~= nil then
+            if inst.components.heater ~= nil then
+                inst.components.heater:SetThermics(false, false)
+            end
+
             if inst.propeller_fan ~= nil then
                 inst.propeller_fan:Remove()
             end
@@ -455,15 +459,19 @@ local function MakeHat(name)
             inst.propeller_fan = SpawnPrefab("propeller_fan")
             inst.propeller_fan.entity:SetParent(owner.entity)
 
-            inst.propeller_fan:OnSetSpinning(false)
+            inst.propeller_fan:OnSetSpinning(true) -- Set to false?
 
             if inst.components.fueled ~= nil then
                 inst.components.fueled:StopConsuming()
             end
+        end
+    end
 
-            if inst.components.heater ~= nil then
-                inst.components.heater:SetThermics(false, false)
-            end
+    hat_fns.propeller_ontakefuel = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        if owner ~= nil then
+            owner:PushEvent("repair")
         end
     end
 
@@ -503,7 +511,6 @@ local function MakeHat(name)
         inst.components.equippable.walkspeedmult = TUNING.APO_HATS.PROPELLER.WALKSPEEDMULT
 
         inst:AddComponent("heater")
-        inst.components.heater:SetThermics(false, false)
         inst.components.heater.equippedheat = TUNING.APO_HATS.PROPELLER.HEAT
 
         inst:AddComponent("insulator")
@@ -513,76 +520,103 @@ local function MakeHat(name)
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.GEARS
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.PROPELLER.PERISHTIME)
+        inst.components.fueled:SetTakeFuelFn(hat_fns.propeller_ontakefuel)
         inst.components.fueled:SetDepletedFn(hat_fns.propeller_onperish)
-        inst.components.fueled.no_sewing = true
+        inst.components.fueled.accepting = true
 
         return inst
     end
 
     hat_fns.pumpkinhead_onwaxed = function(inst)
-        inst.pumpkinhead_iswaxed = true
-
-        if inst.components.perishable ~= nil then
+        if not inst.waxed:value() then
             inst:RemoveComponent("perishable")
-        end
-
-        if inst.components.waxable ~= nil then
             inst:RemoveComponent("waxable")
-        end
 
-        inst:RemoveTag("show_spoilage")
-        inst:RemoveTag("icebox_valid")
-        inst:RemoveTag("waxable")
+            inst:RemoveTag("show_spoilage")
+            inst:RemoveTag("icebox_valid")
+
+            inst.waxed:set(true)
+
+            hat_fns.pumpkinhead_onwaxeddirty(inst)
+
+            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+            if owner ~= nil then
+                local inventory = owner.components.inventory or owner.components.container
+
+                if inventory ~= nil and not inventory:CanTakeItemInSlot(inst) then
+                    inventory:DropItem(inst, true, true)
+                end
+            end
+
+            if inst.components.equippable ~= nil then
+                inst.components.equippable.dapperness = 0
+            end
+        end
     end
 
-    hat_fns.pumpkinhead_onwax = function(inst, doer, waxitem)
-        if doer == nil then
-            return false
-        end
-
-        hat_fns.pumpkinhead_onwaxed(hat)
+    hat_fns.pumpkinhead_onwax = function(inst, doer, item)
+        hat_fns.pumpkinhead_onwaxed(inst)
 
         return true
     end
 
-    hat_fns.pumpkinhead_onsave = function(inst, data)
-        if inst.pumpkinhead_iswaxed then
-            data.pumpkinhead_iswaxed = true
+    hat_fns.pumpkinhead_onwaxeddirty = function(inst)
+        if inst.waxed:value() then
+            inst.displayadjectivefn = function()
+                return STRINGS.UI.HUD.WAXED
+            end
+
+            if not TheNet:IsDedicated() then
+                inst:PushEvent("hide_spoilage")
+            end
         end
     end
 
-    hat_fns.pumpkinhead_onload = function(inst, data)
-        if data ~= nil and data.pumpkinhead_iswaxed then
-            inst.pumpkinhead_iswaxed = true
+    hat_fns.pumpkinhead_onsave = function(inst, data)
+        data.waxed = inst.waxed:value() or nil
+    end
 
-            inst:DoTaskInTime(0, function()
-                hat_fns.pumpkinhead_onwaxed(inst)
-            end)
+    hat_fns.pumpkinhead_onload = function(inst, data)
+        if data ~= nil and data.waxed then
+            hat_fns.pumpkinhead_onwaxed(inst)
+
+            inst.waxed:set(true)
+
+            hat_fns.pumpkinhead_onwaxeddirty(inst)
         end
     end
 
     hat_fns.pumpkinhead_custom_init = function(inst)
+        inst:AddTag("fullhelm_hat")
+        inst:AddTag("spook_protection")
         inst:AddTag("show_spoilage")
         inst:AddTag("icebox_valid")
         inst:AddTag("waxable")
+
+        inst.waxed = net_bool(inst.GUID, "pumpkinhead.waxed", "pumpkinheadwaxeddirty")
     end
 
     hat_fns.pumpkinhead = function()
         local inst = simple(hat_fns.pumpkinhead_custom_init)
 
         if not TheWorld.ismastersim then
+            inst:ListenForEvent("pumpkinheadwaxeddirty", hat_fns.pumpkinhead_onwaxeddirty)
+
             return inst
         end
 
-        if inst:HasTag("waxable") then
-            inst.components.equippable.dapperness = TUNING.CRAZINESS_SMALL
-        end
+        inst.components.equippable.dapperness = TUNING.CRAZINESS_SMALL
 
         inst:AddComponent("waxable")
         inst.components.waxable:SetWaxfn(hat_fns.pumpkinhead_onwax)
 
+        inst:AddComponent("forcecompostable")
+        inst.components.forcecompostable.green = true
+
         inst:AddComponent("perishable")
-        inst.components.perishable:SetPerishTime(TUNING.PERISH_FAST)
+        inst.components.perishable:SetPerishTime(IsSpecialEventActive(SPECIAL_EVENTS.HALLOWED_NIGHTS)
+        and TUNING.PERISH_SLOW or TUNING.PERISH_FASTISH)
         inst.components.perishable:StartPerishing()
         inst.components.perishable:SetOnPerishFn(inst.Remove)
 

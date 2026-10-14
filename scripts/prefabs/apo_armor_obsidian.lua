@@ -69,7 +69,7 @@ local function OnUnequip(inst, owner)
             owner:PushEvent("unequipskinneditem", inst:GetSkinName())
         end
 
-        owner.AnimState:SetSymbolLightOverride("swap_object", 0)
+        owner.AnimState:SetSymbolLightOverride("swap_body", 0)
         owner.AnimState:ClearOverrideSymbol("swap_body")
 
         if inst.components.heater ~= nil then
@@ -88,6 +88,14 @@ local function OnUnequip(inst, owner)
         inst._light:Remove()
         inst._light = nil
     end
+end
+
+local function OnDropped(inst)
+    inst.Light:Enable(true)
+end
+
+local function OnPutInInventory(inst)
+    inst.Light:Enable(false)
 end
 
 local function fn()
@@ -131,7 +139,10 @@ local function fn()
     inst.overheat_damage = TUNING.APO_ARMORS.OBSIDIAN.OVERHEAT_DAMAGE
 
     inst:AddComponent("inspectable")
+
     inst:AddComponent("inventoryitem")
+    inst.components.inventoryitem:SetOnDroppedFn(OnDropped)
+    inst.components.inventoryitem:SetOnPutInInventoryFn(OnPutInInventory)
 
     inst:AddComponent("heater")
     inst.components.heater.equippedheat = TUNING.APO_ARMORS.OBSIDIAN.HEAT

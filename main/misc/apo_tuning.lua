@@ -7,6 +7,8 @@ TUNING.APO_DEBUG_MODE = true -- Turn off on releases.
 TUNING.APO_DEFAULT_FLOATER = { "med", nil, 0.65 }
 
 TUNING.APO_SCRAPBOOK = GetModConfigData("MOD_SCRAPBOOK")
+TUNING.APO_ARMOR_MARBLE_CHANGES = GetModConfigData("ARMOR_MARBLE_CHANGES")
+TUNING.APO_BEEHATS_CHANGES = GetModConfigData("BEEHATS_CHANGES")
 
 TUNING.APO_IS_ABC_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-3322803908") -- Above the Clouds.
 TUNING.APO_IS_HOF_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-2334209327") or _G.KnownModIndex:IsModEnabled("Heap-of-Foods-Workshop-Main") -- Heap of Foods.
@@ -146,6 +148,17 @@ TUNING.APO_ARMORS =
     SNAKESKIN =
     {
         PERISHTIME = 480 * 8,
+
+        SET_BONUS =
+        {
+            PERIOD = 5,
+
+            AMOUNT =
+            {
+                MIN = 1,
+                MAX = 3,
+            },
+        },
     },
 
     TAR =
@@ -277,6 +290,11 @@ TUNING.APO_HATS =
         PERISHTIME = 480 * 3,
     },
 
+    HIVE =
+    {
+        SANITY = 2,
+    },
+
     JIAOLIAN =
     {
         CONDITION = 450,
@@ -346,13 +364,42 @@ TUNING.APO_HATS =
     {
         PERISHTIME = 480 * 4,
         WALKSPEEDMULT = 1.10,
-        HEAT = 110,
+        HEAT = -15,
     },
 
     SHARK_TEETH =
     {
         PERISHTIME = 480 * 6,
         LUCK = 2.0,
+    },
+
+    SNAKESKIN =
+    {
+        PERISHTIME = 480 * 8,
+    },
+
+    THUNDER =
+    {
+        PERISHTIME = 480 * 8,
+        CONSUPTION = 200, -- About 5% each hit.
+
+        CHARGE =
+        {
+            DAMAGE =
+            {
+                PICKUP = 10,
+                EXPLOSION = 30,
+            },
+
+            DURATION = 480 / 2,
+            MAX_DURATION = 480 * 10,
+        },
+
+        LIGHT =
+        {
+            RADIUS = 3,
+            LIGHT_OVERRIDE = 0.35,
+        },
     },
 }
 

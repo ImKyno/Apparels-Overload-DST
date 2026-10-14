@@ -82,4 +82,8 @@ WAXWELL.DESCRIBE.SHARK_FIN = "A trophy from a most excellent kill."
 
 WAXWELL.DESCRIBE.SHARK_TEETHHAT = "I respect this fashion choice."
 
+WAXWELL.DESCRIBE.SNAKESKINHAT = "Quite dashing, actually."
+
 WAXWELL.DESCRIBE.THATCHSACK = "Not much, but the extra space is better than nothing."
+
+WAXWELL.DESCRIBE.THUNDERHAT = "Electrifying finery."

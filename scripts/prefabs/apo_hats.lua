@@ -39,7 +39,7 @@ local function MakeHat(name)
                 local skin_build = owner.AnimState:GetSkinBuild()
 
                 if skin_build ~= "" then
-                    owner.AnimState:OverrideSkinSymbol("headbase_hat", skin_build, headbase_hat_override )
+                    owner.AnimState:OverrideSkinSymbol("headbase_hat", skin_build, headbase_hat_override)
                 else
                     local build = owner.AnimState:GetBuild()
                     owner.AnimState:OverrideSymbol("headbase_hat", build, headbase_hat_override)
@@ -943,6 +943,7 @@ local function MakeHat(name)
 
         inst.components.equippable:SetOnEquip(hat_fns.double_umbrella_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.double_umbrella_onunequip)
+        inst.components.equippable.insulated = true
 
         inst:AddComponent("waterproofer")
         inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_ABSOLUTE)
@@ -950,7 +951,6 @@ local function MakeHat(name)
         inst:AddComponent("insulator")
         inst.components.insulator:SetInsulation(TUNING.INSULATION_LARGE)
         inst.components.insulator:SetSummer()
-        inst.components.equippable.insulated = true
 
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.USAGE
@@ -1434,6 +1434,15 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.shark_teeth_onspark = function(inst)
+        if not inst.AnimState:IsCurrentAnimation("anim_sparkle") then
+            inst.AnimState:PlayAnimation("anim_sparkle")
+            inst.AnimState:PushAnimation("anim", true)
+        end
+
+        inst:DoTaskInTime(5 + math.random(), hat_fns.shark_teeth_onspark)
+    end
+
     hat_fns.shark_teeth_onequip = function(inst, owner)
         hat_fns.opentop_onequip(inst, owner)
 
@@ -1477,6 +1486,446 @@ local function MakeHat(name)
         inst.components.fueled.fueltype = FUELTYPE.USAGE
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.SHARK_TEETH.PERISHTIME)
         inst.components.fueled:SetDepletedFn(inst.Remove)
+
+        inst:DoTaskInTime(1, OnSparkle)
+
+        return inst
+    end
+
+    hat_fns.snakeskin_getsetbonusequip = function(inst, owner)
+        local body = owner.components.inventory ~= nil and owner.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY) or nil
+        return body ~= nil and body.prefab == "armor_snakeskin" and body or nil
+    end
+
+    hat_fns.snakeskin_custom_init = function(inst)
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.snakeskin = function()
+        local inst = simple(hat_fns.snakeskin_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable.insulated = true
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_LARGE)
+
+        inst:AddComponent("setbonus")
+        inst.components.setbonus:SetSetName(EQUIPMENTSETNAMES.SNAKESKIN)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.SNAKESKIN.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(inst.Remove)
+
+        return inst
+    end
+
+    hat_fns.thunder_onsetbloom = function(inst, owner, enabled, lightoverride)
+        lightoverride = lightoverride or 0
+
+        if owner ~= nil then
+            owner.AnimState:SetSymbolLightOverride("swap_hat", enabled and lightoverride or 0)
+
+            if enabled then
+                owner.AnimState:SetSymbolBloom("swap_hat")
+
+                if owner.components.bloomer ~= nil then
+                    owner.components.bloomer:PushBloom(inst, "shaders/anim.ksh", 1)
+                else
+                    owner.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
+                end
+            else
+                owner.AnimState:ClearSymbolBloom("swap_hat")
+
+                if owner.components.bloomer ~= nil then
+                    owner.components.bloomer:PopBloom(inst)
+                else
+                    owner.AnimState:ClearBloomEffectHandle()
+                end
+            end            
+        end
+
+        if (inst.thunder_charge_time or 0) > 0 then
+            inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
+        else
+            inst.AnimState:ClearBloomEffectHandle()
+        end
+    end
+
+    hat_fns.thunder_oncansparks = function(inst)
+        if inst == nil or (inst.thunder_charge_time or 0) <= 0 then
+            return false
+        end
+
+        if inst.thunder_owner ~= nil then
+            return true
+        end
+
+        if inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner ~= nil then
+            return false
+        end
+
+        return not inst:IsInLimbo()
+    end
+
+    hat_fns.thunder_onstartspark = function(inst)
+        if inst.thunder_spark_task ~= nil or not hat_fns.thunder_oncansparks(inst) then
+            return
+        end
+
+        local function DoSpark(inst)
+            inst.thunder_spark_task = nil
+
+            if not hat_fns.thunder_oncansparks(inst) then
+                return
+            end
+
+            local fx = SpawnPrefab("wx78_big_spark")
+
+            if fx ~= nil then
+                if inst.thunder_owner ~= nil then
+                    fx.entity:SetParent(inst.thunder_owner.entity)
+                    fx.Transform:SetPosition(0, 0, 0)
+                else
+                    local x, y, z = inst.Transform:GetWorldPosition()
+                    fx.Transform:SetPosition(x, y, z)
+                end
+            end
+
+            inst.thunder_spark_task = inst:DoTaskInTime(math.random(10, 30), DoSpark)
+        end
+
+        inst.thunder_spark_task = inst:DoTaskInTime(math.random(10, 30), DoSpark)
+    end
+
+    hat_fns.thunder_onstopspark = function(inst)
+        if inst.thunder_spark_task ~= nil then
+            inst.thunder_spark_task:Cancel()
+            inst.thunder_spark_task = nil
+        end
+    end
+
+    hat_fns.thunder_onstartattack = function(inst, owner)
+        if owner.components.electricattacks == nil then
+            owner:AddComponent("electricattacks")
+        end
+
+        owner.components.electricattacks:AddSource(inst)
+
+        if inst._onattackother == nil then
+            inst._onattackother = function(attacker, data)
+                if data.weapon ~= nil then
+                    if data.projectile == nil then
+                        if data.weapon.components.projectile ~= nil then
+                            return
+                        elseif data.weapon.components.complexprojectile ~= nil then
+                            return
+                        elseif data.weapon.components.weapon ~= nil and data.weapon.components.weapon:CanRangedAttack() then
+                            return
+                        end
+                    end
+
+                    if data.weapon.components.weapon ~= nil and data.weapon.components.weapon.stimuli == "electric" then
+                        return
+                    end
+                end
+
+                SpawnElectricHitSparks(data.projectile ~= nil and data.projectile:IsValid()
+                and data.projectile or attacker, data.owner, true)
+            end
+
+            inst:ListenForEvent("onattackother", inst._onattackother, owner)
+        end
+
+        SpawnPrefab("electricchargedfx"):SetTarget(owner)
+    end
+
+    hat_fns.thunder_onstopattack = function(inst, owner)
+        if owner.components.electricattacks ~= nil then
+            owner.components.electricattacks:RemoveSource(inst)
+        end
+
+        if inst._onattackother ~= nil then
+            inst:RemoveEventCallback("onattackother", inst._onattackother, owner)
+            inst._onattackother = nil
+        end
+    end
+
+    hat_fns.thunder_onseteffects = function(inst, enabled, radius)
+        local owner = inst.thunder_owner
+
+        local THUNDER_LIGHT_RADIUS = TUNING.APO_HATS.THUNDER.LIGHT.RADIUS
+
+        if not enabled or owner == nil or not owner:IsValid() then
+            if inst.thunder_light ~= nil then
+                inst.thunder_light:Remove()
+                inst.thunder_light = nil
+            end
+
+            return
+        end
+
+        if inst.thunder_light == nil then
+            inst.thunder_light = SpawnPrefab("thunderhat_light")
+
+            if inst.thunder_light ~= nil then
+                inst.thunder_light.entity:SetParent(owner.entity)
+                inst.thunder_light.Transform:SetPosition(0, 0, 0)
+            end
+        end
+
+        if inst.thunder_light ~= nil then
+            inst.thunder_light.Light:SetRadius(radius or THUNDER_LIGHT_RADIUS)
+        end
+
+        hat_fns.thunder_onsetbloom(inst, owner, true, TUNING.APO_HATS.THUNDER.LIGHT.LIGHT_OVERRIDE)
+    end
+
+    hat_fns.thunder_ondisable = function(inst)
+        local owner = inst.thunder_owner
+
+        if inst.thunder_charged_task ~= nil then
+            inst.thunder_charged_task:Cancel()
+            inst.thunder_charged_task = nil
+        end
+
+        hat_fns.thunder_onstopspark(inst)
+        hat_fns.thunder_onstopattack(inst, owner)
+        hat_fns.thunder_onsetbloom(inst, owner, false, 0)
+    end
+
+    hat_fns.thunder_onupdatelight = function(inst)
+        local charged = (inst.thunder_charge_time or 0) > 0
+
+        local onground = inst.thunder_owner == nil and inst.components.inventoryitem ~= nil
+        and inst.components.inventoryitem.owner == nil and not inst:IsInLimbo()
+
+        if inst.Light ~= nil then
+            inst.Light:Enable(charged and onground)
+        end
+
+        if charged and onground then
+            inst:AddTag("charged")
+        else
+            inst:RemoveTag("charged")
+        end
+    end
+
+    hat_fns.thunder_onupdate = function(inst, dt)
+        local THUNDER_LIGHT_RADIUS = TUNING.APO_HATS.THUNDER.LIGHT.RADIUS
+
+        inst.thunder_charge_time = math.max(0, (inst.thunder_charge_time or 0) - dt)
+
+        hat_fns.thunder_onupdatelight(inst)
+
+        if inst.thunder_charge_time <= 0 then
+            inst.thunder_charge_time = 0
+
+            hat_fns.thunder_ondisable(inst)
+            hat_fns.thunder_onseteffects(inst, false)
+
+            return
+        end
+
+        local radius = THUNDER_LIGHT_RADIUS
+
+        if inst.thunder_charge_time < 60 then
+            radius = math.max(0.1, THUNDER_LIGHT_RADIUS * (inst.thunder_charge_time / 60))
+        end
+
+        if inst.thunder_owner ~= nil then
+            hat_fns.thunder_onseteffects(inst, true, radius)
+        end
+    end
+
+    hat_fns.thunder_onenable = function(inst)
+        local THUNDER_LIGHT_RADIUS = TUNING.APO_HATS.THUNDER.LIGHT.RADIUS
+
+        if inst.thunder_charged_task == nil and inst.thunder_charge_time > 0 then
+            inst.thunder_charged_task = inst:DoPeriodicTask(1, hat_fns.thunder_onupdate, nil, 1)
+        end
+
+        if inst.thunder_charge_time > 0 and inst.thunder_owner ~= nil then
+            local radius = THUNDER_LIGHT_RADIUS
+
+            if inst.thunder_charge_time < 60 then
+                radius = math.max(0.1, THUNDER_LIGHT_RADIUS * (inst.thunder_charge_time / 60))
+            end
+
+            hat_fns.thunder_onupdatelight(inst)
+            hat_fns.thunder_onseteffects(inst, true, radius)
+        end
+    end
+
+    hat_fns.thunder_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            inst.thunder_owner = owner
+
+            if owner.components.playerlightningtarget ~= nil then
+                if inst.playerlightningtarget_hitchance == nil then
+                    inst.playerlightningtarget_hitchance = owner.components.playerlightningtarget.hitchance
+                end
+
+                owner.components.playerlightningtarget:SetHitChance(1)
+            end
+
+            owner:ListenForEvent("playerlightningtargeted", inst.thunder_lightningstrike)
+
+            if inst.thunder_charge_time > 0 then
+                hat_fns.thunder_onenable(inst)
+                hat_fns.thunder_onstartspark(inst)
+                hat_fns.thunder_onstartattack(inst, owner)
+            else
+                hat_fns.thunder_onseteffects(inst, false)
+            end
+        end
+    end
+
+    hat_fns.thunder_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            hat_fns.thunder_onstopattack(inst, owner)
+            hat_fns.thunder_onsetbloom(inst, owner, false, 0)
+
+            if owner.components.playerlightningtarget ~= nil and inst.playerlightningtarget_hitchance ~= nil then
+                owner.components.playerlightningtarget:SetHitChance(inst.playerlightningtarget_hitchance)
+            end
+
+            owner:RemoveEventCallback("playerlightningtargeted", inst.thunder_lightningstrike)
+        end
+
+        inst.thunder_owner = nil
+
+        hat_fns.thunder_onstopspark(inst)
+        hat_fns.thunder_onseteffects(inst, false)
+    end
+
+    hat_fns.thunder_onequiptomodel = function(inst, owner, from_ground)
+        if owner ~= nil then
+            if inst.components.fueled ~= nil then
+                inst.components.fueled:StopConsuming()
+            end
+
+            owner:RemoveEventCallback("playerlightningtargeted", inst.thunder_lightningstrike)
+        end
+
+        inst.thunder_owner = nil
+
+        hat_fns.thunder_onseteffects(inst, false)
+    end
+
+    hat_fns.thunder_ondropped = function(inst)
+        hat_fns.thunder_onupdatelight(inst)
+
+        if hat_fns.thunder_oncansparks(inst) then
+            hat_fns.thunder_onstartspark(inst)
+        end
+    end
+
+    hat_fns.thunder_onputininventory = function(inst, guy)
+        inst.Light:Enable(false)
+        hat_fns.thunder_onstopspark(inst)
+
+        if (inst.thunder_charge_time and inst.thunder_charge_time > 0) and inst:HasTag("charged") and guy ~= nil
+        and guy.components.combat ~= nil and guy.components.inventory ~= nil and not guy.components.inventory:IsInsulated() then
+            if not guy:HasAnyTag("shadowminion", "electricdamageimmune") then
+                guy.components.health:DoDelta(-TUNING.APO_HATS.THUNDER.CHARGE.DAMAGE.PICKUP, nil, inst.prefab, nil, inst)
+                guy.sg:HandleEvent("electrocute")
+            end
+
+            inst:RemoveTag("charged")
+        end
+    end
+
+    hat_fns.thunder_onsave = function(inst, data)
+        data.thunder_charge_time = inst.thunder_charge_time or 0
+    end
+
+    hat_fns.thunder_onload = function(inst, data)
+        if data ~= nil and data.thunder_charge_time ~= nil then
+            inst.thunder_charge_time = math.max(0, data.thunder_charge_time)
+        end
+
+        if inst.thunder_charge_time > 0 then
+            hat_fns.thunder_onenable(inst)
+
+            inst:DoTaskInTime(0, function(inst)
+                hat_fns.thunder_onupdatelight(inst)
+                hat_fns.thunder_onstartspark(inst)
+            end)
+        else
+            inst.Light:Enable(false)
+
+            hat_fns.thunder_onstopspark(inst)
+            hat_fns.thunder_onseteffects(inst, false)
+
+            inst:RemoveTag("charged")
+        end
+    end
+
+    hat_fns.thunder_custom_init = function(inst)
+        inst.entity:AddLight()
+
+        inst.Light:SetFalloff(0.7)
+        inst.Light:SetIntensity(0.5)
+        inst.Light:SetRadius(0.5)
+        inst.Light:SetColour(235/255, 121/255, 12/255)
+        inst.Light:Enable(false)
+
+        inst:AddTag("lightningcatcher")
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.thunder = function()
+        local inst = simple(hat_fns.thunder_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.inventoryitem:SetOnDroppedFn(hat_fns.thunder_ondropped)
+        inst.components.inventoryitem:SetOnPutInInventoryFn(hat_fns.thunder_onputininventory)
+
+        inst.components.equippable:SetOnEquip(hat_fns.thunder_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.thunder_onunequip)
+        inst.components.equippable:SetOnEquipToModel(hat_fns.thunder_onequiptomodel)
+        inst.components.equippable.dapperness = TUNING.DAPPERNESS_SMALL
+        -- inst.components.equippable.insulated = true -- We need to get struck...
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_MED)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.THUNDER.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(inst.Remove)
+        inst.components.fueled.no_sewing = true
+
+        inst.thunder_charge_time = 0
+
+        inst.thunder_lightningstrike = function(owner)
+            local THUNDER_MAX_CHARGE = TUNING.APO_HATS.THUNDER.CHARGE.MAX_DURATION
+            local THUNDER_CHARGE_PER_STRIKE = TUNING.APO_HATS.THUNDER.CHARGE.DURATION
+
+            if inst.components.fueled ~= nil then
+                inst.components.fueled:DoDelta(TUNING.APO_HATS.THUNDER.CONSUPTION)
+            end
+
+            inst.thunder_charge_time = math.min(THUNDER_MAX_CHARGE, (inst.thunder_charge_time or 0) + THUNDER_CHARGE_PER_STRIKE)
+
+            hat_fns.thunder_onenable(inst)
+            hat_fns.thunder_onstartattack(inst, owner)
+        end
+
+        inst.OnSave = hat_fns.thunder_onsave
+        inst.OnLoad = hat_fns.thunder_onload
 
         return inst
     end
@@ -1529,6 +1978,11 @@ local function MakeHat(name)
         hat_fn = hat_fns.pith
     elseif name == "shark_teeth" then
         hat_fn = hat_fns.shark_teeth
+    elseif name == "snakeskin" then
+        hat_fn = hat_fns.snakeskin
+    elseif name == "thunder" then
+        prefabs = { "thunderhat_light", "wx78_big_spark", "electricchargedfx" }
+        hat_fn = hat_fns.thunder
     end
 
     table.insert(ALL_HAT_PREFAB_NAMES, prefabname)
@@ -1552,4 +2006,6 @@ MakeHat("ox"),
 MakeHat("pigcrown"),
 MakeHat("pirate"),
 MakeHat("pith"),
-MakeHat("shark_teeth")
+MakeHat("shark_teeth"),
+MakeHat("snakeskin"),
+MakeHat("thunder")

@@ -82,4 +82,8 @@ WINONA.DESCRIBE.SHARK_FIN = "The only kind of fin I wanna see."
 
 WINONA.DESCRIBE.SHARK_TEETHHAT = "Feels wrong having these on my head."
 
+WINONA.DESCRIBE.SNAKESKINHAT = "Raindrops keep falling on my hat."
+
 WINONA.DESCRIBE.THATCHSACK = "For when my pockets are full."
+
+WINONA.DESCRIBE.THUNDERHAT = "Love the hat."

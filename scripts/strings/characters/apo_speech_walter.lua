@@ -82,4 +82,8 @@ WALTER.DESCRIBE.SHARK_FIN = "I'm still missing the shark!"
 
 WALTER.DESCRIBE.SHARK_TEETHHAT = "The gold tooth is a nice touch."
 
+WALTER.DESCRIBE.SNAKESKINHAT = "Good for rainy days."
+
 WALTER.DESCRIBE.THATCHSACK = "You can never have enough storage space."
+
+WALTER.DESCRIBE.THUNDERHAT = "Won't ground me in a storm."

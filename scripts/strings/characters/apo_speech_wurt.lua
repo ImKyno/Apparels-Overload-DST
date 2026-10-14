@@ -82,4 +82,8 @@ WURT.DESCRIBE.SHARK_FIN = "Poor little shark, florp."
 
 WURT.DESCRIBE.SHARK_TEETHHAT = "Hat of teeth, florp."
 
+WURT.DESCRIBE.SNAKESKINHAT = "Is nice rain hat!"
+
 WURT.DESCRIBE.THATCHSACK = "Tiny bag for my stuff, florp."
+
+WURT.DESCRIBE.THUNDERHAT = "Wurt ready for duty!"

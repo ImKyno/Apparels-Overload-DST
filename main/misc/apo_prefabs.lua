@@ -5,7 +5,8 @@ PrefabFiles =
     "apo_armor_flowers",
     "apo_hats_unique",
     "apo_pigskin_dried",
-    "apo_propeller_fan",
+    "apo_propellerhat_fan",
+    "apo_thunderhat_light",
 
     -- Modded Skins.
     "apo_skins",

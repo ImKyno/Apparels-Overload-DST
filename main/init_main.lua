@@ -2,7 +2,6 @@ local _G = GLOBAL
 
 local INIT_MAIN_MISC =
 {
-    "tuning",
     "assets",
     "constants",
     "simutil",

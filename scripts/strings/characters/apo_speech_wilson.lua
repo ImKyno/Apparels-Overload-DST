@@ -82,4 +82,8 @@ WILSON.DESCRIBE.SHARK_FIN = "A sleek fin."
 
 WILSON.DESCRIBE.SHARK_TEETHHAT = "What a dangerous looking hat."
 
+WILSON.DESCRIBE.SNAKESKINHAT = "It should repel the rain from my hair."
+
 WILSON.DESCRIBE.THATCHSACK = "I call it a tatchel."
+
+WILSON.DESCRIBE.THUNDERHAT = "Does this hat make me look scientific?"

@@ -18,3 +18,6 @@ SKIN_DESCRIPTIONS.ms_double_umbrellahat_red = "The Crimson Curse will always be 
 
 SKIN_NAMES.ms_gasmaskhat_hazard = "Hazard Mask"
 SKIN_DESCRIPTIONS.ms_gasmaskhat_hazard = "For when the fallout has settle, you must rebuild what is left."
+
+SKIN_NAMES.ms_snakeskinhat_scaly = "Scaly Leather Hat"
+SKIN_DESCRIPTIONS.ms_snakeskinhat_scaly = "Would you wear the skin of a dead viper on your head? Of course you would."

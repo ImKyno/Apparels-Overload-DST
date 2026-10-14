@@ -42,4 +42,13 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
 
         inst:RemoveTag("mufflehat")
     end
+
+    -- Leather Hat
+    _G.snakeskinhat_init_fn = function(inst, build_name)
+        _G.basic_init_fn(inst, build_name, "hat_snakeskin")
+    end
+
+    _G.snakeskinhat_clear_fn = function(inst)
+        _G.basic_clear_fn(inst, "hat_snakeskin")
+    end
 end

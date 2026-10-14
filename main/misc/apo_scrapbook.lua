@@ -53,7 +53,14 @@ local function RemoveScrapbookDeps(data, prefabs, deps)
     end
 end
 
-ScrapbookData.armormarble.specialinfo = "ARMOR_MARBLE"
+if TUNING.APO_ARMOR_MARBLE_CHANGES then
+    ScrapbookData.armormarble.specialinfo = "ARMOR_MARBLE"
+end
+
+if TUNING.APO_BEEHATS_CHANGES then
+    ScrapbookData.beehat.specialinfo = "BEEHAT"
+    ScrapbookData.hivehat.specialinfo = "HIVEHAT"
+end
 
 -- Register the entries in the Scrapbook.
 local function AddExtraScrapBookItem(sbdata, sbprefab, sbtable)
@@ -280,6 +287,7 @@ local APO_SCRAPBOOK_BODY =
         animoffsetx         = 3,
         animoffsety         = 10,
         deps                = { "pigskin_dried", "rope", "boneshard", "researchlab2" },
+        specialinfo         = "ARMOR_SNAKESKIN",
         condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
@@ -784,6 +792,7 @@ local APO_SCRAPBOOK_HEAD =
         animoffsetx         = -2,
         deps                = { "beequeen", "pigking" },
         specialinfo         = "PIGCROWNHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     piratehat =
@@ -807,6 +816,7 @@ local APO_SCRAPBOOK_HEAD =
         animoffsetbgy       = 25,
         deps                = { "boneshard", "pigskin_dried", "rope", "seafaring_prototyper" },
         specialinfo         = "PIRATEHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     pithhat =
@@ -830,6 +840,7 @@ local APO_SCRAPBOOK_HEAD =
         animoffsetbgy       = 25,
         deps                = { "pigskin_dried", "twigs", "rope", "researchlab2" },
         specialinfo         = "PITHHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
     propellerhat =
@@ -841,7 +852,7 @@ local APO_SCRAPBOOK_HEAD =
         subcat              = "hat",
         fueledmax           = TUNING.APO_HATS.PROPELLER.PERISHTIME,
         fueledrate          = 1,
-        fueledtype1         = "USAGE",
+        fueledtype1         = "GEARS",
         insulator           = TUNING.INSULATION_MED,
         insulator_type      = "summer",
         snowmandecor        = true,
@@ -851,7 +862,6 @@ local APO_SCRAPBOOK_HEAD =
         animoffsety         = 10,
         animoffsetbgy       = -20,
         deps                = { "minifan", "gears", "transistor", "researchlab2" },
-        specialinfo         = "PROPELLERHAT",
     },
 
     pumpkinheadhat =
@@ -892,6 +902,52 @@ local APO_SCRAPBOOK_HEAD =
         animoffsetbgy       = 25,
         deps                = { "houndstooth", "goldnugget", "researchlab2" },
         specialinfo         = "SHARK_TEETHHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
+
+    snakeskinhat =
+    {
+        name                = "snakeskinhat",
+        prefab              = "snakeskinhat",
+        tex                 = "snakeskinhat.tex",
+        type                = "item",
+        subcat              = "hat",
+        fueledmax           = TUNING.APO_HATS.SNAKESKIN.PERISHTIME,
+        fueledrate          = 1,
+        fueledtype1         = "USAGE",
+        waterproofer        = TUNING.WATERPROOFNESS_LARGE,
+        sewable             = true,
+        snowmandecor        = true,
+        bank                = "snakeskinhat",
+        build               = "hat_snakeskin",
+        anim                = "anim",
+        deps                = { "pigskin_dried", "boneshard", "strawhat", "armor_snakeskin", "researchlab2" },
+        specialinfo         = "SNAKESKINHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
+
+    thunderhat =
+    {
+        name                = "thunderhat",
+        prefab              = "thunderhat",
+        tex                 = "thunderhat.tex",
+        type                = "item",
+        subcat              = "hat",
+        fueledmax           = TUNING.APO_HATS.THUNDER.PERISHTIME,
+        fueledrate          = 1,
+        fueledtype1         = "USAGE",
+        dapperness          = TUNING.DAPPERNESS_SMALL,
+        waterproofer        = TUNING.WATERPROOFNESS_MED,
+        snowmandecor        = true,
+        bank                = "thunderhat",
+        build               = "hat_thunder",
+        anim                = "anim",
+        animoffsetx         = 5,
+        animoffsety         = 10,
+        animoffsetbgy       = -30,
+        deps                = { "feather_canary", "steelwool", "rope", "researchlab2" },
+        specialinfo         = "THUNDERHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 }
 

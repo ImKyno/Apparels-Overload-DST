@@ -82,4 +82,8 @@ WARLY.DESCRIBE.SHARK_FIN = "This looks rather blond."
 
 WARLY.DESCRIBE.SHARK_TEETHHAT = "Look upon your king!"
 
+WARLY.DESCRIBE.SNAKESKINHAT = "Tres cool."
+
 WARLY.DESCRIBE.THATCHSACK = "A very simple handmade satchel."
+
+WARLY.DESCRIBE.THUNDERHAT = "Not a chef hat but good for a night out."

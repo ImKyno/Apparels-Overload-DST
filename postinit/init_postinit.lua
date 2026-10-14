@@ -3,6 +3,7 @@ local _G = GLOBAL
 local INIT_POSTINIT_MISC =
 {
     "messagebottletreasures",
+    "sim",
 }
 
 local INIT_POSTINIT_BRAINS =
@@ -32,6 +33,7 @@ local INIT_POSTINIT_PREFABS =
     "beebox",
     "beequeen",
     "daywalker",
+    "gears",
     "hats",
     "pigskin",
     "player",

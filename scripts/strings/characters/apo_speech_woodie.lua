@@ -82,4 +82,8 @@ WOODIE.DESCRIBE.SHARK_FIN = "I'm sure the shark won't miss this."
 
 WOODIE.DESCRIBE.SHARK_TEETHHAT = "It's a hat made of teeth."
 
+WOODIE.DESCRIBE.SNAKESKINHAT = "Now would this be a \"touque\" or a \"tuque\"?"
+
 WOODIE.DESCRIBE.THATCHSACK = "Now I can carry more delicious wood."
+
+WOODIE.DESCRIBE.THUNDERHAT = "How do I look?"

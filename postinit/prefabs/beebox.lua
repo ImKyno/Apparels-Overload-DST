@@ -31,9 +31,11 @@ local function FriendlyBee(inst, picker)
                 head.components.armor:SetPercent(percent - TUNING.APO_HATS.ANTMASK.CONSUPTION)
             end
 
-            if head.prefab == "hivehat" then
-                if picker.components.sanity ~= nil then
-                    picker.components.sanity:DoDelta(2) -- Gain sanity for harvesting. Yay.
+            if TUNING.APO_BEEHATS_CHANGES then
+                if head.prefab == "hivehat" then
+                    if picker.components.sanity ~= nil then
+                        picker.components.sanity:DoDelta(TUNING.APO_HATS.HIVE.SANITY) -- Gain sanity for harvesting. Yay.
+                    end
                 end
             end
         end

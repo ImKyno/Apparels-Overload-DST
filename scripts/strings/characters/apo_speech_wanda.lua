@@ -82,4 +82,8 @@ WANDA.DESCRIBE.SHARK_FIN = "A shark fin."
 
 WANDA.DESCRIBE.SHARK_TEETHHAT = "A crown made out of teeth."
 
+WANDA.DESCRIBE.SNAKESKINHAT = "A good hat if you don't like being struck by lightning."
+
 WANDA.DESCRIBE.THATCHSACK = "An ordinary handmade satchel."
+
+WANDA.DESCRIBE.THUNDERHAT = "Now I'm ready for the thunderstorm!"

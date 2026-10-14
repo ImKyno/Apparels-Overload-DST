@@ -102,6 +102,23 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
 
         skin_tags = { "GASMASKHAT" },
     }))
+
+    -- Scaly Leather Hat Skin for the Leather Hat.
+    table.insert(prefabs, CreatePrefabSkin("ms_snakeskinhat_scaly",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_hat_snakeskin_scaly.zip"),
+        },
+
+        base_prefab = "snakeskinhat",
+        build_name_override = "ms_hat_snakeskin_scaly",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "SNAKESKINHAT" },
+    }))
 end
 
 return unpack(prefabs)

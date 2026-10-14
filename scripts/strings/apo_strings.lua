@@ -119,5 +119,11 @@ STRINGS.NAMES.SHARK_FIN = "Rockjaw Fin"
 STRINGS.NAMES.SHARK_TEETHHAT = "Lucky Tooth Crown"
 STRINGS.RECIPE_DESC.SHARK_TEETHHAT = "Luck makes you look formidable."
 
+STRINGS.NAMES.SNAKESKINHAT = "Leather Hat"
+STRINGS.RECIPE_DESC.SNAKESKINHAT = "Keep the rain out, and look cool doing it."
+
 STRINGS.NAMES.THATCHSACK = "Reeds Satchel"
 STRINGS.RECIPE_DESC.THATCHSACK = "Carry a light load."
+
+STRINGS.NAMES.THUNDERHAT = "Thunderhat"
+STRINGS.RECIPE_DESC.THUNDERHAT = "A few thousand volts wouldn't hurt, probably."

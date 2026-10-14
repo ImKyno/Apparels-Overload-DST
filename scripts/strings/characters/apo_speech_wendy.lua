@@ -82,4 +82,8 @@ WENDY.DESCRIBE.SHARK_FIN = "It won't be needing this anymore."
 
 WENDY.DESCRIBE.SHARK_TEETHHAT = "Chic, yet fearsome."
 
+WENDY.DESCRIBE.SNAKESKINHAT = "A hat of trophies, wrenched from the dead!"
+
 WENDY.DESCRIBE.THATCHSACK = "I was always destined to carry a heavy load."
+
+WENDY.DESCRIBE.THUNDERHAT = "Pretty."

@@ -44,6 +44,7 @@ local APO_ICONS =
     "ms_double_umbrellahat_cyan",
     "ms_double_umbrellahat_red",
     "ms_gasmaskhat_hazard",
+    "ms_snakeskinhat_scaly",
 }
 
 if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
@@ -81,7 +82,9 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         "pithhat",
         "shark_fin",
         "shark_teethhat",
+        "snakeskinhat",
         "thatchsack",
+        "thunderhat",
     }
 
     for k, v in pairs(ICONS) do

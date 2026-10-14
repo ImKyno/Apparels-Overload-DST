@@ -1,6 +1,7 @@
 local _G      = GLOBAL
 local require = _G.require
 
+modimport("main/misc/apo_tuning")
 require("apo_util")
 
 local INIT_STRINGS =

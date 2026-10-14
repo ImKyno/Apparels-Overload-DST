@@ -82,4 +82,8 @@ WEBBER.DESCRIBE.SHARK_FIN = "Do we touch it?"
 
 WEBBER.DESCRIBE.SHARK_TEETHHAT = "A smile to wear on our forehead!"
 
+WEBBER.DESCRIBE.SNAKESKINHAT = "Does animal leather make us look tough?"
+
 WEBBER.DESCRIBE.THATCHSACK = "Helps carry goodies!"
+
+WEBBER.DESCRIBE.THUNDERHAT = "Check out our hat!"

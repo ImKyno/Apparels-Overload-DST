@@ -82,4 +82,8 @@ WICKERBOTTOM.DESCRIBE.SHARK_FIN = "The dorsal fin functions as an aquatic stabil
 
 WICKERBOTTOM.DESCRIBE.SHARK_TEETHHAT = "A crown of teeth."
 
+WICKERBOTTOM.DESCRIBE.SNAKESKINHAT = "Rain repellent headwear!"
+
 WICKERBOTTOM.DESCRIBE.THATCHSACK = "I can store a few books in here."
+
+WICKERBOTTOM.DESCRIBE.THUNDERHAT = "I'm not usually one for hats."

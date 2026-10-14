@@ -82,4 +82,8 @@ WOLFGANG.DESCRIBE.SHARK_FIN = "I lost rest of shark."
 
 WOLFGANG.DESCRIBE.SHARK_TEETHHAT = "Wolfgang's favorite hat!"
 
+WOLFGANG.DESCRIBE.SNAKESKINHAT = "Very good."
+
 WOLFGANG.DESCRIBE.THATCHSACK = "Wolfgang can carry more on powerful shoulders!"
+
+WOLFGANG.DESCRIBE.THUNDERHAT = "Wolfgang look good in hat."

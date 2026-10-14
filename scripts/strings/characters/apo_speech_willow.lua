@@ -82,4 +82,8 @@ WILLOW.DESCRIBE.SHARK_FIN = "The fin fell off."
 
 WILLOW.DESCRIBE.SHARK_TEETHHAT = "Wearing this gives me a toothy grin."
 
+WILLOW.DESCRIBE.SNAKESKINHAT = "Water just runs right off it."
+
 WILLOW.DESCRIBE.THATCHSACK = "Thatch you very much."
+
+WILLOW.DESCRIBE.THUNDERHAT = "This looks good on me."

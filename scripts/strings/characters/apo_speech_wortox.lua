@@ -82,4 +82,8 @@ WORTOX.DESCRIBE.SHARK_FIN = "The shark left his rudder!"
 
 WORTOX.DESCRIBE.SHARK_TEETHHAT = "Madness put the devils in my head! Hyuyu!"
 
+WORTOX.DESCRIBE.SNAKESKINHAT = "On my head? Wear that?"
+
 WORTOX.DESCRIBE.THATCHSACK = "Thatch that satchel! Hyuyu!"
+
+WORTOX.DESCRIBE.THUNDERHAT = "Fine, electrify mine... Electrify my golden tooth..."

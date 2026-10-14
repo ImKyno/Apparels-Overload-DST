@@ -82,4 +82,8 @@ WATHGRITHR.DESCRIBE.SHARK_FIN = "A token from a fallen warrior."
 
 WATHGRITHR.DESCRIBE.SHARK_TEETHHAT = "A helm after my warriors heart!"
 
+WATHGRITHR.DESCRIBE.SNAKESKINHAT = "Shall I wear the serpent?"
+
 WATHGRITHR.DESCRIBE.THATCHSACK = "I hope my spear doesn't poke a hole in it."
+
+WATHGRITHR.DESCRIBE.THUNDERHAT = "Tis a hat worthy of Thor."

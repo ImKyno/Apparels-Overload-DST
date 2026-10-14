@@ -405,6 +405,26 @@ APOAddRecipe(ABCEnabled or IASEnabled, "shark_teethhat",
     TECH.SCIENCE_TWO, {}, { "CLOTHING" }
 )
 
+APOAddRecipe(ABCEnabled or IASEnabled, "snakeskinhat",
+    {
+        Ingredient("pigskin_dried", 2),
+        Ingredient("boneshard", 1),
+        Ingredient("strawhat", 1),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
+)
+
+APOAddRecipe(ABCEnabled or IASEnabled, "thunderhat",
+    {
+        Ingredient("feather_canary", 3),
+        Ingredient("steelwool", 6),
+        Ingredient("rope", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
+)
+
 -- Everything else.
 APOAddRecipe(ABCEnabled or IASEnabled, "thatchsack",
     {
