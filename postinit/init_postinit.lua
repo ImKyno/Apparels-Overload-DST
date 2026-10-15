@@ -18,6 +18,8 @@ local INIT_POSTINIT_COMPONENTS =
     "builder_replica",
     "combat",
     "drownable",
+    "fuel",
+    "fueled",
     "health",
     "lootdropper",
     "playeractionpicker",
@@ -28,13 +30,18 @@ local INIT_POSTINIT_COMPONENTS =
 
 local INIT_POSTINIT_PREFABS =
 {
+    "any", -- Applied to all prefabs.
+
     "armor_marble",
     "bee",
     "beebox",
     "beequeen",
     "daywalker",
+    "dragonfly",
     "gears",
+    "gems",
     "hats",
+    "lordfruitfly",
     "pigskin",
     "player",
     "player_classified",

@@ -52,6 +52,8 @@ WENDY.DESCRIBE.DOUBLE_UMBRELLAHAT = "This seems excessive."
 
 WENDY.DESCRIBE.EXTRAHEAVYHAT = "A heavy burden to bear."
 
+WENDY.DESCRIBE.FOODBASKETHAT = "A hat worn during pieces and films."
+
 WENDY.DESCRIBE.GASHAT = "This hat prevents me from breathing in death."
 
 WENDY.DESCRIBE.GASMASKHAT = "It keeps out the gas, but no the despair."
@@ -87,3 +89,7 @@ WENDY.DESCRIBE.SNAKESKINHAT = "A hat of trophies, wrenched from the dead!"
 WENDY.DESCRIBE.THATCHSACK = "I was always destined to carry a heavy load."
 
 WENDY.DESCRIBE.THUNDERHAT = "Pretty."
+
+WENDY.DESCRIBE.VOLCANOCOLDHAT = "It's useless in this state, but still gives a cooling aura."
+
+WENDY.DESCRIBE.VOLCANOHAT = "Perhaps it can blow my head off."

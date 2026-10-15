@@ -380,9 +380,7 @@ local function MakeHat(name)
     end
 
     hat_fns.bandit_onequiptomodel = function(inst, owner, from_ground)
-        if inst.components.fueled ~= nil then
-            inst.components.fueled:StopConsuming()
-        end
+        hat_fns.simple_onequiptomodel(inst, owner, from_ground)
 
         if inst.components.extralootdropper ~= nil then
             inst.components.extralootdropper:StopListening()
@@ -619,6 +617,7 @@ local function MakeHat(name)
     end
 
     hat_fns.candle_onequiptomodel = function(inst, owner, from_ground)
+        hat_fns.simple_onequiptomodel(inst, owner, from_ground)
         hat_fns.candle_onturnoff(inst, owner)
     end
 
@@ -734,11 +733,9 @@ local function MakeHat(name)
     end
 
     hat_fns.captain_onequiptomodel = function(inst, owner, from_ground)
-        if owner ~= nil then
-            if inst.components.fueled ~= nil then
-                inst.components.fueled:StopConsuming()
-            end
+        hat_fns.simple_onequiptomodel(inst, owner, from_ground)
 
+        if owner ~= nil then
             if owner.components.hunger ~= nil then
                 owner.components.hunger.burnratemodifiers:RemoveModifier(inst)
             end
@@ -1272,11 +1269,9 @@ local function MakeHat(name)
     end
 
     hat_fns.pirate_onequiptomodel = function(inst, owner, from_ground)
-        if owner ~= nil then
-            if inst.components.fueled ~= nil then
-                inst.components.fueled:StopConsuming()
-            end
+        hat_fns.simple_onequiptomodel(inst, owner, from_ground)
 
+        if owner ~= nil then
             if owner.components.combat ~= nil then
                 owner.components.combat.externaldamagemultipliers:RemoveModifier(owner, "piratehat")
             end
@@ -1669,7 +1664,7 @@ local function MakeHat(name)
             return
         end
 
-        if inst.thunder_light == nil then
+        if inst.thunder_light == nil or not inst.thunder_light:IsValid() then
             inst.thunder_light = SpawnPrefab("thunderhat_light")
 
             if inst.thunder_light ~= nil then
@@ -1808,11 +1803,9 @@ local function MakeHat(name)
     end
 
     hat_fns.thunder_onequiptomodel = function(inst, owner, from_ground)
-        if owner ~= nil then
-            if inst.components.fueled ~= nil then
-                inst.components.fueled:StopConsuming()
-            end
+        hat_fns.simple_onequiptomodel(inst, owner, from_ground)
 
+        if owner ~= nil then
             owner:RemoveEventCallback("playerlightningtargeted", inst.thunder_lightningstrike)
         end
 
@@ -1870,6 +1863,12 @@ local function MakeHat(name)
         end
     end
 
+    hat_fns.thunder_onremove = function(inst)
+        if inst.thunder_light ~= nil and inst.thunder_light:IsValid() then
+            inst.thunder_light:Remove()
+        end
+    end
+
     hat_fns.thunder_custom_init = function(inst)
         inst.entity:AddLight()
 
@@ -1890,6 +1889,8 @@ local function MakeHat(name)
             return inst
         end
 
+        inst.thunder_charge_time = 0
+
         inst.components.inventoryitem:SetOnDroppedFn(hat_fns.thunder_ondropped)
         inst.components.inventoryitem:SetOnPutInInventoryFn(hat_fns.thunder_onputininventory)
 
@@ -1908,8 +1909,6 @@ local function MakeHat(name)
         inst.components.fueled:SetDepletedFn(inst.Remove)
         inst.components.fueled.no_sewing = true
 
-        inst.thunder_charge_time = 0
-
         inst.thunder_lightningstrike = function(owner)
             local THUNDER_MAX_CHARGE = TUNING.APO_HATS.THUNDER.CHARGE.MAX_DURATION
             local THUNDER_CHARGE_PER_STRIKE = TUNING.APO_HATS.THUNDER.CHARGE.DURATION
@@ -1926,6 +1925,8 @@ local function MakeHat(name)
 
         inst.OnSave = hat_fns.thunder_onsave
         inst.OnLoad = hat_fns.thunder_onload
+
+        inst.OnRemoveEntity = hat_fns.thunder_onremove
 
         return inst
     end

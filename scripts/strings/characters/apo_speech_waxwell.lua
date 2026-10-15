@@ -52,6 +52,8 @@ WAXWELL.DESCRIBE.DOUBLE_UMBRELLAHAT = "This looks silly."
 
 WAXWELL.DESCRIBE.EXTRAHEAVYHAT = "Impenetrable, perhaps. Comfortable, certainly not."
 
+WAXWELL.DESCRIBE.FOODBASKETHAT = "Oh great, a fruit hat."
+
 WAXWELL.DESCRIBE.GASHAT = "Cleans the stench away."
 
 WAXWELL.DESCRIBE.GASMASKHAT = "This clears the vapors."
@@ -87,3 +89,7 @@ WAXWELL.DESCRIBE.SNAKESKINHAT = "Quite dashing, actually."
 WAXWELL.DESCRIBE.THATCHSACK = "Not much, but the extra space is better than nothing."
 
 WAXWELL.DESCRIBE.THUNDERHAT = "Electrifying finery."
+
+WAXWELL.DESCRIBE.VOLCANOCOLDHAT = "I don't trust this thing."
+
+WAXWELL.DESCRIBE.VOLCANOHAT = "I really don't trust it."

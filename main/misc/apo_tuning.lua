@@ -6,9 +6,10 @@ local ACTIONS  = _G.ACTIONS
 TUNING.APO_DEBUG_MODE = true -- Turn off on releases.
 TUNING.APO_DEFAULT_FLOATER = { "med", nil, 0.65 }
 
-TUNING.APO_SCRAPBOOK = GetModConfigData("MOD_SCRAPBOOK")
-TUNING.APO_ARMOR_MARBLE_CHANGES = GetModConfigData("ARMOR_MARBLE_CHANGES")
-TUNING.APO_BEEHATS_CHANGES = GetModConfigData("BEEHATS_CHANGES")
+TUNING.APO_SCRAPBOOK            = GetModConfigData("MOD_SCRAPBOOK")
+TUNING.APO_VANILLA_CHANGES      = GetModConfigData("VANILLA_CHANGES")
+TUNING.APO_CLOTHING_FOLLOWER    = true -- GetModConfigData("CLOTHING_FOLLOWER")
+TUNING.APO_CLOTHING_MANNEQUIN   = true -- GetModConfigData("CLOTHING_MANNEQUIN")
 
 TUNING.APO_IS_ABC_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-3322803908") -- Above the Clouds.
 TUNING.APO_IS_HOF_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-2334209327") or _G.KnownModIndex:IsModEnabled("Heap-of-Foods-Workshop-Main") -- Heap of Foods.
@@ -45,6 +46,14 @@ TUNING.APO_MISC =
     {
         DURATION = 4,
         INTERVAL = 0.5,
+    },
+
+    DRAGONFLY =
+    {
+        LOOT =
+        {
+            VOLCANO = 0.30,
+        },
     },
 
     EXTRALOOTDROPPER =
@@ -280,6 +289,12 @@ TUNING.APO_HATS =
         WALKSPEEDMULT = 0.70,
     },
 
+    FOODBASKET =
+    {
+        BONUS = 50,
+        HUNGER_MODIFIER = 0.25,
+    },
+
     GAS =
     {
         PERISHTIME = 480 * 10,
@@ -363,6 +378,7 @@ TUNING.APO_HATS =
     PROPELLER =
     {
         PERISHTIME = 480 * 4,
+        FUEL_BONUS_MULT = 4,
         WALKSPEEDMULT = 1.10,
         HEAT = -15,
     },
@@ -394,6 +410,32 @@ TUNING.APO_HATS =
             DURATION = 480 / 2,
             MAX_DURATION = 480 * 10,
         },
+
+        LIGHT =
+        {
+            RADIUS = 3,
+            LIGHT_OVERRIDE = 0.35,
+        },
+    },
+
+    VOLCANOCOLD =
+    {
+        PERISHTIME = 480 * 6,
+        FUEL_BONUS_MULT = 4,
+        HEAT = -50,
+
+        LIGHT =
+        {
+            RADIUS = 3,
+            LIGHT_OVERRIDE = 0.35,
+        },
+    },
+
+    VOLCANO =
+    {
+        PERISHTIME = 480 * 6,
+        FUEL_BONUS_MULT = 4,
+        HEAT = 50,
 
         LIGHT =
         {

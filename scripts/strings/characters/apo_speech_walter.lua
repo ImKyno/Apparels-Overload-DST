@@ -52,6 +52,8 @@ WALTER.DESCRIBE.DOUBLE_UMBRELLAHAT = "I'll be twice as sure to forget it at home
 
 WALTER.DESCRIBE.EXTRAHEAVYHAT = "Marble armor for your head! Bet it could take quite a beating."
 
+WALTER.DESCRIBE.FOODBASKETHAT = "It seems a bit too much for me to wear."
+
 WALTER.DESCRIBE.GASHAT = "Might be a good idea to have this with me when it's starts raining."
 
 WALTER.DESCRIBE.GASMASKHAT = "Could be useful for exploring zones filled with gas or miasma."
@@ -87,3 +89,7 @@ WALTER.DESCRIBE.SNAKESKINHAT = "Good for rainy days."
 WALTER.DESCRIBE.THATCHSACK = "You can never have enough storage space."
 
 WALTER.DESCRIBE.THUNDERHAT = "Won't ground me in a storm."
+
+WALTER.DESCRIBE.VOLCANOCOLDHAT = "It looks safe enough, right, Woby?"
+
+WALTER.DESCRIBE.VOLCANOHAT = "Don't worry, Woby. It's safe, probably."

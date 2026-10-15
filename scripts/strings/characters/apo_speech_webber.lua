@@ -52,6 +52,8 @@ WEBBER.DESCRIBE.DOUBLE_UMBRELLAHAT = "One for each of us!"
 
 WEBBER.DESCRIBE.EXTRAHEAVYHAT = "It's really heavy, but it makes our head feel safe!"
 
+WEBBER.DESCRIBE.FOODBASKETHAT = "Very tropical!"
+
 WEBBER.DESCRIBE.GASHAT = "We are protected from sick smells."
 
 WEBBER.DESCRIBE.GASMASKHAT = "Now that gas won't make us cough."
@@ -87,3 +89,7 @@ WEBBER.DESCRIBE.SNAKESKINHAT = "Does animal leather make us look tough?"
 WEBBER.DESCRIBE.THATCHSACK = "Helps carry goodies!"
 
 WEBBER.DESCRIBE.THUNDERHAT = "Check out our hat!"
+
+WEBBER.DESCRIBE.VOLCANOCOLDHAT = "We've got our very own ice mountain!"
+
+WEBBER.DESCRIBE.VOLCANOHAT = "We just hope it does not erupt!"

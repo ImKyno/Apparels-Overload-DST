@@ -52,6 +52,8 @@ WICKERBOTTOM.DESCRIBE.DOUBLE_UMBRELLAHAT = "Two tiers of shelter!"
 
 WICKERBOTTOM.DESCRIBE.EXTRAHEAVYHAT = "A durable headpiece, though its considerable weight may strain the neck."
 
+WICKERBOTTOM.DESCRIBE.FOODBASKETHAT = "Ah! It looks like one of the new trending head pieces."
+
 WICKERBOTTOM.DESCRIBE.GASHAT = "The calcium carbonate purifies the surrounding air particles."
 
 WICKERBOTTOM.DESCRIBE.GASMASKHAT = "For investigating dangerous areas."
@@ -87,3 +89,7 @@ WICKERBOTTOM.DESCRIBE.SNAKESKINHAT = "Rain repellent headwear!"
 WICKERBOTTOM.DESCRIBE.THATCHSACK = "I can store a few books in here."
 
 WICKERBOTTOM.DESCRIBE.THUNDERHAT = "I'm not usually one for hats."
+
+WICKERBOTTOM.DESCRIBE.VOLCANOCOLDHAT = "It appears to be dormant."
+
+WICKERBOTTOM.DESCRIBE.VOLCANOHAT = "A volcano replica, like in a science fair."

@@ -52,6 +52,8 @@ WOLFGANG.DESCRIBE.DOUBLE_UMBRELLAHAT = "Two umbrellas is better than one."
 
 WOLFGANG.DESCRIBE.EXTRAHEAVYHAT = "Wolfgang's head is strong enough!"
 
+WOLFGANG.DESCRIBE.FOODBASKETHAT = "Hat has lot of food, could eat it later."
+
 WOLFGANG.DESCRIBE.GASHAT = "Little hat is very colorful."
 
 WOLFGANG.DESCRIBE.GASMASKHAT = "Is good for Wolfgang lungs."
@@ -87,3 +89,7 @@ WOLFGANG.DESCRIBE.SNAKESKINHAT = "Very good."
 WOLFGANG.DESCRIBE.THATCHSACK = "Wolfgang can carry more on powerful shoulders!"
 
 WOLFGANG.DESCRIBE.THUNDERHAT = "Wolfgang look good in hat."
+
+WOLFGANG.DESCRIBE.VOLCANOCOLDHAT = "Little mountain is asleep, yes?"
+
+WOLFGANG.DESCRIBE.VOLCANOHAT = "Is funny little mountain in Wolfgang head, ha ha."

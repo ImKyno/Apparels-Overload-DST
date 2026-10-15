@@ -18,6 +18,9 @@ Assets =
     Asset("IMAGE", "images/minimapimages/apo_minimapimages.tex"),
     Asset("ATLAS", "images/minimapimages/apo_minimapimages.xml"),
 
+    Asset("IMAGE", "images/scrapbookimages/apo_scrapbookimages.tex"),
+    Asset("ATLAS", "images/scrapbookimages/apo_scrapbookimages.xml"),
+
     Asset("SOUNDPACKAGE", "sound/apo_sounds.fev"),
     Asset("SOUND", "sound/apo_sfx.fsb"),
 }
@@ -31,11 +34,16 @@ local APO_ICONS =
     "buckethat",
     "carnival_hosthat",
     "extraheavyhat",
+    "foodbaskethat",
     "jiaolianhat",
     "peagawkfeatherhat",
     "pigskin_dried",
     "propellerhat",
     "pumpkinheadhat",
+    "volcanocoldhat",
+    "volcanocoldhat_off",
+    "volcanohat",
+    "volcanohat_off",
 
     -- Modded Skins.
     "ms_aerodynamichat_tropical",
@@ -92,7 +100,18 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
     end
 end
 
+local APO_SCRAPBOOK_ICONS =
+{
+    "icon_fuel_bluegem",
+    "icon_fuel_gears",
+    "icon_fuel_redgem",
+}
+
 for k, v in pairs(APO_ICONS) do
     RegisterInventoryItemAtlas(resolvefilepath("images/inventoryimages/apo_inventoryimages.xml"), v..".tex")
     RegisterInventoryItemAtlas(resolvefilepath("images/inventoryimages/apo_inventoryimages.xml"), _G.hash(v..".tex"))
+end
+
+for k, v in ipairs(APO_SCRAPBOOK_ICONS) do
+    RegisterScrapbookIconAtlas("images/scrapbookimages/apo_scrapbookimages.xml", v..".tex")
 end

@@ -137,7 +137,7 @@ SPECIALINFO.DISGUISEHAT =
 Pigs and Bunnymen will treat the wearer like one of them.
 ]]
 
-SPECIALINFO.EXTRAHEAVYHAT = TUNING.APO_ARMOR_MARBLE_CHANGES and
+SPECIALINFO.EXTRAHEAVYHAT = TUNING.APO_VANILLA_CHANGES and
 [[
 This armor is durable but heavy, and slows its wearer.
 
@@ -146,6 +146,11 @@ When paired with Marble Suit damage taken becomes damage over time when health i
 or
 [[
 This armor is durable but heavy, and slows its wearer.
+]]
+
+SPECIALINFO.FOODBASKETHAT =
+[[
+Increases hunger by 50 points and decreases hunger rate by 25% when worn.
 ]]
 
 SPECIALINFO.GASHAT =
@@ -207,6 +212,13 @@ SPECIALINFO.PITHHAT =
 Decreases slowness by 25% when worn. 
 ]]
 
+SPECIALINFO.PROPELLERHAT =
+[[
+Cools the wearer and provides constant cold when worn.
+
+Can be repaired with Gears.
+]]
+
 SPECIALINFO.PUMPKINHEADHAT =
 [[
 Can be waxed to last forever.
@@ -234,4 +246,20 @@ Lightning that would strike nearby will instead strike this hat, charging it and
 When charged provides light and discharges electricity to nearby creatures when the wearer attacks them.
 
 Each lightning provides charge for nearly one day.
+]]
+
+SPECIALINFO.VOLCANOCOLDHAT =
+[[
+Provides light for its duration.
+Cools the wearer and provides constant cold when worn.
+
+Can be repaired with Blue Gems.
+]]
+
+SPECIALINFO.VOLCANOHAT =
+[[
+Provides light for its duration and can cook items.
+Warms the wearer and provides constant heat when worn.
+
+Can be repaired with Red Gems.
 ]]

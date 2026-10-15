@@ -327,6 +327,96 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.foodbasket_onapplybonus = function(inst, bonus)
+        if inst.foodbasket_bonushunger then
+            return false
+        end
+
+        inst.foodbasket_bonushunger = bonus
+
+        if inst.components.hunger ~= nil then
+            local current_hunger = inst.hunger_percent or inst.components.hunger:GetPercent()
+            local modifier = TUNING.APO_HATS.FOODBASKET.HUNGER_MODIFIER
+
+            inst.hunger_percent = nil
+
+            inst.components.hunger:SetMax(inst.components.hunger.max + bonus)
+            inst.components.hunger:SetPercent(current_hunger)
+            inst.components.hunger.burnratemodifiers:SetModifier(inst, modifier, "foodbaskethat")
+        end
+
+        return true
+    end
+
+    hat_fns.foodbasket_onremovebonus = function(inst)
+        if not inst.foodbasket_bonushunger then
+            return
+        end
+
+        if inst.components.hunger ~= nil then
+            local current_hunger = inst.hunger_percent or inst.components.hunger:GetPercent()
+
+            inst.hunger_percent = nil
+
+            inst.components.hunger:SetMax(inst.components.hunger.max - inst.foodbasket_bonushunger)
+            inst.components.hunger:SetPercent(current_hunger)
+            inst.components.hunger.burnratemodifiers:RemoveModifier(inst, "foodbaskethat")
+        end
+
+        inst.foodbasket_bonushunger = nil
+    end
+
+    hat_fns.foodbasket_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            local bonus = TUNING.APO_HATS.FOODBASKET.BONUS
+ 
+            hat_fns.foodbasket_onapplybonus(owner, bonus)
+        end
+    end
+
+    hat_fns.foodbasket_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            hat_fns.foodbasket_onremovebonus(owner)
+        end
+    end
+
+    hat_fns.foodbasket_custom_init = function(inst)
+        inst:AddTag("icebox_valid")
+        inst:AddTag("show_spoilage")
+    end
+
+    hat_fns.foodbasket = function()
+        local inst = simple(hat_fns.foodbasket_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.foodbasket_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.foodbasket_onunequip)
+        inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED
+        inst.components.equippable.flipdapperonmerms = true
+
+        inst:AddComponent("forcecompostable")
+        inst.components.forcecompostable.green = true
+
+        inst:AddComponent("perishable")
+        inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)
+        inst.components.perishable:StartPerishing()
+        inst.components.perishable:SetOnPerishFn(inst.Remove)
+
+        MakeSmallBurnable(inst)
+        MakeSmallPropagator(inst)
+
+        MakeHauntableLaunchAndPerish(inst)
+
+        return inst
+    end
+
     hat_fns.jiaolian_custom_init = function(inst)
         inst:AddTag("open_top_hat")
     end
@@ -424,7 +514,7 @@ local function MakeHat(name)
                 inst.propeller_fan:Remove()
             end
 
-            inst.propeller_fan = SpawnPrefab("propeller_fan")
+            inst.propeller_fan = SpawnPrefab("propellerhat_fan")
             inst.propeller_fan.entity:SetParent(owner.entity)
 
             inst.propeller_fan:OnSetSpinning(true)
@@ -456,7 +546,7 @@ local function MakeHat(name)
                 inst.propeller_fan:Remove()
             end
 
-            inst.propeller_fan = SpawnPrefab("propeller_fan")
+            inst.propeller_fan = SpawnPrefab("propellerhat_fan")
             inst.propeller_fan.entity:SetParent(owner.entity)
 
             inst.propeller_fan:OnSetSpinning(true) -- Set to false?
@@ -518,10 +608,12 @@ local function MakeHat(name)
         inst.components.insulator:SetSummer()
 
         inst:AddComponent("fueled")
-        inst.components.fueled.fueltype = FUELTYPE.GEARS
+        inst.components.fueled.fueltype = FUELTYPE.MAGIC
+        inst.components.fueled.secondaryfueltype = FUELTYPE.GEARS
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.PROPELLER.PERISHTIME)
         inst.components.fueled:SetTakeFuelFn(hat_fns.propeller_ontakefuel)
         inst.components.fueled:SetDepletedFn(hat_fns.propeller_onperish)
+        inst.components.fueled.bonusmult = TUNING.APO_HATS.PROPELLER.FUEL_BONUS_MULT
         inst.components.fueled.accepting = true
 
         return inst
@@ -629,6 +721,471 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.volcanocold_onupdatelight = function(inst)
+        local hasfuel = inst.components.fueled ~= nil and not inst.components.fueled:IsEmpty()
+        local equipped = inst.components.equippable ~= nil and inst.components.equippable:IsEquipped()
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        local ininventory = owner ~= nil
+        local onground = not equipped and not ininventory and not inst:IsInLimbo()
+
+        if inst.Light ~= nil then
+            inst.Light:Enable(onground and hasfuel)
+        end
+
+        if inst.components.inventoryitem ~= nil then
+            inst.components.inventoryitem:ChangeImageName(hasfuel and "volcanocoldhat" or "volcanocoldhat_off")
+        end
+
+        inst.AnimState:PlayAnimation(hasfuel and "anim_on" or "anim_off", true)
+
+        if equipped and owner ~= nil then
+            _onequip(inst, owner, hasfuel and "swap_hat" or "swap_hat_off")
+        end
+    end
+
+    hat_fns.volcanocold_onturnon = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        if owner == nil or (inst.components.fueled ~= nil and inst.components.fueled:IsEmpty()) then
+            hat_fns.volcanocold_onturnoff(inst)
+
+            return
+        end
+
+        _onequip(inst, owner, "swap_hat")
+        inst.AnimState:PlayAnimation("anim_on", true)
+
+        if inst.components.inventoryitem ~= nil then
+            inst.components.inventoryitem:ChangeImageName("volcanocoldhat")
+        end
+
+        if inst.components.fueled ~= nil then
+            inst.components.fueled:StartConsuming()
+        end
+
+        if inst.components.heater ~= nil then
+            inst.components.heater:SetThermics(false, true)
+        end
+
+        if inst.components.insulator ~= nil then
+            inst.components.insulator:SetInsulation(TUNING.INSULATION_LARGE)
+        end
+
+        if inst.volcanocold_light == nil or not inst.volcanocold_light:IsValid() then
+            inst.volcanocold_light = SpawnPrefab("volcanocoldhat_light")
+
+            if inst.volcanocold_light ~= nil then
+                inst.volcanocold_light.entity:SetParent(owner.entity)
+                inst.volcanocold_light.Transform:SetPosition(0, 0, 0)
+            end
+        end
+
+        local soundemitter = owner ~= nil and owner.SoundEmitter or inst.SoundEmitter
+        soundemitter:PlaySound("dontstarve/common/fireAddFuel")
+
+        hat_fns.volcanocold_onupdatelight(inst)
+    end
+
+    hat_fns.volcanocold_onturnoff = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        if owner ~= nil then
+            if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+                _onequip(inst, owner, "swap_hat_off")
+            end
+
+            if inst.components.fueled ~= nil then
+                inst.components.fueled:StopConsuming()
+            end
+
+            if inst.components.heater ~= nil then
+                inst.components.heater:SetThermics(false, false)
+            end
+
+            if inst.components.insulator ~= nil then
+                inst.components.insulator:SetInsulation(0)
+            end
+
+            if inst.volcanocold_light ~= nil then
+                if inst.volcanocold_light:IsValid() then
+                    inst.volcanocold_light:Remove()
+                end
+
+                inst.volcanocold_light = nil
+            end
+        end
+
+        local soundemitter = owner ~= nil and owner.SoundEmitter or inst.SoundEmitter
+        soundemitter:PlaySound("dontstarve/common/minerhatOut")
+
+        hat_fns.volcanocold_onupdatelight(inst)
+    end
+
+    hat_fns.volcanocold_onequip = function(inst, owner)
+        if inst.components.fueled ~= nil and not inst.components.fueled:IsEmpty() then
+            hat_fns.volcanocold_onturnon(inst)
+        else
+            hat_fns.volcanocold_onturnoff(inst)
+            hat_fns.volcanocold_onupdatelight(inst)
+        end
+    end
+
+    hat_fns.volcanocold_onunequip = function(inst, owner)
+        _onunequip(inst, owner)
+
+        hat_fns.volcanocold_onturnoff(inst)
+        hat_fns.volcanocold_onupdatelight(inst)
+    end
+
+    hat_fns.volcanocold_onequiptomodel = function(inst, owner, from_ground)
+        hat_fns.simple_onequiptomodel(inst, owner, from_ground)
+        hat_fns.volcanocold_onturnoff(inst)
+        hat_fns.volcanocold_onupdatelight(inst)
+    end
+
+    hat_fns.volcanocold_ondropped = function(inst)
+        hat_fns.volcanocold_onupdatelight(inst)
+    end
+
+    hat_fns.volcanocold_onputininventory = function(inst, guy)
+        if inst.Light ~= nil then
+            inst.Light:Enable(false)
+        end
+
+        hat_fns.volcanocold_onupdatelight(inst)
+    end
+
+    hat_fns.volcanocold_ontakefuel = function(inst)
+        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+            hat_fns.volcanocold_onturnon(inst)
+        else
+            hat_fns.volcanocold_onupdatelight(inst)
+        end
+    end
+
+    hat_fns.volcanocold_onperish = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+        local equipped = inst.components.equippable ~= nil and inst.components.equippable:IsEquipped()
+
+        hat_fns.volcanocold_onturnoff(inst)
+        hat_fns.volcanocold_onupdatelight(inst)
+
+        if equipped and owner ~= nil then
+            owner:PushEvent("torchranout", { prefab = inst.prefab, equipslot = inst.components.equippable.equipslot })
+        end
+    end
+
+    hat_fns.volcanocold_onload = function(inst, data)
+        inst:DoTaskInTime(0, function(inst)
+            local equipped = inst.components.equippable ~= nil and inst.components.equippable:IsEquipped()
+            local hasfuel = inst.components.fueled ~= nil and not inst.components.fueled:IsEmpty()
+
+            if equipped then
+                if hasfuel then
+                    hat_fns.volcanocold_onturnon(inst)
+                else
+                    hat_fns.volcanocold_onturnoff(inst)
+                end
+            else
+                hat_fns.volcanocold_onupdatelight(inst)
+            end
+        end)
+    end
+
+    hat_fns.volcanocold_onremove = function(inst)
+        if inst.volcanocold_light ~= nil and inst.volcanocold_light:IsValid() then
+            inst.volcanocold_light:Remove()
+        end
+    end
+
+    hat_fns.volcanocold_custom_init = function(inst)
+        inst.entity:AddSoundEmitter()
+        inst.entity:AddLight()
+
+        inst.Light:SetFalloff(0.7)
+        inst.Light:SetIntensity(0.5)
+        inst.Light:SetRadius(0.5)
+        inst.Light:SetColour(100/255, 190/255, 255/255)
+        inst.Light:Enable(false)
+
+        inst:AddTag("HASHEATER")
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.volcanocold = function()
+        local inst = simple(hat_fns.volcanocold_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.volcanocold_light = nil
+
+        inst.components.inventoryitem:SetOnDroppedFn(hat_fns.volcanocold_ondropped)
+
+        inst.components.equippable:SetOnEquip(hat_fns.volcanocold_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.volcanocold_onunequip)
+        inst.components.equippable:SetOnEquipToModel(hat_fns.volcanocold_onequiptomodel)
+
+        inst:AddComponent("insulator")
+        inst.components.insulator:SetSummer()
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_LARGE)
+
+        inst:AddComponent("heater")
+        inst.components.heater.heat = TUNING.APO_HATS.VOLCANOCOLD.HEAT
+        inst.components.heater.equippedheat = TUNING.APO_HATS.VOLCANOCOLD.HEAT
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.MAGIC
+        inst.components.fueled.secondaryfueltype = FUELTYPE.BLUEGEM
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.VOLCANOCOLD.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(hat_fns.volcanocold_onperish)
+        inst.components.fueled:SetTakeFuelFn(hat_fns.volcanocold_ontakefuel)
+        inst.components.fueled.bonusmult = TUNING.APO_HATS.VOLCANOCOLD.FUEL_BONUS_MULT
+        inst.components.fueled.accepting = true
+
+        inst.OnLoad = hat_fns.volcanocold_onload
+        inst.OnRemoveEntity = hat_fns.volcanocold_onremove
+
+        return inst
+    end
+
+    hat_fns.volcano_onupdatelight = function(inst)
+        local hasfuel = inst.components.fueled ~= nil and not inst.components.fueled:IsEmpty()
+        local equipped = inst.components.equippable ~= nil and inst.components.equippable:IsEquipped()
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        local ininventory = owner ~= nil
+        local onground = not equipped and not ininventory and not inst:IsInLimbo()
+
+        if inst.Light ~= nil then
+            inst.Light:Enable(onground and hasfuel)
+        end
+
+        if inst.components.inventoryitem ~= nil then
+            inst.components.inventoryitem:ChangeImageName(hasfuel and "volcanohat" or "volcanohat_off")
+        end
+
+        inst.AnimState:PlayAnimation(hasfuel and "anim_on" or "anim_off", true)
+
+        if equipped and owner ~= nil then
+            _onequip(inst, owner, hasfuel and "swap_hat" or "swap_hat_off")
+        end
+    end
+
+    hat_fns.volcano_onturnon = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        if owner == nil or (inst.components.fueled ~= nil and inst.components.fueled:IsEmpty()) then
+            hat_fns.volcano_onturnoff(inst)
+
+            return
+        end
+
+        _onequip(inst, owner, "swap_hat")
+        inst.AnimState:PlayAnimation("anim_on", true)
+
+        if inst.components.inventoryitem ~= nil then
+            inst.components.inventoryitem:ChangeImageName("volcanohat")
+        end
+
+        if inst.components.fueled ~= nil then
+            inst.components.fueled:StartConsuming()
+        end
+
+        if inst.components.heater ~= nil then
+            inst.components.heater:SetThermics(true, false)
+        end
+
+        if inst.components.insulator ~= nil then
+            inst.components.insulator:SetInsulation(TUNING.INSULATION_LARGE)
+        end
+
+        if inst.volcano_light == nil or not inst.volcano_light:IsValid() then
+            inst.volcano_light = SpawnPrefab("volcanohat_light")
+
+            if inst.volcano_light ~= nil then
+                inst.volcano_light.entity:SetParent(owner.entity)
+                inst.volcano_light.Transform:SetPosition(0, 0, 0)
+            end
+        end
+
+        local soundemitter = owner ~= nil and owner.SoundEmitter or inst.SoundEmitter
+        soundemitter:PlaySound("dontstarve/common/fireAddFuel")
+
+        hat_fns.volcano_onupdatelight(inst)
+    end
+
+    hat_fns.volcano_onturnoff = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        if owner ~= nil then
+            if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+                _onequip(inst, owner, "swap_hat_off")
+            end
+
+            if inst.components.fueled ~= nil then
+                inst.components.fueled:StopConsuming()
+            end
+
+            if inst.components.heater ~= nil then
+                inst.components.heater:SetThermics(false, false)
+            end
+
+            if inst.components.insulator ~= nil then
+                inst.components.insulator:SetInsulation(0)
+            end
+
+            if inst.volcano_light ~= nil then
+                if inst.volcano_light:IsValid() then
+                    inst.volcano_light:Remove()
+                end
+
+                inst.volcano_light = nil
+            end
+        end
+
+        local soundemitter = owner ~= nil and owner.SoundEmitter or inst.SoundEmitter
+        soundemitter:PlaySound("dontstarve/common/minerhatOut")
+
+        hat_fns.volcano_onupdatelight(inst)
+    end
+
+    hat_fns.volcano_onequip = function(inst, owner)
+        if inst.components.fueled ~= nil and not inst.components.fueled:IsEmpty() then
+            hat_fns.volcano_onturnon(inst)
+        else
+            hat_fns.volcano_onturnoff(inst)
+            hat_fns.volcano_onupdatelight(inst)
+        end
+    end
+
+    hat_fns.volcano_onunequip = function(inst, owner)
+        _onunequip(inst, owner)
+
+        hat_fns.volcano_onturnoff(inst)
+        hat_fns.volcano_onupdatelight(inst)
+    end
+
+    hat_fns.volcano_onequiptomodel = function(inst, owner, from_ground)
+        hat_fns.simple_onequiptomodel(inst, owner, from_ground)
+        hat_fns.volcano_onturnoff(inst)
+        hat_fns.volcano_onupdatelight(inst)
+    end
+
+    hat_fns.volcano_ondropped = function(inst)
+        hat_fns.volcano_onupdatelight(inst)
+    end
+
+    hat_fns.volcano_onputininventory = function(inst, guy)
+        if inst.Light ~= nil then
+            inst.Light:Enable(false)
+        end
+
+        hat_fns.volcano_onupdatelight(inst)
+    end
+
+    hat_fns.volcano_ontakefuel = function(inst)
+        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+            hat_fns.volcano_onturnon(inst)
+        else
+            hat_fns.volcano_onupdatelight(inst)
+        end
+    end
+
+    hat_fns.volcano_onperish = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+        local equipped = inst.components.equippable ~= nil and inst.components.equippable:IsEquipped()
+
+        hat_fns.volcano_onturnoff(inst)
+        hat_fns.volcano_onupdatelight(inst)
+
+        if equipped and owner ~= nil then
+            owner:PushEvent("torchranout", { prefab = inst.prefab, equipslot = inst.components.equippable.equipslot })
+        end
+    end
+
+    hat_fns.volcano_onload = function(inst, data)
+        inst:DoTaskInTime(0, function(inst)
+            local equipped = inst.components.equippable ~= nil and inst.components.equippable:IsEquipped()
+            local hasfuel = inst.components.fueled ~= nil and not inst.components.fueled:IsEmpty()
+
+            if equipped then
+                if hasfuel then
+                    hat_fns.volcano_onturnon(inst)
+                else
+                    hat_fns.volcano_onturnoff(inst)
+                end
+            else
+                hat_fns.volcano_onupdatelight(inst)
+            end
+        end)
+    end
+
+    hat_fns.volcano_onremove = function(inst)
+        if inst.volcano_light ~= nil and inst.volcano_light:IsValid() then
+            inst.volcano_light:Remove()
+        end
+    end
+
+    hat_fns.volcano_custom_init = function(inst)
+        inst.entity:AddSoundEmitter()
+        inst.entity:AddLight()
+
+        inst.Light:SetFalloff(0.7)
+        inst.Light:SetIntensity(0.5)
+        inst.Light:SetRadius(0.5)
+        inst.Light:SetColour(232/255, 141/255, 67/255)
+        inst.Light:Enable(false)
+
+        inst:AddTag("HASHEATER")
+        inst:AddTag("cooker")
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.volcano = function()
+        local inst = simple(hat_fns.volcano_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.volcano_light = nil
+
+        inst.components.inventoryitem:SetOnDroppedFn(hat_fns.volcano_ondropped)
+
+        inst.components.equippable:SetOnEquip(hat_fns.volcano_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.volcano_onunequip)
+        inst.components.equippable:SetOnEquipToModel(hat_fns.volcano_onequiptomodel)
+
+        inst:AddComponent("cooker")
+        inst:AddComponent("insulator")
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_LARGE)
+
+        inst:AddComponent("heater")
+        inst.components.heater.heat = TUNING.APO_HATS.VOLCANO.HEAT
+        inst.components.heater.equippedheat = TUNING.APO_HATS.VOLCANO.HEAT
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.MAGIC
+        inst.components.fueled.secondaryfueltype = FUELTYPE.REDGEM
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.VOLCANO.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(hat_fns.volcano_onperish)
+        inst.components.fueled:SetTakeFuelFn(hat_fns.volcano_ontakefuel)
+        inst.components.fueled.bonusmult = TUNING.APO_HATS.VOLCANO.FUEL_BONUS_MULT
+        inst.components.fueled.accepting = true
+
+        inst.OnLoad = hat_fns.volcano_onload
+        inst.OnRemoveEntity = hat_fns.volcano_onremove
+
+        return inst
+    end
+
     local hat_fn  = nil
 
     local assets  =
@@ -648,15 +1205,23 @@ local function MakeHat(name)
         hat_fn = hat_fns.carnival_host
     elseif name == "extraheavy" then
         hat_fn = hat_fns.extraheavy
+    elseif name == "foodbasket" then
+        hat_fn = hat_fns.foodbasket
     elseif name == "jiaolian" then
         hat_fn = hat_fns.jiaolian
     elseif name == "peagawkfeather" then
         hat_fn = hat_fns.peagawkfeather
     elseif name == "propeller" then
-        prefabs = { "propeller_fan" }
+        prefabs = { "propellerhat_fan" }
         hat_fn = hat_fns.propeller
     elseif name == "pumpkinhead" then
         hat_fn = hat_fns.pumpkinhead
+    elseif name == "volcanocold" then
+        prefabs = { "volcanocoldhat_light" }
+        hat_fn = hat_fns.volcanocold
+    elseif name == "volcano" then
+        prefabs = { "volcanohat_light" }
+        hat_fn = hat_fns.volcano
     end
 
     table.insert(ALL_HAT_PREFAB_NAMES, prefabname)
@@ -667,7 +1232,10 @@ end
 return MakeHat("bucket"),
 MakeHat("carnival_host"),
 MakeHat("extraheavy"),
+MakeHat("foodbasket"),
 MakeHat("jiaolian"),
 MakeHat("peagawkfeather"),
 MakeHat("propeller"),
-MakeHat("pumpkinhead")
+MakeHat("pumpkinhead"),
+MakeHat("volcanocold"),
+MakeHat("volcano")

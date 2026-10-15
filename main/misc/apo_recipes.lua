@@ -290,6 +290,18 @@ AddRecipe2("extraheavyhat",
     TECH.SCIENCE_TWO, {}, { "ARMOUR" }
 )
 
+AddRecipe2("foodbaskethat",
+    {
+        Ingredient("petals", 6),
+        Ingredient("carrot", 2),
+        Ingredient("cave_banana", 2),
+        Ingredient("berries", 2),
+        Ingredient("silk", 2),
+    },
+
+    TECH.LOST, {}, { "CLOTHING" }
+)
+
 APOAddRecipe(ABCEnabled or IASEnabled, "gashat",
     HOFEnabled and
     {
@@ -423,6 +435,26 @@ APOAddRecipe(ABCEnabled or IASEnabled, "thunderhat",
     },
 
     TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
+)
+
+AddRecipe2("volcanocoldhat",
+    {
+        Ingredient("heatrock", 1),
+        Ingredient("bluegem", 3),
+        Ingredient("strawhat", 1),
+    },
+
+    TECH.LOST, {}, { "LIGHT", "SUMMER" }
+)
+
+AddRecipe2("volcanohat",
+    {
+        Ingredient("heatrock", 1),
+        Ingredient("redgem", 3),
+        Ingredient("strawhat", 1),
+    },
+
+    TECH.LOST, {}, { "LIGHT", "WINTER" }
 )
 
 -- Everything else.

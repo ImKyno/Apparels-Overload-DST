@@ -52,6 +52,8 @@ WANDA.DESCRIBE.DOUBLE_UMBRELLAHAT = "Double protection against rain."
 
 WANDA.DESCRIBE.EXTRAHEAVYHAT = "Built to last. Though I may grow old waiting for my neck to adjust."
 
+WANDA.DESCRIBE.FOODBASKETHAT = "This reminds me of a famous person who would always wear hats like that."
+
 WANDA.DESCRIBE.GASHAT = "This hat can purify my surroundings."
 
 WANDA.DESCRIBE.GASMASKHAT = "Total fallout."
@@ -87,3 +89,7 @@ WANDA.DESCRIBE.SNAKESKINHAT = "A good hat if you don't like being struck by ligh
 WANDA.DESCRIBE.THATCHSACK = "An ordinary handmade satchel."
 
 WANDA.DESCRIBE.THUNDERHAT = "Now I'm ready for the thunderstorm!"
+
+WANDA.DESCRIBE.VOLCANOCOLDHAT = "It has been sleeping for hundreds of years."
+
+WANDA.DESCRIBE.VOLCANOHAT = "I'm counting the seconds for it to explode."

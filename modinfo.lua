@@ -71,6 +71,22 @@ local STRINGS =
             },
         },
 
+        CLIENT =
+        {
+            NAME =
+            {
+                "Client-side Options",
+                pt  = "Opções do Cliente",
+            },
+
+            HOVER =
+            {
+                "Options that only affects you in the server.",
+                pt  = "Opções que afetam somente a você no servidor.",
+            },
+        },
+
+        -- Server Options.
         LANGUAGE =
         {
             NAME =
@@ -128,62 +144,63 @@ local STRINGS =
             },
         },
 
-        BEEHATS_CHANGES =
+        VANILLA_CHANGES =
         {
             NAME =
             {
-                "Bee-like Hats Tweaks",
-                pt  = "Mudanças para os Chapéus de Abelha",
+                "Tweaks to Vanilla Items",
+                pt  = "Mudanças para Items do Vanilla",
             },
 
             HOVER =
             {
-                "Should bee hats such as the Beekeeper Hat and Bee Queen Crown have new features? Visit the Mod's Wiki for more information.",
-                pt  = "Permitir que chapéus de abelhas como o Chapéu de Apicultour e Cora da Abelha Rainha ganhe novos recursos? Visite a Wiki do Mod para mais informações.",
+                "Should some Clothing and Headwear have new features? Visit the Mod's Wiki for more information.",
+                pt  = "Permitir que algumas Roupas e Chapéus tenham novos recursos? Visite a Wiki do Mod para mais informações.",
             },
 
             HOVER_OPTIONS =
             {
                 DISABLED =
                 {
-                    "Default behaviour for Bee-like Hats.",
-                    pt  = "Comportamento padrão para os chapéus de abelhas.",
+                    "Default behaviour for Vanilla Clothing and Headwear.",
+                    pt  = "Comportamento padrão para Roupas e Chapéus do Vanilla.",
                 },
 
                 ENABLED =
                 {
-                    "Bee-like Hats will recieve new features.",
-                    pt  = "Chapéus de abelhas receberão novos recursos.",
+                    "Some Clothing and Headwear will have new features.",
+                    pt  = "Algumas Roupas e Chapéus terão novos recursos.",
                 },
             },
         },
 
-        ARMOR_MARBLE_CHANGES =
+        -- Client Options.
+        BATVISION_CC =
         {
             NAME =
             {
-                "Marble Suit Set Bonus",
-                pt  = "Bonus da Armadura de Mármore",
+                "Cowl - Nightvision Filter",
+                pt  = "Capuz de Morcego - Filtro de Visão Noturna",
             },
 
             HOVER =
             {
-                "Should the Marble Suit have an unique Set Bonus when paired with the Marble Helmet? Visit the Mod's Wiki for more information.",
-                pt  = "Permitir que a Armadura de Mármore tenha um bônus quando usada em conjuto com o Capacete de Mármore? Visite a Wiki do Mod para mais informações.",
+                "Should the Cowl have an unique Nightvision Filter when worn?",
+                pt  = "Permitir que o Capuz de Morcego tenha um filtro único de Visão Noturna quando equipado?",
             },
 
             HOVER_OPTIONS =
             {
                 DISABLED =
                 {
-                    "Default behaviour for the Marble Suit",
-                    pt  = "Comportamento padrão para a Armadura de Mármore",
+                    "Cowl will not have any Nightvision Filter.",
+                    pt  = "O Capuz de Morcego não terá nenhum filtro de Visão Noturna.",
                 },
 
                 ENABLED =
                 {
-                    "Marble Suit will recieve a Set Bonus when paired with the Marble Helmet.",
-                    pt  = "A Armadura de Mármore receberá um bônus quando usada em conjunto com o Capacete de Mármore.",
+                    "Cowl will have an unique Nightvision Filter.",
+                    pt  = "O Capuz de Morcego terá um filtro único de Visão Noturna.",
                 },
             },
         },
@@ -292,34 +309,18 @@ local function GetVanillaOptions()
     local VANILLA_LABEL                = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA.NAME)
     local VANILLA_HOVER                = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA.HOVER)
 
-    local BEEHATS_CHANGES_LABEL        = ChooseTranslationTable(STRINGS.SETTINGS.BEEHATS_CHANGES.NAME)
-    local BEEHATS_CHANGES_HOVER        = ChooseTranslationTable(STRINGS.SETTINGS.BEEHATS_CHANGES.HOVER)
-    local BEEHATS_CHANGES_OPTIONS      =
+    local VANILLA_CHANGES_LABEL        = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA_CHANGES.NAME)
+    local VANILLA_CHANGES_HOVER        = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA_CHANGES.HOVER)
+    local VANILLA_CHANGES_OPTIONS      =
     {
         {
             description                = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.BEEHATS_CHANGES.HOVER_OPTIONS.DISABLED),
+            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA_CHANGES.HOVER_OPTIONS.DISABLED),
             data                       = false
         },
         {
             description                = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.BEEHATS_CHANGES.HOVER_OPTIONS.ENABLED),
-            data                       = true
-        }
-    }
-
-    local ARMOR_MARBLE_CHANGES_LABEL   = ChooseTranslationTable(STRINGS.SETTINGS.ARMOR_MARBLE_CHANGES.NAME)
-    local ARMOR_MARBLE_CHANGES_HOVER   = ChooseTranslationTable(STRINGS.SETTINGS.ARMOR_MARBLE_CHANGES.HOVER)
-    local ARMOR_MARBLE_CHANGES_OPTIONS =
-    {
-        {
-            description                = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.ARMOR_MARBLE_CHANGES.HOVER_OPTIONS.DISABLED),
-            data                       = false
-        },
-        {
-            description                = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.ARMOR_MARBLE_CHANGES.HOVER_OPTIONS.ENABLED),
+            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA_CHANGES.HOVER_OPTIONS.ENABLED),
             data                       = true
         }
     }
@@ -334,18 +335,54 @@ local function GetVanillaOptions()
             default             = false
         },
         {
-            name                = "BEEHATS_CHANGES",
-            label               = BEEHATS_CHANGES_LABEL,
-            hover               = BEEHATS_CHANGES_HOVER,
-            options             = BEEHATS_CHANGES_OPTIONS,
+            name                = "VANILLA_CHANGES",
+            label               = VANILLA_CHANGES_LABEL,
+            hover               = VANILLA_CHANGES_HOVER,
+            options             = VANILLA_CHANGES_OPTIONS,
             default             = true
         },
+    }
+end
+
+local function GetClientOptions()
+    local NONE_OPTIONS                 = GetNoneOptions()
+
+    local CLIENT_LABEL                 = ChooseTranslationTable(STRINGS.SETTINGS.CLIENT.NAME)
+    local CLIENT_HOVER                 = ChooseTranslationTable(STRINGS.SETTINGS.CLIENT.HOVER)
+
+    local BATVISION_CC_LABEL           = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.NAME)
+    local BATVISION_CC_HOVER           = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.HOVER)
+    local BATVISION_CC_OPTIONS         =
+    {
         {
-            name                = "ARMOR_MARBLE_CHANGES",
-            label               = ARMOR_MARBLE_CHANGES_LABEL,
-            hover               = ARMOR_MARBLE_CHANGES_HOVER,
-            options             = ARMOR_MARBLE_CHANGES_OPTIONS,
-            default             = true
+            description                = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.HOVER_OPTIONS.DISABLED),
+            data                       = false
+        },
+        {
+            description                = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.HOVER_OPTIONS.ENABLED),
+            data                       = true
+        }
+    }
+
+    return
+    {
+        {
+            name                = "CLIENT",
+            label               = CLIENT_LABEL,
+            hover               = CLIENT_HOVER,
+            options             = NONE_OPTIONS,
+            default             = false,
+            client              = true
+        },
+        {
+            name                = "BATVISION_CC",
+            label               = BATVISION_CC_LABEL,
+            hover               = BATVISION_CC_HOVER,
+            options             = BATVISION_CC_OPTIONS,
+            default             = true,
+            client              = true
         },
     }
 end
@@ -354,3 +391,4 @@ configuration_options = {}
 
 AddConfigurationOptions(configuration_options, GetGeneralOptions())
 AddConfigurationOptions(configuration_options, GetVanillaOptions())
+AddConfigurationOptions(configuration_options, GetClientOptions())

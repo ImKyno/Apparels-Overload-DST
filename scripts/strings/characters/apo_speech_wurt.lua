@@ -52,6 +52,8 @@ WURT.DESCRIBE.DOUBLE_UMBRELLAHAT = "Twice the fancy!"
 
 WURT.DESCRIBE.EXTRAHEAVYHAT = "Keeps head safe, glorp!"
 
+WURT.DESCRIBE.FOODBASKETHAT = "Want to eat it, flort!"
+
 WURT.DESCRIBE.GASHAT = "Keeps nasty smell out!"
 
 WURT.DESCRIBE.GASMASKHAT = "It's weird, florp."
@@ -87,3 +89,7 @@ WURT.DESCRIBE.SNAKESKINHAT = "Is nice rain hat!"
 WURT.DESCRIBE.THATCHSACK = "Tiny bag for my stuff, florp."
 
 WURT.DESCRIBE.THUNDERHAT = "Wurt ready for duty!"
+
+WURT.DESCRIBE.VOLCANOCOLDHAT = "It sleeping? Me wait for it to wake up, florp."
+
+WURT.DESCRIBE.VOLCANOHAT = "Fwoosh, scary!!"

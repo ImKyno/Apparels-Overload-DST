@@ -52,6 +52,8 @@ WILLOW.DESCRIBE.DOUBLE_UMBRELLAHAT = "If I bought this in a store I'd feel burne
 
 WILLOW.DESCRIBE.EXTRAHEAVYHAT = "A rock on my head."
 
+WILLOW.DESCRIBE.FOODBASKETHAT = "It is a bit flamboyant."
+
 WILLOW.DESCRIBE.GASHAT = "I like not smelling smelly smells."
 
 WILLOW.DESCRIBE.GASMASKHAT = "Cuts down on the coughing."
@@ -87,3 +89,7 @@ WILLOW.DESCRIBE.SNAKESKINHAT = "Water just runs right off it."
 WILLOW.DESCRIBE.THATCHSACK = "Thatch you very much."
 
 WILLOW.DESCRIBE.THUNDERHAT = "This looks good on me."
+
+WILLOW.DESCRIBE.VOLCANOCOLDHAT = "Bummer. It's sleeping!"
+
+WILLOW.DESCRIBE.VOLCANOHAT = "I absolutely love it!"

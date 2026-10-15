@@ -78,6 +78,9 @@ STRINGS.RECIPE_DESC.DOUBLE_UMBRELLAHAT = "Definitely function over fashion."
 STRINGS.NAMES.EXTRAHEAVYHAT = "Marble Helmet"
 STRINGS.RECIPE_DESC.EXTRAHEAVYHAT = "Sturdy and heavy!"
 
+STRINGS.NAMES.FOODBASKETHAT = "Tutti-Frutti Hat"
+STRINGS.RECIPE_DESC.FOODBASKETHAT = "I have never followed what people say it is \"fashionable\"."
+
 STRINGS.NAMES.GASHAT = "Particulate Purifier"
 STRINGS.RECIPE_DESC.GASHAT = "Keep nasty airborne particulates away!"
 
@@ -127,3 +130,9 @@ STRINGS.RECIPE_DESC.THATCHSACK = "Carry a light load."
 
 STRINGS.NAMES.THUNDERHAT = "Thunderhat"
 STRINGS.RECIPE_DESC.THUNDERHAT = "A few thousand volts wouldn't hurt, probably."
+
+STRINGS.NAMES.VOLCANOCOLDHAT = "Chilled Volcano"
+STRINGS.RECIPE_DESC.VOLCANOCOLDHAT = "The air is getting colder around you."
+
+STRINGS.NAMES.VOLCANOHAT = "Mini Volcano"
+STRINGS.RECIPE_DESC.VOLCANOHAT = "The air is getting warmer around you."

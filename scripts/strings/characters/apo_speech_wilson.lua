@@ -52,6 +52,8 @@ WILSON.DESCRIBE.DOUBLE_UMBRELLAHAT = "The second umbrella keeps the first umbrel
 
 WILSON.DESCRIBE.EXTRAHEAVYHAT = "Sturdy, but my neck might regret this."
 
+WILSON.DESCRIBE.FOODBASKETHAT = "It's a hat full of fruits!"
+
 WILSON.DESCRIBE.GASHAT = "Sucks all the stink out."
 
 WILSON.DESCRIBE.GASMASKHAT = "Now I can breath anywhere."
@@ -87,3 +89,7 @@ WILSON.DESCRIBE.SNAKESKINHAT = "It should repel the rain from my hair."
 WILSON.DESCRIBE.THATCHSACK = "I call it a tatchel."
 
 WILSON.DESCRIBE.THUNDERHAT = "Does this hat make me look scientific?"
+
+WILSON.DESCRIBE.VOLCANOCOLDHAT = "A dormant volcano? I just hope it does not erupt while I'm wearing it."
+
+WILSON.DESCRIBE.VOLCANOHAT = "Oh well, now I have a volcano in my head."

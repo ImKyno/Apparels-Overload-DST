@@ -1,10 +1,17 @@
 local _G = GLOBAL
 
+local BATVISION_CC = GetModConfigData("BATVISION_CC", true)
+
 local function OnSetBatVision(self, enabled)
     self.inst:PushEvent("batvision", { enabled = enabled })
 
     if enabled then
-        self:PushForcedNightVision("BATVISION", 100, TUNING.APO_MISC.BATVISION.CC_TABLE, 1)
+        -- PushForcedNightVision(source, priority, customcctable, blend, customambienttable, nonightvisioncc)
+        if BATVISION_CC then
+            self:PushForcedNightVision("BATVISION", 100, TUNING.APO_MISC.BATVISION.CC_TABLE, 1)
+        else
+            self:PushForcedNightVision("BATVISION", 100, nil, 1, nil, true)
+        end
     else
         self:PopForcedNightVision("BATVISION")
     end

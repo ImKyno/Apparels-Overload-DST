@@ -52,6 +52,8 @@ WATHGRITHR.DESCRIBE.DOUBLE_UMBRELLAHAT = "What kind of strange helm is this?"
 
 WATHGRITHR.DESCRIBE.EXTRAHEAVYHAT = "A helm of stone! Let the blows of mine foes shatter upon it!"
 
+WATHGRITHR.DESCRIBE.FOODBASKETHAT = "Not a proper hat for a warrior!"
+
 WATHGRITHR.DESCRIBE.GASHAT = "Armor of sorts for my nose and throat!"
 
 WATHGRITHR.DESCRIBE.GASMASKHAT = "Poisonous air shall not consume me!"
@@ -87,3 +89,7 @@ WATHGRITHR.DESCRIBE.SNAKESKINHAT = "Shall I wear the serpent?"
 WATHGRITHR.DESCRIBE.THATCHSACK = "I hope my spear doesn't poke a hole in it."
 
 WATHGRITHR.DESCRIBE.THUNDERHAT = "Tis a hat worthy of Thor."
+
+WATHGRITHR.DESCRIBE.VOLCANOCOLDHAT = "The northern alps!"
+
+WATHGRITHR.DESCRIBE.VOLCANOHAT = "A mountain hat of fire!"

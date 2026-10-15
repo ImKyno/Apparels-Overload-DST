@@ -52,6 +52,8 @@ WARLY.DESCRIBE.DOUBLE_UMBRELLAHAT = "Ridiculous! I want one."
 
 WARLY.DESCRIBE.EXTRAHEAVYHAT = "A bit too heavy for my taste, but quite sturdy."
 
+WARLY.DESCRIBE.FOODBASKETHAT = "This is magnifique!"
+
 WARLY.DESCRIBE.GASHAT = "Anything to keep acid out of my dinner!"
 
 WARLY.DESCRIBE.GASMASKHAT = "I could use this in the smoke house."
@@ -87,3 +89,7 @@ WARLY.DESCRIBE.SNAKESKINHAT = "Tres cool."
 WARLY.DESCRIBE.THATCHSACK = "A very simple handmade satchel."
 
 WARLY.DESCRIBE.THUNDERHAT = "Not a chef hat but good for a night out."
+
+WARLY.DESCRIBE.VOLCANOCOLDHAT = "Hmm. I think this might help preserve some of my ingredients."
+
+WARLY.DESCRIBE.VOLCANOHAT = "Maybe I can cook something on it."

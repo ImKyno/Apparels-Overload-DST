@@ -52,6 +52,8 @@ WORTOX.DESCRIBE.DOUBLE_UMBRELLAHAT = "Work of a madman."
 
 WORTOX.DESCRIBE.EXTRAHEAVYHAT = "Heavy is the crown!"
 
+WORTOX.DESCRIBE.FOODBASKETHAT = "Mortals have a funny taste for head pieces."
+
 WORTOX.DESCRIBE.GASHAT = "Smells of freshness when I wear it!"
 
 WORTOX.DESCRIBE.GASMASKHAT = "This will cut down my coughing."
@@ -87,3 +89,7 @@ WORTOX.DESCRIBE.SNAKESKINHAT = "On my head? Wear that?"
 WORTOX.DESCRIBE.THATCHSACK = "Thatch that satchel! Hyuyu!"
 
 WORTOX.DESCRIBE.THUNDERHAT = "Fine, electrify mine... Electrify my golden tooth..."
+
+WORTOX.DESCRIBE.VOLCANOCOLDHAT = "Hello? Are you sleeping, perhaps?"
+
+WORTOX.DESCRIBE.VOLCANOHAT = "Seems like my head gonna do a big boom! Hyuyu!"

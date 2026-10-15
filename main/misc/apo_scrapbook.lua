@@ -53,14 +53,25 @@ local function RemoveScrapbookDeps(data, prefabs, deps)
     end
 end
 
-if TUNING.APO_ARMOR_MARBLE_CHANGES then
+-- Tweaks to Vanilla content.
+if TUNING.APO_VANILLA_CHANGES then
     ScrapbookData.armormarble.specialinfo = "ARMOR_MARBLE"
-end
-
-if TUNING.APO_BEEHATS_CHANGES then
     ScrapbookData.beehat.specialinfo = "BEEHAT"
     ScrapbookData.hivehat.specialinfo = "HIVEHAT"
 end
+
+if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
+    ScrapbookData.bluegem.fueltype  = "BLUEGEM"
+    ScrapbookData.bluegem.fuelvalue = TUNING.HUGE_FUEL
+
+    ScrapbookData.gears.fueltype  = "GEARS"
+    ScrapbookData.gears.fuelvalue = TUNING.HUGE_FUEL
+
+    ScrapbookData.redgem.fueltype  = "REDGEM"
+    ScrapbookData.redgem.fuelvalue = TUNING.HUGE_FUEL
+end
+
+AddScrapbookDeps(ScrapbookData, { "dragonfly", "daywalker" }, { "blueprint" })
 
 -- Register the entries in the Scrapbook.
 local function AddExtraScrapBookItem(sbdata, sbprefab, sbtable)
@@ -657,6 +668,24 @@ local APO_SCRAPBOOK_HEAD =
         specialinfo         = "EXTRAHEAVYHAT",
     },
 
+    foodbaskethat =
+    {
+        name                = "foodbaskethat",
+        prefab              = "foodbaskethat",
+        tex                 = "foodbaskethat.tex",
+        type                = "item",
+        subcat              = "hat",
+        perishable          = TUNING.PERISH_MED,
+        dapperness          = TUNING.DAPPERNESS_MED,
+        burnable            = true,
+        snowmandecor        = true,
+        bank                = "foodbaskethat",
+        build               = "hat_foodbasket",
+        anim                = "anim",
+        deps                = { "petals", "carrot", "cave_banana", "berries", "silk", "researchlab2" },
+        specialinfo         = "FOODBASKETHAT",
+    },
+
     gashat =
     {
         name                = "gashat",
@@ -862,6 +891,7 @@ local APO_SCRAPBOOK_HEAD =
         animoffsety         = 10,
         animoffsetbgy       = -20,
         deps                = { "minifan", "gears", "transistor", "researchlab2" },
+        specialinfo         = "PROPELLERHAT",
     },
 
     pumpkinheadhat =
@@ -948,6 +978,47 @@ local APO_SCRAPBOOK_HEAD =
         deps                = { "feather_canary", "steelwool", "rope", "researchlab2" },
         specialinfo         = "THUNDERHAT",
         condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
+
+    volcanocoldhat =
+    {
+        name                = "volcanocoldhat",
+        prefab              = "volcanocoldhat",
+        tex                 = "volcanocoldhat.tex",
+        type                = "item",
+        subcat              = "hat",
+        fueledmax           = TUNING.APO_HATS.VOLCANOCOLD.PERISHTIME,
+        fueledrate          = 1,
+        fueledtype1         = "BLUEGEM",
+        insulator           = TUNING.INSULATION_LARGE,
+        insulator_type      = "summer",
+        waterproofer        = TUNING.WATERPROOFNESS_LARGE,
+        snowmandecor        = true,
+        bank                = "volcanocoldhat",
+        build               = "hat_volcanocold",
+        anim                = "anim_off",
+        deps                = { "dragonfly", "heatrock", "bluegem", "strawhat" },
+        specialinfo         = "VOLCANOCOLDHAT",
+    },
+
+    volcanohat =
+    {
+        name                = "volcanohat",
+        prefab              = "volcanohat",
+        tex                 = "volcanohat.tex",
+        type                = "item",
+        subcat              = "hat",
+        fueledmax           = TUNING.APO_HATS.VOLCANO.PERISHTIME,
+        fueledrate          = 1,
+        fueledtype1         = "REDGEM",
+        insulator           = TUNING.INSULATION_LARGE,
+        waterproofer        = TUNING.WATERPROOFNESS_LARGE,
+        snowmandecor        = true,
+        bank                = "volcanohat",
+        build               = "hat_volcano",
+        anim                = "anim_off",
+        deps                = { "dragonfly", "heatrock", "redgem", "strawhat" },
+        specialinfo         = "VOLCANOHAT",
     },
 }
 

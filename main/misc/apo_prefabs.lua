@@ -3,10 +3,9 @@ local _G = GLOBAL
 PrefabFiles =
 {
     "apo_armor_flowers",
+    "apo_hats_fx",
     "apo_hats_unique",
     "apo_pigskin_dried",
-    "apo_propellerhat_fan",
-    "apo_thunderhat_light",
 
     -- Modded Skins.
     "apo_skins",

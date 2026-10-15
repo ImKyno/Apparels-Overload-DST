@@ -52,6 +52,8 @@ WOODIE.DESCRIBE.DOUBLE_UMBRELLAHAT = "Double the protection!"
 
 WOODIE.DESCRIBE.EXTRAHEAVYHAT = "That's a lot of rock to have on yer noggin."
 
+WOODIE.DESCRIBE.FOODBASKETHAT = "Mhm... Can I get a piece of the fruit?"
+
 WOODIE.DESCRIBE.GASHAT = "Nothin' stinks when I got this on."
 
 WOODIE.DESCRIBE.GASMASKHAT = "Keeps my lungs clear."
@@ -87,3 +89,7 @@ WOODIE.DESCRIBE.SNAKESKINHAT = "Now would this be a \"touque\" or a \"tuque\"?"
 WOODIE.DESCRIBE.THATCHSACK = "Now I can carry more delicious wood."
 
 WOODIE.DESCRIBE.THUNDERHAT = "How do I look?"
+
+WOODIE.DESCRIBE.VOLCANOCOLDHAT = "What a chilling volcano!"
+
+WOODIE.DESCRIBE.VOLCANOHAT = "What could go wrong, eh?"

@@ -52,6 +52,8 @@ WINONA.DESCRIBE.DOUBLE_UMBRELLAHAT = "This should keep me at least twice as dry.
 
 WINONA.DESCRIBE.EXTRAHEAVYHAT = "Built like a brick outhouse. Weighs about as much, too."
 
+WINONA.DESCRIBE.FOODBASKETHAT = "Ha! Hilarious!"
+
 WINONA.DESCRIBE.GASHAT = "Keeps acid away."
 
 WINONA.DESCRIBE.GASMASKHAT = "Out with the bad air, in with the good."
@@ -87,3 +89,7 @@ WINONA.DESCRIBE.SNAKESKINHAT = "Raindrops keep falling on my hat."
 WINONA.DESCRIBE.THATCHSACK = "For when my pockets are full."
 
 WINONA.DESCRIBE.THUNDERHAT = "Love the hat."
+
+WINONA.DESCRIBE.VOLCANOCOLDHAT = "At least there's no risk of it exploding in this state."
+
+WINONA.DESCRIBE.VOLCANOHAT = "Oh yeah, a mini volcano for my head."

@@ -5,6 +5,7 @@ local INIT_MAIN_MISC =
     "assets",
     "constants",
     "simutil",
+    "actions",
     "prefabs",
     "containers",
     "recipes",
@@ -18,4 +19,5 @@ end
 
 if TUNING.APO_SCRAPBOOK then
     modimport("main/misc/apo_scrapbook")
+    modimport("main/misc/apo_scrapbook_extras")
 end

@@ -3,6 +3,7 @@ local assets =
     Asset("ANIM", "anim/hat_propeller_fan.zip"),
 }
 
+-- Propeller Hat FXs.
 local function OnAlignToTarget(inst, target)
     inst.Transform:SetRotation(target.Transform:GetRotation())
 end
@@ -118,7 +119,7 @@ local function OnStartUnequipping(inst, item)
     end
 end
 
-local function fn()
+local function propellerhat_fanfn()
     local inst = CreateEntity()
 
     inst.entity:AddTransform()
@@ -130,7 +131,7 @@ local function fn()
 
     inst:AddTag("FX")
 
-    inst.isspinning = net_bool(inst.GUID, "propeller_fan.isspinning", "isspinningdirty")
+    inst.isspinning = net_bool(inst.GUID, "propellerhat_fan.isspinning", "isspinningdirty")
 
     inst.entity:SetPristine()
 
@@ -146,4 +147,85 @@ local function fn()
     return inst
 end
 
-return Prefab("propeller_fan", fn, assets)
+-- Thunder Hat FXs.
+local function thunderhat_lightfn()
+    local inst = CreateEntity()
+
+    inst.entity:AddTransform()
+    inst.entity:AddLight()
+    inst.entity:AddNetwork()
+
+    inst.Light:SetRadius(3)
+    inst.Light:SetFalloff(.75)
+    inst.Light:SetIntensity(.9)
+    inst.Light:SetColour(235/255, 121/255, 12/255)
+
+    inst:AddTag("FX")
+
+    inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.persists = false
+
+    return inst
+end
+
+-- Chilled Volcano FXs.
+local function volcanocoldhat_lightfn()
+    local inst = CreateEntity()
+
+    inst.entity:AddTransform()
+    inst.entity:AddLight()
+    inst.entity:AddNetwork()
+
+    inst.Light:SetRadius(3)
+    inst.Light:SetFalloff(.75)
+    inst.Light:SetIntensity(.9)
+    inst.Light:SetColour(100/255, 190/255, 255/255)
+
+    inst:AddTag("FX")
+
+    inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.persists = false
+
+    return inst
+end
+
+-- Mini Volcano FXs.
+local function volcanohat_lightfn()
+    local inst = CreateEntity()
+
+    inst.entity:AddTransform()
+    inst.entity:AddLight()
+    inst.entity:AddNetwork()
+
+    inst.Light:SetRadius(3)
+    inst.Light:SetFalloff(.75)
+    inst.Light:SetIntensity(.9)
+    inst.Light:SetColour(232/255, 141/255, 67/255)
+
+    inst:AddTag("FX")
+
+    inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.persists = false
+
+    return inst
+end
+
+return Prefab("propellerhat_fan", propellerhat_fanfn, assets),
+Prefab("thunderhat_light", thunderhat_lightfn),
+Prefab("volcanocoldhat_light", volcanocoldhat_lightfn),
+Prefab("volcanohat_light", volcanohat_lightfn)

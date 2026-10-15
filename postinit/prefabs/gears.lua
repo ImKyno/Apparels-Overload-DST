@@ -7,7 +7,13 @@ local function GearsPostInit(inst)
 
     if inst.components.fuel == nil then
         inst:AddComponent("fuel")
-        inst.components.fuel.fueltype = _G.FUELTYPE.GEARS
+    end
+
+    if inst.components.fuel then
+        if inst.components.fuel.secondaryfueltype == nil then
+            inst.components.fuel.secondaryfueltype = _G.FUELTYPE.GEARS
+        end
+
         inst.components.fuel.fuelvalue = TUNING.HUGE_FUEL
     end
 end

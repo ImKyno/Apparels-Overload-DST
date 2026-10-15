@@ -72,6 +72,7 @@ SortAfter("gashat",             "beefalohat",         "CLOTHING")
 SortAfter("gasmaskhat",         "gashat",             "CLOTHING")
 SortAfter("peagawkfeatherhat",  "featherhat",         "CLOTHING")
 SortAfter("pumpkinheadhat",     "pumpkinhat",         "CLOTHING")
+SortAfter("foodbaskethat",      "pumpkinheadhat",     "CLOTHING")
 
 SortAfter("thatchsack",         "giftwrap",           "CONTAINERS")
 SortAfter("armor_vortex",       "candybag",           "CONTAINERS")
@@ -80,6 +81,8 @@ SortAfter("carnival_hosthat",   "carnival_vest_c",    "CRAFTING_STATION")
 
 SortAfter("candlehat",          "pumpkin_lantern",    "LIGHT")
 SortAfter("bathat",             "minerhat",           "LIGHT")
+SortAfter("volcanohat",         "molehat",            "LIGHT")
+SortAfter("volcanocoldhat",     "volcanohat",         "LIGHT")
 
 SortAfter("armor_vortex",       "nightlight",         "MAGIC")
 
@@ -111,6 +114,8 @@ SortAfter("armor_blubber",      "hawaiianshirt",      "SUMMER")
 SortAfter("armor_lifejacket",   "reflectivevest",     "SUMMER")
 SortAfter("double_umbrellahat", "eyebrellahat",       "SUMMER")
 SortAfter("propellerhat",       "double_umbrellahat", "SUMMER")
+SortAfter("volcanocoldhat",     "propellerhat",       "SUMMER")
 
 SortAfter("armor_obsidian",     "beargervest",        "WINTER")
 SortAfter("armor_snakeskin",    "raincoat",           "WINTER")
+SortAfter("volcanohat",         "beefalohat",         "WINTER")
