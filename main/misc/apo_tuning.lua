@@ -337,6 +337,7 @@ TUNING.APO_HATS =
     {
         PERISHTIME = 480 * 5,
         WALKSPEEDMULT = 1.20,
+        LUCK = 2,
     },
 
     DOUBLE_UMBRELLA =
@@ -387,6 +388,13 @@ TUNING.APO_HATS =
             "shadowcreature",
             "shadow_aligned",
         },
+    },
+
+    LUCKYTREASURE =
+    {
+        PERISHTIME = 480 * 10,
+        SECTIONS = 6,
+        LUCK = 3,
     },
 
     METALPLATE =
@@ -515,6 +523,7 @@ TUNING.APO_HATS =
     {
         CONDITION = 600,
         ABSORPTION = 0.85,
+        PLANAR_ABSORPTION = 5,
         WALKSPEEDMULT = 0.90,
     },
 
@@ -528,6 +537,17 @@ TUNING.APO_HATS =
     {
         PERISHTIME = 480 * 2,
         FUEL_BONUS_MULT = 4,
+    },
+
+    WILLOWOLD =
+    {
+        PERISHTIME = 480 * 4,
+
+        MODIFIERS =
+        {
+            DAMAGE = 1.25,
+            HEALTH = 1.25,
+        },
     },
 }
 

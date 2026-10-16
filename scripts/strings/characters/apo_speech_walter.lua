@@ -1,5 +1,7 @@
 local WALTER = STRINGS.CHARACTERS.WALTER
 
+WALTER.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "Ah! There's a treasure around here Woby, let's find it!"
+
 WALTER.DESCRIBE.AERODYNAMICHAT = "I wonder if this would work on Woby too."
 
 WALTER.DESCRIBE.ANTMASKHAT = "I feel like a mant now."
@@ -40,6 +42,8 @@ WALTER.DESCRIBE.BRAINJELLYHAT = "Look Woby, I'm even smarter now!"
 
 WALTER.DESCRIBE.BUCKETHAT = "A good idea when the whole place starts coming down!"
 
+WALTER.DESCRIBE.BURIEDTREASURECHEST = "A chest full of treasures!"
+
 WALTER.DESCRIBE.CANDLEHAT = "This could be useful during the night!"
 
 WALTER.DESCRIBE.CAPTAINHAT = "Captain Walter at your disposal!"
@@ -59,6 +63,8 @@ WALTER.DESCRIBE.GASHAT = "Might be a good idea to have this with me when it's st
 WALTER.DESCRIBE.GASMASKHAT = "Could be useful for exploring zones filled with gas or miasma."
 
 WALTER.DESCRIBE.JIAOLIANHAT = "A mask to fight ghosts!"
+
+WALTER.DESCRIBE.LUCKYTREASUREHAT = "Does it make me look like a real pirate, Woby?"
 
 WALTER.DESCRIBE.METALPLATEHAT = "It's a bit heavy."
 
@@ -101,3 +107,5 @@ WALTER.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Great armor. Horrible goggles."
 WALTER.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "These make spotting wildlife at night a cinch!"
 
 WALTER.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "An electric blaster you can aim anywhere."
+
+WALTER.DESCRIBE.WILLOWOLDHAT = "This cap needs a patch me up!"

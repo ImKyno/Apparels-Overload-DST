@@ -46,9 +46,11 @@ local APO_ICONS =
     "volcanocoldhat_off",
     "volcanohat",
     "volcanohat_off",
+    "willowoldhat",
 
     -- Modded Skins.
     "ms_aerodynamichat_tropical",
+    "ms_armor_cactus_tropical",
     "ms_armor_snakeskin_scaly",
     "ms_double_umbrellahat_black",
     "ms_double_umbrellahat_cyan",
@@ -84,6 +86,7 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         "double_umbrellahat",
         "gashat",
         "gasmaskhat",
+        "luckytreasurehat",
         "metalplatehat",
         "oxhat",
         "pigcrownhat",

@@ -1,5 +1,7 @@
 local WANDA = STRINGS.CHARACTERS.WANDA
 
+WANDA.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "It's time for a treasure hunting game."
+
 WANDA.DESCRIBE.AERODYNAMICHAT = "Weee!"
 
 WANDA.DESCRIBE.ANTMASKHAT = "Now I know what it smells like to be an insect."
@@ -40,6 +42,8 @@ WANDA.DESCRIBE.BRAINJELLYHAT = "I'm getting some ideas!"
 
 WANDA.DESCRIBE.BUCKETHAT = "I'd rather not have my head crushed before my time."
 
+WANDA.DESCRIBE.BURIEDTREASURECHEST = "It's time for some treasure hunting."
+
 WANDA.DESCRIBE.CANDLEHAT = "For seeing in the dark."
 
 WANDA.DESCRIBE.CAPTAINHAT = "I am the captain of the time!"
@@ -59,6 +63,8 @@ WANDA.DESCRIBE.GASHAT = "This hat can purify my surroundings."
 WANDA.DESCRIBE.GASMASKHAT = "Total fallout."
 
 WANDA.DESCRIBE.JIAOLIANHAT = "Boo!"
+
+WANDA.DESCRIBE.LUCKYTREASUREHAT = "I'm feeling lucky today!"
 
 WANDA.DESCRIBE.METALPLATEHAT = "It's heavy...!"
 
@@ -101,3 +107,5 @@ WANDA.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Glasses mixed with armor. Interestin
 WANDA.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "I can see what's lurking in the dark before it gets too close."
 
 WANDA.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A little electrical discharge can save a great deal of time."
+
+WANDA.DESCRIBE.WILLOWOLDHAT = "This hat has so many stories to tell..."

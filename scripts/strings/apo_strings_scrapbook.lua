@@ -129,7 +129,7 @@ Decreases hunger rate by 25% and provides a sanity boost while the wearer is on 
 
 SPECIALINFO.CARNIVAL_HOSTHAT =
 [[
-Increases movement speed by 20% when worn.
+Increases luck by 2 points and movement speed by 20% when worn.
 ]]
 
 SPECIALINFO.DISGUISEHAT =
@@ -175,6 +175,13 @@ SPECIALINFO.JIAOLIANHAT =
 The protection this armor offers only really works on Ghosts, Merms, Pigs and Shadow Creatures.
 ]]
 
+SPECIALINFO.LUCKYTREASUREHAT =
+[[
+Increases luck by 3 points and periodically finds a "X Marks the Spot" when worn.
+
+"Me pirate sense be tinglin." - Woodlegs.
+]]
+
 SPECIALINFO.METALPLATEHAT =
 [[
 This armor is durable but heavy, and slows its wearer.
@@ -194,7 +201,7 @@ Roughly doubles the number of birds that will land near the wearer.
 
 SPECIALINFO.PIGCROWNHAT =
 [[
-This noble crown shows supreme authority, boosting the wearer's companions damage and health by 25%.
+This noble crown shows supreme authority, increasing the wearer's companions damage and health by 25%.
 ]]
 
 SPECIALINFO.PIRATEHAT =
@@ -226,7 +233,7 @@ Can be waxed to last forever.
 
 SPECIALINFO.SHARK_TEETHHAT =
 [[
-Increases luck by 2 when worn.
+Increases luck by 2 points when worn.
 ]]
 
 SPECIALINFO.SNAKESKINHAT =
@@ -287,4 +294,9 @@ SPECIALINFO.WAGSTAFF_GOGGLES_SHOOTHAT =
 [[
 Improves vision in a storm.
 
+]]
+
+SPECIALINFO.WILLOWOLDHAT =
+[[
+Increases Bernie's health and damage by 25% when worn.
 ]]

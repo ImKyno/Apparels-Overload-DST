@@ -1,5 +1,7 @@
 local WARLY = STRINGS.CHARACTERS.WARLY
 
+WARLY.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "Mon dieu! There's a buried treasure around here."
+
 WARLY.DESCRIBE.AERODYNAMICHAT = "Speeds me on my way."
 
 WARLY.DESCRIBE.ANTMASKHAT = "The pith has been removed."
@@ -40,6 +42,8 @@ WARLY.DESCRIBE.BRAINJELLYHAT = "I can feel inspiration seeping into me! Wait, th
 
 WARLY.DESCRIBE.BUCKETHAT = "A rather crude hat, but one must protect the head."
 
+WARLY.DESCRIBE.BURIEDTREASURECHEST = "What shall I find?"
+
 WARLY.DESCRIBE.CANDLEHAT = "Handy for some nighttime cooking."
 
 WARLY.DESCRIBE.CAPTAINHAT = "I have been promoted!"
@@ -59,6 +63,8 @@ WARLY.DESCRIBE.GASHAT = "Anything to keep acid out of my dinner!"
 WARLY.DESCRIBE.GASMASKHAT = "I could use this in the smoke house."
 
 WARLY.DESCRIBE.JIAOLIANHAT = "Ah, a halloween mask."
+
+WARLY.DESCRIBE.LUCKYTREASUREHAT = "It makes me feel... dangerous."
 
 WARLY.DESCRIBE.METALPLATEHAT = "I prefer a chef hat."
 
@@ -101,3 +107,5 @@ WARLY.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Perfect for running around blindly o
 WARLY.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Even the smallest living things stand out."
 
 WARLY.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A shocking little invention. Best not use it near the kitchen."
+
+WARLY.DESCRIBE.WILLOWOLDHAT = "That is... a common hat for orphans..."

@@ -1,5 +1,7 @@
 local WATHGRITHR = STRINGS.CHARACTERS.WATHGRITHR
 
+WATHGRITHR.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "There be a buried treasure somewhere!"
+
 WATHGRITHR.DESCRIBE.AERODYNAMICHAT = "My head shall cut the air!"
 
 WATHGRITHR.DESCRIBE.ANTMASKHAT = "Mine helm would have sufficed."
@@ -40,6 +42,8 @@ WATHGRITHR.DESCRIBE.BRAINJELLYHAT = "My brain has the might of my sword!"
 
 WATHGRITHR.DESCRIBE.BUCKETHAT = "Let the stones rain down! My head shall endure!"
 
+WATHGRITHR.DESCRIBE.BURIEDTREASURECHEST = "May luck smile on me this day."
+
 WATHGRITHR.DESCRIBE.CANDLEHAT = "Mine hands are now free to pillage ruins!"
 
 WATHGRITHR.DESCRIBE.CAPTAINHAT = "It would be better with horns."
@@ -59,6 +63,8 @@ WATHGRITHR.DESCRIBE.GASHAT = "Armor of sorts for my nose and throat!"
 WATHGRITHR.DESCRIBE.GASMASKHAT = "Poisonous air shall not consume me!"
 
 WATHGRITHR.DESCRIBE.JIAOLIANHAT = "The face of a criminal!"
+
+WATHGRITHR.DESCRIBE.LUCKYTREASUREHAT = "Pales in comparison to my helm."
 
 WATHGRITHR.DESCRIBE.METALPLATEHAT = "Heavy head protection!"
 
@@ -101,3 +107,5 @@ WATHGRITHR.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "A helm of bleary sight."
 WATHGRITHR.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "No living foe shall escape mine sight!"
 
 WATHGRITHR.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Let lightning leap forth and smite mine foes!"
+
+WATHGRITHR.DESCRIBE.WILLOWOLDHAT = "Soft but needs sewing."

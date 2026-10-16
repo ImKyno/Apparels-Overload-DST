@@ -343,6 +343,16 @@ AddRecipe2("jiaolianhat",
     TECH.SCIENCE_TWO, {}, { "ARMOUR" }
 )
 
+APOAddRecipe(ABCEnabled or IASEnabled, "luckytreasurehat",
+    {
+        Ingredient("boneshard", 4),
+        Ingredient("pigskin_dried", 3),
+        Ingredient("goldnugget", 10),
+    },
+
+    TECH.LOST, {}, { "CLOTHING", "SEAFARING" }
+)
+
 APOAddRecipe(ABCEnabled or IASEnabled, "metalplatehat",
     {
         Ingredient("cutstone", 2),
@@ -499,6 +509,16 @@ APOAddCharacterRecipe(ABCEnabled or IASEnabled, "wagstaff_goggles_shoothat",
     },
 
     TECH.LOST, { builder_tag = "portableengineer" }, { "CHARACTER", "LIGHT", "WEAPONS" }
+)
+
+AddCharacterRecipe("willowoldhat",
+    {
+        Ingredient("pigskin_dried", 1),
+        Ingredient("silk", 1),
+        Ingredient("charcoal", 1),
+    },
+
+    TECH.NONE, { builder_tag = "bernieowner" }, { "CHARACTER", "CLOTHING" }
 )
 
 -- Everything else.

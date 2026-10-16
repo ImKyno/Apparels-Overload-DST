@@ -16,14 +16,14 @@ end
 function BuriedTreasureFinder:GetTreasureChance()
     if self.owner == nil then
         return TUNING.APO_MISC.BURIEDTREASUREFINDER.CHANCE.NONE
-    elseif self.owner:HasTag("piratecaptain") then
+    elseif self.owner:HasAnyTag("pirate", "piratecaptain", "fleetadmiral") then
         return TUNING.APO_MISC.BURIEDTREASUREFINDER.CHANCE.PIRATE
     end
 
-    return TUNING.APO_MISC.BURIEDTREASUREFINDER.CHANCE.NONE.NORMAL
+    return TUNING.APO_MISC.BURIEDTREASUREFINDER.CHANCE.NORMAL
 end
 
-function BuriedTreasureFinder:RevealTreasures()
+function BuriedTreasureFinder:RevealTreasure()
     for i = 1, self.num_found do
         local pos = self.inst:GetPosition()
         local offset = FindWalkableOffset(pos, math.random() * 2 * math.pi, math.random(25, 30), 18)
@@ -35,7 +35,7 @@ function BuriedTreasureFinder:RevealTreasures()
             treasure.Transform:SetPosition(spawn_pos:Get())
 
             if self.owner then
-                self.owner:PushEvent("ontreasurefound", { treasure = treasure })
+                self.owner:PushEvent("onburiedtreasurechestfound", { treasure = treasure })
             end
 
             self.num_found = self.num_found - 1
@@ -49,8 +49,35 @@ function BuriedTreasureFinder:FindTreasure()
     end
 end
 
+-- Forces a treasure to spawn near the player.
+function BuriedTreasureFinder:GenerateTreasure()
+    self.num_found = self.num_found + 1
+    self:RevealTreasure()
+end
+
+-- Forces a treasure to spawn at the cursor.
+function BuriedTreasureFinder:GenerateTreasureAtPoint(pos)
+    pos = pos or ConsoleWorldPosition()
+
+    if pos == nil then
+        return nil
+    end
+
+    local treasure = SpawnPrefab("buriedtreasurechest")
+
+    if treasure ~= nil then
+        treasure.Transform:SetPosition(pos:Get())
+
+        if self.owner ~= nil then
+            self.owner:PushEvent("onburiedtreasurechestfound", { treasure = treasure })
+        end
+    end
+
+    return treasure
+end
+
 function BuriedTreasureFinder:OnRemoveFromEntity()
-    self:RevealTreasures()
+    self:RevealTreasure()
     self:Stop()
 end
 

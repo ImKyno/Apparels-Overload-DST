@@ -1,5 +1,7 @@
 local WAXWELL = STRINGS.CHARACTERS.WAXWELL
 
+WAXWELL.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "The treasure chest is near, I need to find it."
+
 WAXWELL.DESCRIBE.AERODYNAMICHAT = "Quite sleek, if not elegant."
 
 WAXWELL.DESCRIBE.ANTMASKHAT = "A hallowed out head. Don't ask where I got it."
@@ -40,6 +42,8 @@ WAXWELL.DESCRIBE.BRAINJELLYHAT = "I feel inspired."
 
 WAXWELL.DESCRIBE.BUCKETHAT = "One must protect one's head from falling masonry."
 
+WAXWELL.DESCRIBE.BURIEDTREASURECHEST = "Ah, what's this then?"
+
 WAXWELL.DESCRIBE.CANDLEHAT = "The wax better not drip on my suit."
 
 WAXWELL.DESCRIBE.CAPTAINHAT = "It makes me feel commanding."
@@ -59,6 +63,8 @@ WAXWELL.DESCRIBE.GASHAT = "Cleans the stench away."
 WAXWELL.DESCRIBE.GASMASKHAT = "This clears the vapors."
 
 WAXWELL.DESCRIBE.JIAOLIANHAT = "Doesn't fit me."
+
+WAXWELL.DESCRIBE.LUCKYTREASUREHAT = "Swashbuckling..."
 
 WAXWELL.DESCRIBE.METALPLATEHAT = "How very conquistadorian."
 
@@ -101,3 +107,5 @@ WAXWELL.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "You're going to need that kind of 
 WAXWELL.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "How convenient. All living things, laid bare before my eyes."
 
 WAXWELL.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A rather flashy way to settle an argument."
+
+WAXWELL.DESCRIBE.WILLOWOLDHAT = "You can't run away from your past, take it from me, pal."

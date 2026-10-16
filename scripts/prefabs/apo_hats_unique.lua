@@ -273,6 +273,30 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.carnival_host_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            inst:AddTag("luckysource")
+
+            if owner.components.luckuser ~= nil then
+                owner.components.luckuser:SetLuckSource(TUNING.APO_HATS.CARNIVAL_HOST.LUCK, inst)
+            end
+        end
+    end
+
+    hat_fns.carnival_host_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            inst:RemoveTag("luckysource")
+
+            if owner.components.luckuser ~= nil then
+                owner.components.luckuser:RemoveLuckSource(inst)
+            end
+        end
+    end
+
     hat_fns.carnival_host_custom_init = function(inst)
         inst:AddTag("carnivalwinner")
     end
@@ -284,6 +308,8 @@ local function MakeHat(name)
             return inst
         end
 
+        inst.components.equippable:SetOnEquip(hat_fns.carnival_host_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.carnival_host_onunequip)
         inst.components.equippable.dapperness = TUNING.DAPPERNESS_LARGE
         inst.components.equippable.walkspeedmult = TUNING.APO_HATS.CARNIVAL_HOST.WALKSPEEDMULT
 
@@ -586,6 +612,7 @@ local function MakeHat(name)
         inst.entity:AddSoundEmitter()
 
         inst:AddTag("HASHEATER")
+        inst:AddTag("metal")
     end
 
     hat_fns.propeller = function()
@@ -1186,6 +1213,152 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.willowold_onapplyhealthbuff = function(bernie)
+        if bernie.willowold_bonushealth then
+            return
+        end
+
+        if bernie.components.health ~= nil and not bernie.components.health:IsDead() then
+            local current_health = bernie.components.health:GetPercent()
+            local bonus = bernie.components.health.maxhealth * (TUNING.APO_HATS.WILLOWOLD.MODIFIERS.HEALTH - 1)
+
+            bernie.willowold_bonushealth = bonus
+
+            bernie.components.health:SetMaxHealth(bernie.components.health.maxhealth + bonus)
+            bernie.components.health:SetPercent(current_health)
+        end
+    end
+
+    hat_fns.willowold_onremovehealthbuff = function(bernie)
+        local bonus = bernie.willowold_bonushealth
+
+        if bonus == nil then
+            return
+        end
+
+        if bernie.components.health ~= nil then
+            local current_health = bernie.components.health:GetPercent()
+
+            bernie.components.health:SetMaxHealth(math.max(1, bernie.components.health.maxhealth - bonus))
+            bernie.components.health:SetPercent(current_health)
+        end
+
+        bernie.willowold_bonushealth = nil
+    end
+
+    hat_fns.willowold_onapplybuff = function(bernie)
+        local MODIFIER = TUNING.APO_HATS.WILLOWOLD.MODIFIERS.DAMAGE
+
+        if bernie.components.combat ~= nil then
+            bernie.components.combat.externaldamagemultipliers:SetModifier(bernie, MODIFIER, "willowoldhat")
+        end
+
+        hat_fns.willowold_onapplyhealthbuff(bernie)
+    end
+
+    hat_fns.willowold_onremovebuff = function(bernie)
+        if bernie.components.combat ~= nil then
+            bernie.components.combat.externaldamagemultipliers:RemoveModifier(bernie, "willowoldhat")
+        end
+
+        hat_fns.willowold_onremovehealthbuff(bernie)
+    end
+
+    hat_fns.willowold_onupdate = function(owner, fn)
+        local function ApplyToBernie(bernie)
+            if bernie ~= nil and bernie:IsValid() and (bernie.prefab == "bernie_active" or bernie.prefab == "bernie_big")
+            and bernie.components.combat ~= nil and bernie.components.health ~= nil and not bernie.components.health:IsDead() then
+                fn(bernie)
+            end
+        end
+
+        local leader = owner.components.leader
+
+        if leader ~= nil and leader.followers ~= nil then
+            for follower in pairs(leader.followers) do
+                ApplyToBernie(follower)
+            end
+        end
+
+        if owner.bigbernies ~= nil then
+            for bernie in pairs(owner.bigbernies) do
+                ApplyToBernie(bernie)
+            end
+        end
+    end
+
+    hat_fns.willowold_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil and owner.prefab == "willow" then
+            if inst.components.equippable ~= nil then
+                inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED
+
+                owner:ListenForEvent("onberniebig", inst.willowold_onberniebig)
+
+                hat_fns.willowold_onupdate(owner, hat_fns.willowold_onapplybuff)
+            end
+        end
+    end
+
+    hat_fns.willowold_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            if inst.components.equippable ~= nil then
+                inst.components.equippable.dapperness = 0
+
+                owner:RemoveEventCallback("onberniebig", inst.willowold_onberniebig)
+
+                hat_fns.willowold_onupdate(owner, hat_fns.willowold_onremovebuff)
+            end
+        end
+    end
+
+    hat_fns.willowold_custom_init = function(inst)
+        inst:AddTag("followeramplifier")
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.willowold = function()
+        local inst = simple(hat_fns.willowold_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.willowold_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.willowold_onunequip)
+        inst.components.equippable.dapperness = 0
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
+
+        inst:AddComponent("insulator")
+        inst.components.insulator:SetInsulation(TUNING.INSULATION_MED)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.WILLOWOLD.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
+
+        inst.willowold_onberniebig = function(owner, data)
+            if data ~= nil and data.bernie ~= nil then
+                local bernie = data.bernie
+
+                -- Need to delay the buff to let bernie initiliaze his stuff...
+                bernie:DoTaskInTime(2, function()
+                    hat_fns.willowold_onapplybuff(bernie)
+                end)
+            end
+        end
+
+        MakeMediumBurnable(inst)
+        MakeSmallPropagator(inst)
+
+        return inst
+    end
+
     local hat_fn  = nil
 
     local assets  =
@@ -1222,6 +1395,8 @@ local function MakeHat(name)
     elseif name == "volcano" then
         prefabs = { "volcanohat_light" }
         hat_fn = hat_fns.volcano
+    elseif name == "willowold" then
+        hat_fn = hat_fns.willowold
     end
 
     table.insert(ALL_HAT_PREFAB_NAMES, prefabname)
@@ -1238,4 +1413,5 @@ MakeHat("peagawkfeather"),
 MakeHat("propeller"),
 MakeHat("pumpkinhead"),
 MakeHat("volcanocold"),
-MakeHat("volcano")
+MakeHat("volcano"),
+MakeHat("willowold")

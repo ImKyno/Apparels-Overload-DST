@@ -1,5 +1,7 @@
 local WURT = STRINGS.CHARACTERS.WURT
 
+WURT.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "GLORP! Me sense treasures nearby!"
+
 WURT.DESCRIBE.AERODYNAMICHAT = "Zoom powers, florp!"
 
 WURT.DESCRIBE.ANTMASKHAT = "I wear the head of my enemies, flort!!"
@@ -40,6 +42,8 @@ WURT.DESCRIBE.BRAINJELLYHAT = "Ooohh, smart!"
 
 WURT.DESCRIBE.BUCKETHAT = "Protects head from rocks, florp."
 
+WURT.DESCRIBE.BURIEDTREASURECHEST = "I smell treasures, florp!"
+
 WURT.DESCRIBE.CANDLEHAT = "On, on, brief candle!"
 
 WURT.DESCRIBE.CAPTAINHAT = "Ahoy! captain Wurt is here, florp!"
@@ -59,6 +63,8 @@ WURT.DESCRIBE.GASHAT = "Keeps nasty smell out!"
 WURT.DESCRIBE.GASMASKHAT = "It's weird, florp."
 
 WURT.DESCRIBE.JIAOLIANHAT = "Scary pigfolk mask... Glurp..."
+
+WURT.DESCRIBE.LUCKYTREASUREHAT = "Arr, matey!"
 
 WURT.DESCRIBE.METALPLATEHAT = "Shiny hat protects me, florp."
 
@@ -101,3 +107,5 @@ WURT.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Protects me head but not eyes, glurrp
 WURT.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Ooo! Glowy eyes see living things in dark!"
 
 WURT.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Weird thing go zap! Big boom!"
+
+WURT.DESCRIBE.WILLOWOLDHAT = "It a bit dirty, Wurt will clean!"

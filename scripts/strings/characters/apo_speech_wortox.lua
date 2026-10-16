@@ -1,5 +1,7 @@
 local WORTOX = STRINGS.CHARACTERS.WORTOX
 
+WORTOX.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "Something tells me there's a buried treasure nearby!"
+
 WORTOX.DESCRIBE.AERODYNAMICHAT = "Cuts the walking a half!"
 
 WORTOX.DESCRIBE.ANTMASKHAT = "Mask of a ugly bug!"
@@ -40,6 +42,8 @@ WORTOX.DESCRIBE.BRAINJELLYHAT = "I'm the smartest now!"
 
 WORTOX.DESCRIBE.BUCKETHAT = "A bucket for the head, so rocks won't make you dead! Hyuyu!"
 
+WORTOX.DESCRIBE.BURIEDTREASURECHEST = "Treasures! Hyuyu!"
+
 WORTOX.DESCRIBE.CANDLEHAT = "A fine fire hat for looting ruins."
 
 WORTOX.DESCRIBE.CAPTAINHAT = "Captain on deck!"
@@ -59,6 +63,8 @@ WORTOX.DESCRIBE.GASHAT = "Smells of freshness when I wear it!"
 WORTOX.DESCRIBE.GASMASKHAT = "This will cut down my coughing."
 
 WORTOX.DESCRIBE.JIAOLIANHAT = "A merry visage! Hyuyu!"
+
+WORTOX.DESCRIBE.LUCKYTREASUREHAT = "Made for a true pirate."
 
 WORTOX.DESCRIBE.METALPLATEHAT = "I prefer the other one."
 
@@ -101,3 +107,5 @@ WORTOX.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Staring out!"
 WORTOX.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Living things glow bright as day!"
 
 WORTOX.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A zap right there, a boom right here!"
+
+WORTOX.DESCRIBE.WILLOWOLDHAT = "Oh, the hat of the pyromaniac girl!"

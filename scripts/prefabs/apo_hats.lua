@@ -1023,6 +1023,136 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.luckytreasure_onspawntreasure = function(new_sec, old_sec, inst, doer)
+        if new_sec >= old_sec then
+            return
+        end
+
+        if inst.components.buriedtreasurefinder ~= nil then
+            inst.components.buriedtreasurefinder:FindTreasure()
+            inst.components.buriedtreasurefinder:RevealTreasure()
+        end
+    end
+
+    hat_fns.luckytreasure_onupdate = function(inst, owner)
+        if owner ~= nil then
+            if owner:GetCurrentPlatform() then
+                if inst.components.equippable ~= nil then
+                    inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED_LARGE
+                end
+            else
+                if inst.components.equippable ~= nil then
+                    inst.components.equippable.dapperness = 0
+                end
+            end
+        end
+    end
+
+    hat_fns.luckytreasure_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            inst:AddTag("luckysource")
+
+            if owner.components.luckuser ~= nil then
+                owner.components.luckuser:SetLuckSource(TUNING.APO_HATS.LUCKYTREASURE.LUCK, inst)
+            end
+
+            if inst.components.buriedtreasurefinder ~= nil then
+                inst.components.buriedtreasurefinder:Start(owner)
+            end
+
+            inst:ListenForEvent("player_on_platform", inst.luckytreasure_onplatform, owner)
+            inst:ListenForEvent("player_off_platform", inst.luckytreasure_offplatform, owner)
+
+            hat_fns.luckytreasure_onupdate(inst, owner)
+        end
+    end
+
+    hat_fns.luckytreasure_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            inst:RemoveTag("luckysource")
+
+            if owner.components.luckuser ~= nil then
+                owner.components.luckuser:RemoveLuckSource(inst)
+            end
+
+            if inst.components.buriedtreasurefinder ~= nil then
+                inst.components.buriedtreasurefinder:Stop()
+            end
+
+            if inst.components.equippable ~= nil then
+                inst.components.equippable.dapperness = 0
+            end
+
+            inst:RemoveEventCallback("player_on_platform", inst.luckytreasure_onplatform, owner)
+            inst:RemoveEventCallback("player_off_platform", inst.luckytreasure_offplatform, owner)
+        end
+    end
+
+    -- Yeah, no way I will let you guys farm treasures using mannequins.
+    hat_fns.luckytreasure_onequiptomodel = function(inst, owner, from_ground)
+        hat_fns.simple_onequiptomodel(inst, owner, from_ground)
+
+        if owner ~= nil then
+            if inst.components.buriedtreasurefinder ~= nil then
+                inst.components.buriedtreasurefinder:Stop()
+            end
+
+            if inst.components.equippable ~= nil then
+                inst.components.equippable.dapperness = 0
+            end
+
+            inst:RemoveEventCallback("player_on_platform", inst.luckytreasure_onplatform, owner)
+            inst:RemoveEventCallback("player_off_platform", inst.luckytreasure_offplatform, owner)
+        end
+    end
+
+    hat_fns.luckytreasure_custom_init = function(inst)
+        inst:AddTag("buriedtreasurefinder")
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.luckytreasure = function()
+        local inst = simple(hat_fns.luckytreasure_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.luckytreasure_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.luckytreasure_onunequip)
+        inst.components.equippable:SetOnEquipToModel(hat_fns.luckytreasure_onequiptomodel)
+        inst.components.equippable.dapperness = 0
+
+        inst:AddComponent("buriedtreasurefinder")
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.LUCKYTREASURE.PERISHTIME)
+        inst.components.fueled:SetSections(TUNING.APO_HATS.LUCKYTREASURE.SECTIONS)
+        inst.components.fueled:SetSectionCallback(hat_fns.luckytreasure_onspawntreasure)
+        inst.components.fueled:SetDepletedFn(inst.Remove)
+
+        inst.luckytreasure_onplatform = function(owner)
+            hat_fns.luckytreasure_onupdate(inst, owner)
+        end
+
+        inst.luckytreasure_offplatform = function(owner)
+            hat_fns.luckytreasure_onupdate(inst, owner)
+        end
+
+        MakeMediumBurnable(inst)
+        MakeSmallPropagator(inst)
+
+        return inst
+    end
+
     hat_fns.metalplate_getsetbonusequip = function(inst, owner)
         local body = owner.components.inventory ~= nil and owner.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY) or nil
         return body ~= nil and body.prefab == "armor_metalplate" and body or nil
@@ -1877,6 +2007,7 @@ local function MakeHat(name)
         inst.Light:SetColour(235/255, 121/255, 12/255)
         inst.Light:Enable(false)
 
+        inst:AddTag("metal")
         inst:AddTag("lightningcatcher")
         inst:AddTag("waterproofer")
     end
@@ -1969,12 +2100,51 @@ local function MakeHat(name)
         end
     end
 
+    hat_fns.wagstaff_goggles_armor_onsetup = function(inst)
+        inst:AddComponent("equippable")
+        inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
+        inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_armor_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_armor_onunequip)
+    end
+
+    hat_fns.wagstaff_goggles_armor_onbroken = function(inst)
+        if inst.components.equippable ~= nil then
+            inst:RemoveComponent("equippable")
+
+            inst:AddTag("broken")
+
+            if inst.components.inspectable ~= nil then
+                inst.components.inspectable.nameoverride = "BROKEN_FORGEDITEM"
+            end
+        end
+    end
+
+    hat_fns.wagstaff_goggles_armor_onrepaired = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        if owner ~= nil then
+            owner:PushEvent("repair")
+        end
+
+        if inst.components.equippable == nil then
+            hat_fns.wagstaff_goggles_armor_onsetup(inst)
+
+            inst:RemoveTag("broken")
+
+            if inst.components.inspectable ~= nil then
+                inst.components.inspectable.nameoverride = nil
+            end
+        end
+    end
+
     hat_fns.wagstaff_goggles_armor_custom_init = function(inst)
         inst.entity:AddSoundEmitter()
 
+        inst:AddTag("metal")
         inst:AddTag("goggles")
         inst:AddTag("goggles_wagstaff")
         inst:AddTag("gogglesarmor")
+        inst:AddTag("show_broken_ui")
         inst:AddTag("waterproofer")
     end
 
@@ -1994,6 +2164,14 @@ local function MakeHat(name)
 
         inst:AddComponent("armor")
         inst.components.armor:InitCondition(TUNING.APO_HATS.WAGSTAFF_GOGGLES_ARMOR.CONDITION, TUNING.APO_HATS.WAGSTAFF_GOGGLES_ARMOR.ABSORPTION)
+
+        inst:AddComponent("planardefense")
+        inst.components.planardefense:SetBaseDefense(TUNING.APO_HATS.WAGSTAFF_GOGGLES_ARMOR.PLANAR_ABSORPTION)
+
+        local OnBroken = hat_fns.wagstaff_goggles_armor_onbroken
+        local OnRepaired = hat_fns.wagstaff_goggles_armor_onrepaired
+
+        MakeForgeRepairable(inst, FORGEMATERIALS.WAGPUNKBITS, OnBroken, OnRepaired)
 
         return inst
     end
@@ -2032,32 +2210,51 @@ local function MakeHat(name)
         end
     end
 
-    hat_fns.wagstaff_goggles_heat_ontakefuel = function(inst)
+    hat_fns.wagstaff_goggles_heat_onsetup = function(inst)
+        inst:AddComponent("equippable")
+        inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
+        inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_heat_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_heat_onunequip)
+    end
+
+    hat_fns.wagstaff_goggles_heat_onbroken = function(inst)
+        if inst.components.equippable ~= nil then
+            inst:RemoveComponent("equippable")
+
+            inst:AddTag("broken")
+
+            if inst.components.inspectable ~= nil then
+                inst.components.inspectable.nameoverride = "BROKEN_FORGEDITEM"
+            end
+        end
+    end
+
+    hat_fns.wagstaff_goggles_heat_onrepaired = function(inst)
         local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
 
         if owner ~= nil then
             owner:PushEvent("repair")
         end
-    end
 
-    hat_fns.wagstaff_goggles_heat_onperish = function(inst)
-        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
-            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+        if inst.components.equippable == nil then
+            hat_fns.wagstaff_goggles_heat_onsetup(inst)
 
-            if owner ~= nil then
-                hat_fns.wagstaff_goggles_heat_onturnoff(owner)
+            inst:RemoveTag("broken")
+
+            if inst.components.inspectable ~= nil then
+                inst.components.inspectable.nameoverride = nil
             end
         end
-
-        hat_fns.simple_onperish(inst)
     end
 
     hat_fns.wagstaff_goggles_heat_custom_init = function(inst)
         inst.entity:AddSoundEmitter()
 
+        inst:AddTag("metal")
         inst:AddTag("goggles")
         inst:AddTag("goggles_wagstaff")
         inst:AddTag("heatvision")
+        inst:AddTag("show_broken_ui")
         inst:AddTag("open_top_hat")
     end
 
@@ -2072,13 +2269,13 @@ local function MakeHat(name)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_heat_onunequip)
 
         inst:AddComponent("fueled")
-        inst.components.fueled.fueltype = FUELTYPE.USAGE
-        inst.components.fueled.secondaryfueltype = FUELTYPE.GEARS
+        inst.components.fueled.fueltype = FUELTYPE.MAGIC
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.WAGSTAFF_GOGGLES_HEAT.PERISHTIME)
-        inst.components.fueled:SetTakeFuelFn(hat_fns.wagstaff_goggles_heat_ontakefuel)
-        inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
-        inst.components.fueled.bonusmult = TUNING.APO_HATS.WAGSTAFF_GOGGLES_HEAT.FUEL_BONUS_MULT
-        inst.components.fueled.accepting = true
+
+        local OnBroken = hat_fns.wagstaff_goggles_heat_onbroken
+        local OnRepaired = hat_fns.wagstaff_goggles_heat_onrepaired
+
+        MakeForgeRepairable(inst, FORGEMATERIALS.WAGPUNKBITS, OnBroken, OnRepaired)
 
         return inst
     end
@@ -2117,32 +2314,51 @@ local function MakeHat(name)
         end
     end
 
-    hat_fns.wagstaff_goggles_shoot_ontakefuel = function(inst)
+    hat_fns.wagstaff_goggles_shoot_onsetup = function(inst)
+        inst:AddComponent("equippable")
+        inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
+        inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_shoot_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_shoot_onunequip)
+    end
+
+    hat_fns.wagstaff_goggles_shoot_onbroken = function(inst)
+        if inst.components.equippable ~= nil then
+            inst:RemoveComponent("equippable")
+
+            inst:AddTag("broken")
+
+            if inst.components.inspectable ~= nil then
+                inst.components.inspectable.nameoverride = "BROKEN_FORGEDITEM"
+            end
+        end
+    end
+
+    hat_fns.wagstaff_goggles_shoot_onrepaired = function(inst)
         local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
 
         if owner ~= nil then
             owner:PushEvent("repair")
         end
-    end
 
-    hat_fns.wagstaff_goggles_shoot_onperish = function(inst)
-        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
-            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+        if inst.components.equippable == nil then
+            hat_fns.wagstaff_goggles_shoot_onsetup(inst)
 
-            if owner ~= nil then
-                hat_fns.wagstaff_goggles_shoot_onturnoff(owner)
+            inst:RemoveTag("broken")
+
+            if inst.components.inspectable ~= nil then
+                inst.components.inspectable.nameoverride = nil
             end
         end
-
-        hat_fns.simple_onperish(inst)
     end
 
     hat_fns.wagstaff_goggles_shoot_custom_init = function(inst)
         inst.entity:AddSoundEmitter()
 
+        inst:AddTag("metal")
         inst:AddTag("goggles")
         inst:AddTag("goggles_wagstaff")
         inst:AddTag("shootvision")
+        inst:AddTag("show_broken_ui")
         inst:AddTag("open_top_hat")
     end
 
@@ -2157,13 +2373,13 @@ local function MakeHat(name)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_shoot_onunequip)
 
         inst:AddComponent("fueled")
-        inst.components.fueled.fueltype = FUELTYPE.USAGE
-        inst.components.fueled.secondaryfueltype = FUELTYPE.GEARS
+        inst.components.fueled.fueltype = FUELTYPE.MAGIC
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.WAGSTAFF_GOGGLES_SHOOT.PERISHTIME)
-        inst.components.fueled:SetTakeFuelFn(hat_fns.wagstaff_goggles_shoot_ontakefuel)
-        inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
-        inst.components.fueled.bonusmult = TUNING.APO_HATS.WAGSTAFF_GOGGLES_SHOOT.FUEL_BONUS_MULT
-        inst.components.fueled.accepting = true
+
+        local OnBroken = hat_fns.wagstaff_goggles_shoot_onbroken
+        local OnRepaired = hat_fns.wagstaff_goggles_shoot_onrepaired
+
+        MakeForgeRepairable(inst, FORGEMATERIALS.WAGPUNKBITS, OnBroken, OnRepaired)
 
         return inst
     end
@@ -2204,6 +2420,8 @@ local function MakeHat(name)
         hat_fn = hat_fns.gas
     elseif name == "gasmask" then
         hat_fn = hat_fns.gasmask
+    elseif name == "luckytreasure" then
+        hat_fn = hat_fns.luckytreasure
     elseif name == "metalplate" then
         hat_fn = hat_fns.metalplate
     elseif name == "ox" then
@@ -2247,6 +2465,7 @@ MakeHat("disguise"),
 MakeHat("double_umbrella"),
 MakeHat("gas"),
 MakeHat("gasmask"),
+MakeHat("luckytreasure"),
 MakeHat("metalplate"),
 MakeHat("ox"),
 MakeHat("pigcrown"),

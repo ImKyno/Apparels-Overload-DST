@@ -1,5 +1,7 @@
 local WILSON = STRINGS.CHARACTERS.GENERIC
 
+WILSON.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "My treasure sense is telling!"
+
 WILSON.DESCRIBE.AERODYNAMICHAT = "It really cuts through the air!"
 
 WILSON.DESCRIBE.ANTMASKHAT = "There's still some goo stuck to the insides."
@@ -40,6 +42,8 @@ WILSON.DESCRIBE.BRAINJELLYHAT = "Two brains means double the ideas!"
 
 WILSON.DESCRIBE.BUCKETHAT = "A little protection from things falling on my head."
 
+WILSON.DESCRIBE.BURIEDTREASURECHEST = "Please be a good treasure."
+
 WILSON.DESCRIBE.CANDLEHAT = "What a bright idea!"
 
 WILSON.DESCRIBE.CAPTAINHAT = "The proper boating attire!"
@@ -59,6 +63,8 @@ WILSON.DESCRIBE.GASHAT = "Sucks all the stink out."
 WILSON.DESCRIBE.GASMASKHAT = "Now I can breath anywhere."
 
 WILSON.DESCRIBE.JIAOLIANHAT = "Looks like a halloween mask."
+
+WILSON.DESCRIBE.LUCKYTREASUREHAT = "Does it make me look scurvy... I mean scary!?"
 
 WILSON.DESCRIBE.METALPLATEHAT = "A knight's helmet!"
 
@@ -101,3 +107,5 @@ WILSON.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "It works, as long as I don't have t
 WILSON.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Now I can spot living things even in the dark!"
 
 WILSON.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "I can summon a lightning burst wherever I point!"
+
+WILSON.DESCRIBE.WILLOWOLDHAT = "She should take care of her things better!"

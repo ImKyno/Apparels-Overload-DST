@@ -1,5 +1,7 @@
 local WENDY = STRINGS.CHARACTERS.WENDY
 
+WENDY.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "Dead people's stuff ahead."
+
 WENDY.DESCRIBE.AERODYNAMICHAT = "I cut through the air!"
 
 WENDY.DESCRIBE.ANTMASKHAT = "The mind that dwelt within is long gone."
@@ -40,6 +42,8 @@ WENDY.DESCRIBE.BRAINJELLYHAT = "Does this make my brain look big?"
 
 WENDY.DESCRIBE.BUCKETHAT = "Even the sky wishes to bury us."
 
+WENDY.DESCRIBE.BURIEDTREASURECHEST = "Dead people's stuff."
+
 WENDY.DESCRIBE.CANDLEHAT = "Only Abigail can light up my life."
 
 WENDY.DESCRIBE.CAPTAINHAT = "No living soul commands the sea..."
@@ -59,6 +63,8 @@ WENDY.DESCRIBE.GASHAT = "This hat prevents me from breathing in death."
 WENDY.DESCRIBE.GASMASKHAT = "It keeps out the gas, but no the despair."
 
 WENDY.DESCRIBE.JIAOLIANHAT = "It is not really that scary."
+
+WENDY.DESCRIBE.LUCKYTREASUREHAT = "Haughty seadog couture."
 
 WENDY.DESCRIBE.METALPLATEHAT = "It'll protect my head but not my heart."
 
@@ -101,3 +107,5 @@ WENDY.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Everything comes at a price."
 WENDY.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Even in darkness, the living cannot hide."
 
 WENDY.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A flash of light, a burst of pain. How familiar."
+
+WENDY.DESCRIBE.WILLOWOLDHAT = "Willow's childhood cap. Sadly, it's in a bad shape just like me."

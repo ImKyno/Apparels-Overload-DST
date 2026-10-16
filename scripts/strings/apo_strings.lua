@@ -60,6 +60,8 @@ STRINGS.RECIPE_DESC.BRAINJELLYHAT = "Well aren't you clever?"
 STRINGS.NAMES.BUCKETHAT = "Bucket Hat"
 STRINGS.RECIPE_DESC.BUCKETHAT = "Protects your head from debris."
 
+STRINGS.NAMES.BURIEDTREASURECHEST = "X Marks the Spot"
+
 STRINGS.NAMES.CANDLEHAT = "Wood Candle Hat"
 STRINGS.RECIPE_DESC.CANDLEHAT = "Hands free spelunking on shoe string."
 
@@ -89,6 +91,9 @@ STRINGS.RECIPE_DESC.GASMASKHAT = "Makes everything smell like bird."
 
 STRINGS.NAMES.JIAOLIANHAT = "Jiaolian's Mask"
 STRINGS.RECIPE_DESC.JIAOLIANHAT = "Protection against paranormal activity!"
+
+STRINGS.NAMES.LUCKYTREASUREHAT = "Lucky Hat"
+STRINGS.RECIPE_DESC.LUCKYTREASUREHAT = "Sniff out treasures."
 
 STRINGS.NAMES.METALPLATEHAT = "Fancy Helmet"
 STRINGS.RECIPE_DESC.METALPLATEHAT = "Strong, sturdy and classy."
@@ -148,3 +153,6 @@ STRINGS.RECIPE_DESC.WAGSTAFF_GOGGLES_HEATHAT = "Is everything hot or not."
 
 STRINGS.NAMES.WAGSTAFF_GOGGLES_SHOOTHAT = "Fryfocals"
 STRINGS.RECIPE_DESC.WAGSTAFF_GOGGLES_SHOOTHAT = "Static boom focusing apparatus."
+
+STRINGS.NAMES.WILLOWOLDHAT = "Willow's Old Cap"
+STRINGS.RECIPE_DESC.WILLOWOLDHAT = "Nothing remains, save a burning will to survive."

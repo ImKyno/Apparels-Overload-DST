@@ -1,5 +1,7 @@
 local WOODIE = STRINGS.CHARACTERS.WOODIE
 
+WOODIE.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "I think some buried treasure is near, Lucy!"
+
 WOODIE.DESCRIBE.AERODYNAMICHAT = "It's a speed toque."
 
 WOODIE.DESCRIBE.ANTMASKHAT = "I hope no one recognizes this guy."
@@ -40,6 +42,8 @@ WOODIE.DESCRIBE.BRAINJELLYHAT = "I feel like a keener when I put it on."
 
 WOODIE.DESCRIBE.BUCKETHAT = "Better this than a rock to the noggin, eh?"
 
+WOODIE.DESCRIBE.BURIEDTREASURECHEST = "Time to get digging!"
+
 WOODIE.DESCRIBE.CANDLEHAT = "Now I can chop trees in the dark."
 
 WOODIE.DESCRIBE.CAPTAINHAT = "I hope I don't have to go down with the ship."
@@ -59,6 +63,8 @@ WOODIE.DESCRIBE.GASHAT = "Nothin' stinks when I got this on."
 WOODIE.DESCRIBE.GASMASKHAT = "Keeps my lungs clear."
 
 WOODIE.DESCRIBE.JIAOLIANHAT = "Hehe. It's like a halloween mask."
+
+WOODIE.DESCRIBE.LUCKYTREASUREHAT = "Could do with a pair of wolly earflaps."
 
 WOODIE.DESCRIBE.METALPLATEHAT = "It's a little cold."
 
@@ -101,3 +107,5 @@ WOODIE.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Not really that great for seeing."
 WOODIE.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Now I can see critters hiding in the dark. Handy, eh?"
 
 WOODIE.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Point, zap, and watch the sparks fly. Just don't fry yourself, eh?"
+
+WOODIE.DESCRIBE.WILLOWOLDHAT = "I could give this hat some touches. What do you think, Lucy?"

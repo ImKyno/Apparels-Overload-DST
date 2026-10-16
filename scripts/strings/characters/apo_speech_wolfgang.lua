@@ -1,5 +1,7 @@
 local WOLFGANG = STRINGS.CHARACTERS.WOLFGANG
 
+WOLFGANG.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "Treasure is near! Wolfgang can tell!"
+
 WOLFGANG.DESCRIBE.AERODYNAMICHAT = "Keeps mighty legs free to run!"
 
 WOLFGANG.DESCRIBE.ANTMASKHAT = "Make Wolfgang look like bug man."
@@ -40,6 +42,8 @@ WOLFGANG.DESCRIBE.BRAINJELLYHAT = "Agh! Is making Wolfgang think!"
 
 WOLFGANG.DESCRIBE.BUCKETHAT = "Strong bucket hat protects Wolfgang's strong head!"
 
+WOLFGANG.DESCRIBE.BURIEDTREASURECHEST = "Is mine!"
+
 WOLFGANG.DESCRIBE.CANDLEHAT = "Now Wolfgang hands free for punching."
 
 WOLFGANG.DESCRIBE.CAPTAINHAT = "Look at Wolfgang! He is captain now!"
@@ -59,6 +63,8 @@ WOLFGANG.DESCRIBE.GASHAT = "Little hat is very colorful."
 WOLFGANG.DESCRIBE.GASMASKHAT = "Is good for Wolfgang lungs."
 
 WOLFGANG.DESCRIBE.JIAOLIANHAT = "Hehe. Is funny spook mask."
+
+WOLFGANG.DESCRIBE.LUCKYTREASUREHAT = "Is pirate head clothes."
 
 WOLFGANG.DESCRIBE.METALPLATEHAT = "Is funny little tin hat."
 
@@ -101,3 +107,5 @@ WOLFGANG.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Is mighty hat of not seeing."
 WOLFGANG.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Wolfgang sees living things in the dark!"
 
 WOLFGANG.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Hat makes big electric boom! Wolfgang likes!"
+
+WOLFGANG.DESCRIBE.WILLOWOLDHAT = "Is little cap from fire girl."

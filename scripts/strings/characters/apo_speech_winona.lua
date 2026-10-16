@@ -1,5 +1,7 @@
 local WINONA = STRINGS.CHARACTERS.WINONA
 
+WINONA.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "I sense something good nearby!"
+
 WINONA.DESCRIBE.AERODYNAMICHAT = "very aerodynamic."
 
 WINONA.DESCRIBE.ANTMASKHAT = "Sorry bug-dude."
@@ -40,6 +42,8 @@ WINONA.DESCRIBE.BRAINJELLYHAT = "It's like, blowing my mind!"
 
 WINONA.DESCRIBE.BUCKETHAT = "Not the fanciest hard hat, but it'll get the job done."
 
+WINONA.DESCRIBE.BURIEDTREASURECHEST = "Hope this is worth the work."
+
 WINONA.DESCRIBE.CANDLEHAT = "For late night shifts."
 
 WINONA.DESCRIBE.CAPTAINHAT = "If only boss could see me now."
@@ -59,6 +63,8 @@ WINONA.DESCRIBE.GASHAT = "Keeps acid away."
 WINONA.DESCRIBE.GASMASKHAT = "Out with the bad air, in with the good."
 
 WINONA.DESCRIBE.JIAOLIANHAT = "Ha! It's kinda scary!"
+
+WINONA.DESCRIBE.LUCKYTREASUREHAT = "I ain't no swashbuckler."
 
 WINONA.DESCRIBE.METALPLATEHAT = "Keeps my noggin safe."
 
@@ -101,3 +107,5 @@ WINONA.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "It's good for banging your head aga
 WINONA.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Infrared vision gadget! One of bossman's prototypes."
 
 WINONA.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Another one of bossman's prototypes. I hope this one works."
+
+WINONA.DESCRIBE.WILLOWOLDHAT = "Poor work. Perhaps I could fix it..."

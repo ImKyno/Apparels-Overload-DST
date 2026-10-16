@@ -57,4 +57,4 @@ end
 modimport("main/init_main")
 modimport("postinit/init_postinit")
 
--- require("apo_debugcommands")
+require("apo_debugcommands")

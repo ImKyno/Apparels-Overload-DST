@@ -1,5 +1,7 @@
 local WILLOW = STRINGS.CHARACTERS.WILLOW
 
+WILLOW.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "A buried treasure is near!"
+
 WILLOW.DESCRIBE.AERODYNAMICHAT = "Brisk movement snuffs fires."
 
 WILLOW.DESCRIBE.ANTMASKHAT = "This is the nastiest thing I've ever made."
@@ -40,6 +42,8 @@ WILLOW.DESCRIBE.BRAINJELLYHAT = "I feel smarter, but also grosser..."
 
 WILLOW.DESCRIBE.BUCKETHAT = "Keeps the rocks off my head."
 
+WILLOW.DESCRIBE.BURIEDTREASURECHEST = "If I don't like the treasure, I'll just set the chest on fire."
+
 WILLOW.DESCRIBE.CANDLEHAT = "A little fire hat."
 
 WILLOW.DESCRIBE.CAPTAINHAT = "I no longer have that sinking feeling."
@@ -59,6 +63,8 @@ WILLOW.DESCRIBE.GASHAT = "I like not smelling smelly smells."
 WILLOW.DESCRIBE.GASMASKHAT = "Cuts down on the coughing."
 
 WILLOW.DESCRIBE.JIAOLIANHAT = "I should prank someone using this!"
+
+WILLOW.DESCRIBE.LUCKYTREASUREHAT = "Arrr! I'm the pirate captain now."
 
 WILLOW.DESCRIBE.METALPLATEHAT = "This protects my brain."
 
@@ -101,3 +107,5 @@ WILLOW.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "How am I supposed to see what I wan
 WILLOW.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Everything alive lights up!"
 
 WILLOW.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Finally, something with a little spark!"
+
+WILLOW.DESCRIBE.WILLOWOLDHAT = "Aahh... you're still with me, friend."

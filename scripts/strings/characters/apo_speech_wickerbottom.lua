@@ -1,5 +1,7 @@
 local WICKERBOTTOM = STRINGS.CHARACTERS.WICKERBOTTOM
 
+WICKERBOTTOM.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "A treasure is near, I can tell."
+
 WICKERBOTTOM.DESCRIBE.AERODYNAMICHAT = "Somewhat prehistoric looking."
 
 WICKERBOTTOM.DESCRIBE.ANTMASKHAT = "This may be slightly unethical."
@@ -40,6 +42,8 @@ WICKERBOTTOM.DESCRIBE.BRAINJELLYHAT = "Bright ideas shape the future!"
 
 WICKERBOTTOM.DESCRIBE.BUCKETHAT = "A practical measure against cranial trauma from falling debris."
 
+WICKERBOTTOM.DESCRIBE.BURIEDTREASURECHEST = "My curiosity is getting the better of me!"
+
 WICKERBOTTOM.DESCRIBE.CANDLEHAT = "A portable reading light."
 
 WICKERBOTTOM.DESCRIBE.CAPTAINHAT = "The cap of a true boatswoman."
@@ -59,6 +63,8 @@ WICKERBOTTOM.DESCRIBE.GASHAT = "The calcium carbonate purifies the surrounding a
 WICKERBOTTOM.DESCRIBE.GASMASKHAT = "For investigating dangerous areas."
 
 WICKERBOTTOM.DESCRIBE.JIAOLIANHAT = "A classic mask for scary criminal tales."
+
+WICKERBOTTOM.DESCRIBE.LUCKYTREASUREHAT = "It would better suit a pirate than I."
 
 WICKERBOTTOM.DESCRIBE.METALPLATEHAT = "It's similar to the Spanish colonials."
 
@@ -101,3 +107,5 @@ WICKERBOTTOM.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Head protection at the expens
 WICKERBOTTOM.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Infrared optics that highlight living organisms."
 
 WICKERBOTTOM.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A wearable apparatus capable of projecting a concentrated electrical discharge."
+
+WICKERBOTTOM.DESCRIBE.WILLOWOLDHAT = "Needs sewing and cleaning."

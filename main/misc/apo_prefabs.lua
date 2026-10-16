@@ -27,6 +27,7 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         "apo_armor_vortex",
         "apo_armor_weevole",
         "apo_armor_windbreaker",
+        "apo_buriedtreasurechest",
         "apo_hats",
         "apo_piratepack",
         "apo_thatchsack",

@@ -63,6 +63,17 @@ local function OnWagstaffGogglesArmorOff(parent)
     parent.player_classified.wagstaffgogglesarmoroffevent:push()
 end
 
+-- Buried Treasure Chest Sounds
+local function OnBuriedTreasureChestFoundEvent(inst)
+    if inst._parent ~= nil and _G.TheFocalPoint.entity:GetParent() == inst._parent then
+        _G.TheFocalPoint.SoundEmitter:PlaySound("apo_sounds/HUD/buriedtreasurechest/found")
+    end
+end
+
+local function OnBuriedTreasureChestFound(parent)
+    parent.player_classified.buriedtreasurechestfoundevent:push()
+end
+
 local function OnRegisterNetListeners(inst)
     if _G.TheWorld.ismastersim then
         inst:ListenForEvent("batvision_on", OnBatvisionOn, inst.entity:GetParent())
@@ -73,6 +84,8 @@ local function OnRegisterNetListeners(inst)
 
         inst:ListenForEvent("wagstaff_goggles_armor_on", OnWagstaffGogglesArmorOn, inst.entity:GetParent())
         inst:ListenForEvent("wagstaff_goggles_armor_off", OnWagstaffGogglesArmorOff, inst.entity:GetParent())
+
+        inst:ListenForEvent("buriedtreasurechestfound", OnBuriedTreasureChestFound, inst.entity:GetParent())
     end
 
     inst:ListenForEvent("event.batvision_on", OnBatvisionOnEvent)
@@ -83,6 +96,8 @@ local function OnRegisterNetListeners(inst)
 
     inst:ListenForEvent("event.wagstaff_goggles_armor_on", OnWagstaffGogglesArmorOnEvent)
     inst:ListenForEvent("event.wagstaff_goggles_armor_off", OnWagstaffGogglesArmorOffEvent)
+
+    inst:ListenForEvent("event.buriedtreasurechestfound", OnBuriedTreasureChestFoundEvent)
 end
 
 local function PlayerClassifiedPostInit(inst)
@@ -97,6 +112,8 @@ local function PlayerClassifiedPostInit(inst)
 
     inst.wagstaffgogglesarmoronevent = _G.net_event(inst.GUID, "event.wagstaff_goggles_armor_on")
     inst.wagstaffgogglesarmoroffevent = _G.net_event(inst.GUID, "event.wagstaff_goggles_armor_off")
+
+    inst.buriedtreasurechestfoundevent = _G.net_event(inst.GUID, "event.buriedtreasurechestfound")
 
     inst:DoStaticTaskInTime(0, OnRegisterNetListeners)
 end

@@ -26,6 +26,7 @@ local INIT_POSTINIT_COMPONENTS =
     "playervision",
     "temperature",
     "walkableplatformplayer",
+    "wisecracker",
 }
 
 local INIT_POSTINIT_PREFABS =
@@ -37,6 +38,8 @@ local INIT_POSTINIT_PREFABS =
     "bee",
     "beebox",
     "beequeen",
+    "bernie_active",
+    "crabking",
     "daywalker",
     "dragonfly",
     "gears",
