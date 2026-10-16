@@ -54,10 +54,17 @@ local function RemoveScrapbookDeps(data, prefabs, deps)
 end
 
 -- Tweaks to Vanilla content.
-if TUNING.APO_VANILLA_CHANGES then
+if TUNING.APO_TWEAK_ARMORMARBLE then
     ScrapbookData.armormarble.specialinfo = "ARMOR_MARBLE"
+end
+
+if TUNING.APO_TWEAK_BEEHAT then
     ScrapbookData.beehat.specialinfo = "BEEHAT"
     ScrapbookData.hivehat.specialinfo = "HIVEHAT"
+end
+
+if TUNING.APO_TWEAK_INSPECTACLESHAT then
+    RemoveScrapbookDeps(ScrapbookData, { "inspectacleshat" }, { "goggleshat" })
 end
 
 if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
@@ -1019,6 +1026,86 @@ local APO_SCRAPBOOK_HEAD =
         anim                = "anim_off",
         deps                = { "dragonfly", "heatrock", "redgem", "strawhat" },
         specialinfo         = "VOLCANOHAT",
+    },
+
+    wagstaff_goggleshat =
+    {
+        name                = "wagstaff_goggleshat",
+        prefab              = "wagstaff_goggleshat",
+        tex                 = "wagstaff_goggleshat.tex",
+        type                = "item",
+        subcat              = "hat",
+        craftingprefab      = "winona",
+        fueledmax           = TUNING.APO_HATS.WAGSTAFF_GOGGLES.PERISHTIME,
+        fueledrate          = 1,
+        fueledtype1         = "MAGIC",
+        snowmandecor        = true,
+        bank                = "wagstaff_goggleshat",
+        build               = "hat_wagstaff_goggles",
+        anim                = "anim",
+        deps                = { "goggleshat", "wagpunk_bits", "moonglass" },
+        specialinfo         = "WAGSTAFF_GOGGLESHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
+
+    wagstaff_goggles_armorhat =
+    {
+        name                = "wagstaff_goggles_armorhat",
+        prefab              = "wagstaff_goggles_armorhat",
+        tex                 = "wagstaff_goggles_armorhat.tex",
+        type                = "item",
+        subcat              = "hat",
+        craftingprefab      = "winona",
+        armor               = TUNING.APO_HATS.WAGSTAFF_GOGGLES_ARMOR.CONDITION,
+        absorb_percent      = TUNING.APO_HATS.WAGSTAFF_GOGGLES_ARMOR.ABSORPTION,
+        waterproofer        = TUNING.WATERPROOFNESS_MED,
+        snowmandecor        = true,
+        bank                = "wagstaff_goggles_armorhat",
+        build               = "hat_wagstaff_goggles_armor",
+        anim                = "anim",
+        deps                = { "wagstaff_goggleshat", "cutstone" },
+        specialinfo         = "WAGSTAFF_GOGGLES_ARMORHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
+
+    wagstaff_goggles_heathat =
+    {
+        name                = "wagstaff_goggles_heathat",
+        prefab              = "wagstaff_goggles_heathat",
+        tex                 = "wagstaff_goggles_heathat.tex",
+        type                = "item",
+        subcat              = "hat",
+        craftingprefab      = "winona",
+        fueledmax           = TUNING.APO_HATS.WAGSTAFF_GOGGLES_HEAT.PERISHTIME,
+        fueledrate          = 1,
+        fueledtype1         = "MAGIC",
+        snowmandecor        = true,
+        bank                = "wagstaff_goggles_heathat",
+        build               = "hat_wagstaff_goggles_heat",
+        anim                = "anim",
+        deps                = { "wagstaff_goggleshat", "trinket_6", "transistor" },
+        specialinfo         = "WAGSTAFF_GOGGLES_HEATHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
+
+    wagstaff_goggles_shoothat =
+    {
+        name                = "wagstaff_goggles_shoothat",
+        prefab              = "wagstaff_goggles_shoothat",
+        tex                 = "wagstaff_goggles_shoothat.tex",
+        type                = "item",
+        subcat              = "hat",
+        craftingprefab      = "winona",
+        fueledmax           = TUNING.APO_HATS.WAGSTAFF_GOGGLES_SHOOT.PERISHTIME,
+        fueledrate          = 1,
+        fueledtype1         = "MAGIC",
+        snowmandecor        = true,
+        bank                = "wagstaff_goggles_shoothat",
+        build               = "hat_wagstaff_goggles_shoot",
+        anim                = "anim",
+        deps                = { "wagstaff_goggleshat", "moonstorm_spark", "trinket_6", "potato" },
+        specialinfo         = "WAGSTAFF_GOGGLES_SHOOTHAT",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 }
 

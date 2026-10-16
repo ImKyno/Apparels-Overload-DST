@@ -31,6 +31,7 @@ local INIT_POSTINIT_COMPONENTS =
 local INIT_POSTINIT_PREFABS =
 {
     "any", -- Applied to all prefabs.
+    "world",
 
     "armor_marble",
     "bee",
@@ -58,9 +59,11 @@ local INIT_POSTINIT_SCREENS =
 
 local INIT_POSTINIT_WIDGETS =
 {
+    "controls",
     "craftingmenu_hud",
     "craftingmenu_ingredients",
     "craftingmenu_widget",
+    "gogglesover",
     "healthbadge",
     "itemtile",
 }

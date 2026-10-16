@@ -93,3 +93,11 @@ WORTOX.DESCRIBE.THUNDERHAT = "Fine, electrify mine... Electrify my golden tooth.
 WORTOX.DESCRIBE.VOLCANOCOLDHAT = "Hello? Are you sleeping, perhaps?"
 
 WORTOX.DESCRIBE.VOLCANOHAT = "Seems like my head gonna do a big boom! Hyuyu!"
+
+WORTOX.DESCRIBE.WAGSTAFF_GOGGLESHAT = "No use for me."
+
+WORTOX.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Staring out!"
+
+WORTOX.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Living things glow bright as day!"
+
+WORTOX.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A zap right there, a boom right here!"

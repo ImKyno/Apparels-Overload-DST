@@ -128,7 +128,7 @@ local function fn()
     inst:AddTag("hardarmor")
     inst:AddTag("absorbsoverheat")
 
-    inst.foleysound = "apo_sounds/common/armor_obsidian/foley"
+    inst.foleysound = "apo_sounds/movement/armor_obsidian/foley"
 
     inst.entity:SetPristine()
 

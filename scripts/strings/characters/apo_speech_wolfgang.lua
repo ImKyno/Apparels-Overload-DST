@@ -93,3 +93,11 @@ WOLFGANG.DESCRIBE.THUNDERHAT = "Wolfgang look good in hat."
 WOLFGANG.DESCRIBE.VOLCANOCOLDHAT = "Little mountain is asleep, yes?"
 
 WOLFGANG.DESCRIBE.VOLCANOHAT = "Is funny little mountain in Wolfgang head, ha ha."
+
+WOLFGANG.DESCRIBE.WAGSTAFF_GOGGLESHAT = "Is funny little glasses."
+
+WOLFGANG.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Is mighty hat of not seeing."
+
+WOLFGANG.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Wolfgang sees living things in the dark!"
+
+WOLFGANG.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Hat makes big electric boom! Wolfgang likes!"

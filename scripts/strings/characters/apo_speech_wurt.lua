@@ -93,3 +93,11 @@ WURT.DESCRIBE.THUNDERHAT = "Wurt ready for duty!"
 WURT.DESCRIBE.VOLCANOCOLDHAT = "It sleeping? Me wait for it to wake up, florp."
 
 WURT.DESCRIBE.VOLCANOHAT = "Fwoosh, scary!!"
+
+WURT.DESCRIBE.WAGSTAFF_GOGGLESHAT = "It makes better to see?"
+
+WURT.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Protects me head but not eyes, glurrp..."
+
+WURT.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Ooo! Glowy eyes see living things in dark!"
+
+WURT.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Weird thing go zap! Big boom!"

@@ -6,10 +6,12 @@ local ACTIONS  = _G.ACTIONS
 TUNING.APO_DEBUG_MODE = true -- Turn off on releases.
 TUNING.APO_DEFAULT_FLOATER = { "med", nil, 0.65 }
 
-TUNING.APO_SCRAPBOOK            = GetModConfigData("MOD_SCRAPBOOK")
-TUNING.APO_VANILLA_CHANGES      = GetModConfigData("VANILLA_CHANGES")
-TUNING.APO_CLOTHING_FOLLOWER    = true -- GetModConfigData("CLOTHING_FOLLOWER")
-TUNING.APO_CLOTHING_MANNEQUIN   = true -- GetModConfigData("CLOTHING_MANNEQUIN")
+TUNING.APO_SCRAPBOOK             = GetModConfigData("MOD_SCRAPBOOK")
+TUNING.APO_TWEAK_ARMORMARBLE     = GetModConfigData("TWEAK_ARMORMARBLE")
+TUNING.APO_TWEAK_BEEHAT          = GetModConfigData("TWEAK_BEEHAT")
+TUNING.APO_TWEAK_INSPECTACLESHAT = GetModConfigData("TWEAK_INSPECTACLESHAT")
+TUNING.APO_TWEAK_FOLLOWER        = true -- GetModConfigData("CLOTHING_FOLLOWER")
+TUNING.APO_TWEAK_MANNEQUIN       = GetModConfigData("TWEAK_MANNEQUIN")
 
 TUNING.APO_IS_ABC_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-3322803908") -- Above the Clouds.
 TUNING.APO_IS_HOF_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-2334209327") or _G.KnownModIndex:IsModEnabled("Heap-of-Foods-Workshop-Main") -- Heap of Foods.
@@ -72,11 +74,71 @@ TUNING.APO_MISC =
         },
     },
 
+    HEATVISION =
+    {
+        CC_TABLE =
+        {
+            day       = _G.resolvefilepath("images/colour_cubes/heatvision_cc.tex"),
+            dusk      = _G.resolvefilepath("images/colour_cubes/heatvision_cc.tex"),
+            night     = _G.resolvefilepath("images/colour_cubes/heatvision_cc.tex"),
+            full_moon = _G.resolvefilepath("images/colour_cubes/heatvision_cc.tex"),
+        },
+
+        COLORS =
+        {
+            HOT =
+            {
+                BLOOM = true,
+                DESATURATION = 1.0,
+                MULT_COLOUR = { 0.0, 1.0, 0.5, 1.0 },
+                ADD_COLOUR = { 1.0, 0.1, 0.3, 1.0 },
+            },
+
+            COLD =
+            {
+                BLOOM = false,
+                DESATURATION = 0.7,
+                MULT_COLOUR = { 0.0, 0.0, 0.3, 1.0 },
+                ADD_COLOUR = { 0.1, 0.1, 0.5, 1.0 },
+            },
+
+            GROUND =
+            {
+                MULT_COLOUR = { 0.0, 0.1, 0.3, 1.0 },
+                ADD_COLOUR  = { 0.1, 0.1, 0.5, 1.0 },
+            },
+
+            WAVES =
+            {
+                MULT_COLOUR = { 0.0, 0.0, 0.3, 1.0 },
+                ADD_COLOUR  = { 0.1, 0.1, 0.6, 1.0 },
+            },
+
+            BLUR =
+            {
+                ENABLED = true,
+                START_RADIUS = -5.0,
+                STRENGTH = 0.16,
+            },
+        },
+    },
+
     SHARK_FIN =
     {
         HEALTH = 20,
         HUNGER = 25,
         SANITY = -15,
+    },
+
+    SHOOTVISION =
+    {
+        CC_TABLE =
+        {
+            day       = _G.resolvefilepath("images/colour_cubes/shootvision_cc.tex"),
+            dusk      = _G.resolvefilepath("images/colour_cubes/shootvision_cc.tex"),
+            night     = _G.resolvefilepath("images/colour_cubes/shootvision_cc.tex"),
+            full_moon = _G.resolvefilepath("images/colour_cubes/shootvision_cc.tex"),
+        },
     },
 }
 
@@ -442,6 +504,30 @@ TUNING.APO_HATS =
             RADIUS = 3,
             LIGHT_OVERRIDE = 0.35,
         },
+    },
+
+    WAGSTAFF_GOGGLES =
+    {
+        PERISHTIME = 480 * 12,
+    },
+
+    WAGSTAFF_GOGGLES_ARMOR =
+    {
+        CONDITION = 600,
+        ABSORPTION = 0.85,
+        WALKSPEEDMULT = 0.90,
+    },
+
+    WAGSTAFF_GOGGLES_HEAT =
+    {
+        PERISHTIME = 480 * 2,
+        FUEL_BONUS_MULT = 4,
+    },
+
+    WAGSTAFF_GOGGLES_SHOOT =
+    {
+        PERISHTIME = 480 * 2,
+        FUEL_BONUS_MULT = 4,
     },
 }
 

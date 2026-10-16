@@ -144,32 +144,122 @@ local STRINGS =
             },
         },
 
-        VANILLA_CHANGES =
+        TWEAK_ARMORMARBLE =
         {
             NAME =
             {
-                "Tweaks to Vanilla Items",
-                pt  = "Mudanças para Items do Vanilla",
+                "Marble Suit - Tweaks",
+                pt  = "Armadura de Mármore - Mudanças",
             },
 
             HOVER =
             {
-                "Should some Clothing and Headwear have new features? Visit the Mod's Wiki for more information.",
-                pt  = "Permitir que algumas Roupas e Chapéus tenham novos recursos? Visite a Wiki do Mod para mais informações.",
+                "Should the Marble Suit have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que a Armadura de Mármore tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
             },
 
             HOVER_OPTIONS =
             {
                 DISABLED =
                 {
-                    "Default behaviour for Vanilla Clothing and Headwear.",
-                    pt  = "Comportamento padrão para Roupas e Chapéus do Vanilla.",
+                    "Default Marble Suit.",
+                    pt  = "Armadura de Mármore Padrão.",
                 },
 
                 ENABLED =
                 {
-                    "Some Clothing and Headwear will have new features.",
-                    pt  = "Algumas Roupas e Chapéus terão novos recursos.",
+                    "Marble Suit will have some new features.",
+                    pt  = "A Armadura de Mármore terá recursos novos.",
+                },
+            },
+        },
+
+        TWEAK_BEEHAT =
+        {
+            NAME =
+            {
+                "Bee Hats - Tweaks",
+                pt  = "Chapéus de Abelha - Mudanças",
+            },
+
+            HOVER =
+            {
+                "Should the Beekeeper Hat and Bee Queen Crown have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que o Chapéu de Apicultor e Coroa da Abelha Rainha tenham novos recursos?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Beekeeper Hat and Bee Queen Crown.",
+                    pt  = "Chapéu de Apicultor e Coroa da Abelha Rainha Padrões.",
+                },
+
+                ENABLED =
+                {
+                    "Beekeeper Hat and Bee Queen Crown will have some new features.",
+                    pt  = "O Chapéu de Apicultor e a Cora da Abelha Rainha teram novos recursos.",
+                },
+            },
+        },
+
+        TWEAK_INSPECTACLESHAT =
+        {
+            NAME =
+            {
+                "Inspectacles - Tweaks",
+                pt  = "Inspectares - Mudanças",
+            },
+
+            HOVER =
+            {
+                "Should the Inspectacles have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que o Inspectares tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Inspectacles.",
+                    pt  = "Inspectares Padrão.",
+                },
+
+                ENABLED =
+                {
+                    "Inspectacles will have some new features.",
+                    pt  = "O Inspectares terá novos recursos.",
+                },
+            },
+        },
+
+        TWEAK_MANNEQUIN =
+        {
+            NAME =
+            {
+                "Mannequin - Wear Out",
+                pt  = "Manequim - Desgaste",
+            },
+
+            HOVER =
+            {
+                "Should Clothing and Headwear wear out on the Sewing Mannequin?",
+                pt  = "Permitir que Roupas e Chapéus desgastem se estiverem no Manequim?",
+            },
+
+            HOVER_OPTIONS = -- THIS OPTION IS BACKWARDS !!!
+            {
+                DISABLED =
+                {
+                    "Clothing and Headwear will not wear out on the Sewing Mannequin.",
+                    pt  = "Roupas e Chapéus não irão desgastar se estiverem no Manequim.",
+                },
+
+                ENABLED =
+                {
+                    "Default Sewing Mannequin behaviour.",
+                    pt  = "Comportamento padrão do Manequim.",
                 },
             },
         },
@@ -204,6 +294,66 @@ local STRINGS =
                 },
             },
         },
+
+        HEATVISION_CC =
+        {
+            NAME =
+            {
+                "Infroggles - Nightvision Filter",
+                pt  = "Infróculos - Filtro de Visão Noturna",
+            },
+
+            HOVER =
+            {
+                "Should the Infroggles have an unique Nightvision Filter when worn?",
+                pt  = "Permitir que o Infróculos tenha um filtro único de Visão Noturna quando equipado?",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Infroggles will not have any Nightvision Filter.",
+                    pt  = "O Infróculos não terá nenhum filtro de Visão Noturna.",
+                },
+
+                ENABLED =
+                {
+                    "Infroggles will have an unique Nightvision Filter.",
+                    pt  = "O Infróculos terá um filtro único de Visão Noturna.",
+                },
+            },
+        },
+
+        SHOOTVISION_CC =
+        {
+            NAME =
+            {
+                "Fryfocals - Nightvision Filter",
+                pt  = "Fritóculos - Filtro de Visão Noturna",
+            },
+
+            HOVER =
+            {
+                "Should the Fryfocals have an unique Nightvision Filter when worn?",
+                pt  = "Permitir que o Fritóculos tenha um filtro único de Visão Noturna quando equipado?",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Fryfocals will not have any Nightvision Filter.",
+                    pt  = "O Fritóculos não terá nenhum filtro de Visão Noturna.",
+                },
+
+                ENABLED =
+                {
+                    "Fryfocals will have an unique Nightvision Filter.",
+                    pt  = "O Fritóculos terá um filtro único de Visão Noturna.",
+                },
+            },
+        },
     },
 }
 
@@ -224,6 +374,9 @@ server_filter_tags      = { "Apparels Overload", "APO", "Clothing", "Hats", "Ent
 
 icon                    = "ModiconAPO.tex"
 icon_atlas              = "ModiconAPO.xml"
+
+local SEPARATOR_LABEL   = "- - - - - - - - - - - - - -"
+local SEPARATOR_HOVER   = "- - - - - - - - - - - - - -"
 
 -- What the fuck ipairs is not available in here (?)
 local function AddConfigurationOptions(target, options)
@@ -262,127 +415,252 @@ local function GetYesNoOptions()
 end
 
 local function GetGeneralOptions()
-    local NONE_OPTIONS                 = GetNoneOptions()
+    local NONE_OPTIONS                  = GetNoneOptions()
 
-    local GENERAL_LABEL                = ChooseTranslationTable(STRINGS.SETTINGS.GENERAL.NAME)
-    local GENERAL_HOVER                = ChooseTranslationTable(STRINGS.SETTINGS.GENERAL.HOVER)
+    local GENERAL_LABEL                 = ChooseTranslationTable(STRINGS.SETTINGS.GENERAL.NAME)
+    local GENERAL_HOVER                 = ChooseTranslationTable(STRINGS.SETTINGS.GENERAL.HOVER)
 
-    local MOD_SCRAPBOOK_LABEL          = ChooseTranslationTable(STRINGS.SETTINGS.SCRAPBOOK.NAME)
-    local MOD_SCRAPBOOK_HOVER          = ChooseTranslationTable(STRINGS.SETTINGS.SCRAPBOOK.HOVER)
+    local MOD_SCRAPBOOK_LABEL           = ChooseTranslationTable(STRINGS.SETTINGS.SCRAPBOOK.NAME)
+    local MOD_SCRAPBOOK_HOVER           = ChooseTranslationTable(STRINGS.SETTINGS.SCRAPBOOK.HOVER)
 
-    local MOD_SCRAPBOOK_OPTIONS        =
+    local MOD_SCRAPBOOK_OPTIONS         =
     {
         {
-            description                = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.SCRAPBOOK.HOVER_OPTIONS.DISABLED),
-            data                       = false
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.SCRAPBOOK.HOVER_OPTIONS.DISABLED),
+            data                        = false
         },
         {
-            description                = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.SCRAPBOOK.HOVER_OPTIONS.ENABLED),
-            data                       = true
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.SCRAPBOOK.HOVER_OPTIONS.ENABLED),
+            data                        = true
         }
     }
 
     return
     {
         {
-            name                       = "GENERAL",
-            label                      = GENERAL_LABEL,
-            hover                      = GENERAL_HOVER,
-            options                    = NONE_OPTIONS,
-            default                    = false
+            name                        = "GENERAL",
+            label                       = GENERAL_LABEL,
+            hover                       = GENERAL_HOVER,
+            options                     = NONE_OPTIONS,
+            default                     = false
         },
         {
-            name                       = "MOD_SCRAPBOOK",
-            label                      = MOD_SCRAPBOOK_LABEL,
-            hover                      = MOD_SCRAPBOOK_HOVER,
-            options                    = MOD_SCRAPBOOK_OPTIONS,
-            default                    = true
+            name                        = "MOD_SCRAPBOOK",
+            label                       = MOD_SCRAPBOOK_LABEL,
+            hover                       = MOD_SCRAPBOOK_HOVER,
+            options                     = MOD_SCRAPBOOK_OPTIONS,
+            default                     = true
         },
     }
 end
 
 local function GetVanillaOptions()
-    local NONE_OPTIONS                 = GetNoneOptions()
+    local NONE_OPTIONS                  = GetNoneOptions()
 
-    local VANILLA_LABEL                = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA.NAME)
-    local VANILLA_HOVER                = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA.HOVER)
+    local VANILLA_LABEL                 = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA.NAME)
+    local VANILLA_HOVER                 = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA.HOVER)
 
-    local VANILLA_CHANGES_LABEL        = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA_CHANGES.NAME)
-    local VANILLA_CHANGES_HOVER        = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA_CHANGES.HOVER)
-    local VANILLA_CHANGES_OPTIONS      =
+    local TWEAK_ARMORMARBLE_LABEL       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.NAME)
+    local TWEAK_ARMORMARBLE_HOVER       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.HOVER)
+    local TWEAK_ARMORMARBLE_OPTIONS     =
     {
         {
-            description                = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA_CHANGES.HOVER_OPTIONS.DISABLED),
-            data                       = false
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.HOVER_OPTIONS.DISABLED),
+            data                        = false
         },
         {
-            description                = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA_CHANGES.HOVER_OPTIONS.ENABLED),
-            data                       = true
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    local TWEAK_BEEHAT_LABEL            = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEEHAT.NAME)
+    local TWEAK_BEEHAT_HOVER            = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEEHAT.HOVER)
+    local TWEAK_BEEHAT_OPTIONS          =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEEHAT.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEEHAT.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    local TWEAK_INSPECTACLESHAT_LABEL   = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_INSPECTACLESHAT.NAME)
+    local TWEAK_INSPECTACLESHAT_HOVER   = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_INSPECTACLESHAT.HOVER)
+    local TWEAK_INSPECTACLESHAT_OPTIONS =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_INSPECTACLESHAT.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_INSPECTACLESHAT.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    -- THIS OPTION IS BACKWARDS !!!
+    local TWEAK_MANNEQUIN_LABEL         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MANNEQUIN.NAME)
+    local TWEAK_MANNEQUIN_HOVER         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MANNEQUIN.HOVER)
+    local TWEAK_MANNEQUIN_OPTIONS       =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MANNEQUIN.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MANNEQUIN.HOVER_OPTIONS.ENABLED),
+            data                        = true
         }
     }
 
     return
     {
         {
-            name                = "VANILLA",
-            label               = VANILLA_LABEL,
-            hover               = VANILLA_HOVER,
-            options             = NONE_OPTIONS,
-            default             = false
+            name                        = "VANILLA",
+            label                       = VANILLA_LABEL,
+            hover                       = VANILLA_HOVER,
+            options                     = NONE_OPTIONS,
+            default                     = false
         },
         {
-            name                = "VANILLA_CHANGES",
-            label               = VANILLA_CHANGES_LABEL,
-            hover               = VANILLA_CHANGES_HOVER,
-            options             = VANILLA_CHANGES_OPTIONS,
-            default             = true
+            name                        = "TWEAK_BEEHAT",
+            label                       = TWEAK_BEEHAT_LABEL,
+            hover                       = TWEAK_BEEHAT_HOVER,
+            options                     = TWEAK_BEEHAT_OPTIONS,
+            default                     = true
+        },
+        {
+            name                        = "TWEAK_INSPECTACLESHAT",
+            label                       = TWEAK_INSPECTACLESHAT_LABEL,
+            hover                       = TWEAK_INSPECTACLESHAT_HOVER,
+            options                     = TWEAK_INSPECTACLESHAT_OPTIONS,
+            default                     = true
+        },
+        {
+            name                        = "TWEAK_ARMORMARBLE",
+            label                       = TWEAK_ARMORMARBLE_LABEL,
+            hover                       = TWEAK_ARMORMARBLE_HOVER,
+            options                     = TWEAK_ARMORMARBLE_OPTIONS,
+            default                     = true
+        },
+        {
+            name                        = "SEPARATOR",
+            label                       = SEPARATOR_LABEL,
+            hover                       = SEPARATOR_HOVER,
+            options                     = NONE_OPTIONS,
+            default                     = false
+        },
+        {
+            name                        = "TWEAK_MANNEQUIN",
+            label                       = TWEAK_MANNEQUIN_LABEL,
+            hover                       = TWEAK_MANNEQUIN_HOVER,
+            options                     = TWEAK_MANNEQUIN_OPTIONS,
+            default                     = false
         },
     }
 end
 
 local function GetClientOptions()
-    local NONE_OPTIONS                 = GetNoneOptions()
+    local NONE_OPTIONS                  = GetNoneOptions()
 
-    local CLIENT_LABEL                 = ChooseTranslationTable(STRINGS.SETTINGS.CLIENT.NAME)
-    local CLIENT_HOVER                 = ChooseTranslationTable(STRINGS.SETTINGS.CLIENT.HOVER)
+    local CLIENT_LABEL                  = ChooseTranslationTable(STRINGS.SETTINGS.CLIENT.NAME)
+    local CLIENT_HOVER                  = ChooseTranslationTable(STRINGS.SETTINGS.CLIENT.HOVER)
 
-    local BATVISION_CC_LABEL           = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.NAME)
-    local BATVISION_CC_HOVER           = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.HOVER)
-    local BATVISION_CC_OPTIONS         =
+    local BATVISION_CC_LABEL            = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.NAME)
+    local BATVISION_CC_HOVER            = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.HOVER)
+    local BATVISION_CC_OPTIONS          =
     {
         {
-            description                = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.HOVER_OPTIONS.DISABLED),
-            data                       = false
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.HOVER_OPTIONS.DISABLED),
+            data                        = false
         },
         {
-            description                = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                      = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.HOVER_OPTIONS.ENABLED),
-            data                       = true
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.BATVISION_CC.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    local HEATVISION_CC_LABEL           = ChooseTranslationTable(STRINGS.SETTINGS.HEATVISION_CC.NAME)
+    local HEATVISION_CC_HOVER           = ChooseTranslationTable(STRINGS.SETTINGS.HEATVISION_CC.HOVER)
+    local HEATVISION_CC_OPTIONS         =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.HEATVISION_CC.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.HEATVISION_CC.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    local SHOOTVISION_CC_LABEL          = ChooseTranslationTable(STRINGS.SETTINGS.SHOOTVISION_CC.NAME)
+    local SHOOTVISION_CC_HOVER          = ChooseTranslationTable(STRINGS.SETTINGS.SHOOTVISION_CC.HOVER)
+    local SHOOTVISION_CC_OPTIONS        =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.SHOOTVISION_CC.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.SHOOTVISION_CC.HOVER_OPTIONS.ENABLED),
+            data                        = true
         }
     }
 
     return
     {
         {
-            name                = "CLIENT",
-            label               = CLIENT_LABEL,
-            hover               = CLIENT_HOVER,
-            options             = NONE_OPTIONS,
-            default             = false,
-            client              = true
+            name                        = "CLIENT",
+            label                       = CLIENT_LABEL,
+            hover                       = CLIENT_HOVER,
+            options                     = NONE_OPTIONS,
+            default                     = false,
+            client                      = true
         },
         {
-            name                = "BATVISION_CC",
-            label               = BATVISION_CC_LABEL,
-            hover               = BATVISION_CC_HOVER,
-            options             = BATVISION_CC_OPTIONS,
-            default             = true,
-            client              = true
+            name                        = "BATVISION_CC",
+            label                       = BATVISION_CC_LABEL,
+            hover                       = BATVISION_CC_HOVER,
+            options                     = BATVISION_CC_OPTIONS,
+            default                     = true,
+            client                      = true
+        },
+        {
+            name                        = "HEATVISION_CC",
+            label                       = HEATVISION_CC_LABEL,
+            hover                       = HEATVISION_CC_HOVER,
+            options                     = HEATVISION_CC_OPTIONS,
+            default                     = true,
+            client                      = true
+        },
+        {
+            name                        = "SHOOTVISION_CC",
+            label                       = SHOOTVISION_CC_LABEL,
+            hover                       = SHOOTVISION_CC_HOVER,
+            options                     = SHOOTVISION_CC_OPTIONS,
+            default                     = true,
+            client                      = true
         },
     }
 end

@@ -93,3 +93,11 @@ WEBBER.DESCRIBE.THUNDERHAT = "Check out our hat!"
 WEBBER.DESCRIBE.VOLCANOCOLDHAT = "We've got our very own ice mountain!"
 
 WEBBER.DESCRIBE.VOLCANOHAT = "We just hope it does not erupt!"
+
+WEBBER.DESCRIBE.WAGSTAFF_GOGGLESHAT = "Weird pair of glasses."
+
+WEBBER.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "It sounds all echo-ey in there."
+
+WEBBER.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "We can see all the living things glowing in the dark!"
+
+WEBBER.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "We can make electric explosions wherever we want! Whoa!"

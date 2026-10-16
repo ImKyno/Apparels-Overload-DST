@@ -159,7 +159,7 @@ function BatVision:OnUpdate(dt)
         self:ApplyLevels()
     else
         if self.fadein then
-            TheFocalPoint.SoundEmitter:PlaySound("apo_sounds/common/hat_bat/sonar")
+            TheFocalPoint.SoundEmitter:PlaySound("apo_sounds/HUD/hat_bat/sonar")
 
             SpawnSonarAnim(self.owner, self)
 

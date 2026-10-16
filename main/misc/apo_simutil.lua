@@ -23,11 +23,14 @@ end
 local function _LOCAL_CanEntitySeeInDark(inst)
     if inst.components.playervision ~= nil then
         return inst.components.playervision:HasBatVision()
+        or inst.components.playervision:HasHeatVision()
+        or inst.components.playervision:HasShootVision()
     end
 
     local inventory = inst.replica.inventory
     
-    return inst:HasTag("canseeindark") or (inventory ~= nil and inventory:EquipHasTag("batvision"))
+    return inst:HasTag("canseeindark") or (inventory ~= nil and inventory:EquipHasTag("batvision")
+    or inventory:EquipHasTag("heatvision") or inventory:EquipHasTag("shootvision"))
 end
 
 local _CanEntitySeePoint = CanEntitySeePoint

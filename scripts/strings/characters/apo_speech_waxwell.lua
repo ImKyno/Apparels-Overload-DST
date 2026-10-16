@@ -93,3 +93,11 @@ WAXWELL.DESCRIBE.THUNDERHAT = "Electrifying finery."
 WAXWELL.DESCRIBE.VOLCANOCOLDHAT = "I don't trust this thing."
 
 WAXWELL.DESCRIBE.VOLCANOHAT = "I really don't trust it."
+
+WAXWELL.DESCRIBE.WAGSTAFF_GOGGLESHAT = "I hardly see the need for these!"
+
+WAXWELL.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "You're going to need that kind of armor if you can't see where you're going."
+
+WAXWELL.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "How convenient. All living things, laid bare before my eyes."
+
+WAXWELL.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A rather flashy way to settle an argument."

@@ -93,3 +93,11 @@ WICKERBOTTOM.DESCRIBE.THUNDERHAT = "I'm not usually one for hats."
 WICKERBOTTOM.DESCRIBE.VOLCANOCOLDHAT = "It appears to be dormant."
 
 WICKERBOTTOM.DESCRIBE.VOLCANOHAT = "A volcano replica, like in a science fair."
+
+WICKERBOTTOM.DESCRIBE.WAGSTAFF_GOGGLESHAT = "I'm afraid they're not my prescription."
+
+WICKERBOTTOM.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Head protection at the expense of periphery vision."
+
+WICKERBOTTOM.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Infrared optics that highlight living organisms."
+
+WICKERBOTTOM.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A wearable apparatus capable of projecting a concentrated electrical discharge."

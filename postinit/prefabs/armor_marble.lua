@@ -62,6 +62,6 @@ local function ArmorMarblePostInit(inst)
     end
 end
 
-if TUNING.APO_VANILLA_CHANGES then
+if TUNING.APO_TWEAK_ARMORMARBLE then
     AddPrefabPostInit("armormarble", ArmorMarblePostInit)
 end

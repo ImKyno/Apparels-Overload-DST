@@ -93,3 +93,11 @@ WOODIE.DESCRIBE.THUNDERHAT = "How do I look?"
 WOODIE.DESCRIBE.VOLCANOCOLDHAT = "What a chilling volcano!"
 
 WOODIE.DESCRIBE.VOLCANOHAT = "What could go wrong, eh?"
+
+WOODIE.DESCRIBE.WAGSTAFF_GOGGLESHAT = "What's the point of this, eh?"
+
+WOODIE.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Not really that great for seeing."
+
+WOODIE.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Now I can see critters hiding in the dark. Handy, eh?"
+
+WOODIE.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Point, zap, and watch the sparks fly. Just don't fry yourself, eh?"

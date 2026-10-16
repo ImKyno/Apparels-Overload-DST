@@ -93,3 +93,11 @@ WATHGRITHR.DESCRIBE.THUNDERHAT = "Tis a hat worthy of Thor."
 WATHGRITHR.DESCRIBE.VOLCANOCOLDHAT = "The northern alps!"
 
 WATHGRITHR.DESCRIBE.VOLCANOHAT = "A mountain hat of fire!"
+
+WATHGRITHR.DESCRIBE.WAGSTAFF_GOGGLESHAT = "Reveal thou secrets!"
+
+WATHGRITHR.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "A helm of bleary sight."
+
+WATHGRITHR.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "No living foe shall escape mine sight!"
+
+WATHGRITHR.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Let lightning leap forth and smite mine foes!"

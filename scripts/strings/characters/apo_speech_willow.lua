@@ -93,3 +93,11 @@ WILLOW.DESCRIBE.THUNDERHAT = "This looks good on me."
 WILLOW.DESCRIBE.VOLCANOCOLDHAT = "Bummer. It's sleeping!"
 
 WILLOW.DESCRIBE.VOLCANOHAT = "I absolutely love it!"
+
+WILLOW.DESCRIBE.WAGSTAFF_GOGGLESHAT = "Good for seeing inside a storm."
+
+WILLOW.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "How am I supposed to see what I want to burn?"
+
+WILLOW.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Everything alive lights up!"
+
+WILLOW.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Finally, something with a little spark!"

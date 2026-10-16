@@ -93,3 +93,11 @@ WALTER.DESCRIBE.THUNDERHAT = "Won't ground me in a storm."
 WALTER.DESCRIBE.VOLCANOCOLDHAT = "It looks safe enough, right, Woby?"
 
 WALTER.DESCRIBE.VOLCANOHAT = "Don't worry, Woby. It's safe, probably."
+
+WALTER.DESCRIBE.WAGSTAFF_GOGGLESHAT = "I don't think I need any glasses."
+
+WALTER.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Great armor. Horrible goggles."
+
+WALTER.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "These make spotting wildlife at night a cinch!"
+
+WALTER.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "An electric blaster you can aim anywhere."

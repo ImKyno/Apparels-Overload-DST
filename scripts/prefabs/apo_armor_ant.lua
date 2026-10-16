@@ -80,7 +80,7 @@ local function fn()
 
     inst:AddTag("beefriend")
 
-    inst.foleysound = "apo_sounds/common/armor_ant/foley"
+    inst.foleysound = "apo_sounds/movement/armor_ant/foley"
 
     inst.entity:SetPristine()
 

@@ -421,14 +421,14 @@ local function MakeHat(name)
     end
 
     hat_fns.bat_onturnon = function(owner)
-        if owner ~= nil and owner.SoundEmitter ~= nil then
-            owner.SoundEmitter:PlaySound("apo_sounds/common/hat_bat/turn_on")
+        if owner ~= nil then
+            owner:PushEvent("batvision_on")
         end
     end
 
     hat_fns.bat_onturnoff = function(owner)
-        if owner ~= nil and owner.SoundEmitter ~= nil then
-            owner.SoundEmitter:PlaySound("apo_sounds/common/hat_bat/turn_off")
+        if owner ~= nil then
+            owner:PushEvent("batvision_off")
         end
     end
 
@@ -469,7 +469,6 @@ local function MakeHat(name)
     hat_fns.bat_custom_init = function(inst)
         inst.entity:AddSoundEmitter()
 
-        inst:AddTag("no_sewing")
         inst:AddTag("batvision")
     end
 
@@ -1931,6 +1930,244 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.wagstaff_goggles_custom_init = function(inst)
+        inst:AddTag("goggles")
+        inst:AddTag("goggles_wagstaff")
+        inst:AddTag("open_top_hat")
+    end
+
+    hat_fns.wagstaff_goggles = function()
+        local inst = simple(hat_fns.wagstaff_goggles_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.opentop_onequip)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.MAGIC
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.WAGSTAFF_GOGGLES.PERISHTIME)
+        inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
+
+        return inst
+    end
+
+    hat_fns.wagstaff_goggles_armor_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            owner:PushEvent("wagstaff_goggles_armor_on")
+        end
+    end
+
+    hat_fns.wagstaff_goggles_armor_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            owner:PushEvent("wagstaff_goggles_armor_off")
+        end
+    end
+
+    hat_fns.wagstaff_goggles_armor_custom_init = function(inst)
+        inst.entity:AddSoundEmitter()
+
+        inst:AddTag("goggles")
+        inst:AddTag("goggles_wagstaff")
+        inst:AddTag("gogglesarmor")
+        inst:AddTag("waterproofer")
+    end
+
+    hat_fns.wagstaff_goggles_armor = function()
+        local inst = simple(hat_fns.wagstaff_goggles_armor_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_armor_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_armor_onunequip)
+        inst.components.equippable.walkspeedmult = TUNING.APO_HATS.WAGSTAFF_GOGGLES_ARMOR.WALKSPEEDMULT
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_MED)
+
+        inst:AddComponent("armor")
+        inst.components.armor:InitCondition(TUNING.APO_HATS.WAGSTAFF_GOGGLES_ARMOR.CONDITION, TUNING.APO_HATS.WAGSTAFF_GOGGLES_ARMOR.ABSORPTION)
+
+        return inst
+    end
+
+    hat_fns.wagstaff_goggles_heat_onturnon = function(owner)
+        if owner ~= nil then
+            owner:PushEvent("wagstaff_goggles_on")
+        end
+    end
+
+    hat_fns.wagstaff_goggles_heat_onturnoff = function(owner)
+        if owner ~= nil then
+            owner:PushEvent("wagstaff_goggles_off")
+        end
+    end
+
+    hat_fns.wagstaff_goggles_heat_onequip = function(inst, owner)
+        hat_fns.opentop_onequip(inst, owner)
+        hat_fns.wagstaff_goggles_heat_onturnon(owner)
+
+        if owner ~= nil then
+            if owner.components.grue ~= nil then
+                owner.components.grue:AddImmunity("wagstaff_goggles_heathat")
+            end
+        end
+    end
+
+    hat_fns.wagstaff_goggles_heat_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+        hat_fns.wagstaff_goggles_heat_onturnoff(owner)
+
+        if owner ~= nil then
+            if owner.components.grue ~= nil then
+                owner.components.grue:RemoveImmunity("wagstaff_goggles_heathat")
+            end
+        end
+    end
+
+    hat_fns.wagstaff_goggles_heat_ontakefuel = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        if owner ~= nil then
+            owner:PushEvent("repair")
+        end
+    end
+
+    hat_fns.wagstaff_goggles_heat_onperish = function(inst)
+        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+            if owner ~= nil then
+                hat_fns.wagstaff_goggles_heat_onturnoff(owner)
+            end
+        end
+
+        hat_fns.simple_onperish(inst)
+    end
+
+    hat_fns.wagstaff_goggles_heat_custom_init = function(inst)
+        inst.entity:AddSoundEmitter()
+
+        inst:AddTag("goggles")
+        inst:AddTag("goggles_wagstaff")
+        inst:AddTag("heatvision")
+        inst:AddTag("open_top_hat")
+    end
+
+    hat_fns.wagstaff_goggles_heat = function()
+        local inst = simple(hat_fns.wagstaff_goggles_heat_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_heat_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_heat_onunequip)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled.secondaryfueltype = FUELTYPE.GEARS
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.WAGSTAFF_GOGGLES_HEAT.PERISHTIME)
+        inst.components.fueled:SetTakeFuelFn(hat_fns.wagstaff_goggles_heat_ontakefuel)
+        inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
+        inst.components.fueled.bonusmult = TUNING.APO_HATS.WAGSTAFF_GOGGLES_HEAT.FUEL_BONUS_MULT
+        inst.components.fueled.accepting = true
+
+        return inst
+    end
+
+    hat_fns.wagstaff_goggles_shoot_onturnon = function(owner)
+        if owner ~= nil then
+            owner:PushEvent("wagstaff_goggles_on")
+        end
+    end
+
+    hat_fns.wagstaff_goggles_shoot_onturnoff = function(owner)
+        if owner ~= nil then
+            owner:PushEvent("wagstaff_goggles_off")
+        end
+    end
+
+    hat_fns.wagstaff_goggles_shoot_onequip = function(inst, owner)
+        hat_fns.opentop_onequip(inst, owner)
+        hat_fns.wagstaff_goggles_shoot_onturnon(owner)
+
+        if owner ~= nil then
+            if owner.components.grue ~= nil then
+                owner.components.grue:AddImmunity("wagstaff_goggles_shoothat")
+            end
+        end
+    end
+
+    hat_fns.wagstaff_goggles_shoot_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+        hat_fns.wagstaff_goggles_shoot_onturnoff(owner)
+
+        if owner ~= nil then
+            if owner.components.grue ~= nil then
+                owner.components.grue:RemoveImmunity("wagstaff_goggles_shoothat")
+            end
+        end
+    end
+
+    hat_fns.wagstaff_goggles_shoot_ontakefuel = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        if owner ~= nil then
+            owner:PushEvent("repair")
+        end
+    end
+
+    hat_fns.wagstaff_goggles_shoot_onperish = function(inst)
+        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+            if owner ~= nil then
+                hat_fns.wagstaff_goggles_shoot_onturnoff(owner)
+            end
+        end
+
+        hat_fns.simple_onperish(inst)
+    end
+
+    hat_fns.wagstaff_goggles_shoot_custom_init = function(inst)
+        inst.entity:AddSoundEmitter()
+
+        inst:AddTag("goggles")
+        inst:AddTag("goggles_wagstaff")
+        inst:AddTag("shootvision")
+        inst:AddTag("open_top_hat")
+    end
+
+    hat_fns.wagstaff_goggles_shoot = function()
+        local inst = simple(hat_fns.wagstaff_goggles_shoot_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_shoot_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_shoot_onunequip)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled.secondaryfueltype = FUELTYPE.GEARS
+        inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.WAGSTAFF_GOGGLES_SHOOT.PERISHTIME)
+        inst.components.fueled:SetTakeFuelFn(hat_fns.wagstaff_goggles_shoot_ontakefuel)
+        inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
+        inst.components.fueled.bonusmult = TUNING.APO_HATS.WAGSTAFF_GOGGLES_SHOOT.FUEL_BONUS_MULT
+        inst.components.fueled.accepting = true
+
+        return inst
+    end
+
     local hat_fn  = nil
 
     local assets  =
@@ -1984,6 +2221,14 @@ local function MakeHat(name)
     elseif name == "thunder" then
         prefabs = { "thunderhat_light", "wx78_big_spark", "electricchargedfx" }
         hat_fn = hat_fns.thunder
+    elseif name == "wagstaff_goggles" then
+        hat_fn = hat_fns.wagstaff_goggles
+    elseif name == "wagstaff_goggles_armor" then
+        hat_fn = hat_fns.wagstaff_goggles_armor
+    elseif name == "wagstaff_goggles_heat" then
+        hat_fn = hat_fns.wagstaff_goggles_heat
+    elseif name == "wagstaff_goggles_shoot" then
+        hat_fn = hat_fns.wagstaff_goggles_shoot
     end
 
     table.insert(ALL_HAT_PREFAB_NAMES, prefabname)
@@ -2009,4 +2254,8 @@ MakeHat("pirate"),
 MakeHat("pith"),
 MakeHat("shark_teeth"),
 MakeHat("snakeskin"),
-MakeHat("thunder")
+MakeHat("thunder"),
+MakeHat("wagstaff_goggles"),
+MakeHat("wagstaff_goggles_armor"),
+MakeHat("wagstaff_goggles_heat"),
+MakeHat("wagstaff_goggles_shoot")

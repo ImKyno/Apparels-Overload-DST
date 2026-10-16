@@ -97,7 +97,7 @@ local function fn()
     inst:AddTag("heavyarmor")
     inst:AddTag("hardarmor")
 
-    inst.foleysound = "apo_sounds/common/armor_metalplate/foley"
+    inst.foleysound = "apo_sounds/movement/armor_metalplate/foley"
 
     inst.entity:SetPristine()
 

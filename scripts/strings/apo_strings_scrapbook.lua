@@ -137,7 +137,7 @@ SPECIALINFO.DISGUISEHAT =
 Pigs and Bunnymen will treat the wearer like one of them.
 ]]
 
-SPECIALINFO.EXTRAHEAVYHAT = TUNING.APO_VANILLA_CHANGES and
+SPECIALINFO.EXTRAHEAVYHAT = TUNING.APO_TWEAK_ARMORMARBLE and
 [[
 This armor is durable but heavy, and slows its wearer.
 
@@ -262,4 +262,29 @@ Provides light for its duration and can cook items.
 Warms the wearer and provides constant heat when worn.
 
 Can be repaired with Red Gems.
+]]
+
+SPECIALINFO.WAGSTAFF_GOGGLESHAT =
+[[
+Improves vision in a storm.
+]]
+
+SPECIALINFO.WAGSTAFF_GOGGLES_ARMORHAT =
+[[
+Improves vision in a storm.
+
+This armor is durable but heavy, and slows its wearer.
+]]
+
+SPECIALINFO.WAGSTAFF_GOGGLES_HEATHAT =
+[[
+Improves vision in a storm.
+
+Allows wearer to view the world in a infrared vision mode that can see in the dark, highlighting all living things.
+]]
+
+SPECIALINFO.WAGSTAFF_GOGGLES_SHOOTHAT =
+[[
+Improves vision in a storm.
+
 ]]

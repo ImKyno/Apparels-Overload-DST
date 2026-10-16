@@ -93,3 +93,11 @@ WANDA.DESCRIBE.THUNDERHAT = "Now I'm ready for the thunderstorm!"
 WANDA.DESCRIBE.VOLCANOCOLDHAT = "It has been sleeping for hundreds of years."
 
 WANDA.DESCRIBE.VOLCANOHAT = "I'm counting the seconds for it to explode."
+
+WANDA.DESCRIBE.WAGSTAFF_GOGGLESHAT = "I already have glasses."
+
+WANDA.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Glasses mixed with armor. Interesting."
+
+WANDA.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "I can see what's lurking in the dark before it gets too close."
+
+WANDA.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A little electrical discharge can save a great deal of time."

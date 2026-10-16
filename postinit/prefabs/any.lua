@@ -9,23 +9,27 @@ local function AnyPerishableClothingPostInit(inst)
     if inst.components.equippable ~= nil and inst.components.perishable ~= nil then
         local _onequiptomodelfn = inst.components.equippable.onequiptomodelfn
 
-        inst.components.equippable.onequiptomodelfn = function(...)
-            inst._wasperishing = inst.components.perishable:IsPerishing()
-            inst.components.perishable:StopPerishing()
+        if _onequiptomodelfn ~= nil then
+            inst.components.equippable.onequiptomodelfn = function(...)
+                inst._wasperishing = inst.components.perishable:IsPerishing()
+                inst.components.perishable:StopPerishing()
 
-            return _onequiptomodelfn and _onequiptomodelfn(...)
+                return _onequiptomodelfn and _onequiptomodelfn(...)
+            end
         end
 
         local _onunequipfn = inst.components.equippable.onunequipfn
 
-        inst.components.equippable.onunequipfn = function(inst, owner, ...)
-            if owner ~= nil and owner:HasTag("equipmentmodel") then
-                if inst._wasperishing then
-                    inst.components.perishable:StartPerishing()
+        if _onunequipfn ~= nil then
+            inst.components.equippable.onunequipfn = function(inst, owner, ...)
+                if owner ~= nil and owner:HasTag("equipmentmodel") then
+                    if inst._wasperishing then
+                        inst.components.perishable:StartPerishing()
+                    end
                 end
-            end
 
-            return _onunequipfn and _onunequipfn(inst, owner, ...)
+                return _onunequipfn and _onunequipfn(inst, owner, ...)
+            end
         end
     end
 end
@@ -38,6 +42,7 @@ local function AnyFollowerClothingPostInit(inst)
 
 end
 
-if TUNING.APO_CLOTHING_MANNEQUIN then
+-- THIS OPTION IS BACKWARDS !!!
+if not TUNING.APO_TWEAK_MANNEQUIN then
     AddPrefabPostInitAny(AnyPerishableClothingPostInit)
 end

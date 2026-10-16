@@ -1,6 +1,8 @@
 local _G = GLOBAL
 
-local BATVISION_CC = GetModConfigData("BATVISION_CC", true)
+local BATVISION_CC   = GetModConfigData("BATVISION_CC",   true)
+local HEATVISION_CC  = GetModConfigData("HEATVISION_CC",  true)
+local SHOOTVISION_CC = GetModConfigData("SHOOTVISION_CC", true)
 
 local function OnSetBatVision(self, enabled)
     self.inst:PushEvent("batvision", { enabled = enabled })
@@ -17,6 +19,34 @@ local function OnSetBatVision(self, enabled)
     end
 end
 
+local function OnSetHeatVision(self, enabled)
+    self.inst:PushEvent("heatvision", { enabled = enabled })
+
+    if enabled then
+        if HEATVISION_CC then
+            self:PushForcedNightVision("HEATVISION", 100, TUNING.APO_MISC.HEATVISION.CC_TABLE, 1)
+        else
+            self:PushForcedNightVision("HEATVISION", 100, nil, 1, nil, true)
+        end
+    else
+        self:PopForcedNightVision("HEATVISION")
+    end
+end
+
+local function OnSetShootVision(self, enabled)
+    self.inst:PushEvent("shootvision", { enabled = enabled })
+
+    if enabled then
+        if SHOOTVISION_CC then
+            self:PushForcedNightVision("SHOOTVISION", 100, TUNING.APO_MISC.SHOOTVISION.CC_TABLE, 1)
+        else
+            self:PushForcedNightVision("SHOOTVISION", 100, nil, 1, nil, true)
+        end
+    else
+        self:PopForcedNightVision("SHOOTVISION")
+    end
+end
+
 local function OnEquipChanged(inst)
     local self = inst.components.playervision
 
@@ -25,6 +55,22 @@ local function OnEquipChanged(inst)
 
         if not self.forcebatvision and self.inst == _G.ThePlayer then
             OnSetBatVision(self, self.batvision)
+        end
+    end
+
+    if self.heatvision == not inst.replica.inventory:EquipHasTag("heatvision") then
+        self.heatvision = not self.heatvision
+
+        if not self.forceheatvision and self.inst == _G.ThePlayer then
+            OnSetHeatVision(self, self.heatvision)
+        end
+    end
+
+    if self.shootvision == not inst.replica.inventory:EquipHasTag("shootvision") then
+        self.shootvision = not self.shootvision
+
+        if not self.forceshootvision and self.inst == _G.ThePlayer then
+            OnSetShootVision(self, self.shootvision)
         end
     end
 end
@@ -48,6 +94,12 @@ AddComponentPostInit("playervision", function(self)
     self.batvision = false
     self.forcebatvision = false
 
+    self.heatvision = false
+    self.forceheatvision = false
+
+    self.shootvision = false
+    self.forceshootvision = false
+
     function self:HasBatVision()
         return self.batvision or self.forcebatvision
     end
@@ -58,6 +110,34 @@ AddComponentPostInit("playervision", function(self)
 
             if not self.batvision and self.inst == _G.ThePlayer then
                 OnSetBatVision(self, self.forcebatvision)
+            end
+        end
+    end
+
+    function self:HasHeatVision()
+        return self.heatvision or self.forceheatvision
+    end
+
+    function self:ForceHeatVision(force)
+        if not self.forceheatvision ~= not force then
+            self.forceheatvision = force == true
+
+            if not self.heatvision and self.inst == _G.ThePlayer then
+                OnSetHeatVision(self, self.forceheatvision)
+            end
+        end
+    end
+
+    function self:HasShootVision()
+        return self.shootvision or self.forceshootvision
+    end
+
+    function self:ForceShootVision(force)
+        if not self.forceshootvision ~= not force then
+            self.forceshootvision = force == true
+
+            if not self.shootvision and self.inst == _G.ThePlayer then
+                OnSetShootVision(self, self.forceshootvision)
             end
         end
     end

@@ -93,3 +93,11 @@ WARLY.DESCRIBE.THUNDERHAT = "Not a chef hat but good for a night out."
 WARLY.DESCRIBE.VOLCANOCOLDHAT = "Hmm. I think this might help preserve some of my ingredients."
 
 WARLY.DESCRIBE.VOLCANOHAT = "Maybe I can cook something on it."
+
+WARLY.DESCRIBE.WAGSTAFF_GOGGLESHAT = "Can't see the point in these."
+
+WARLY.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Perfect for running around blindly on a battlefield."
+
+WARLY.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Even the smallest living things stand out."
+
+WARLY.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A shocking little invention. Best not use it near the kitchen."

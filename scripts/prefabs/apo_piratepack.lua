@@ -152,7 +152,7 @@ local function fn()
     inst.AnimState:SetBuild("piratepack")
     inst.AnimState:PlayAnimation("idle")
 
-    inst.foleysound = "apo_sounds/common/piratepack/foley"
+    inst.foleysound = "apo_sounds/movement/piratepack/foley"
 
     inst:AddTag("backpack")
     inst:AddTag("waterproofer")

@@ -93,3 +93,11 @@ WENDY.DESCRIBE.THUNDERHAT = "Pretty."
 WENDY.DESCRIBE.VOLCANOCOLDHAT = "It's useless in this state, but still gives a cooling aura."
 
 WENDY.DESCRIBE.VOLCANOHAT = "Perhaps it can blow my head off."
+
+WENDY.DESCRIBE.WAGSTAFF_GOGGLESHAT = "I don't need glasses! Or do I?"
+
+WENDY.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "Everything comes at a price."
+
+WENDY.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Even in darkness, the living cannot hide."
+
+WENDY.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "A flash of light, a burst of pain. How familiar."

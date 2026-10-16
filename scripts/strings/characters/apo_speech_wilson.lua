@@ -93,3 +93,11 @@ WILSON.DESCRIBE.THUNDERHAT = "Does this hat make me look scientific?"
 WILSON.DESCRIBE.VOLCANOCOLDHAT = "A dormant volcano? I just hope it does not erupt while I'm wearing it."
 
 WILSON.DESCRIBE.VOLCANOHAT = "Oh well, now I have a volcano in my head."
+
+WILSON.DESCRIBE.WAGSTAFF_GOGGLESHAT = "A rudimentar eye protection!"
+
+WILSON.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "It works, as long as I don't have to see."
+
+WILSON.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Now I can spot living things even in the dark!"
+
+WILSON.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "I can summon a lightning burst wherever I point!"

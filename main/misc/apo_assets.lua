@@ -4,6 +4,8 @@ local resolvefilepath = _G.resolvefilepath
 Assets =
 {
     Asset("IMAGE", "images/colour_cubes/batvision_cc.tex"),
+    Asset("IMAGE", "images/colour_cubes/heatvision_cc.tex"),
+    Asset("IMAGE", "images/colour_cubes/shootvision_cc.tex"),
 
     Asset("IMAGE", "images/hudimages/batvision_over.tex"),
     Asset("ATLAS", "images/hudimages/batvision_over.xml"),
@@ -93,6 +95,10 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         "snakeskinhat",
         "thatchsack",
         "thunderhat",
+        "wagstaff_goggleshat",
+        "wagstaff_goggles_armorhat",
+        "wagstaff_goggles_heathat",
+        "wagstaff_goggles_shoothat",
     }
 
     for k, v in pairs(ICONS) do

@@ -93,3 +93,11 @@ WINONA.DESCRIBE.THUNDERHAT = "Love the hat."
 WINONA.DESCRIBE.VOLCANOCOLDHAT = "At least there's no risk of it exploding in this state."
 
 WINONA.DESCRIBE.VOLCANOHAT = "Oh yeah, a mini volcano for my head."
+
+WINONA.DESCRIBE.WAGSTAFF_GOGGLESHAT = "Like boss' glasses."
+
+WINONA.DESCRIBE.WAGSTAFF_GOGGLES_ARMORHAT = "It's good for banging your head against a wall."
+
+WINONA.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Infrared vision gadget! One of bossman's prototypes."
+
+WINONA.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Another one of bossman's prototypes. I hope this one works."

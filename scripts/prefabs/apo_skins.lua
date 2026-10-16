@@ -18,6 +18,23 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         skin_tags = { "AERODYNAMICHAT" },
     }))
 
+    -- Elephant Husk Skin for the Cactus Husk.
+    table.insert(prefabs, CreatePrefabSkin("ms_armor_cactus_tropical",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_armor_cactus_tropical.zip"),
+        },
+
+        base_prefab = "armor_cactus",
+        build_name_override = "ms_armor_cactus_tropical",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "ARMOR_CACTUS" },
+    }))
+
     -- Scaly Leather Jacket Skin for the Leather Jacket.
     table.insert(prefabs, CreatePrefabSkin("ms_armor_snakeskin_scaly",
     {

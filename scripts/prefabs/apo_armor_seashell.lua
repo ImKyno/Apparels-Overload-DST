@@ -63,7 +63,7 @@ local function fn()
     inst:AddTag("waterproofer")
     inst:AddTag("explosionarmor")
 
-    inst.foleysound = "apo_sounds/common/armor_seashell/foley"
+    inst.foleysound = "apo_sounds/movement/armor_seashell/foley"
 
     inst.entity:SetPristine()
 

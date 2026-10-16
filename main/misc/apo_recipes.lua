@@ -8,6 +8,10 @@ local ABCEnabled   = _G.APORecipeAlreadyExists("cork_bat",       "corkchest")
 local IASEnabled   = _G.APORecipeAlreadyExists("chiminea",       "limestone")
 local HOFEnabled   = _G.APORecipeAlreadyExists("kyno_woodenkeg", "kyno_preservesjar")
 
+if TUNING.APO_TWEAK_INSPECTACLESHAT then
+    _G.AllRecipes["inspectacleshat"].ingredients[1] = Ingredient("wagstaff_goggleshat", 1)
+end
+
 local function APOAddRecipe(condition, ...)
     if not condition then
         AddRecipe2(...)
@@ -455,6 +459,46 @@ AddRecipe2("volcanohat",
     },
 
     TECH.LOST, {}, { "LIGHT", "WINTER" }
+)
+
+APOAddCharacterRecipe(ABCEnabled or IASEnabled, "wagstaff_goggleshat",
+    {
+        Ingredient("goggleshat", 1),
+        Ingredient("wagpunk_bits", 2),
+        Ingredient("moonglass", 2),
+    },
+
+    TECH.LOST, { builder_tag = "portableengineer" }, { "CHARACTER", "CLOTHING" }
+)
+
+APOAddCharacterRecipe(ABCEnabled or IASEnabled, "wagstaff_goggles_armorhat",
+    {
+        Ingredient("wagstaff_goggleshat", 1),
+        Ingredient("cutstone", 1),
+    },
+
+    TECH.LOST, { builder_tag = "portableengineer" }, { "ARMOUR", "CHARACTER" }
+)
+
+APOAddCharacterRecipe(ABCEnabled or IASEnabled, "wagstaff_goggles_heathat",
+    {
+        Ingredient("wagstaff_goggleshat", 1),
+        Ingredient("trinket_6", 4),
+        Ingredient("transistor", 2),
+    },
+
+    TECH.LOST, { builder_tag = "portableengineer" }, { "CHARACTER", "LIGHT" }
+)
+
+APOAddCharacterRecipe(ABCEnabled or IASEnabled, "wagstaff_goggles_shoothat",
+    {
+        Ingredient("wagstaff_goggleshat", 1),
+        Ingredient("moonstorm_spark", 6),
+        Ingredient("trinket_6", 4),
+        Ingredient("potato", 2),
+    },
+
+    TECH.LOST, { builder_tag = "portableengineer" }, { "CHARACTER", "LIGHT", "WEAPONS" }
 )
 
 -- Everything else.
