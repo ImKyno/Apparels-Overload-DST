@@ -74,10 +74,12 @@ local INIT_POSTINIT_WIDGETS =
     "controls",
     "craftingmenu_hud",
     "craftingmenu_ingredients",
+    "craftingmenu_skinselector",
     "craftingmenu_widget",
     "gogglesover",
     "healthbadge",
     "itemtile",
+    "recipetile",
 }
 
 for _, v in pairs(INIT_POSTINIT_MISC) do

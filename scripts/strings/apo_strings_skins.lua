@@ -10,6 +10,27 @@ SKIN_DESCRIPTIONS.ms_armor_cactus_tropical = "Now that's an elephant in the room
 SKIN_NAMES.ms_armor_snakeskin_scaly = "Scaly Leather Jacket"
 SKIN_DESCRIPTIONS.ms_armor_snakeskin_scaly = "Stay dry while adventuring in the deep jungle."
 
+SKIN_NAMES.ms_lanternbottle_green = "Viridian Lantern"
+SKIN_DESCRIPTIONS.ms_lanternbottle_green = "A verdant glow from the heart of the forest."
+
+SKIN_NAMES.ms_lanternbottle_orange = "Cinder Lantern"
+SKIN_DESCRIPTIONS.ms_lanternbottle_orange = "A warm glow that burns like a tiny sunset."
+
+SKIN_NAMES.ms_lanternbottle_pink = "Blossom Lantern"
+SKIN_DESCRIPTIONS.ms_lanternbottle_pink = "A delicate glow that blooms in the dark."
+
+SKIN_NAMES.ms_lanternbottle_purple = "Twilight Lantern"
+SKIN_DESCRIPTIONS.ms_lanternbottle_purple = "A dusky glow caught between day and night."
+
+SKIN_NAMES.ms_lanternbottle_red = "Crimson Lantern"
+SKIN_DESCRIPTIONS.ms_lanternbottle_red = "A scarlet gleam that refuses to go unnoticed."
+
+SKIN_NAMES.ms_lanternbottle_turquoise = "Seabreeze Lantern"
+SKIN_DESCRIPTIONS.ms_lanternbottle_turquoise = "A tranquil glow reminiscent of distant seas."
+
+SKIN_NAMES.ms_lanternbottle_yellow = "Sunshine Lantern"
+SKIN_DESCRIPTIONS.ms_lanternbottle_yellow = "A golden glow to brighten the darkest nights."
+
 SKIN_NAMES.ms_double_umbrellahat_black = "Noir Dumbrella"
 SKIN_DESCRIPTIONS.ms_double_umbrellahat_black = "The rain in a city at night is always different and quieter..."
 

@@ -433,7 +433,7 @@ local APO_SCRAPBOOK_HANDS =
         anim                = "idle_off",
         animoffsety         = 40,
         animoffsetbgy       = -90,
-        deps                = { "moonbutterfly", "messagebottleempty", "rope", "researchlab2" },
+        deps                = { "sunkenchest", "moonbutterfly", "messagebottleempty", "rope", "researchlab2" },
         specialinfo         = "LANTERNBOTTLE",
     },
 }
@@ -891,7 +891,7 @@ local APO_SCRAPBOOK_HEAD =
         build               = "hat_pirate",
         anim                = "anim",
         animoffsetbgy       = 25,
-        deps                = { "boneshard", "pigskin_dried", "rope", "seafaring_prototyper" },
+        deps                = { "sunkenchest", "boneshard", "pigskin_dried", "rope", "seafaring_prototyper" },
         specialinfo         = "PIRATEHAT",
         condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },

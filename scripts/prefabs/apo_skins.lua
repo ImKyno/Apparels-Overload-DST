@@ -52,6 +52,132 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         skin_tags = { "ARMOR_SNAKESKIN" },
     }))
 
+    -- Viridian Lantern Skin for the Bottle Lantern.
+    table.insert(prefabs, CreatePrefabSkin("ms_lanternbottle_green",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_lanternbottle_green.zip"),
+            Asset("ANIM", "anim/dynamic/ms_swap_lanternbottle_green.zip"),
+        },
+
+        base_prefab = "lanternbottle",
+        build_name_override = "ms_lanternbottle_green",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "LANTERNBOTTLE" },
+    }))
+
+    -- Cinder Lantern Skin for the Bottle Lantern.
+    table.insert(prefabs, CreatePrefabSkin("ms_lanternbottle_orange",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_lanternbottle_orange.zip"),
+            Asset("ANIM", "anim/dynamic/ms_swap_lanternbottle_orange.zip"),
+        },
+
+        base_prefab = "lanternbottle",
+        build_name_override = "ms_lanternbottle_orange",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "LANTERNBOTTLE" },
+    }))
+
+    -- Blossom Lantern Skin for the Bottle Lantern.
+    table.insert(prefabs, CreatePrefabSkin("ms_lanternbottle_pink",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_lanternbottle_pink.zip"),
+            Asset("ANIM", "anim/dynamic/ms_swap_lanternbottle_pink.zip"),
+        },
+
+        base_prefab = "lanternbottle",
+        build_name_override = "ms_lanternbottle_pink",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "LANTERNBOTTLE" },
+    }))
+
+    -- Twilight Lantern Skin for the Bottle Lantern.
+    table.insert(prefabs, CreatePrefabSkin("ms_lanternbottle_purple",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_lanternbottle_purple.zip"),
+            Asset("ANIM", "anim/dynamic/ms_swap_lanternbottle_purple.zip"),
+        },
+
+        base_prefab = "lanternbottle",
+        build_name_override = "ms_lanternbottle_purple",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "LANTERNBOTTLE" },
+    }))
+
+    -- Crimson Lantern Skin for the Bottle Lantern.
+    table.insert(prefabs, CreatePrefabSkin("ms_lanternbottle_red",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_lanternbottle_red.zip"),
+            Asset("ANIM", "anim/dynamic/ms_swap_lanternbottle_red.zip"),
+        },
+
+        base_prefab = "lanternbottle",
+        build_name_override = "ms_lanternbottle_red",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "LANTERNBOTTLE" },
+    }))
+
+    -- Seabreeze Lantern Skin for the Bottle Lantern.
+    table.insert(prefabs, CreatePrefabSkin("ms_lanternbottle_turquoise",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_lanternbottle_turquoise.zip"),
+            Asset("ANIM", "anim/dynamic/ms_swap_lanternbottle_turquoise.zip"),
+        },
+
+        base_prefab = "lanternbottle",
+        build_name_override = "ms_lanternbottle_turquoise",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "LANTERNBOTTLE" },
+    }))
+
+    -- Sunshine Lantern Skin for the Bottle Lantern.
+    table.insert(prefabs, CreatePrefabSkin("ms_lanternbottle_yellow",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_lanternbottle_yellow.zip"),
+            Asset("ANIM", "anim/dynamic/ms_swap_lanternbottle_yellow.zip"),
+        },
+
+        base_prefab = "lanternbottle",
+        build_name_override = "ms_lanternbottle_yellow",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "LANTERNBOTTLE" },
+    }))
+
     -- Noir Dumbrella Skin for the Dumbrella.
     table.insert(prefabs, CreatePrefabSkin("ms_double_umbrellahat_black",
     {

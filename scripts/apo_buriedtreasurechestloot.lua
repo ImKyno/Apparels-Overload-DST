@@ -211,14 +211,14 @@ local CHEST_LOOTS = -- Do not modify this table directly.
         { item = "goldnugget", count = 2 },
         { item = "lightbulb",  count = 5 },
         { item = "spear"                 },
-        { item = "lantern"               },
+        { item = "lanternbottle"         },
     },
 
     chest_spelunker2 =
     {
         { item = "goldnugget", count = 4 },
         { item = "lightbulb",  count = 5 },
-        { item = "lantern"               },
+        { item = "lanternbottle"         },
         { item = "bedroll_furry"         },
     },
 

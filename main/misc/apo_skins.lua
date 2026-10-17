@@ -1,6 +1,15 @@
 local _G = GLOBAL
 
 if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
+    -- Sleek Hat.
+    _G.aerodynamichat_init_fn = function(inst, build_name)
+        _G.basic_init_fn(inst, build_name, "hat_aerodynamic")
+    end
+
+    _G.aerodynamichat_clear_fn = function(inst)
+        _G.basic_clear_fn(inst, "hat_aerodynamic")
+    end
+
     -- Cactus Husk.
     _G.armor_cactus_init_fn = function(inst, build_name)
         _G.basic_init_fn(inst, build_name, "armor_cactus")
@@ -19,13 +28,21 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         _G.basic_clear_fn(inst, "armor_snakeskin")
     end
 
-    -- Sleek Hat.
-    _G.aerodynamichat_init_fn = function(inst, build_name)
-        _G.basic_init_fn(inst, build_name, "hat_aerodynamic")
+    -- Bottle Lantern.
+    _G.lanternbottle_init_fn = function(inst, build_name)
+        _G.basic_init_fn(inst, build_name, "lanternbottle")
+
+        if inst.OnUpdateLightColour ~= nil then
+            inst.OnUpdateLightColour(inst)
+        end
     end
 
-    _G.aerodynamichat_clear_fn = function(inst)
-        _G.basic_clear_fn(inst, "hat_aerodynamic")
+    _G.lanternbottle_clear_fn = function(inst)
+        _G.basic_clear_fn(inst, "lanternbottle")
+
+        if inst.OnUpdateLightColour ~= nil then
+            inst.OnUpdateLightColour(inst)
+        end
     end
 
     -- Dumbrella.

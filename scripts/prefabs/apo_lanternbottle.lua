@@ -16,6 +16,28 @@ local prefabs =
     "lanternbottle_light",
 }
 
+local DEFAULT_LIGHT_COLOR = { 0/255, 180/255, 255/255 }
+
+local SKIN_LIGHT_COLORS =
+{
+    ms_lanternbottle_green     = {  90/255, 230/255, 110/255 },
+    ms_lanternbottle_orange    = { 255/255, 140/255,  55/255 },
+    ms_lanternbottle_pink      = { 255/255, 105/255, 160/255 },
+    ms_lanternbottle_purple    = { 165/255, 105/255, 245/255 },
+    ms_lanternbottle_red       = { 245/255,  75/255,  65/255 },
+    ms_lanternbottle_turquoise = {  45/255, 220/255, 215/255 },
+    ms_lanternbottle_yellow    = { 255/255, 220/255,  65/255 },
+}
+
+local function OnUpdateLightColour(inst)
+    if inst.lanternbottle_light ~= nil then
+        local skinname = inst:GetSkinName()
+        local colour = skinname ~= nil and SKIN_LIGHT_COLORS[skinname] or DEFAULT_LIGHT_COLOR
+
+        inst.lanternbottle_light.Light:SetColour(colour[1], colour[2], colour[3])
+    end
+end
+
 local function OnTurnOffSound(inst, owner)
     inst.lanternbottle_soundtask = nil
 
@@ -85,6 +107,7 @@ local function OnTurnOn(inst)
 
             inst:ListenForEvent("onremove", OnRemoveLight, inst.lanternbottle_light)
 
+            OnUpdateLightColour(inst)
             OnFuelUpdate(inst)
             OnPlayTurnOnSound(inst)
         end
@@ -105,7 +128,6 @@ local function OnTurnOn(inst)
 
         if inst.components.inventoryitem ~= nil then
             local invon = inst.components.inventoryitem:ChangeImageName((inst:GetSkinName() or "lanternbottle").."_lit")
-            print("BOTTLE ON", invon)
         end
 
         inst:PushEvent("lantern_on")
@@ -139,7 +161,6 @@ local function OnTurnOff(inst)
 
     if inst.components.inventoryitem ~= nil then
         local invoff = inst.components.inventoryitem:ChangeImageName(inst:GetSkinName())
-        print("BOTTLE OFF", invoff)
     end
 
     inst:PushEvent("lantern_off")
@@ -165,6 +186,8 @@ local function OnEquip(inst, owner)
         local skin_build = inst:GetSkinBuild()
 
         if skin_build ~= nil then
+            skin_build = skin_build:gsub("^ms_lanternbottle_", "ms_swap_lanternbottle_") -- BRUUUUHHH
+
             owner:PushEvent("equipskinneditem", inst:GetSkinName())
             owner.AnimState:OverrideItemSkinSymbol("swap_object", skin_build, "swap_lanternbottle", inst.GUID, "swap_lanternbottle")
             owner.AnimState:OverrideItemSkinSymbol("lantern_overlay", skin_build, "lantern_overlay", inst.GUID, "swap_lanternbottle")
@@ -308,6 +331,7 @@ local function fn()
         end
     end
 
+    inst.OnUpdateLightColour = OnUpdateLightColour
     inst.OnRemoveEntity = OnRemove
 
     MakeHauntableLaunch(inst)
@@ -323,7 +347,7 @@ local function lightfn()
     inst.entity:AddLight()
     inst.entity:AddNetwork()
 
-    inst.Light:SetColour(0/255, 180/255, 255/255)
+    inst.Light:SetColour(0 / 255, 180 / 255, 255 / 255)
 
     inst:AddTag("FX")
 

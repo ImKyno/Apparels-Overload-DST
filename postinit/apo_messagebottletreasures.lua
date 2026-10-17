@@ -11,6 +11,7 @@ local APO_PRESETS =
         guaranteed_loot =
         {
             boatpatch           = { 3, 6 },
+            lanternbottle       = 1,
             messagebottle       = { 1, 3 },
             oar_monkey          = 1,
             piratehat           = 1,
