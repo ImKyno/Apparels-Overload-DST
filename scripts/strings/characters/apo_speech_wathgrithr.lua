@@ -64,6 +64,8 @@ WATHGRITHR.DESCRIBE.GASMASKHAT = "Poisonous air shall not consume me!"
 
 WATHGRITHR.DESCRIBE.JIAOLIANHAT = "The face of a criminal!"
 
+WATHGRITHR.DESCRIBE.LANTERNBOTTLE = "A most curious torch."
+
 WATHGRITHR.DESCRIBE.LUCKYTREASUREHAT = "Pales in comparison to my helm."
 
 WATHGRITHR.DESCRIBE.METALPLATEHAT = "Heavy head protection!"

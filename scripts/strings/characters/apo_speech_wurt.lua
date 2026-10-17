@@ -64,6 +64,8 @@ WURT.DESCRIBE.GASMASKHAT = "It's weird, florp."
 
 WURT.DESCRIBE.JIAOLIANHAT = "Scary pigfolk mask... Glurp..."
 
+WURT.DESCRIBE.LANTERNBOTTLE = "Awww... Bottled buddies!"
+
 WURT.DESCRIBE.LUCKYTREASUREHAT = "Arr, matey!"
 
 WURT.DESCRIBE.METALPLATEHAT = "Shiny hat protects me, florp."

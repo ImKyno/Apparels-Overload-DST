@@ -64,6 +64,8 @@ WANDA.DESCRIBE.GASMASKHAT = "Total fallout."
 
 WANDA.DESCRIBE.JIAOLIANHAT = "Boo!"
 
+WANDA.DESCRIBE.LANTERNBOTTLE = "This kind of lantern seems more durable than the regular ones."
+
 WANDA.DESCRIBE.LUCKYTREASUREHAT = "I'm feeling lucky today!"
 
 WANDA.DESCRIBE.METALPLATEHAT = "It's heavy...!"

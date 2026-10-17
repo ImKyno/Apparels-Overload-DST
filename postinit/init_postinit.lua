@@ -17,6 +17,7 @@ local INIT_POSTINIT_COMPONENTS =
     "builder",
     "builder_replica",
     "combat",
+    "combat_replica",
     "drownable",
     "fuel",
     "fueled",
@@ -46,6 +47,7 @@ local INIT_POSTINIT_PREFABS =
     "gems",
     "hats",
     "lordfruitfly",
+    "moonbutterfly",
     "pigskin",
     "player",
     "player_classified",
@@ -53,6 +55,13 @@ local INIT_POSTINIT_PREFABS =
     "shark",
     "sleepcloud",
     "sporecloud",
+    "weaponlowpriority",
+}
+
+local INIT_POSTINIT_STATEGRAPHS =
+{
+    "wilson",
+    "wilson_client",
 }
 
 local INIT_POSTINIT_SCREENS =
@@ -85,6 +94,10 @@ end
 
 for _, v in pairs(INIT_POSTINIT_PREFABS) do
     modimport("postinit/prefabs/"..v)
+end
+
+for _, v in pairs(INIT_POSTINIT_STATEGRAPHS) do
+    modimport("postinit/stategraphs/SG"..v)
 end
 
 for _, v in pairs(INIT_POSTINIT_SCREENS) do

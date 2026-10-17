@@ -74,6 +74,8 @@ local function OnPlayerActivated(inst)
 end
 
 local function PlayerPostInit(inst)
+    inst.AnimState:AddOverrideBuild("player_wagstaff_goggles")
+
     inst.damageovertimeactive = _G.net_bool(inst.GUID, "player.damageovertimeactive", "damageovertimeactive_dirty")
 
     if not _G.TheNet:IsDedicated() then

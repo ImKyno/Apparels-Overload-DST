@@ -64,6 +64,8 @@ WAXWELL.DESCRIBE.GASMASKHAT = "This clears the vapors."
 
 WAXWELL.DESCRIBE.JIAOLIANHAT = "Doesn't fit me."
 
+WAXWELL.DESCRIBE.LANTERNBOTTLE = "Their lives have found purpose in servitude."
+
 WAXWELL.DESCRIBE.LUCKYTREASUREHAT = "Swashbuckling..."
 
 WAXWELL.DESCRIBE.METALPLATEHAT = "How very conquistadorian."

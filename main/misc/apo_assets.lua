@@ -3,6 +3,9 @@ local resolvefilepath = _G.resolvefilepath
 
 Assets =
 {
+    Asset( "ANIM", "anim/player_wagstaff_goggles.zip" ),
+    Asset( "ANIM", "anim/player_mount_wagstaff_goggles.zip"),
+
     Asset("IMAGE", "images/colour_cubes/batvision_cc.tex"),
     Asset("IMAGE", "images/colour_cubes/heatvision_cc.tex"),
     Asset("IMAGE", "images/colour_cubes/shootvision_cc.tex"),
@@ -86,6 +89,8 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         "double_umbrellahat",
         "gashat",
         "gasmaskhat",
+        "lanternbottle",
+        "lanternbottle_lit",
         "luckytreasurehat",
         "metalplatehat",
         "oxhat",
@@ -113,6 +118,7 @@ local APO_SCRAPBOOK_ICONS =
 {
     "icon_fuel_bluegem",
     "icon_fuel_gears",
+    "icon_fuel_moonbutterfly",
     "icon_fuel_redgem",
 }
 

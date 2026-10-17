@@ -92,6 +92,7 @@ SortAfter("wagstaff_goggles_heathat",  "molehat",                   "LIGHT")
 SortAfter("wagstaff_goggles_shoothat", "wagstaff_goggles_heathat",  "LIGHT")
 SortAfter("volcanohat",                "molehat",                   "LIGHT")
 SortAfter("volcanocoldhat",            "volcanohat",                "LIGHT")
+SortAfter("lanternbottle",             "lantern",                   "LIGHT")
 
 SortAfter("armor_vortex",              "nightlight",                "MAGIC")
 

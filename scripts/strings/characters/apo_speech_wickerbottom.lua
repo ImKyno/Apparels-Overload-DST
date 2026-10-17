@@ -64,6 +64,8 @@ WICKERBOTTOM.DESCRIBE.GASMASKHAT = "For investigating dangerous areas."
 
 WICKERBOTTOM.DESCRIBE.JIAOLIANHAT = "A classic mask for scary criminal tales."
 
+WICKERBOTTOM.DESCRIBE.LANTERNBOTTLE = "A portable source of illumination."
+
 WICKERBOTTOM.DESCRIBE.LUCKYTREASUREHAT = "It would better suit a pirate than I."
 
 WICKERBOTTOM.DESCRIBE.METALPLATEHAT = "It's similar to the Spanish colonials."

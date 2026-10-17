@@ -64,6 +64,8 @@ WILSON.DESCRIBE.GASMASKHAT = "Now I can breath anywhere."
 
 WILSON.DESCRIBE.JIAOLIANHAT = "Looks like a halloween mask."
 
+WILSON.DESCRIBE.LANTERNBOTTLE = "A bottle full of sunshine."
+
 WILSON.DESCRIBE.LUCKYTREASUREHAT = "Does it make me look scurvy... I mean scary!?"
 
 WILSON.DESCRIBE.METALPLATEHAT = "A knight's helmet!"

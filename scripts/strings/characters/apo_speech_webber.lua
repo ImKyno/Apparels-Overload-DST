@@ -64,6 +64,8 @@ WEBBER.DESCRIBE.GASMASKHAT = "Now that gas won't make us cough."
 
 WEBBER.DESCRIBE.JIAOLIANHAT = "I bet we can scary everyone with this!"
 
+WEBBER.DESCRIBE.LANTERNBOTTLE = "Hey there, thanks for the light!"
+
 WEBBER.DESCRIBE.LUCKYTREASUREHAT = "Yarr! Haha."
 
 WEBBER.DESCRIBE.METALPLATEHAT = "A fancy helmet to protect our head."

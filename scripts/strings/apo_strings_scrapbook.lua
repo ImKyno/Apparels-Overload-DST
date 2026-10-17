@@ -99,6 +99,8 @@ This hat provides increased movement speed on creep and will not trigger traps w
 
 SPECIALINFO.BATHAT =
 [[
+Pacifies nearby Bat-like creatures.
+
 Allows the wearer to view the world in a sonar vision mode that can see in the dark.
 ]]
 
@@ -173,6 +175,13 @@ Allows the wearer to safely harvest bee boxes.
 SPECIALINFO.JIAOLIANHAT =
 [[
 The protection this armor offers only really works on Ghosts, Merms, Pigs and Shadow Creatures.
+]]
+
+SPECIALINFO.LANTERNBOTTLE =
+[[
+This item creates light for its duration.
+
+It does not break when its duration is finished and can be refuled.
 ]]
 
 SPECIALINFO.LUCKYTREASUREHAT =
@@ -278,7 +287,7 @@ Improves vision in a storm.
 
 SPECIALINFO.WAGSTAFF_GOGGLES_ARMORHAT =
 [[
-Improves vision in a storm.
+Improves vision in a storm, but reduces area of view.
 
 This armor is durable but heavy, and slows its wearer.
 ]]
@@ -294,6 +303,9 @@ SPECIALINFO.WAGSTAFF_GOGGLES_SHOOTHAT =
 [[
 Improves vision in a storm.
 
+Allows the wearer to view the world in a night vision mode that can see in the dark.
+
+Shoots a high-energy projectile that causes an electric blast causing electric damage to nearby creatures.
 ]]
 
 SPECIALINFO.WILLOWOLDHAT =

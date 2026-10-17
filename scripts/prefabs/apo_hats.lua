@@ -2292,6 +2292,12 @@ local function MakeHat(name)
         end
     end
 
+    hat_fns.wagstaff_goggles_shoot_onattack = function(inst, attacker, target)
+        if inst.components.fueled ~= nil then
+            inst.components.fueled:DoDelta(-TUNING.APO_HATS.WAGSTAFF_GOGGLES_SHOOT.CONSUPTION)
+        end
+    end
+
     hat_fns.wagstaff_goggles_shoot_onequip = function(inst, owner)
         hat_fns.opentop_onequip(inst, owner)
         hat_fns.wagstaff_goggles_shoot_onturnon(owner)
@@ -2357,7 +2363,9 @@ local function MakeHat(name)
         inst:AddTag("metal")
         inst:AddTag("goggles")
         inst:AddTag("goggles_wagstaff")
+        inst:AddTag("gogglesshoot")
         inst:AddTag("shootvision")
+        inst:AddTag("rangedweapon")
         inst:AddTag("show_broken_ui")
         inst:AddTag("open_top_hat")
     end
@@ -2369,12 +2377,21 @@ local function MakeHat(name)
             return inst
         end
 
+        inst.wagstaff_goggles_shoot_damage = TUNING.APO_HATS.WAGSTAFF_GOGGLES_SHOOT.DAMAGE
+        inst.wagstaff_goggles_shoot_stimuli = "electric"
+
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_shoot_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_shoot_onunequip)
 
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.MAGIC
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.WAGSTAFF_GOGGLES_SHOOT.PERISHTIME)
+
+        inst:AddComponent("weapon")
+        inst.components.weapon:SetDamage(0)
+        inst.components.weapon:SetRange(10, 12)
+        inst.components.weapon:SetProjectile("wagstaff_goggles_shoothat_projectile")
+        inst.components.weapon:SetOnAttack(hat_fns.wagstaff_goggles_shoot_onattack)
 
         local OnBroken = hat_fns.wagstaff_goggles_shoot_onbroken
         local OnRepaired = hat_fns.wagstaff_goggles_shoot_onrepaired
@@ -2446,6 +2463,7 @@ local function MakeHat(name)
     elseif name == "wagstaff_goggles_heat" then
         hat_fn = hat_fns.wagstaff_goggles_heat
     elseif name == "wagstaff_goggles_shoot" then
+        prefabs = { "wagstaff_goggles_shoothat_charge", "wagstaff_goggles_shoothat_projectile" }
         hat_fn = hat_fns.wagstaff_goggles_shoot
     end
 

@@ -92,6 +92,9 @@ STRINGS.RECIPE_DESC.GASMASKHAT = "Makes everything smell like bird."
 STRINGS.NAMES.JIAOLIANHAT = "Jiaolian's Mask"
 STRINGS.RECIPE_DESC.JIAOLIANHAT = "Protection against paranormal activity!"
 
+STRINGS.NAMES.LANTERNBOTTLE = "Bottle Lantern"
+STRINGS.RECIPE_DESC.LANTERNBOTTLE = "Glowing lunar moths in a bottle."
+
 STRINGS.NAMES.LUCKYTREASUREHAT = "Lucky Hat"
 STRINGS.RECIPE_DESC.LUCKYTREASUREHAT = "Sniff out treasures."
 

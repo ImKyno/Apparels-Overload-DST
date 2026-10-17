@@ -64,6 +64,8 @@ WENDY.DESCRIBE.GASMASKHAT = "It keeps out the gas, but no the despair."
 
 WENDY.DESCRIBE.JIAOLIANHAT = "It is not really that scary."
 
+WENDY.DESCRIBE.LANTERNBOTTLE = "The light of life. Trapped."
+
 WENDY.DESCRIBE.LUCKYTREASUREHAT = "Haughty seadog couture."
 
 WENDY.DESCRIBE.METALPLATEHAT = "It'll protect my head but not my heart."

@@ -64,6 +64,8 @@ WARLY.DESCRIBE.GASMASKHAT = "I could use this in the smoke house."
 
 WARLY.DESCRIBE.JIAOLIANHAT = "Ah, a halloween mask."
 
+WARLY.DESCRIBE.LANTERNBOTTLE = "Shine on!"
+
 WARLY.DESCRIBE.LUCKYTREASUREHAT = "It makes me feel... dangerous."
 
 WARLY.DESCRIBE.METALPLATEHAT = "I prefer a chef hat."

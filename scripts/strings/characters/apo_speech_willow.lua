@@ -64,6 +64,8 @@ WILLOW.DESCRIBE.GASMASKHAT = "Cuts down on the coughing."
 
 WILLOW.DESCRIBE.JIAOLIANHAT = "I should prank someone using this!"
 
+WILLOW.DESCRIBE.LANTERNBOTTLE = "The light is so cold and alien."
+
 WILLOW.DESCRIBE.LUCKYTREASUREHAT = "Arrr! I'm the pirate captain now."
 
 WILLOW.DESCRIBE.METALPLATEHAT = "This protects my brain."

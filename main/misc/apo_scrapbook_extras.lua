@@ -109,16 +109,17 @@ local DESCRIPTION_STATUS_LOOKUP =
 
 local FUELTYPE_SUBICON_LOOKUP =
 {
-    [FUELTYPE.BURNABLE]   = "icon_fuel_burnable.tex",
-    [FUELTYPE.CAVE] 	  = "icon_fuel_cavelight.tex",
-    [FUELTYPE.CHEMICAL]   = "icon_fuel_chemical.tex",
-    [FUELTYPE.NIGHTMARE]  = "icon_fuel_nightmare.tex",
-    [FUELTYPE.WORMLIGHT]  = "icon_fuel_wormlight.tex",
+    [FUELTYPE.BURNABLE]      = "icon_fuel_burnable.tex",
+    [FUELTYPE.CAVE] 	     = "icon_fuel_cavelight.tex",
+    [FUELTYPE.CHEMICAL]      = "icon_fuel_chemical.tex",
+    [FUELTYPE.NIGHTMARE]     = "icon_fuel_nightmare.tex",
+    [FUELTYPE.WORMLIGHT]     = "icon_fuel_wormlight.tex",
 
     -- Modded FUELTYPES.
-    [FUELTYPE.GEARS]      = "icon_fuel_gears.tex",
-    [FUELTYPE.REDGEM]     = "icon_fuel_redgem.tex",
-    [FUELTYPE.BLUEGEM]    = "icon_fuel_bluegem.tex",
+    [FUELTYPE.GEARS]         = "icon_fuel_gears.tex",
+    [FUELTYPE.REDGEM]        = "icon_fuel_redgem.tex",
+    [FUELTYPE.MOONBUTTERFLY] = "icon_fuel_moonbutterfly.tex",
+    [FUELTYPE.BLUEGEM]       = "icon_fuel_bluegem.tex",
 }
 
 local FUELTYPE_SUBICONS = table.getkeys(FUELTYPE_SUBICON_LOOKUP)

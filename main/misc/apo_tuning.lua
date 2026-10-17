@@ -537,6 +537,11 @@ TUNING.APO_HATS =
     {
         PERISHTIME = 480 * 2,
         FUEL_BONUS_MULT = 4,
+        CONSUPTION = 100, -- About 10% each shot.
+        MOISTURE_THRESHOLD = 25,
+        DAMAGE = 60,
+        DAMAGE_MOISTURE = 10, -- Damage to self when using it while wetness is high enough.
+        RANGE = 10,
     },
 
     WILLOWOLD =
@@ -549,6 +554,11 @@ TUNING.APO_HATS =
             HEALTH = 1.25,
         },
     },
+}
+
+TUNING.APO_LANTERNBOTTLE =
+{
+    PERISHTIME = 480,
 }
 
 TUNING.PIRATEPACK =

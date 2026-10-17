@@ -64,6 +64,8 @@ WORTOX.DESCRIBE.GASMASKHAT = "This will cut down my coughing."
 
 WORTOX.DESCRIBE.JIAOLIANHAT = "A merry visage! Hyuyu!"
 
+WORTOX.DESCRIBE.LANTERNBOTTLE = "That's one use for a bottle!"
+
 WORTOX.DESCRIBE.LUCKYTREASUREHAT = "Made for a true pirate."
 
 WORTOX.DESCRIBE.METALPLATEHAT = "I prefer the other one."

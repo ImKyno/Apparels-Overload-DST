@@ -64,6 +64,8 @@ WINONA.DESCRIBE.GASMASKHAT = "Out with the bad air, in with the good."
 
 WINONA.DESCRIBE.JIAOLIANHAT = "Ha! It's kinda scary!"
 
+WINONA.DESCRIBE.LANTERNBOTTLE = "This will keep the dark at bay."
+
 WINONA.DESCRIBE.LUCKYTREASUREHAT = "I ain't no swashbuckler."
 
 WINONA.DESCRIBE.METALPLATEHAT = "Keeps my noggin safe."

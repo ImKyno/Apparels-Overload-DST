@@ -522,6 +522,16 @@ AddCharacterRecipe("willowoldhat",
 )
 
 -- Everything else.
+APOAddRecipe(ABCEnabled or IASEnabled, "lanternbottle",
+    {
+        Ingredient("moonbutterfly", 2),
+        Ingredient("messagebottleempty", 1),
+        Ingredient("rope", 2),
+    },
+
+    TECH.SCIENCE_TWO, {}, { "LIGHT" }
+)
+
 APOAddRecipe(ABCEnabled or IASEnabled, "thatchsack",
     {
         Ingredient("cutreeds", 4),

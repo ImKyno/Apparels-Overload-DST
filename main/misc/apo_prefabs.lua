@@ -29,6 +29,7 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         "apo_armor_windbreaker",
         "apo_buriedtreasurechest",
         "apo_hats",
+        "apo_lanternbottle",
         "apo_piratepack",
         "apo_thatchsack",
     }

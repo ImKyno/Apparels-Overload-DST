@@ -418,7 +418,24 @@ local APO_SCRAPBOOK_BODY =
 
 local APO_SCRAPBOOK_HANDS =
 {
-
+    lanternbottle =
+    {
+        name                = "lanternbottle",
+        prefab              = "lanternbottle",
+        tex                 = "lanternbottle.tex",
+        type                = "item",
+        fueledmax           = TUNING.APO_LANTERNBOTTLE.PERISHTIME,
+        fueledrate          = 1,
+        fueledtype1         = "CAVE",
+        fueledtype2         = "MOONBUTTERFLY",
+        bank                = "lanternbottle",
+        build               = "lanternbottle",
+        anim                = "idle_off",
+        animoffsety         = 40,
+        animoffsetbgy       = -90,
+        deps                = { "moonbutterfly", "messagebottleempty", "rope", "researchlab2" },
+        specialinfo         = "LANTERNBOTTLE",
+    },
 }
 
 local APO_SCRAPBOOK_HEAD =
@@ -1124,10 +1141,11 @@ local APO_SCRAPBOOK_HEAD =
         subcat              = "hat",
         craftingprefab      = "winona",
         forgerepairable     = { "wagpunkbits_kit" },
+        weapondamage        = TUNING.APO_HATS.WAGSTAFF_GOGGLES_SHOOT.DAMAGE,
+        weaponrange         = TUNING.APO_HATS.WAGSTAFF_GOGGLES_SHOOT.RANGE,
         fueledmax           = TUNING.APO_HATS.WAGSTAFF_GOGGLES_SHOOT.PERISHTIME,
         fueledrate          = 1,
         fueledtype1         = "MAGIC",
-        fueledtype2         = "GEARS",
         snowmandecor        = true,
         bank                = "wagstaff_goggles_shoothat",
         build               = "hat_wagstaff_goggles_shoot",
@@ -1219,6 +1237,6 @@ local APO_SCRAPBOOK_ITEMS =
 
 -- Add our entries to the Scrapbook.
 AddExtraScrapBookItem(ScrapbookData, ScrapbookPrefabs, APO_SCRAPBOOK_BODY)
--- AddExtraScrapBookItem(ScrapbookData, ScrapbookPrefabs, APO_SCRAPBOOK_HANDS)
+AddExtraScrapBookItem(ScrapbookData, ScrapbookPrefabs, APO_SCRAPBOOK_HANDS)
 AddExtraScrapBookItem(ScrapbookData, ScrapbookPrefabs, APO_SCRAPBOOK_HEAD)
 AddExtraScrapBookItem(ScrapbookData, ScrapbookPrefabs, APO_SCRAPBOOK_ITEMS)

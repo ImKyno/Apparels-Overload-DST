@@ -64,6 +64,8 @@ WALTER.DESCRIBE.GASMASKHAT = "Could be useful for exploring zones filled with ga
 
 WALTER.DESCRIBE.JIAOLIANHAT = "A mask to fight ghosts!"
 
+WALTER.DESCRIBE.LANTERNBOTTLE = "I'm sure they love it in there."
+
 WALTER.DESCRIBE.LUCKYTREASUREHAT = "Does it make me look like a real pirate, Woby?"
 
 WALTER.DESCRIBE.METALPLATEHAT = "It's a bit heavy."
