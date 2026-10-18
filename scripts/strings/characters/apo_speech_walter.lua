@@ -58,17 +58,29 @@ WALTER.DESCRIBE.EXTRAHEAVYHAT = "Marble armor for your head! Bet it could take q
 
 WALTER.DESCRIBE.FOODBASKETHAT = "It seems a bit too much for me to wear."
 
+WALTER.DESCRIBE.FOODBONUSHAT = "Are you feeling a bit hungry too, Woby?"
+
 WALTER.DESCRIBE.GASHAT = "Might be a good idea to have this with me when it's starts raining."
 
 WALTER.DESCRIBE.GASMASKHAT = "Could be useful for exploring zones filled with gas or miasma."
+
+WALTER.DESCRIBE.HEALINGBONUSHAT = "Woah! This flower has some nice healing properties!"
 
 WALTER.DESCRIBE.JIAOLIANHAT = "A mask to fight ghosts!"
 
 WALTER.DESCRIBE.LANTERNBOTTLE = "I'm sure they love it in there."
 
+WALTER.DESCRIBE.LEIF_STALK = "Hope this come in handy. Otherwise that tree died for nothing."
+
+WALTER.DESCRIBE.LEIF_WALKINGSTICK = "It puts a spring in my step!"
+
+WALTER.DESCRIBE.LIFESTEALHAT = "Ooo, spooky!"
+
 WALTER.DESCRIBE.LUCKYTREASUREHAT = "Does it make me look like a real pirate, Woby?"
 
 WALTER.DESCRIBE.METALPLATEHAT = "It's a bit heavy."
+
+WALTER.DESCRIBE.MINOTAURCROWNHAT = "This is definitely the helmet of a strong fighter."
 
 WALTER.DESCRIBE.OXHAT = "All the rage with the \"not dying\" crowd."
 
@@ -87,6 +99,8 @@ WALTER.DESCRIBE.PITHHAT = "A true explorer hat!"
 WALTER.DESCRIBE.PROPELLERHAT = "A built-in breeze! Perfect for keeping cool on the trail."
 
 WALTER.DESCRIBE.PUMPKINHEADHAT = "It has a face! Look, Woby!"
+
+WALTER.DESCRIBE.SANITYDAMAGEHAT = "Oh... this makes my head hurt a little bit..."
 
 WALTER.DESCRIBE.SHARK_FIN = "I'm still missing the shark!"
 

@@ -30,6 +30,8 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         "apo_buriedtreasurechest",
         "apo_hats",
         "apo_lanternbottle",
+        "apo_leif_stalk",
+        "apo_leif_walkingstick",
         "apo_piratepack",
         "apo_thatchsack",
     }

@@ -432,11 +432,264 @@ local function MakeHat(name)
 
         inst:AddComponent("perishable")
         inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)
-        inst.components.perishable:StartPerishing()
         inst.components.perishable:SetOnPerishFn(inst.Remove)
+        inst.components.perishable:StartPerishing()
 
-        MakeSmallBurnable(inst)
-        MakeSmallPropagator(inst)
+        MakeHauntableLaunchAndPerish(inst)
+
+        return inst
+    end
+
+    hat_fns.foodbonus_oneatfood = function(inst, data)
+        local food = data ~= nil and data.food or nil
+
+        local hat = inst.components.inventory ~= nil and inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD) or nil
+        hat = hat ~= nil and hat.components.perishable or nil
+
+        local perishpercent = hat ~= nil and hat:GetPercent() or 1
+        local bonus = TUNING.APO_HATS.FOODBONUS.BONUS * perishpercent
+
+        if food ~= nil and food.components.edible ~= nil then
+            local health = food.components.edible:GetHealth(inst)
+            local hunger = food.components.edible:GetHunger(inst)
+            local sanity = food.components.edible:GetSanity(inst)
+
+            if health > 0 and inst.components.health ~= nil then
+                inst.components.health:DoDelta(health * bonus, nil, "foodbonushat")
+            end
+
+            if hunger > 0 and inst.components.hunger ~= nil then
+                inst.components.hunger:DoDelta(hunger * bonus)
+            end
+
+            if sanity > 0 and inst.components.sanity ~= nil then
+                inst.components.sanity:DoDelta(sanity * bonus)
+            end
+        end
+    end
+
+    hat_fns.foodbonus_onequip = function(inst, owner)
+        hat_fns.opentop_onequip(inst, owner)
+
+        if owner ~= nil then
+            if owner.foodbonus_oneat == nil then
+                owner.foodbonus_oneat = function(player, data)
+                    hat_fns.foodbonus_oneatfood(player, data)
+                end
+
+                owner:ListenForEvent("oneat", owner.foodbonus_oneat)
+            end
+        end
+    end
+
+    hat_fns.foodbonus_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            if owner.foodbonus_oneat ~= nil then
+                owner:RemoveEventCallback("oneat", owner.foodbonus_oneat)
+            end
+        end
+
+        owner.foodbonus_oneat = nil
+    end
+
+    hat_fns.foodbonus_custom_init = function(inst)
+        inst:AddTag("gestaltprotection")
+        inst:AddTag("open_top_hat")
+        inst:AddTag("show_spoilage")
+    end
+
+    hat_fns.foodbonus = function()
+        local inst = simple(hat_fns.foodbonus_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst:AddComponent("forcecompostable")
+        inst.components.forcecompostable.green = true
+
+        inst.components.equippable:SetOnEquip(hat_fns.foodbonus_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.foodbonus_onunequip)
+        inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED
+        inst.components.equippable.flipdapperonmerms = true
+
+        inst:AddComponent("perishable")
+        inst.components.perishable:SetPerishTime(TUNING.PERISH_FAST)
+        inst.components.perishable:SetOnPerishFn(inst.Remove)
+        inst.components.perishable:StartPerishing()
+
+        MakeHauntableLaunchAndPerish(inst)
+
+        return inst
+    end
+
+    hat_fns.healingbonus_onapplybonus = function(inst, bonus)
+        if inst.healingbonus_bonushealth then
+            return false
+        end
+
+        inst.healingbonus_bonushealth = bonus
+
+        if inst.components.health ~= nil then
+            local current_health = inst.health_percent or inst.components.health:GetPercent()
+            inst.health_percent = nil
+
+            inst.components.health:SetMaxHealth(inst.components.health.maxhealth + bonus)
+            inst.components.health:SetPercent(current_health)
+        end
+
+        return true
+    end
+
+    hat_fns.healingbonus_onremovebonus = function(inst)
+        if not inst.healingbonus_bonushealth then
+            return
+        end
+
+        if inst.components.health ~= nil then
+            local current_health = inst.health_percent or inst.components.health:GetPercent()
+            inst.health_percent = nil
+
+            inst.components.health:SetMaxHealth(inst.components.health.maxhealth - inst.healingbonus_bonushealth)
+            inst.components.health:SetPercent(current_health)
+        end
+
+        inst.healingbonus_bonushealth = nil
+    end
+
+    hat_fns.healingbonus_onregen = function(inst, owner)
+        local THRESHOLD = TUNING.APO_HATS.HEALINGBONUS.REGEN.THRESHOLD
+        local AMOUNT = TUNING.APO_HATS.HEALINGBONUS.REGEN.AMOUNT
+
+        if owner ~= nil and owner.components.health ~= nil and not owner.components.health:IsDead() then
+            if owner.components.health:GetPercent() < THRESHOLD then
+                owner.components.health:DoDelta(AMOUNT, nil, "healingbonushat")
+            end
+        end
+    end
+
+    hat_fns.healthbonus_onstopregen = function(inst, owner)
+        if inst.healingbonus_regen ~= nil then
+            inst.healingbonus_regen:Cancel()
+            inst.healingbonus_regen = nil
+        end
+
+        if owner ~= nil then
+            owner:PushEvent("healthregenactive", { active = false })
+        end
+    end
+
+    hat_fns.healthbonus_onstartregen = function(inst, owner)
+        if inst.healingbonus_regen ~= nil then
+            return
+        end
+
+        local AMOUNT = TUNING.APO_HATS.HEALINGBONUS.REGEN.AMOUNT
+        local PERIOD = TUNING.APO_HATS.HEALINGBONUS.REGEN.PERIOD
+        local THRESHOLD = TUNING.APO_HATS.HEALINGBONUS.REGEN.THRESHOLD
+
+        if owner ~= nil then
+            if owner.components.health ~= nil and owner.components.health:GetPercent() >= THRESHOLD then
+                return
+            end
+
+            inst.healingbonus_regen = inst:DoPeriodicTask(PERIOD, function()
+                if owner.components.health ~= nil and owner.components.health:GetPercent() >= THRESHOLD then
+                    hat_fns.healthbonus_onstopregen(inst, owner)
+
+                    return
+                end
+
+                hat_fns.healingbonus_onregen(inst, owner)
+            end)
+
+            owner:PushEvent("healthregenactive", { active = true })
+        end
+    end
+
+    hat_fns.healingbonus_onequip = function(inst, owner)
+        hat_fns.opentop_onequip(inst, owner)
+
+        if owner ~= nil then
+            local bonus = TUNING.APO_HATS.HEALINGBONUS.BONUS
+            local THRESHOLD = TUNING.APO_HATS.HEALINGBONUS.REGEN.THRESHOLD
+
+            hat_fns.healingbonus_onapplybonus(owner, bonus)
+
+            inst.healthbonus_healthdelta = function(owner)
+                if owner.components.health ~= nil then
+                    if owner.components.health:GetPercent() >= THRESHOLD then
+                        hat_fns.healthbonus_onstopregen(inst, owner)
+                    else
+                        hat_fns.healthbonus_onstartregen(inst, owner)
+                    end
+                end
+            end
+
+            owner:ListenForEvent("healthdelta", inst.healthbonus_healthdelta)
+
+            inst.healthbonus_healthdelta(owner)
+        end
+    end
+
+    hat_fns.healingbonus_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            hat_fns.healingbonus_onremovebonus(owner)
+
+            if inst.healthbonus_healthdelta ~= nil then
+                owner:RemoveEventCallback("healthdelta", inst.healthbonus_healthdelta)
+
+                inst.healthbonus_healthdelta = nil
+            end
+        end
+
+        hat_fns.healthbonus_onstopregen(inst, owner)
+    end
+
+    hat_fns.healingbonus_onequiptomodel = function(inst, owner, from_ground)
+        hat_fns.simple_onequiptomodel(inst, owner, from_ground)
+
+        if owner ~= nil then
+            if inst.healthbonus_healthdelta ~= nil then
+                owner:RemoveEventCallback("healthdelta", inst.healthbonus_healthdelta)
+
+                inst.healthbonus_healthdelta = nil
+            end
+        end
+
+        hat_fns.healthbonus_onstopregen(inst, owner)
+    end
+
+    hat_fns.healingbonus_custom_init = function(inst)
+        inst:AddTag("gestaltprotection")
+        inst:AddTag("open_top_hat")
+        inst:AddTag("show_spoilage")
+    end
+
+    hat_fns.healingbonus = function()
+        local inst = simple(hat_fns.healingbonus_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst:AddComponent("forcecompostable")
+        inst.components.forcecompostable.green = true
+
+        inst.components.equippable:SetOnEquip(hat_fns.healingbonus_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.healingbonus_onunequip)
+        inst.components.equippable:SetOnEquipToModel(hat_fns.healingbonus_onequiptomodel)
+        inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED
+        inst.components.equippable.flipdapperonmerms = true
+
+        inst:AddComponent("perishable")
+        inst.components.perishable:SetPerishTime(TUNING.PERISH_FAST)
+        inst.components.perishable:SetOnPerishFn(inst.Remove)
+        inst.components.perishable:StartPerishing()
 
         MakeHauntableLaunchAndPerish(inst)
 
@@ -462,6 +715,166 @@ local function MakeHat(name)
 
         MakeSmallBurnable(inst)
         MakeSmallPropagator(inst)
+
+        return inst
+    end
+
+    hat_fns.lifesteal_onattack = function(owner, data)
+        if owner ~= nil and data ~= nil then
+            local target = data.target
+
+            if target ~= nil and target:IsValid() then
+                if owner.components.health ~= nil and not owner.components.health:IsHurt()
+                or target:HasOneOfTags(NON_LIFEFORM_TARGET_TAGS) then
+                    return
+                end
+
+                local amount = TUNING.APO_HATS.LIFESTEAL.LIFESTEAL.AMOUNT
+                local amount_loss = TUNING.APO_HATS.LIFESTEAL.LIFESTEAL.LOSS
+                local sanity_cost = amount * amount_loss
+
+                if owner.components.sanity ~= nil and owner.components.sanity.current < sanity_cost then
+                    return
+                end
+
+                local mult = owner.components.aoediminishingreturns ~= nil
+                and owner.components.aoediminishingreturns.mult:Get() or 1
+
+                if owner.components.health ~= nil then
+                    owner.components.health:DoDelta(amount * mult, false, "lifestealhat")
+                end
+
+                if owner.components.sanity ~= nil then
+                    owner.components.sanity:DoDelta(-amount * amount_loss)
+                end
+
+                local hat = owner.components.inventory ~= nil
+                and owner.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD) or nil
+
+                if hat ~= nil and hat:HasTag("lifestealsource") then
+                    if hat.components.finiteuses ~= nil then
+                        hat.components.finiteuses:Use(1)
+                    end
+                end
+            end
+        end
+    end
+
+    hat_fns.lifesteal_onequip = function(inst, owner)
+        hat_fns.opentop_onequip(inst, owner)
+
+        if owner ~= nil then
+            inst.lifesteal_owner = owner
+
+            owner:ListenForEvent("onhitother", inst.lifesteal_onattack)
+        end
+    end
+
+    hat_fns.lifesteal_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            owner:RemoveEventCallback("onhitother", inst.lifesteal_onattack)
+        end
+
+        inst.lifesteal_owner = nil
+    end
+
+    hat_fns.lifesteal_onperish = function(inst, owner)
+        if owner ~= nil then
+            owner:RemoveEventCallback("onhitother", inst.lifesteal_onattack)
+        end
+
+        inst.lifesteal_owner = nil
+
+        hat_fns.simple_onperish(inst)
+    end
+
+    hat_fns.lifesteal_custom_init = function(inst)
+        inst:AddTag("shadowlevel")
+        inst:AddTag("lifestealsource")
+    end
+
+    hat_fns.lifesteal = function()
+        local inst = simple(hat_fns.lifesteal_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.lifesteal_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.lifesteal_onunequip)
+        inst.components.equippable.dapperness = -TUNING.DAPPERNESS_MED
+        inst.components.equippable.walkspeedmult = TUNING.APO_HATS.LIFESTEAL.WALKSPEEDMULT
+        inst.components.equippable.is_magic_dapperness = true
+
+        inst:AddComponent("shadowlevel")
+        inst.components.shadowlevel:SetDefaultLevel(TUNING.APO_HATS.LIFESTEAL.SHADOWLEVEL)
+
+        inst:AddComponent("finiteuses")
+        inst.components.finiteuses:SetMaxUses(TUNING.APO_HATS.LIFESTEAL.USES)
+        inst.components.finiteuses:SetUses(TUNING.APO_HATS.LIFESTEAL.USES)
+        inst.components.finiteuses:SetOnFinished(hat_fns.lifesteal_onperish)
+
+        inst.lifesteal_onattack = hat_fns.lifesteal_onattack
+
+        return inst
+    end
+
+    hat_fns.minotaurcrown_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            if owner.components.combat ~= nil then
+                local MODIFIER = TUNING.APO_HATS.MINOTAURCROWN.MODIFIER
+
+                inst._min_attack_period = owner.components.combat.min_attack_period
+
+                owner.components.combat:SetAttackPeriod(inst._min_attack_period * inst.attackspeedsource_mult)
+                owner.components.combat.externaldamagemultipliers:SetModifier(owner, MODIFIER, "minotaurcrownhat")
+            end
+        end
+    end
+
+    hat_fns.minotaurcrown_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            if owner.components.combat ~= nil then
+                if inst._min_attack_period ~= nil then
+                    owner.components.combat:SetAttackPeriod(inst._min_attack_period)
+                end
+
+                owner.components.combat.externaldamagemultipliers:RemoveModifier(owner, "minotaurcrownhat")
+            end
+        end
+
+        inst._min_attack_period = nil
+    end
+
+    hat_fns.minotaurcrown_custom_init = function(inst)
+        inst:AddTag("attackspeedsource")
+        inst:AddTag("shadowlevel")
+    end
+
+    hat_fns.minotaurcrown = function()
+        local inst = simple(hat_fns.minotaurcrown_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.attackspeedsource_mult = TUNING.APO_HATS.MINOTAURCROWN.MIN_ATTACK_PERIOD_MULT
+
+        inst.components.equippable:SetOnEquip(hat_fns.minotaurcrown_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.minotaurcrown_onunequip)
+        inst.components.equippable.walkspeedmult = TUNING.APO_HATS.MINOTAURCROWN.WALKSPEEDMULT
+
+        inst:AddComponent("armor")
+        inst.components.armor:InitCondition(TUNING.APO_HATS.MINOTAURCROWN.CONDITION, TUNING.APO_HATS.MINOTAURCROWN.ABSORPTION)
+
+        inst:AddComponent("shadowlevel")
+        inst.components.shadowlevel:SetDefaultLevel(TUNING.APO_HATS.MINOTAURCROWN.SHADOWLEVEL)
 
         return inst
     end
@@ -736,14 +1149,37 @@ local function MakeHat(name)
         inst:AddComponent("perishable")
         inst.components.perishable:SetPerishTime(IsSpecialEventActive(SPECIAL_EVENTS.HALLOWED_NIGHTS)
         and TUNING.PERISH_SLOW or TUNING.PERISH_FASTISH)
-        inst.components.perishable:StartPerishing()
         inst.components.perishable:SetOnPerishFn(inst.Remove)
+        inst.components.perishable:StartPerishing()
 
         inst.OnSave = hat_fns.pumpkinhead_onsave
         inst.OnLoad = hat_fns.pumpkinhead_onload
 
-        MakeMediumBurnable(inst)
-        MakeSmallPropagator(inst)
+        return inst
+    end
+
+    hat_fns.sanitydamage_custom_init = function(inst)
+        inst:AddTag("damagetosanity")
+        inst:AddTag("gestaltprotection")
+        inst:AddTag("open_top_hat")
+    end
+
+    hat_fns.sanitydamage = function()
+        local inst = simple(hat_fns.sanitydamage_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(hat_fns.opentop_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.simple_onunequip)
+        inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED_LARGE
+
+        inst:AddComponent("armor")
+        inst.components.armor:InitCondition(TUNING.APO_HATS.SANITYDAMAGE.CONDITION, TUNING.APO_HATS.SANITYDAMAGE.ABSORPTION)
+
+        inst:AddComponent("damagetyperesist")
+        inst.components.damagetyperesist:AddResist("lunar_aligned", inst, TUNING.APO_HATS.SANITYDAMAGE.DAMAGETYPE_RESIST)
 
         return inst
     end
@@ -1353,11 +1789,11 @@ local function MakeHat(name)
             end
         end
 
-        MakeMediumBurnable(inst)
-        MakeSmallPropagator(inst)
-
         return inst
     end
+
+    -- ranged crown    = lifesteal +10 mv speed
+    -- minotaurcrown   = +25% atk speed + 25% dmg +10 mv speed
 
     local hat_fn  = nil
 
@@ -1380,8 +1816,16 @@ local function MakeHat(name)
         hat_fn = hat_fns.extraheavy
     elseif name == "foodbasket" then
         hat_fn = hat_fns.foodbasket
+    elseif name == "foodbonus" then
+        hat_fn = hat_fns.foodbonus
+    elseif name == "healingbonus" then
+        hat_fn = hat_fns.healingbonus
     elseif name == "jiaolian" then
         hat_fn = hat_fns.jiaolian
+    elseif name == "lifesteal" then
+        hat_fn = hat_fns.lifesteal
+    elseif name == "minotaurcrown" then
+        hat_fn = hat_fns.minotaurcrown
     elseif name == "peagawkfeather" then
         hat_fn = hat_fns.peagawkfeather
     elseif name == "propeller" then
@@ -1389,6 +1833,8 @@ local function MakeHat(name)
         hat_fn = hat_fns.propeller
     elseif name == "pumpkinhead" then
         hat_fn = hat_fns.pumpkinhead
+    elseif name == "sanitydamage" then
+        hat_fn = hat_fns.sanitydamage
     elseif name == "volcanocold" then
         prefabs = { "volcanocoldhat_light" }
         hat_fn = hat_fns.volcanocold
@@ -1408,10 +1854,15 @@ return MakeHat("bucket"),
 MakeHat("carnival_host"),
 MakeHat("extraheavy"),
 MakeHat("foodbasket"),
+MakeHat("foodbonus"),
+MakeHat("healingbonus"),
 MakeHat("jiaolian"),
+MakeHat("lifesteal"),
+MakeHat("minotaurcrown"),
 MakeHat("peagawkfeather"),
 MakeHat("propeller"),
 MakeHat("pumpkinhead"),
+MakeHat("sanitydamage"),
 MakeHat("volcanocold"),
 MakeHat("volcano"),
 MakeHat("willowold")

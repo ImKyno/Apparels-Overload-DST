@@ -159,6 +159,81 @@ AddComponentPostInit("health", function(self)
         local inst = self.inst
         local source = self:GetDamageOvertimeSource()
 
+        -- Convert the final mitigated damage into sanity damage.
+        local hat = inst.components.inventory ~= nil and inst.components.inventory:GetEquippedItem(_G.EQUIPSLOTS.HEAD) or nil
+        local sanity = inst.components.sanity
+
+        local convert_damage = amount < 0 and not overtime and inst._receiving_combat_damage
+        and not inst._applying_damage_overtime and not self:IsDead()
+        and hat ~= nil and hat:HasTag("damagetosanity") and sanity ~= nil
+
+        if convert_damage then
+            local old_percent = self:GetPercent()
+
+            if old_percent <= self.nonlethal_pct and (((cause == "cold" or cause == "hot") and self.nonlethal_temperature)
+            or (cause == "hunger" and self.nonlethal_hunger)) then
+                return 0
+            end
+
+            if self.redirect ~= nil and self.redirect(inst, amount, overtime, cause, ignore_invincible, afflicter, ignore_absorb) then
+                return 0
+            elseif not ignore_invincible and (self:IsInvincible() or inst.is_teleporting) then
+                return 0
+            end
+
+            -- Apply the usual health damage reductions first.
+            if not ignore_absorb then
+                amount = amount* math.clamp(1 - (self.playerabsorb ~= 0 and afflicter ~= nil and afflicter:HasTag("player")
+                and self.playerabsorb + self.absorb or self.absorb), 0, 1) * math.max(1 - self.externalabsorbmodifiers:Get(), 0)
+
+                amount = afflicter ~= nil and math.min(0, amount + self.externalreductionmodifiers:Get()) or amount
+            end
+
+            if self.deltamodifierfn ~= nil then
+                amount = self.deltamodifierfn(inst, amount, overtime, cause, ignore_invincible, afflicter, ignore_absorb)
+            end
+
+            if self.maxdamagetakenperhit ~= nil and amount < self.maxdamagetakenperhit
+            and not self._ignore_maxdamagetakenperhit then
+                amount = self.maxdamagetakenperhit
+            end
+
+            if amount >= 0 then
+                return _DoDelta(self, amount, overtime, cause, ignore_invincible, afflicter, ignore_absorb, ...)
+            end
+
+            -- Convert incoming damage into sanity loss.
+            local damage = -amount
+            local sanity_damage = math.min(damage, math.max(0, sanity.current))
+
+            if sanity_damage > 0 then
+                sanity:DoDelta(-sanity_damage)
+            end
+
+            -- Any damage that sanity cannot absorb goes to health.
+            local remaining_damage = damage - sanity_damage
+
+            if remaining_damage <= 0 then
+                return 0
+            end
+
+            local old_redirect = self.redirect
+            local old_deltamodifierfn = self.deltamodifierfn
+            local old_maxdamagetakenperhit = self.maxdamagetakenperhit
+
+            self.redirect = nil
+            self.deltamodifierfn = nil
+            self.maxdamagetakenperhit = nil
+
+            local result = _DoDelta(self, -remaining_damage, overtime, cause, true, afflicter, true, ...)
+
+            self.redirect = old_redirect
+            self.deltamodifierfn = old_deltamodifierfn
+            self.maxdamagetakenperhit = old_maxdamagetakenperhit
+
+            return result
+        end
+
         -- Only intercept incoming combat damage.
         -- Normal healing, existing overtime damage and non-combat health changes use vanilla logic.
         if amount >= 0 or overtime or source == nil
@@ -179,7 +254,7 @@ AddComponentPostInit("health", function(self)
             return 0
         elseif amount < 0 and not ignore_absorb then
             amount = amount * math.clamp(1 - (self.playerabsorb ~= 0 and afflicter ~= nil and afflicter:HasTag("player")
-            and self.playerabsorb + self.absorb or self.absorb), 0, 1 ) * math.max(1 - self.externalabsorbmodifiers:Get(), 0)
+            and self.playerabsorb + self.absorb or self.absorb), 0, 1) * math.max(1 - self.externalabsorbmodifiers:Get(), 0)
 
             amount = afflicter ~= nil and math.min(0, amount + self.externalreductionmodifiers:Get()) or amount
         end

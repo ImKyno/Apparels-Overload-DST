@@ -58,17 +58,29 @@ WATHGRITHR.DESCRIBE.EXTRAHEAVYHAT = "A helm of stone! Let the blows of mine foes
 
 WATHGRITHR.DESCRIBE.FOODBASKETHAT = "Not a proper hat for a warrior!"
 
+WATHGRITHR.DESCRIBE.FOODBONUSHAT = "'Twas not made for a warrior."
+
 WATHGRITHR.DESCRIBE.GASHAT = "Armor of sorts for my nose and throat!"
 
 WATHGRITHR.DESCRIBE.GASMASKHAT = "Poisonous air shall not consume me!"
+
+WATHGRITHR.DESCRIBE.HEALINGBONUSHAT = "A blessing from Freya is contained within."
 
 WATHGRITHR.DESCRIBE.JIAOLIANHAT = "The face of a criminal!"
 
 WATHGRITHR.DESCRIBE.LANTERNBOTTLE = "A most curious torch."
 
+WATHGRITHR.DESCRIBE.LEIF_STALK = "Tis the heart of a defeated tree warrior."
+
+WATHGRITHR.DESCRIBE.LEIF_WALKINGSTICK = "To assist in mine longest journey."
+
+WATHGRITHR.DESCRIBE.LIFESTEALHAT = "Dark magic arts!"
+
 WATHGRITHR.DESCRIBE.LUCKYTREASUREHAT = "Pales in comparison to my helm."
 
 WATHGRITHR.DESCRIBE.METALPLATEHAT = "Heavy head protection!"
+
+WATHGRITHR.DESCRIBE.MINOTAURCROWNHAT = "Be still my heart! Tis the king of battle helms!"
 
 WATHGRITHR.DESCRIBE.OXHAT = "This helm will keep my scalp dry."
 
@@ -87,6 +99,8 @@ WATHGRITHR.DESCRIBE.PITHHAT = "A helm. Not mine own."
 WATHGRITHR.DESCRIBE.PROPELLERHAT = "The whirling winds shall cool me as I charge!"
 
 WATHGRITHR.DESCRIBE.PUMPKINHEADHAT = "Do you wish to fight, vegetable?"
+
+WATHGRITHR.DESCRIBE.SANITYDAMAGEHAT = "Magic stone, empower my spirit!"
 
 WATHGRITHR.DESCRIBE.SHARK_FIN = "A token from a fallen warrior."
 

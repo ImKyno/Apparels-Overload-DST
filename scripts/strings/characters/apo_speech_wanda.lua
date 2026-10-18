@@ -58,17 +58,29 @@ WANDA.DESCRIBE.EXTRAHEAVYHAT = "Built to last. Though I may grow old waiting for
 
 WANDA.DESCRIBE.FOODBASKETHAT = "This reminds me of a famous person who would always wear hats like that."
 
+WANDA.DESCRIBE.FOODBONUSHAT = "A hat for gourmands."
+
 WANDA.DESCRIBE.GASHAT = "This hat can purify my surroundings."
 
 WANDA.DESCRIBE.GASMASKHAT = "Total fallout."
+
+WANDA.DESCRIBE.HEALINGBONUSHAT = "This does not help much."
 
 WANDA.DESCRIBE.JIAOLIANHAT = "Boo!"
 
 WANDA.DESCRIBE.LANTERNBOTTLE = "This kind of lantern seems more durable than the regular ones."
 
+WANDA.DESCRIBE.LEIF_STALK = "I think this can be dried..."
+
+WANDA.DESCRIBE.LEIF_WALKINGSTICK = "For travelling faster."
+
+WANDA.DESCRIBE.LIFESTEALHAT = "A siphoning magic eye? Odd enough."
+
 WANDA.DESCRIBE.LUCKYTREASUREHAT = "I'm feeling lucky today!"
 
 WANDA.DESCRIBE.METALPLATEHAT = "It's heavy...!"
+
+WANDA.DESCRIBE.MINOTAURCROWNHAT = "This does not fit my style."
 
 WANDA.DESCRIBE.OXHAT = "Horns to the sky."
 
@@ -87,6 +99,8 @@ WANDA.DESCRIBE.PITHHAT = "Adventure takes time."
 WANDA.DESCRIBE.PROPELLERHAT = "A little breeze can make all the difference when you're in a hurry."
 
 WANDA.DESCRIBE.PUMPKINHEADHAT = "It's honestly one of the least spooky things around here."
+
+WANDA.DESCRIBE.SANITYDAMAGEHAT = "Every pain can be mitigated with a little of brain."
 
 WANDA.DESCRIBE.SHARK_FIN = "A shark fin."
 

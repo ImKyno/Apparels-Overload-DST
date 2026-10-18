@@ -58,17 +58,29 @@ WAXWELL.DESCRIBE.EXTRAHEAVYHAT = "Impenetrable, perhaps. Comfortable, certainly 
 
 WAXWELL.DESCRIBE.FOODBASKETHAT = "Oh great, a fruit hat."
 
+WAXWELL.DESCRIBE.FOODBONUSHAT = "A decent wreath, should I feel like eating."
+
 WAXWELL.DESCRIBE.GASHAT = "Cleans the stench away."
 
 WAXWELL.DESCRIBE.GASMASKHAT = "This clears the vapors."
+
+WAXWELL.DESCRIBE.HEALINGBONUSHAT = "I could use the invigoration."
 
 WAXWELL.DESCRIBE.JIAOLIANHAT = "Doesn't fit me."
 
 WAXWELL.DESCRIBE.LANTERNBOTTLE = "Their lives have found purpose in servitude."
 
+WAXWELL.DESCRIBE.LEIF_STALK = "All stalk and no action."
+
+WAXWELL.DESCRIBE.LEIF_WALKINGSTICK = "Much easier on my knees."
+
+WAXWELL.DESCRIBE.LIFESTEALHAT = "I must have it."
+
 WAXWELL.DESCRIBE.LUCKYTREASUREHAT = "Swashbuckling..."
 
 WAXWELL.DESCRIBE.METALPLATEHAT = "How very conquistadorian."
+
+WAXWELL.DESCRIBE.MINOTAURCROWNHAT = "You'd need a thick neck to wear such a thing."
 
 WAXWELL.DESCRIBE.OXHAT = "Sometimes one must sacrifice form for function."
 
@@ -87,6 +99,8 @@ WAXWELL.DESCRIBE.PITHHAT = "Protects my most important part."
 WAXWELL.DESCRIBE.PROPELLERHAT = "Higgsbury, this is a ridiculous contraption."
 
 WAXWELL.DESCRIBE.PUMPKINHEADHAT = "Why hello, Mr. Crane."
+
+WAXWELL.DESCRIBE.SANITYDAMAGEHAT = "My dapperness will protect me."
 
 WAXWELL.DESCRIBE.SHARK_FIN = "A trophy from a most excellent kill."
 

@@ -58,17 +58,29 @@ WICKERBOTTOM.DESCRIBE.EXTRAHEAVYHAT = "A durable headpiece, though its considera
 
 WICKERBOTTOM.DESCRIBE.FOODBASKETHAT = "Ah! It looks like one of the new trending head pieces."
 
+WICKERBOTTOM.DESCRIBE.FOODBONUSHAT = "This strengthens the wearer's nourishment."
+
 WICKERBOTTOM.DESCRIBE.GASHAT = "The calcium carbonate purifies the surrounding air particles."
 
 WICKERBOTTOM.DESCRIBE.GASMASKHAT = "For investigating dangerous areas."
+
+WICKERBOTTOM.DESCRIBE.HEALINGBONUSHAT = "Strange. I thought this flower had properties related to one's mind, not healing."
 
 WICKERBOTTOM.DESCRIBE.JIAOLIANHAT = "A classic mask for scary criminal tales."
 
 WICKERBOTTOM.DESCRIBE.LANTERNBOTTLE = "A portable source of illumination."
 
+WICKERBOTTOM.DESCRIBE.LEIF_STALK = "Salvaged from that terrible creature."
+
+WICKERBOTTOM.DESCRIBE.LEIF_WALKINGSTICK = "Improves one's posture."
+
+WICKERBOTTOM.DESCRIBE.LIFESTEALHAT = "An enviable magic relic, I must say."
+
 WICKERBOTTOM.DESCRIBE.LUCKYTREASUREHAT = "It would better suit a pirate than I."
 
 WICKERBOTTOM.DESCRIBE.METALPLATEHAT = "It's similar to the Spanish colonials."
+
+WICKERBOTTOM.DESCRIBE.MINOTAURCROWNHAT = "A commander's helmet."
 
 WICKERBOTTOM.DESCRIBE.OXHAT = "A sturdy head covering."
 
@@ -87,6 +99,8 @@ WICKERBOTTOM.DESCRIBE.PITHHAT = "Historically accurate and functionally imperati
 WICKERBOTTOM.DESCRIBE.PROPELLERHAT = "An ingenious way to encourage convective cooling through movement."
 
 WICKERBOTTOM.DESCRIBE.PUMPKINHEADHAT = "Carving the Cucurbita pepo is such a nice pastime."
+
+WICKERBOTTOM.DESCRIBE.SANITYDAMAGEHAT = "This headwear can pose serious damage to one's mind."
 
 WICKERBOTTOM.DESCRIBE.SHARK_FIN = "The dorsal fin functions as an aquatic stabilizer."
 

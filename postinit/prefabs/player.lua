@@ -73,15 +73,26 @@ local function OnPlayerActivated(inst)
     end, inst)
 end
 
+local function OnHealthRegenActive(inst, data)
+    if data ~= nil and data.active ~= nil then
+        inst.healthregenactive:set(data.active)
+    end
+end
+
 local function PlayerPostInit(inst)
     inst.AnimState:AddOverrideBuild("player_wagstaff_goggles")
 
     inst.damageovertimeactive = _G.net_bool(inst.GUID, "player.damageovertimeactive", "damageovertimeactive_dirty")
 
+    inst.healthregenactive = _G.net_bool(inst.GUID, "healthregenactive")
+    inst.healthregenactive:set(false)
+
     if not _G.TheNet:IsDedicated() then
         inst:ListenForEvent("playeractivated", OnPlayerActivated)
         inst:ListenForEvent("playeractivated", OnEnableHeatVision)
     end
+
+    inst:ListenForEvent("healthregenactive", OnHealthRegenActive)
 end
 
 AddPlayerPostInit(PlayerPostInit)

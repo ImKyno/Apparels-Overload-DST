@@ -333,6 +333,26 @@ APOAddRecipe(ABCEnabled or IASEnabled, "gasmaskhat",
     TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
 )
 
+AddRecipe2("foodbonushat",
+    {
+        Ingredient("moon_tree_blossom", 4),
+        Ingredient("moonbutterflywings", 2),
+        Ingredient("livinglog", 2),
+    },
+
+    TECH.CELESTIAL_THREE, { station_tag = "celestial_station" }, { "CLOTHING", "CRAFTING_STATION" }
+)
+
+AddRecipe2("healingbonushat",
+    {
+        Ingredient("moon_tree_blossom", 1),
+        Ingredient("moonbutterflywings", 1),
+        Ingredient("livinglog", 1),
+    },
+
+    TECH.CELESTIAL_THREE, { station_tag = "celestial_station" }, { "CLOTHING", "CRAFTING_STATION", "RESTORATION" }
+)
+
 AddRecipe2("jiaolianhat",
     {
         Ingredient("driftwood_log", 4),
@@ -341,6 +361,28 @@ AddRecipe2("jiaolianhat",
     },
 
     TECH.SCIENCE_TWO, {}, { "ARMOUR" }
+)
+
+AddRecipe2("lifestealhat",
+    {
+        Ingredient("minotaurhorn", 1),
+        Ingredient("redgem", 1),
+        Ingredient("thulecite", 4),
+        Ingredient("nightmarefuel", 4),
+    },
+
+    TECH.ANCIENT_FOUR, { nounlock = true }, { "CRAFTING_STATION" }
+)
+
+AddRecipe2("minotaurcrownhat",
+    {
+        Ingredient("minotaurhorn", 1),
+        Ingredient("yellowgem", 1),
+        Ingredient("thulecite", 6),
+        Ingredient("nightmarefuel", 4),
+    },
+
+    TECH.ANCIENT_FOUR, { nounlock = true }, { "CRAFTING_STATION" }
 )
 
 APOAddRecipe(ABCEnabled or IASEnabled, "luckytreasurehat",
@@ -420,6 +462,16 @@ AddRecipe2("pumpkinheadhat",
     },
 
     TECH.SCIENCE_ONE, {}, { "CLOTHING" }
+)
+
+AddRecipe2("sanitydamagehat",
+    {
+        Ingredient("moonglass", 12),
+        Ingredient("moonbutterflywings", 3),
+        Ingredient("boneshard", 4),
+    },
+
+    TECH.CELESTIAL_THREE, { station_tag = "celestial_station" }, { "ARMOUR", "CRAFTING_STATION" }
 )
 
 APOAddRecipe(ABCEnabled or IASEnabled, "shark_teethhat",

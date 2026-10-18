@@ -58,17 +58,29 @@ WORTOX.DESCRIBE.EXTRAHEAVYHAT = "Heavy is the crown!"
 
 WORTOX.DESCRIBE.FOODBASKETHAT = "Mortals have a funny taste for head pieces."
 
+WORTOX.DESCRIBE.FOODBONUSHAT = "Would help a little bit with mortal food."
+
 WORTOX.DESCRIBE.GASHAT = "Smells of freshness when I wear it!"
 
 WORTOX.DESCRIBE.GASMASKHAT = "This will cut down my coughing."
+
+WORTOX.DESCRIBE.HEALINGBONUSHAT = "I don't want to die. Hyuyu!"
 
 WORTOX.DESCRIBE.JIAOLIANHAT = "A merry visage! Hyuyu!"
 
 WORTOX.DESCRIBE.LANTERNBOTTLE = "That's one use for a bottle!"
 
+WORTOX.DESCRIBE.LEIF_STALK = "Some tree parts."
+
+WORTOX.DESCRIBE.LEIF_WALKINGSTICK = "Treewalk!"
+
+WORTOX.DESCRIBE.LIFESTEALHAT = "I'm a reaper of souls already!"
+
 WORTOX.DESCRIBE.LUCKYTREASUREHAT = "Made for a true pirate."
 
 WORTOX.DESCRIBE.METALPLATEHAT = "I prefer the other one."
+
+WORTOX.DESCRIBE.MINOTAURCROWNHAT = "Oh the power! Hyuyu!"
 
 WORTOX.DESCRIBE.OXHAT = "Hat of an ox."
 
@@ -87,6 +99,8 @@ WORTOX.DESCRIBE.PITHHAT = "Not as tough as my horns!"
 WORTOX.DESCRIBE.PROPELLERHAT = "Spin and run, let the cool breeze flow! Hyuyu!"
 
 WORTOX.DESCRIBE.PUMPKINHEADHAT = "How delightfully spooky! Hyuyu!"
+
+WORTOX.DESCRIBE.SANITYDAMAGEHAT = "Oh, so this is what mortals calls \"headache\"?"
 
 WORTOX.DESCRIBE.SHARK_FIN = "The shark left his rudder!"
 

@@ -573,7 +573,7 @@ local function wagstaff_goggles_shoothat_projectilefn()
     inst.components.projectile:SetHitDist(1.2)
     inst.components.projectile:SetOnHitFn(OnHitWagstaffGogglesShoot)
     inst.components.projectile:SetOnMissFn(OnHitWagstaffGogglesShoot)
-    inst.components.projectile:SetLaunchOffset({ x = 1, y = 1, z = 0 })
+    inst.components.projectile:SetLaunchOffset(Vector3(2, 1, 0))
 
     return inst
 end

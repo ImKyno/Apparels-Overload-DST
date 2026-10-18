@@ -58,17 +58,29 @@ WILSON.DESCRIBE.EXTRAHEAVYHAT = "Sturdy, but my neck might regret this."
 
 WILSON.DESCRIBE.FOODBASKETHAT = "It's a hat full of fruits!"
 
+WILSON.DESCRIBE.FOODBONUSHAT = "Looks like it amplifies my appetite."
+
 WILSON.DESCRIBE.GASHAT = "Sucks all the stink out."
 
 WILSON.DESCRIBE.GASMASKHAT = "Now I can breath anywhere."
+
+WILSON.DESCRIBE.HEALINGBONUSHAT = "This blossom has some strange healing properties."
 
 WILSON.DESCRIBE.JIAOLIANHAT = "Looks like a halloween mask."
 
 WILSON.DESCRIBE.LANTERNBOTTLE = "A bottle full of sunshine."
 
+WILSON.DESCRIBE.LEIF_STALK = "I bet I could find a use for it."
+
+WILSON.DESCRIBE.LEIF_WALKINGSTICK = "Perfect for a gentleman scientist."
+
+WILSON.DESCRIBE.LIFESTEALHAT = "It has a gaze full of science."
+
 WILSON.DESCRIBE.LUCKYTREASUREHAT = "Does it make me look scurvy... I mean scary!?"
 
 WILSON.DESCRIBE.METALPLATEHAT = "A knight's helmet!"
+
+WILSON.DESCRIBE.MINOTAURCROWNHAT = "That could cause some major destruction."
 
 WILSON.DESCRIBE.OXHAT = "Nice and dry. This helmet will protect me from the beefalos."
 
@@ -87,6 +99,8 @@ WILSON.DESCRIBE.PITHHAT = "Pithy."
 WILSON.DESCRIBE.PROPELLERHAT = "I've made it so the fans keeps spinning forever!"
 
 WILSON.DESCRIBE.PUMPKINHEADHAT = "Spooky!"
+
+WILSON.DESCRIBE.SANITYDAMAGEHAT = "My mind will take the burden of my body for me."
 
 WILSON.DESCRIBE.SHARK_FIN = "A sleek fin."
 

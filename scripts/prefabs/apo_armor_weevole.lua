@@ -118,9 +118,6 @@ local function fn()
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
 
-    MakeSmallBurnable(inst)
-    MakeSmallPropagator(inst)
-
     MakeHauntableLaunch(inst)
 
     return inst

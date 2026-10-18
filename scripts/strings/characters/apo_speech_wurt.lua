@@ -58,17 +58,29 @@ WURT.DESCRIBE.EXTRAHEAVYHAT = "Keeps head safe, glorp!"
 
 WURT.DESCRIBE.FOODBASKETHAT = "Want to eat it, flort!"
 
+WURT.DESCRIBE.FOODBONUSHAT = "It fill head with food learning!"
+
 WURT.DESCRIBE.GASHAT = "Keeps nasty smell out!"
 
 WURT.DESCRIBE.GASMASKHAT = "It's weird, florp."
+
+WURT.DESCRIBE.HEALINGBONUSHAT = "Blegh... have to wear it...?"
 
 WURT.DESCRIBE.JIAOLIANHAT = "Scary pigfolk mask... Glurp..."
 
 WURT.DESCRIBE.LANTERNBOTTLE = "Awww... Bottled buddies!"
 
+WURT.DESCRIBE.LEIF_STALK = "Glorrp... can't think a use for it."
+
+WURT.DESCRIBE.LEIF_WALKINGSTICK = "Stick of zoomies, florp."
+
+WURT.DESCRIBE.LIFESTEALHAT = "Has magic eye."
+
 WURT.DESCRIBE.LUCKYTREASUREHAT = "Arr, matey!"
 
 WURT.DESCRIBE.METALPLATEHAT = "Shiny hat protects me, florp."
+
+WURT.DESCRIBE.MINOTAURCROWNHAT = "Extra horns for extra fights!"
 
 WURT.DESCRIBE.OXHAT = "Looks good on me, hehe."
 
@@ -87,6 +99,8 @@ WURT.DESCRIBE.PITHHAT = "Helps walking a bit faster, florp."
 WURT.DESCRIBE.PROPELLERHAT = "Spinny hat make cool breeze when running, flort."
 
 WURT.DESCRIBE.PUMPKINHEADHAT = "Has a friendly face, flort."
+
+WURT.DESCRIBE.SANITYDAMAGEHAT = "Head feels dizzy..."
 
 WURT.DESCRIBE.SHARK_FIN = "Poor little shark, florp."
 

@@ -140,6 +140,20 @@ TUNING.APO_MISC =
             full_moon = _G.resolvefilepath("images/colour_cubes/shootvision_cc.tex"),
         },
     },
+
+    STATEGRAPH_ATTACKS_WHITELIST = -- States that can be speedup by attack speed modifiers.
+    {
+        "attack",
+        "slingshot_shoot",
+        "wx_spin",
+        "wx_spin_start",
+        "blowdart",
+        "throw",
+        "attack_pillow_pre",
+        "attack_prop_pre",
+        "multithrust_pre",
+        "helmsplitter_pre",
+    },
 }
 
 TUNING.APO_ARMORS =
@@ -204,7 +218,7 @@ TUNING.APO_ARMORS =
         ABSORPTION = 0.95,
         WALKSPEEDMULT = 0.70,
         FIRERESIST = 1,
-        OVERHEAT_DAMAGE = 5,
+        FREEZING_DAMAGE = 5,
         LIGHT_OVERRIDE = 0.35,
         HEAT = 15,
     },
@@ -358,6 +372,23 @@ TUNING.APO_HATS =
         HUNGER_MODIFIER = 0.25,
     },
 
+    FOODBONUS =
+    {
+        BONUS = 0.20,
+    },
+
+    HEALINGBONUS =
+    {
+        BONUS = 25,
+
+        REGEN =
+        {
+            AMOUNT = 2,
+            PERIOD = 1.5,
+            THRESHOLD = 0.65,
+        },
+    },
+
     GAS =
     {
         PERISHTIME = 480 * 10,
@@ -390,6 +421,19 @@ TUNING.APO_HATS =
         },
     },
 
+    LIFESTEAL =
+    {
+        USES = 250,
+        WALKSPEEDMULT = 1.10,
+        SHADOWLEVEL = 2,
+
+        LIFESTEAL =
+        {
+            AMOUNT = 2.5,
+            LOSS = 1.5,
+        },
+    },
+
     LUCKYTREASURE =
     {
         PERISHTIME = 480 * 10,
@@ -402,6 +446,16 @@ TUNING.APO_HATS =
         CONDITION = 550,
         ABSORPTION = 0.85,
         WALKSPEEDMULT = 0.85,
+    },
+
+    MINOTAURCROWN =
+    {
+        CONDITION = 1260,
+        ABSORPTION = 0.95,
+        WALKSPEEDMULT = 1.10,
+        SHADOWLEVEL = 2,
+        MODIFIER = 1.25,
+        MIN_ATTACK_PERIOD_MULT = 0.75, -- 25% Attack Speed.
     },
 
     PEAGAWKFEATHER =
@@ -420,6 +474,7 @@ TUNING.APO_HATS =
     {
         CONDITION = 500,
         ABSORPTION = 0.80,
+        DAMAGETYPE_RESIST = 0.45,
     },
 
     PIGCROWN =
@@ -486,6 +541,13 @@ TUNING.APO_HATS =
             RADIUS = 3,
             LIGHT_OVERRIDE = 0.35,
         },
+    },
+
+    SANITYDAMAGE =
+    {
+        CONDITION = 315,
+        ABSORPTION = 0.40,
+        DAMAGETYPE_RESIST = 0.50,
     },
 
     VOLCANOCOLD =
@@ -559,6 +621,20 @@ TUNING.APO_HATS =
 TUNING.APO_LANTERNBOTTLE =
 {
     PERISHTIME = 480,
+}
+
+TUNING.APO_LEIF_STALK =
+{
+    HEALTH = 0,
+    HUNGER = 12.5,
+    SANITY = -10,
+}
+
+TUNING.APO_LEIF_WALKINGSTICK =
+{
+    PERISHTIME = 480 * 3,
+    WALKSPEEDMULT = 1.30,
+    DAMAGE = 20.4,
 }
 
 TUNING.PIRATEPACK =

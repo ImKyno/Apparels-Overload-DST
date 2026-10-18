@@ -299,7 +299,6 @@ local APO_SCRAPBOOK_BODY =
         insulator           = TUNING.INSULATION_SMALL,
         waterproofer        = TUNING.WATERPROOFNESS_LARGE,
         sewable             = true,
-        burnable            = true,
         bank                = "armor_snakeskin",
         build               = "armor_snakeskin",
         anim                = "anim",
@@ -363,7 +362,6 @@ local APO_SCRAPBOOK_BODY =
         fueltype            = "BURNABLE",
         fuelvalue           = TUNING.LARGE_FUEL,
         waterproofer        = TUNING.WATERPROOFNESS_MED,
-        burnable            = true,
         bank                = "armor_weevole",
         build               = "armor_weevole",
         anim                = "anim",
@@ -386,7 +384,6 @@ local APO_SCRAPBOOK_BODY =
         fueledtype1         = "USAGE",
         waterproofer        = TUNING.WATERPROOFNESS_MED,
         sewable             = true,
-        burnable            = true,
         bank                = "armor_windbreaker",
         build               = "armor_windbreaker",
         anim                = "anim",
@@ -435,6 +432,34 @@ local APO_SCRAPBOOK_HANDS =
         animoffsetbgy       = -90,
         deps                = { "sunkenchest", "moonbutterfly", "messagebottleempty", "rope", "researchlab2" },
         specialinfo         = "LANTERNBOTTLE",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
+
+    leif_walkingstick =
+    {
+        name                = "leif_walkingstick",
+        prefab              = "leif_walkingstick",
+        tex                 = "leif_walkingstick.tex",
+        type                = "item",
+        subcat              = "tool",
+        weapondamage        = TUNING.APO_LEIF_WALKINGSTICK.DAMAGE,
+        fueledmax           = TUNING.APO_LEIF_WALKINGSTICK.PERISHTIME,
+        fueledrate          = 1,
+        fueledtype1         = "USAGE",
+        fueltype            = "BURNABLE",
+        fuelvalue           = TUNING.LARGE_FUEL,
+        sewable             = true,
+        burnable            = true,
+        bank                = "leif_walkingstick",
+        build               = "leif_walkingstick",
+        anim                = "idle",
+        animoffsetx         = 20,
+        animoffsety         = 20,
+        animoffsetbgx       = 20,
+        animoffsetbgy       = -90,
+        deps                = { "leif_stalk" },
+        specialinfo         = "LEIF_WALKINGSTICK",
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 }
 
@@ -478,7 +503,6 @@ local APO_SCRAPBOOK_HEAD =
         fueledtype1         = "USAGE",
         waterproofer        = TUNING.WATERPROOFNESS_SMALL,
         sewable             = true,
-        burnable            = true,
         snowmandecor        = true,
         bank                = "antmaskhat",
         build               = "hat_antmask",
@@ -579,7 +603,6 @@ local APO_SCRAPBOOK_HEAD =
         fueledrate          = 1,
         fueledtype1         = "BURNABLE",
         waterproofer        = TUNING.WATERPROOFNESS_SMALL,
-        burnable            = true,
         snowmandecor        = true,
         bank                = "candlehat",
         build               = "hat_candle",
@@ -702,7 +725,6 @@ local APO_SCRAPBOOK_HEAD =
         subcat              = "hat",
         perishable          = TUNING.PERISH_MED,
         dapperness          = TUNING.DAPPERNESS_MED,
-        burnable            = true,
         snowmandecor        = true,
         bank                = "foodbaskethat",
         build               = "hat_foodbasket",
@@ -755,6 +777,42 @@ local APO_SCRAPBOOK_HEAD =
         condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
     },
 
+    foodbonushat =
+    {
+        name                = "foodbonushat",
+        prefab              = "foodbonushat",
+        tex                 = "foodbonushat.tex",
+        type                = "item",
+        subcat              = "hat",
+        perishable          = TUNING.PERISH_FAST,
+        dapperness          = TUNING.DAPPERNESS_MED,
+        snowmandecor        = true,
+        bank                = "foodbonushat",
+        build               = "hat_foodbonus",
+        anim                = "anim",
+        animoffsetbgy       = 30,
+        deps                = { "moon_tree_blossom", "moonbutterflywings", "livinglog", "moon_altar_cosmic" },
+        specialinfo         = "FOODBONUSHAT",
+    },
+
+    healingbonushat =
+    {
+        name                = "healingbonushat",
+        prefab              = "healingbonushat",
+        tex                 = "healingbonushat.tex",
+        type                = "item",
+        subcat              = "hat",
+        perishable          = TUNING.PERISH_FAST,
+        dapperness          = TUNING.DAPPERNESS_MED,
+        snowmandecor        = true,
+        bank                = "healingbonushat",
+        build               = "hat_healingbonus",
+        anim                = "anim",
+        animoffsetbgy       = 30,
+        deps                = { "moon_tree_blossom", "moonbutterflywings", "livinglog", "moon_altar_cosmic" },
+        specialinfo         = "HEALINGBONUSHAT",
+    },
+
     jiaolianhat =
     {
         name                = "jiaolianhat",
@@ -773,6 +831,24 @@ local APO_SCRAPBOOK_HEAD =
         specialinfo         = "JIAOLIANHAT",
     },
 
+    lifestealhat =
+    {
+        name                = "lifestealhat",
+        prefab              = "lifestealhat",
+        tex                 = "lifestealhat.tex",
+        type                = "item",
+        subcat              = "hat",
+        finiteuses          = TUNING.APO_HATS.LIFESTEAL.USES,
+        dapperness          = -TUNING.DAPPERNESS_MED,
+        snowmandecor        = true,
+        bank                = "lifestealhat",
+        build               = "hat_lifesteal",
+        anim                = "anim",
+        animoffsetbgy       = 25,
+        deps                = { "minotaurhorn", "redgem", "thulecite", "nightmarefuel", "ancient_altar" },
+        specialinfo         = "LIFESTEALHAT",
+    },
+
     luckytreasurehat =
     {
         name                = "luckytreasurehat",
@@ -786,7 +862,6 @@ local APO_SCRAPBOOK_HEAD =
         dapperness          = TUNING.DAPPERNESS_MED_LARGE,
         waterproofer        = TUNING.WATERPROOFNESS_SMALL,
         sewable             = true,
-        burnable            = true,
         snowmandecor        = true,
         bank                = "luckytreasurehat",
         build               = "hat_luckytreasure",
@@ -812,6 +887,23 @@ local APO_SCRAPBOOK_HEAD =
         deps                = { "cutstone", "rope", "hammer", "armor_metalplate", "researchlab2" },
         specialinfo         = "METALPLATEHAT",
         condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
+
+    minotaurcrownhat =
+    {
+        name                = "minotaurcrownhat",
+        prefab              = "minotaurcrownhat",
+        tex                 = "minotaurcrownhat.tex",
+        type                = "item",
+        subcat              = "armor",
+        armor               = TUNING.APO_HATS.MINOTAURCROWN.CONDITION,
+        absorb_percent      = TUNING.APO_HATS.MINOTAURCROWN.ABSORPTION,
+        snowmandecor        = true,
+        bank                = "minotaurcrownhat",
+        build               = "hat_minotaurcrown",
+        anim                = "anim",
+        deps                = { "minotaurhorn", "yellowgem", "thulecite", "nightmarefuel", "ancient_altar" },
+        specialinfo         = "MINOTAURCROWNHAT",
     },
 
     oxhat =
@@ -885,7 +977,6 @@ local APO_SCRAPBOOK_HEAD =
         dapperness          = TUNING.DAPPERNESS_SMALL,
         waterproofer        = TUNING.WATERPROOFNESS_SMALL,
         sewable             = true,
-        burnable            = true,
         snowmandecor        = true,
         bank                = "piratehat",
         build               = "hat_pirate",
@@ -909,7 +1000,6 @@ local APO_SCRAPBOOK_HEAD =
         dapperness          = TUNING.DAPPERNESS_SMALL,
         waterproofer        = TUNING.WATERPROOFNESS_SMALL,
         sewable             = true,
-        burnable            = true,
         snowmandecor        = true,
         bank                = "pithhat",
         build               = "hat_pith",
@@ -951,7 +1041,6 @@ local APO_SCRAPBOOK_HEAD =
         subcat              = "hat",
         perishable          = TUNING.PERISH_FAST,
         dapperness          = TUNING.CRAZINESS_SMALL,
-        burnable            = true,
         waxable             = true,
         snowmandecor        = true,
         bank                = "pumpkinheadhat",
@@ -959,6 +1048,24 @@ local APO_SCRAPBOOK_HEAD =
         anim                = "anim",
         deps                = { "pumpkin", "researchlab" },
         specialinfo         = "PUMPKINHEADHAT",
+    },
+
+    sanitydamagehat =
+    {
+        name                = "sanitydamagehat",
+        prefab              = "sanitydamagehat",
+        tex                 = "sanitydamagehat.tex",
+        type                = "item",
+        subcat              = "armor",
+        armor               = TUNING.APO_HATS.SANITYDAMAGE.CONDITION,
+        absorb_percent      = TUNING.APO_HATS.SANITYDAMAGE.ABSORPTION,
+        dapperness          = TUNING.DAPPERNESS_MED_LARGE,
+        snowmandecor        = true,
+        bank                = "sanitydamagehat",
+        build               = "hat_sanitydamage",
+        anim                = "anim",
+        deps                = { "moonglass", "moonbutterflywings", "boneshard", "moon_altar_cosmic" },
+        specialinfo         = "SANITYDAMAGEHAT",
     },
 
     shark_teethhat =
@@ -1169,7 +1276,6 @@ local APO_SCRAPBOOK_HEAD =
         dapperness          = TUNING.DAPPERNESS_MED,
         insulator           = TUNING.INSULATION_MED,
         waterproofer        = TUNING.WATERPROOFNESS_SMALL,
-        burnable            = true,
         sewable             = true,
         snowmandecor        = true,
         bank                = "willowoldhat",
@@ -1182,6 +1288,26 @@ local APO_SCRAPBOOK_HEAD =
 
 local APO_SCRAPBOOK_ITEMS =
 {
+    leif_stalk =
+    {
+        name                = "leif_stalk",
+        prefab              = "leif_stalk",
+        tex                 = "leif_stalk.tex",
+        type                = "food",
+        perishable          = TUNING.PERISH_FAST,
+        stacksize           = TUNING.STACK_SIZE_SMALLITEM,
+        healthvalue         = TUNING.APO_LEIF_STALK.HEALTH,
+        hungervalue         = TUNING.APO_LEIF_STALK.HUNGER,
+        sanityvalue         = TUNING.APO_LEIF_STALK.SANITY,
+        foodtype            = "GENERIC",
+        burnable            = true,
+        bank                = "leif_stalk",
+        build               = "leif_stalk",
+        anim                = "idle",
+        deps                = { "leif", "leif_walkingstick", "meatrack", "meatrack_hermit", "spoiled_food" },
+        condition           = not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED,
+    },
+
     pigskin_dried =
     {
         name                = "pigskin_dried",

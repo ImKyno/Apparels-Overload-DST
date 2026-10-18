@@ -166,9 +166,6 @@ local function fn()
     inst.components.equippable:SetOnEquipToModel(OnEquipToModel)
     inst.components.equippable.insulated = true
 
-    MakeSmallBurnable(inst)
-    MakeSmallPropagator(inst)
-
     MakeHauntableLaunch(inst)
 
     return inst

@@ -8,7 +8,7 @@ Increases movement speed by 25% when worn.
 
 SPECIALINFO.ANTMASKHAT =
 [[
-The protection this armor offers only really works on Bees and Bee-like creatures. It also pacifies them.
+The protection this helm offers only really works on Bees and Bee-like creatures. It also pacifies them.
 
 Allows the wearer to safely harvest bee boxes.
 ]]
@@ -60,7 +60,7 @@ When paired with Fancy Helmet increases damage dealt by 10% and decreases damage
 
 SPECIALINFO.ARMOR_OBSIDIAN =
 [[
-This armor is durable but heavy, and slows its wearer while also making it immune to fire. Attackers will be set ablaze.
+This armor is durable but heavy, and slows its wearer while also making it immune to fire and absorbing freezing damage. Attackers will be set ablaze.
 
 Increases temperature by 15 degrees when worn.
 ]]
@@ -141,18 +141,23 @@ Pigs and Bunnymen will treat the wearer like one of them.
 
 SPECIALINFO.EXTRAHEAVYHAT = TUNING.APO_TWEAK_ARMORMARBLE and
 [[
-This armor is durable but heavy, and slows its wearer.
+This helm is durable but heavy, and slows its wearer.
 
 When paired with Marble Suit damage taken becomes damage over time when health is below 50%.
 ]]
 or
 [[
-This armor is durable but heavy, and slows its wearer.
+This helm is durable but heavy, and slows its wearer.
 ]]
 
 SPECIALINFO.FOODBASKETHAT =
 [[
 Increases hunger by 50 points and decreases hunger rate by 25% when worn.
+]]
+
+SPECIALINFO.FOODBONUSHAT =
+[[
+Increases stats gained from food by 20%.
 ]]
 
 SPECIALINFO.GASHAT =
@@ -165,6 +170,13 @@ SPECIALINFO.GASMASKHAT =
 This hat allows the wearer to see and breath while inside harsh environments.
 ]]
 
+SPECIALINFO.HEALINGBONUSHAT =
+[[
+Increases health by 25 points when worn.
+
+When below 65% health regenerates 2 health per second.
+]]
+
 SPECIALINFO.HIVEHAT =
 [[
 Makes scary things around you relaxing instead.
@@ -174,7 +186,7 @@ Allows the wearer to safely harvest bee boxes.
 
 SPECIALINFO.JIAOLIANHAT =
 [[
-The protection this armor offers only really works on Ghosts, Merms, Pigs and Shadow Creatures.
+The protection this mask offers only really works on Ghosts, Merms, Pigs and Shadow Creatures.
 ]]
 
 SPECIALINFO.LANTERNBOTTLE =
@@ -182,6 +194,16 @@ SPECIALINFO.LANTERNBOTTLE =
 This item creates light for its duration.
 
 It does not break when its duration is finished and can be refuled.
+]]
+
+SPECIALINFO.LEIF_WALKINGSTICK =
+[[
+Increases movement speed by 30% when held.
+]]
+
+SPECIALINFO.LIFESTEALHAT =
+[[
+Provides life steal when worn.
 ]]
 
 SPECIALINFO.LUCKYTREASUREHAT =
@@ -193,14 +215,21 @@ Increases luck by 3 points and periodically finds a "X Marks the Spot" when worn
 
 SPECIALINFO.METALPLATEHAT =
 [[
-This armor is durable but heavy, and slows its wearer.
+This helm is durable but heavy, and slows its wearer.
 
 When paired with Fancy Suit increases damage by 10% and decreases damage taken by 10%.
+]]
+
+SPECIALINFO.MINOTAURCROWNHAT =
+[[
+Increases movement speed by 10%, damage and attack speed by 25% when worn.
 ]]
 
 SPECIALINFO.OXHAT =
 [[
 Makes the wearer friendly to Beefalo in heat.
+
+This helm can protect the wearer against explosive damage.
 ]]
 
 SPECIALINFO.PEAGAWKFEATHERHAT =
@@ -238,6 +267,11 @@ Can be repaired with Gears.
 SPECIALINFO.PUMPKINHEADHAT =
 [[
 Can be waxed to last forever.
+]]
+
+SPECIALINFO.SANITYDAMAGEHAT =
+[[
+Damage taken is applied to the wearer's sanity instead.
 ]]
 
 SPECIALINFO.SHARK_TEETHHAT =
@@ -289,7 +323,7 @@ SPECIALINFO.WAGSTAFF_GOGGLES_ARMORHAT =
 [[
 Improves vision in a storm, but reduces area of view.
 
-This armor is durable but heavy, and slows its wearer.
+This helm is durable but heavy, and slows its wearer.
 ]]
 
 SPECIALINFO.WAGSTAFF_GOGGLES_HEATHAT =

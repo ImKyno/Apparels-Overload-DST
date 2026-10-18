@@ -58,17 +58,29 @@ WILLOW.DESCRIBE.EXTRAHEAVYHAT = "A rock on my head."
 
 WILLOW.DESCRIBE.FOODBASKETHAT = "It is a bit flamboyant."
 
+WILLOW.DESCRIBE.FOODBONUSHAT = "Hmm, now I'm feeling a bit hungry."
+
 WILLOW.DESCRIBE.GASHAT = "I like not smelling smelly smells."
 
 WILLOW.DESCRIBE.GASMASKHAT = "Cuts down on the coughing."
+
+WILLOW.DESCRIBE.HEALINGBONUSHAT = "That's great wreath!"
 
 WILLOW.DESCRIBE.JIAOLIANHAT = "I should prank someone using this!"
 
 WILLOW.DESCRIBE.LANTERNBOTTLE = "The light is so cold and alien."
 
+WILLOW.DESCRIBE.LEIF_STALK = "Looks like kindling."
+
+WILLOW.DESCRIBE.LEIF_WALKINGSTICK = "Zoom!"
+
+WILLOW.DESCRIBE.LIFESTEALHAT = "Ooo, gimme!"
+
 WILLOW.DESCRIBE.LUCKYTREASUREHAT = "Arrr! I'm the pirate captain now."
 
 WILLOW.DESCRIBE.METALPLATEHAT = "This protects my brain."
+
+WILLOW.DESCRIBE.MINOTAURCROWNHAT = "Dibs!"
 
 WILLOW.DESCRIBE.OXHAT = "Ox-cellent!"
 
@@ -87,6 +99,8 @@ WILLOW.DESCRIBE.PITHHAT = "Meh. Not my style, but I'll wear it."
 WILLOW.DESCRIBE.PROPELLERHAT = "A spinning hat? Silly, but cool."
 
 WILLOW.DESCRIBE.PUMPKINHEADHAT = "Amazing!"
+
+WILLOW.DESCRIBE.SANITYDAMAGEHAT = "Ohh, I want it!"
 
 WILLOW.DESCRIBE.SHARK_FIN = "The fin fell off."
 

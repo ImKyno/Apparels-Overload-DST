@@ -58,17 +58,29 @@ WOLFGANG.DESCRIBE.EXTRAHEAVYHAT = "Wolfgang's head is strong enough!"
 
 WOLFGANG.DESCRIBE.FOODBASKETHAT = "Hat has lot of food, could eat it later."
 
+WOLFGANG.DESCRIBE.FOODBONUSHAT = "Is useless leaf hat."
+
 WOLFGANG.DESCRIBE.GASHAT = "Little hat is very colorful."
 
 WOLFGANG.DESCRIBE.GASMASKHAT = "Is good for Wolfgang lungs."
+
+WOLFGANG.DESCRIBE.HEALINGBONUSHAT = "It would make Wolfgang look nice."
 
 WOLFGANG.DESCRIBE.JIAOLIANHAT = "Hehe. Is funny spook mask."
 
 WOLFGANG.DESCRIBE.LANTERNBOTTLE = "Is good way to keep darkness back."
 
+WOLFGANG.DESCRIBE.LEIF_STALK = "Is Treeman parts."
+
+WOLFGANG.DESCRIBE.LEIF_WALKINGSTICK = "Is for good walk steps."
+
+WOLFGANG.DESCRIBE.LIFESTEALHAT = "Is no-good creepy hat."
+
 WOLFGANG.DESCRIBE.LUCKYTREASUREHAT = "Is pirate head clothes."
 
 WOLFGANG.DESCRIBE.METALPLATEHAT = "Is funny little tin hat."
+
+WOLFGANG.DESCRIBE.MINOTAURCROWNHAT = "Is so mighty!"
 
 WOLFGANG.DESCRIBE.OXHAT = "I have become more mighty!"
 
@@ -87,6 +99,8 @@ WOLFGANG.DESCRIBE.PITHHAT = "Is hard like Wolfgang head."
 WOLFGANG.DESCRIBE.PROPELLERHAT = "Little hat fan makes Wolfgang cool when running!"
 
 WOLFGANG.DESCRIBE.PUMPKINHEADHAT = "Now is actual head! Wolfgang afraid!"
+
+WOLFGANG.DESCRIBE.SANITYDAMAGEHAT = "Nice little head rocks."
 
 WOLFGANG.DESCRIBE.SHARK_FIN = "I lost rest of shark."
 

@@ -58,17 +58,29 @@ WEBBER.DESCRIBE.EXTRAHEAVYHAT = "It's really heavy, but it makes our head feel s
 
 WEBBER.DESCRIBE.FOODBASKETHAT = "Very tropical!"
 
+WEBBER.DESCRIBE.FOODBONUSHAT = "Feeling hungry already."
+
 WEBBER.DESCRIBE.GASHAT = "We are protected from sick smells."
 
 WEBBER.DESCRIBE.GASMASKHAT = "Now that gas won't make us cough."
+
+WEBBER.DESCRIBE.HEALINGBONUSHAT = "It makes your day a little brighter."
 
 WEBBER.DESCRIBE.JIAOLIANHAT = "I bet we can scary everyone with this!"
 
 WEBBER.DESCRIBE.LANTERNBOTTLE = "Hey there, thanks for the light!"
 
+WEBBER.DESCRIBE.LEIF_STALK = "It came off that mean tree."
+
+WEBBER.DESCRIBE.LEIF_WALKINGSTICK = "This should make it easier to walk."
+
+WEBBER.DESCRIBE.LIFESTEALHAT = "Looks creepy."
+
 WEBBER.DESCRIBE.LUCKYTREASUREHAT = "Yarr! Haha."
 
 WEBBER.DESCRIBE.METALPLATEHAT = "A fancy helmet to protect our head."
+
+WEBBER.DESCRIBE.MINOTAURCROWNHAT = "That helmet is really something!"
 
 WEBBER.DESCRIBE.OXHAT = "How do we look?"
 
@@ -87,6 +99,8 @@ WEBBER.DESCRIBE.PITHHAT = "A safari hat!"
 WEBBER.DESCRIBE.PROPELLERHAT = "We go faster, and the hat spins faster! Wheee!"
 
 WEBBER.DESCRIBE.PUMPKINHEADHAT = "Just like we used to make at home!"
+
+WEBBER.DESCRIBE.SANITYDAMAGEHAT = "It sure is sparkly."
 
 WEBBER.DESCRIBE.SHARK_FIN = "Do we touch it?"
 

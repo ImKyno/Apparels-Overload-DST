@@ -126,7 +126,7 @@ local function fn()
     inst:AddTag("HASHEATER")
     inst:AddTag("heavyarmor")
     inst:AddTag("hardarmor")
-    inst:AddTag("absorbsoverheat")
+    inst:AddTag("absorbsfreezing")
 
     inst.foleysound = "apo_sounds/movement/armor_obsidian/foley"
 
@@ -136,7 +136,7 @@ local function fn()
         return inst
     end
 
-    inst.overheat_damage = TUNING.APO_ARMORS.OBSIDIAN.OVERHEAT_DAMAGE
+    inst.freezing_damage = TUNING.APO_ARMORS.OBSIDIAN.FREEZING_DAMAGE
 
     inst:AddComponent("inspectable")
 

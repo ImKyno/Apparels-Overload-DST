@@ -321,9 +321,6 @@ local function MakeHat(name)
         inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
         inst.components.fueled:SetUpdateFn(hat_fns.antmask_onupdate)
 
-        MakeSmallBurnable(inst)
-        MakeSmallPropagator(inst)
-
         return inst
     end
 
@@ -674,9 +671,6 @@ local function MakeHat(name)
         inst.components.fueled:SetDepletedFn(hat_fns.candle_onperish)
         inst.components.fueled.ontakefuelfn = hat_fns.candle_ontakefuel
         inst.components.fueled.accepting = true
-
-        MakeSmallBurnable(inst)
-        MakeSmallPropagator(inst)
 
         return inst
     end
@@ -1147,9 +1141,6 @@ local function MakeHat(name)
             hat_fns.luckytreasure_onupdate(inst, owner)
         end
 
-        MakeMediumBurnable(inst)
-        MakeSmallPropagator(inst)
-
         return inst
     end
 
@@ -1223,6 +1214,9 @@ local function MakeHat(name)
 
         inst:AddComponent("armor")
         inst.components.armor:InitCondition(TUNING.APO_HATS.OX.CONDITION, TUNING.APO_HATS.OX.ABSORPTION)
+
+        inst:AddComponent("damagetyperesist")
+        inst.components.damagetyperesist:AddResist("explosive", inst, TUNING.APO_HATS.OX.DAMAGETYPE_RESIST)
 
         return inst
     end
@@ -1446,9 +1440,6 @@ local function MakeHat(name)
             hat_fns.pirate_onupdate(inst, owner)
         end
 
-        MakeSmallBurnable(inst)
-        MakeSmallPropagator(inst)
-
         return inst
     end
 
@@ -1551,9 +1542,6 @@ local function MakeHat(name)
         inst.components.fueled.fueltype = FUELTYPE.USAGE
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.PITH.PERISHTIME)
         inst.components.fueled:SetDepletedFn(inst.Remove)
-
-        MakeSmallBurnable(inst)
-        MakeSmallPropagator(inst)
 
         return inst
     end

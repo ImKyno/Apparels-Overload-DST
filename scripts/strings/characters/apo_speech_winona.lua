@@ -58,17 +58,29 @@ WINONA.DESCRIBE.EXTRAHEAVYHAT = "Built like a brick outhouse. Weighs about as mu
 
 WINONA.DESCRIBE.FOODBASKETHAT = "Ha! Hilarious!"
 
+WINONA.DESCRIBE.FOODBONUSHAT = "That'd be for improving my daily meals."
+
 WINONA.DESCRIBE.GASHAT = "Keeps acid away."
 
 WINONA.DESCRIBE.GASMASKHAT = "Out with the bad air, in with the good."
+
+WINONA.DESCRIBE.HEALINGBONUSHAT = "That hat'll help you feel right as rain."
 
 WINONA.DESCRIBE.JIAOLIANHAT = "Ha! It's kinda scary!"
 
 WINONA.DESCRIBE.LANTERNBOTTLE = "This will keep the dark at bay."
 
+WINONA.DESCRIBE.LEIF_STALK = "Gnarly."
+
+WINONA.DESCRIBE.LEIF_WALKINGSTICK = "It's my lazy stick."
+
+WINONA.DESCRIBE.LIFESTEALHAT = "Just some high class headwear."
+
 WINONA.DESCRIBE.LUCKYTREASUREHAT = "I ain't no swashbuckler."
 
 WINONA.DESCRIBE.METALPLATEHAT = "Keeps my noggin safe."
+
+WINONA.DESCRIBE.MINOTAURCROWNHAT = "You'd be a real heavy hitter with that."
 
 WINONA.DESCRIBE.OXHAT = "I hope it doesn't mess up my hair."
 
@@ -87,6 +99,8 @@ WINONA.DESCRIBE.PITHHAT = "A hard hat!"
 WINONA.DESCRIBE.PROPELLERHAT = "Clever! Turns a little running into a cooling breeze."
 
 WINONA.DESCRIBE.PUMPKINHEADHAT = "It's cool."
+
+WINONA.DESCRIBE.SANITYDAMAGEHAT = "I don't like headaches."
 
 WINONA.DESCRIBE.SHARK_FIN = "The only kind of fin I wanna see."
 

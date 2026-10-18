@@ -83,11 +83,17 @@ STRINGS.RECIPE_DESC.EXTRAHEAVYHAT = "Sturdy and heavy!"
 STRINGS.NAMES.FOODBASKETHAT = "Tutti-Frutti Hat"
 STRINGS.RECIPE_DESC.FOODBASKETHAT = "I have never followed what people say it is \"fashionable\"."
 
+STRINGS.NAMES.FOODBONUSHAT = "Lunar Woven Garland"
+STRINGS.RECIPE_DESC.FOODBONUSHAT = "A little extra nourishment."
+
 STRINGS.NAMES.GASHAT = "Particulate Purifier"
 STRINGS.RECIPE_DESC.GASHAT = "Keep nasty airborne particulates away!"
 
 STRINGS.NAMES.GASMASKHAT = "Gas Mask"
 STRINGS.RECIPE_DESC.GASMASKHAT = "Makes everything smell like bird."
+
+STRINGS.NAMES.HEALINGBONUSHAT = "Lunar Blossom Headband"
+STRINGS.RECIPE_DESC.HEALINGBONUSHAT = "Let nature mend what ails you."
 
 STRINGS.NAMES.JIAOLIANHAT = "Jiaolian's Mask"
 STRINGS.RECIPE_DESC.JIAOLIANHAT = "Protection against paranormal activity!"
@@ -95,11 +101,21 @@ STRINGS.RECIPE_DESC.JIAOLIANHAT = "Protection against paranormal activity!"
 STRINGS.NAMES.LANTERNBOTTLE = "Bottle Lantern"
 STRINGS.RECIPE_DESC.LANTERNBOTTLE = "Glowing lunar moths in a bottle."
 
+STRINGS.NAMES.LEIF_STALK = "Treeguard Stalk"
+
+STRINGS.NAMES.LEIF_WALKINGSTICK = "Stalking Stick"
+
+STRINGS.NAMES.LIFESTEALHAT = "Soulstealer's Crown"
+STRINGS.RECIPE_DESC.LIFESTEALHAT = "A crown that hungers for blood."
+
 STRINGS.NAMES.LUCKYTREASUREHAT = "Lucky Hat"
 STRINGS.RECIPE_DESC.LUCKYTREASUREHAT = "Sniff out treasures."
 
 STRINGS.NAMES.METALPLATEHAT = "Fancy Helmet"
 STRINGS.RECIPE_DESC.METALPLATEHAT = "Strong, sturdy and classy."
+
+STRINGS.NAMES.MINOTAURCROWNHAT = "Resplendent Guardian Helm"
+STRINGS.RECIPE_DESC.MINOTAURCROWNHAT = "Unleash the fury of a true conqueror."
 
 STRINGS.NAMES.OXHAT = "Horned Helmet"
 STRINGS.RECIPE_DESC.OXHAT = "Shell out for some beefalo protection."
@@ -124,6 +140,9 @@ STRINGS.RECIPE_DESC.PROPELLERHAT = "Running around has never been so refreshing!
 
 STRINGS.NAMES.PUMPKINHEADHAT = "Jack o' Head"
 STRINGS.RECIPE_DESC.PUMPKINHEADHAT = "Better wax before it spoils!"
+
+STRINGS.NAMES.SANITYDAMAGEHAT = "Lunar Crystal Tiara"
+STRINGS.RECIPE_DESC.SANITYDAMAGEHAT = "Share the pain of your body with your mind."
 
 STRINGS.NAMES.SHARK_FIN = "Rockjaw Fin"
 

@@ -16,6 +16,25 @@ AddComponentPostInit("combat", function(self)
         return result
     end
 
+    --[[
+    function self:GetAttacked(...)
+        local inst = self.inst
+        local previous = inst._receiving_combat_damage
+
+        inst._receiving_combat_damage = true
+
+        local result = { _G.pcall(_GetAttacked, self, ...) }
+
+        inst._receiving_combat_damage = previous
+
+        if not result[1] then
+            _G.error(result[2])
+        end
+
+        return _G.unpack(result, 2)
+    end
+    ]]--
+
     local _GetWeapon = self.GetWeapon
 
     function self:GetWeapon(...)

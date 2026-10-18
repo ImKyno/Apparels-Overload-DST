@@ -58,17 +58,29 @@ WARLY.DESCRIBE.EXTRAHEAVYHAT = "A bit too heavy for my taste, but quite sturdy."
 
 WARLY.DESCRIBE.FOODBASKETHAT = "This is magnifique!"
 
+WARLY.DESCRIBE.FOODBONUSHAT = "Food seems to taste better whenever I wear this."
+
 WARLY.DESCRIBE.GASHAT = "Anything to keep acid out of my dinner!"
 
 WARLY.DESCRIBE.GASMASKHAT = "I could use this in the smoke house."
+
+WARLY.DESCRIBE.HEALINGBONUSHAT = "Such pretty flower hat."
 
 WARLY.DESCRIBE.JIAOLIANHAT = "Ah, a halloween mask."
 
 WARLY.DESCRIBE.LANTERNBOTTLE = "Shine on!"
 
+WARLY.DESCRIBE.LEIF_STALK = "Possesses a flavor reminiscent of artichoke hearts."
+
+WARLY.DESCRIBE.LEIF_WALKINGSTICK = "I'm out to forage!"
+
+WARLY.DESCRIBE.LIFESTEALHAT = "An artifact of unparellel power."
+
 WARLY.DESCRIBE.LUCKYTREASUREHAT = "It makes me feel... dangerous."
 
 WARLY.DESCRIBE.METALPLATEHAT = "I prefer a chef hat."
+
+WARLY.DESCRIBE.MINOTAURCROWNHAT = "I'm not an accomplished fighter, but I could be one with this helmet..."
 
 WARLY.DESCRIBE.OXHAT = "Much more waterproof than a chef's hat."
 
@@ -87,6 +99,8 @@ WARLY.DESCRIBE.PITHHAT = "Orange pith?"
 WARLY.DESCRIBE.PROPELLERHAT = "A refreshing breeze without having to stop for a break. Magnifique!"
 
 WARLY.DESCRIBE.PUMPKINHEADHAT = "Trick and neat!"
+
+WARLY.DESCRIBE.SANITYDAMAGEHAT = "Mhmm... makes my head hurt instead of my body."
 
 WARLY.DESCRIBE.SHARK_FIN = "This looks rather blond."
 

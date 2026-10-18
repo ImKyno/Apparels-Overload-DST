@@ -143,9 +143,6 @@ local function fn()
     inst.components.equippable.dapperness = TUNING.DAPPERNESS_SMALL
     inst.components.equippable.walkspeedmult = TUNING.APO_ARMORS.WINDBREAKER.WALKSPEEDMULT.NORMAL
 
-    MakeSmallBurnable(inst)
-    MakeSmallPropagator(inst)
-
     MakeHauntableLaunch(inst)
 
     return inst

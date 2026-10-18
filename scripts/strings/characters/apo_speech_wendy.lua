@@ -58,17 +58,29 @@ WENDY.DESCRIBE.EXTRAHEAVYHAT = "A heavy burden to bear."
 
 WENDY.DESCRIBE.FOODBASKETHAT = "A hat worn during pieces and films."
 
+WENDY.DESCRIBE.FOODBONUSHAT = "The wearer shall eat for good."
+
 WENDY.DESCRIBE.GASHAT = "This hat prevents me from breathing in death."
 
 WENDY.DESCRIBE.GASMASKHAT = "It keeps out the gas, but no the despair."
+
+WENDY.DESCRIBE.HEALINGBONUSHAT = "It eases pain of the body, but not of the heart."
 
 WENDY.DESCRIBE.JIAOLIANHAT = "It is not really that scary."
 
 WENDY.DESCRIBE.LANTERNBOTTLE = "The light of life. Trapped."
 
+WENDY.DESCRIBE.LEIF_STALK = "In death the tree serves me."
+
+WENDY.DESCRIBE.LEIF_WALKINGSTICK = "I am destined to walk this earth alone."
+
+WENDY.DESCRIBE.LIFESTEALHAT = "There is dastardly power within."
+
 WENDY.DESCRIBE.LUCKYTREASUREHAT = "Haughty seadog couture."
 
 WENDY.DESCRIBE.METALPLATEHAT = "It'll protect my head but not my heart."
+
+WENDY.DESCRIBE.MINOTAURCROWNHAT = "I forsee a wave of death."
 
 WENDY.DESCRIBE.OXHAT = "Dashing."
 
@@ -87,6 +99,8 @@ WENDY.DESCRIBE.PITHHAT = "As hard as my existence."
 WENDY.DESCRIBE.PROPELLERHAT = "Even the wind conspires to keep me moving."
 
 WENDY.DESCRIBE.PUMPKINHEADHAT = "You're not so scary."
+
+WENDY.DESCRIBE.SANITYDAMAGEHAT = "My mind shall shatter just like how my heart did."
 
 WENDY.DESCRIBE.SHARK_FIN = "It won't be needing this anymore."
 
