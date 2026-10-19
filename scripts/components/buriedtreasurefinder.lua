@@ -16,6 +16,8 @@ end
 function BuriedTreasureFinder:GetTreasureChance()
     if self.owner == nil then
         return TUNING.APO_MISC.BURIEDTREASUREFINDER.CHANCE.NONE
+    elseif not self.owner:HasTag("player") then
+        return TUNING.APO_MISC.BURIEDTREASUREFINDER.CHANCE.CREATURE
     elseif self.owner:HasAnyTag("pirate", "piratecaptain", "fleetadmiral") then
         return TUNING.APO_MISC.BURIEDTREASUREFINDER.CHANCE.PIRATE
     end

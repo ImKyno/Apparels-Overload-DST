@@ -12,6 +12,7 @@ TUNING.APO_TWEAK_ANTLIONHAT      = GetModConfigData("TWEAK_ANTLIONHAT")
 TUNING.APO_TWEAK_ARMORMARBLE     = GetModConfigData("TWEAK_ARMORMARBLE")
 TUNING.APO_TWEAK_ARMORSLURPER    = GetModConfigData("TWEAK_ARMORSLURPER")
 TUNING.APO_TWEAK_ARMORSNURTLE    = GetModConfigData("TWEAK_ARMORSNURTLE")
+TUNING.APO_TWEAK_ARMORRUINS      = GetModConfigData("TWEAK_ARMORRUINS")
 TUNING.APO_TWEAK_BEARGERVEST     = GetModConfigData("TWEAK_BEARGERVEST")
 TUNING.APO_TWEAK_BEEHAT          = GetModConfigData("TWEAK_BEEHAT")
 TUNING.APO_TWEAK_CATCOONHAT      = GetModConfigData("TWEAK_CATCOONHAT")
@@ -19,6 +20,7 @@ TUNING.APO_TWEAK_COOKIECUTTERHAT = GetModConfigData("TWEAK_COOKIECUTTERHAT")
 TUNING.APO_TWEAK_EARMUFFSHAT     = GetModConfigData("TWEAK_EARMUFFSHAT")
 TUNING.APO_TWEAK_HAWAIIANSHIRT   = GetModConfigData("TWEAK_HAWAIIANSHIRT")
 TUNING.APO_TWEAK_INSPECTACLESHAT = GetModConfigData("TWEAK_INSPECTACLESHAT")
+TUNING.APO_TWEAK_MUSHROOMHAT     = GetModConfigData("TWEAK_MUSHROOMHAT")
 TUNING.APO_TWEAK_RAINHAT         = GetModConfigData("TWEAK_RAINHAT")
 TUNING.APO_TWEAK_REFLECTIVEVEST  = GetModConfigData("TWEAK_REFLECTIVEVEST")
 TUNING.APO_TWEAK_SLURTLEHAT      = GetModConfigData("TWEAK_SLURTLEHAT")
@@ -28,7 +30,7 @@ TUNING.APO_TWEAK_TRUNKVEST_S     = GetModConfigData("TWEAK_TRUNKVEST_S")
 TUNING.APO_TWEAK_TRUNKVEST_W     = GetModConfigData("TWEAK_TRUNKVEST_W")
 TUNING.APO_TWEAK_WINTERHAT       = GetModConfigData("TWEAK_WINTERHAT")
 
-TUNING.APO_TWEAK_FOLLOWER        = true -- GetModConfigData("CLOTHING_FOLLOWER")
+TUNING.APO_TWEAK_FOLLOWER        = GetModConfigData("TWEAK_FOLLOWER")
 TUNING.APO_TWEAK_MANNEQUIN       = GetModConfigData("TWEAK_MANNEQUIN")
 
 TUNING.APO_IS_ABC_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-3322803908") -- Above the Clouds.
@@ -57,8 +59,9 @@ TUNING.APO_MISC =
         CHANCE =
         {
             NONE = -1,
-            PIRATE = 1,
+            CREATURE = 0.33,
             NORMAL = 0.66,
+            PIRATE = 1,
         },
     },
 
@@ -143,6 +146,24 @@ TUNING.APO_MISC =
                 START_RADIUS = -5.0,
                 STRENGTH = 0.16,
             },
+        },
+    },
+
+    MUSHROOM_TO_HATS =
+    {
+        GROUND =
+        {
+            blue_mushroom  = { hat = "blue_mushroomhat",  amount = 2 },
+            green_mushroom = { hat = "green_mushroomhat", amount = 2 },
+            red_mushroom   = { hat = "red_mushroomhat",   amount = 2 },
+        },
+
+        PLANTER =
+        {
+            blue_cap  = { hat = "blue_mushroomhat",  amount = 2 },
+            green_cap = { hat = "green_mushroomhat", amount = 2 },
+            red_cap   = { hat = "red_mushroomhat",   amount = 2 },
+            moon_cap  = { hat = "moon_mushroomhat",  amount = 2 },
         },
     },
 
@@ -320,6 +341,12 @@ TUNING.APO_ARMORS =
         PLANAR_ABSORPTION = 5,
         DAMAGETYPE_RESIST = 0.80,
         SHADOWLEVEL = 1,
+    },
+
+    THULECITE =
+    {
+        COOLDOWN = 15,
+        MODIFIER = 1.25,
     },
 
     TRUNKVEST =

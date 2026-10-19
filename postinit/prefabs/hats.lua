@@ -1,5 +1,19 @@
 local _G = GLOBAL
 
+local HATS_BEE =
+{
+    "beehat",
+    "hivehat",
+}
+
+local HATS_MUSHROOM =
+{
+    "blue_mushroomhat",
+    "green_mushroomhat",
+    "moon_mushroomhat",
+    "red_mushroomhat",
+}
+
 local function HatAntlionPostInit(inst)
     local function OnRepaired(inst, doer, repair_item)
         if doer ~= nil then
@@ -28,12 +42,6 @@ local function HatAntlionPostInit(inst)
         inst.components.repairable.noannounce = true
     end
 end
-
-local HATS_BEE =
-{
-    "beehat",
-    "hivehat",
-}
 
 local function HatBeePostInit(inst)
     inst:AddTag("beefriend")
@@ -133,6 +141,10 @@ local function HatMoonstormGogglesPostInit(inst)
     inst.SCANNABLE_RECIPENAME = "wagstaff_goggles_shoothat"
 end
 
+local function HatMushroomPostInit(inst)
+    inst:AddTag("mushroomsource")
+end
+
 local function HatRainPostInit(inst)
     _G.APOAddEquipCallbacks(inst, function(inst, owner)
         if owner ~= nil then
@@ -149,6 +161,19 @@ local function HatRainPostInit(inst)
             end
         end
     end)
+end
+
+local function HatRuinsPostInit(inst)
+    if not _G.TheWorld.ismastersim then
+        return inst
+    end
+
+    if TUNING.APO_TWEAK_ARMORRUINS then
+        if inst.components.setbonus == nil then
+            inst:AddComponent("setbonus")
+            inst.components.setbonus:SetSetName(_G.EQUIPMENTSETNAMES.THULECITE)
+        end
+    end
 end
 
 local function HatSpiderPostInit(inst)
@@ -304,6 +329,12 @@ if TUNING.APO_TWEAK_EARMUFFSHAT then
     AddPrefabPostInit("earmuffshat", HatEarmuffsPostInit)
 end
 
+if TUNING.APO_TWEAK_MUSHROOMHAT then
+    for k, v in pairs(HATS_MUSHROOM) do
+        AddPrefabPostInit(v, HatMushroomPostInit)
+    end
+end
+
 if TUNING.APO_TWEAK_RAINHAT then
     AddPrefabPostInit("rainhat", HatRainPostInit)
 end
@@ -324,3 +355,4 @@ AddPrefabPostInit("footballhat",          HatFootballPostInit)
 AddPrefabPostInit("goggleshat",           HatGogglesPostInit)
 AddPrefabPostInit("molehat",              HatMolePostInit)
 AddPrefabPostInit("moonstorm_goggleshat", HatMoonstormGogglesPostInit)
+AddPrefabPostInit("ruinshat",             HatRuinsPostInit)

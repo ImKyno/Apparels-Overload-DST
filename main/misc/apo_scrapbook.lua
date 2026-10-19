@@ -63,6 +63,12 @@ if TUNING.APO_TWEAK_ARMORMARBLE then
     ScrapbookData.armormarble.specialinfo = "ARMOR_MARBLE_TWEAK"
 end
 
+if TUNING.APO_TWEAK_ARMORRUINS then
+    ScrapbookData.armorruins.specialinfo = "ARMOR_RUINS_TWEAK"
+    ScrapbookData.ruins_bat.specialinfo = "RUINS_BAT_TWEAK"
+    ScrapbookData.ruinshat.specialinfo = "RUINSHAT_TWEAK"
+end
+
 if TUNING.APO_TWEAK_ARMORSLURPER then
     ScrapbookData.armorslurper.specialinfo = "ARMOR_SLURPER_TWEAK"
 end
@@ -101,6 +107,13 @@ end
 if TUNING.APO_TWEAK_INSPECTACLESHAT then
     RemoveScrapbookDeps(ScrapbookData, { "inspectacleshat" }, { "goggleshat" })
     AddScrapbookDeps(ScrapbookData, { "inspectacleshat" }, { "wagstaff_goggleshat" })
+end
+
+if TUNING.APO_TWEAK_MUSHROOMHAT then
+    ScrapbookData.blue_mushroomhat.specialinfo = "MUSHROOMHAT_TWEAK"
+    ScrapbookData.green_mushroomhat.specialinfo = "MUSHROOMHAT_TWEAK"
+    ScrapbookData.moon_mushroomhat.specialinfo = "MUSHROOMHAT_TWEAK"
+    ScrapbookData.red_mushroomhat.specialinfo = "MUSHROOMHAT_TWEAK"
 end
 
 if TUNING.APO_TWEAK_RAINHAT then

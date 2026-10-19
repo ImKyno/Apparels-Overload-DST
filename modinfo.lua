@@ -174,126 +174,6 @@ local STRINGS =
             },
         },
 
-        TWEAK_ARMORMARBLE =
-        {
-            NAME =
-            {
-                "Marble Suit - Tweaks",
-                pt  = "Armadura de Mármore - Mudanças",
-            },
-
-            HOVER =
-            {
-                "Should the Marble Suit have new features?\nVisit the Mod's Wiki for more information.",
-                pt  = "Permitir que a Armadura de Mármore tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
-            },
-
-            HOVER_OPTIONS =
-            {
-                DISABLED =
-                {
-                    "Default Marble Suit.",
-                    pt  = "Armadura de Mármore Padrão.",
-                },
-
-                ENABLED =
-                {
-                    "Marble Suit will have some new features.",
-                    pt  = "A Armadura de Mármore terá recursos novos.",
-                },
-            },
-        },
-
-        TWEAK_ARMORSLURPER =
-        {
-            NAME =
-            {
-                "Belt of Hunger - Tweaks",
-                pt  = "Cinto da Fome - Mudanças",
-            },
-
-            HOVER =
-            {
-                "Should the Belt of Hunger have new features?\nVisit the Mod's Wiki for more information.",
-                pt  = "Permitir que o Cinto da Fome tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
-            },
-
-            HOVER_OPTIONS =
-            {
-                DISABLED =
-                {
-                    "Default Belt of Hunger.",
-                    pt  = "Cinto da Fome Padrão.",
-                },
-
-                ENABLED =
-                {
-                    "Belt of Hunger will have some new features.",
-                    pt  = "O Cinto da Fome terá recursos novos.",
-                },
-            },
-        },
-
-        TWEAK_ARMORSNURTLE =
-        {
-            NAME =
-            {
-                "Snurtle Shell Armor - Tweaks",
-                pt  = "Concha de Tartareca - Mudanças",
-            },
-
-            HOVER =
-            {
-                "Should the Snurtle Shell Armor have new features?\nVisit the Mod's Wiki for more information.",
-                pt  = "Permitir que a Concha de Tartareca tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
-            },
-
-            HOVER_OPTIONS =
-            {
-                DISABLED =
-                {
-                    "Default Snurtle Shell Armor.",
-                    pt  = "Concha de Tartareca Padrão",
-                },
-
-                ENABLED =
-                {
-                    "Snurtle Shell Armor will have some new features.",
-                    pt  = "A Concha de Tartareca terá novos recursos.",
-                },
-            },
-        },
-
-        TWEAK_BEARGERVEST =
-        {
-            NAME =
-            {
-                "Hibearnation Vest - Tweaks",
-                pt  = "Veste de Hibernação - Mudanças",
-            },
-
-            HOVER =
-            {
-                "Should the Hibearnation Vest have new features?\nVisit the Mod's Wiki for more information.",
-                pt  = "Permitir que a Veste de Hibernação tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
-            },
-
-            HOVER_OPTIONS =
-            {
-                DISABLED =
-                {
-                    "Default Hibearnation Vest.",
-                    pt  = "Veste de Hibernação Padrão",
-                },
-
-                ENABLED =
-                {
-                    "Hibearnation Vest will have some new features.",
-                    pt  = "A Veste de Hibernação terá novos recursos.",
-                },
-            },
-        },
-
         TWEAK_BEEHAT =
         {
             NAME =
@@ -414,36 +294,6 @@ local STRINGS =
             },
         },
 
-        TWEAK_HAWAIIANSHIRT =
-        {
-            NAME =
-            {
-                "Floral Shirt - Tweaks",
-                pt  = "Camiseta Floral - Mudanças",
-            },
-
-            HOVER =
-            {
-                "Should the Floral Shirt have new features?\nVisit the Mod's Wiki for more information.",
-                pt  = "Permitir que a Camiseta Floral tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
-            },
-
-            HOVER_OPTIONS =
-            {
-                DISABLED =
-                {
-                    "Default Floral Shirt.",
-                    pt  = "Camiseta Floral Padrão",
-                },
-
-                ENABLED =
-                {
-                    "Floral Shirt will have some new features.",
-                    pt  = "A Camiseta Floral terá novos recursos.",
-                },
-            },
-        },
-
         TWEAK_INSPECTACLESHAT =
         {
             NAME =
@@ -474,6 +324,36 @@ local STRINGS =
             },
         },
 
+        TWEAK_MUSHROOMHAT =
+        {
+            NAME =
+            {
+                "Mushroom Funcaps - Tweaks",
+                pt  = "Chapéus de Cogumelos - Mudanças",
+            },
+
+            HOVER =
+            {
+                "Should the Mushroom Funcaps have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que os Chapéus de Cogumelos tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Mushroom Funcaps.",
+                    pt  = "Chapéus de Cogumelos Padrões",
+                },
+
+                ENABLED =
+                {
+                    "Mushroom Funcaps will have some new features.",
+                    pt  = "Os Chapéus de Cogumelos terão novos recursos.",
+                },
+            },
+        },
+
         TWEAK_RAINHAT =
         {
             NAME =
@@ -500,36 +380,6 @@ local STRINGS =
                 {
                     "Rain Hat will have some new features.",
                     pt  = "O Chapéu de Chuva terá novos recursos.",
-                },
-            },
-        },
-
-        TWEAK_REFLECTIVEVEST =
-        {
-            NAME =
-            {
-                "Summer Frest - Tweaks",
-                pt  = "Freste de Verão - Mudanças",
-            },
-
-            HOVER =
-            {
-                "Should the Summer Frest have new features?\nVisit the Mod's Wiki for more information.",
-                pt  = "Permitir que o Freste de Verão tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
-            },
-
-            HOVER_OPTIONS =
-            {
-                DISABLED =
-                {
-                    "Default Summer Frest.",
-                    pt  = "Freste de Verão Padrão",
-                },
-
-                ENABLED =
-                {
-                    "Summer Frest will have some new features.",
-                    pt  = "O Freste de Verão terá novos recursos.",
                 },
             },
         },
@@ -590,6 +440,187 @@ local STRINGS =
                 {
                     "Spiderhat will have some new features.",
                     pt  = "O Chapéu de Aranha terá novos recursos.",
+                },
+            },
+        },
+
+        TWEAK_WINTERHAT =
+        {
+            NAME =
+            {
+                "Winter Hat - Tweaks",
+                pt  = "Chapéu de Inverno - Mudanças",
+            },
+
+            HOVER =
+            {
+                "Should the Winter Hat have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que o Chapéu de Inverno tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Winter Hat.",
+                    pt  = "Chapéu de Inverno Padrão",
+                },
+
+                ENABLED =
+                {
+                    "Winter Hat will have some new features.",
+                    pt  = "O Chapéu de Inverno terá novos recursos.",
+                },
+            },
+        },
+
+        -- CLOTHING
+        TWEAK_ARMORSLURPER =
+        {
+            NAME =
+            {
+                "Belt of Hunger - Tweaks",
+                pt  = "Cinto da Fome - Mudanças",
+            },
+
+            HOVER =
+            {
+                "Should the Belt of Hunger have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que o Cinto da Fome tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Belt of Hunger.",
+                    pt  = "Cinto da Fome Padrão.",
+                },
+
+                ENABLED =
+                {
+                    "Belt of Hunger will have some new features.",
+                    pt  = "O Cinto da Fome terá recursos novos.",
+                },
+            },
+        },
+
+        TWEAK_ARMORSNURTLE =
+        {
+            NAME =
+            {
+                "Snurtle Shell Armor - Tweaks",
+                pt  = "Concha de Tartareca - Mudanças",
+            },
+
+            HOVER =
+            {
+                "Should the Snurtle Shell Armor have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que a Concha de Tartareca tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Snurtle Shell Armor.",
+                    pt  = "Concha de Tartareca Padrão",
+                },
+
+                ENABLED =
+                {
+                    "Snurtle Shell Armor will have some new features.",
+                    pt  = "A Concha de Tartareca terá novos recursos.",
+                },
+            },
+        },
+
+        TWEAK_BEARGERVEST =
+        {
+            NAME =
+            {
+                "Hibearnation Vest - Tweaks",
+                pt  = "Veste de Hibernação - Mudanças",
+            },
+
+            HOVER =
+            {
+                "Should the Hibearnation Vest have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que a Veste de Hibernação tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Hibearnation Vest.",
+                    pt  = "Veste de Hibernação Padrão",
+                },
+
+                ENABLED =
+                {
+                    "Hibearnation Vest will have some new features.",
+                    pt  = "A Veste de Hibernação terá novos recursos.",
+                },
+            },
+        },
+
+        TWEAK_HAWAIIANSHIRT =
+        {
+            NAME =
+            {
+                "Floral Shirt - Tweaks",
+                pt  = "Camiseta Floral - Mudanças",
+            },
+
+            HOVER =
+            {
+                "Should the Floral Shirt have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que a Camiseta Floral tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Floral Shirt.",
+                    pt  = "Camiseta Floral Padrão",
+                },
+
+                ENABLED =
+                {
+                    "Floral Shirt will have some new features.",
+                    pt  = "A Camiseta Floral terá novos recursos.",
+                },
+            },
+        },
+
+        TWEAK_REFLECTIVEVEST =
+        {
+            NAME =
+            {
+                "Summer Frest - Tweaks",
+                pt  = "Freste de Verão - Mudanças",
+            },
+
+            HOVER =
+            {
+                "Should the Summer Frest have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que o Freste de Verão tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Summer Frest.",
+                    pt  = "Freste de Verão Padrão",
+                },
+
+                ENABLED =
+                {
+                    "Summer Frest will have some new features.",
+                    pt  = "O Freste de Verão terá novos recursos.",
                 },
             },
         },
@@ -684,32 +715,94 @@ local STRINGS =
             },
         },
 
-        TWEAK_WINTERHAT =
+        -- SET BONUS
+        TWEAK_ARMORMARBLE =
         {
             NAME =
             {
-                "Winter Hat - Tweaks",
-                pt  = "Chapéu de Inverno - Mudanças",
+                "Marble - Set Bonus",
+                pt  = "Mármore - Bônus de Conjunto",
             },
 
             HOVER =
             {
-                "Should the Winter Hat have new features?\nVisit the Mod's Wiki for more information.",
-                pt  = "Permitir que o Chapéu de Inverno tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
+                "Should the Marble Helmet/Suit have a Set Bonus?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que a Armadura/Capacete de Mármore tenha um Bônus de Conjunto?\nVisite a Wiki do Mod para mais informações.",
             },
 
             HOVER_OPTIONS =
             {
                 DISABLED =
                 {
-                    "Default Winter Hat.",
-                    pt  = "Chapéu de Inverno Padrão",
+                    "Default Marble Helmet/Suit.",
+                    pt  = "Armadura/Capacete de Mármore Padrão.",
                 },
 
                 ENABLED =
                 {
-                    "Winter Hat will have some new features.",
-                    pt  = "O Chapéu de Inverno terá novos recursos.",
+                    "Marble Helmet/Suit will have a Set Bonus.",
+                    pt  = "A Armadura/Capacete de Mármore terá um Bônus de Conjunto.",
+                },
+            },
+        },
+
+        TWEAK_ARMORRUINS =
+        {
+            NAME =
+            {
+                "Thulecite - Set Bonus",
+                pt  = "Thulecita - Bônus de Conjunto",
+            },
+
+            HOVER =
+            {
+                "Should the Thulecite Crown/Suit have a Set Bonus?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que a Coroa/Armadura de Thulecita tenha um Bônus de Conjunto?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Thulecite Crown/Suit.",
+                    pt  = "Coroa/Armadura de Thulecita Padrão.",
+                },
+
+                ENABLED =
+                {
+                    "Thulecite Crown/Suit will have a Set Bonus.",
+                    pt  = "A Coroa/Armadura de Thulecita terá um Bônus de Conjunto.",
+                },
+            },
+        },
+
+        -- MISC
+        TWEAK_FOLLOWER =
+        {
+            NAME =
+            {
+                "Creatures - Wear Out",
+                pt  = "Creatures - Desgaste",
+            },
+
+            HOVER =
+            {
+                "Should Clothing and Headwear wear out on Creatures?",
+                pt  = "Permitir que Roupas e Chapéus desgastem se estiverem em Criaturas?",
+            },
+
+            HOVER_OPTIONS = -- THIS OPTION IS BACKWARDS !!!
+            {
+                DISABLED =
+                {
+                    "Clothing and Headwear will not wear out on Creatures.",
+                    pt  = "Roupas e Chapéus não irão desgastar se estiverem em Criaturas.",
+                },
+
+                ENABLED =
+                {
+                    "Default Creatures behaviour.",
+                    pt  = "Comportamento padrão de Criaturas.",
                 },
             },
         },
@@ -942,6 +1035,7 @@ local function GetVanillaOptions()
     local VANILLA_LABEL                 = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA.NAME)
     local VANILLA_HOVER                 = ChooseTranslationTable(STRINGS.SETTINGS.VANILLA.HOVER)
 
+    -- HEADWEAR
     local TWEAK_ANTLIONHAT_LABEL        = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ANTLIONHAT.NAME)
     local TWEAK_ANTLIONHAT_HOVER        = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ANTLIONHAT.HOVER)
     local TWEAK_ANTLIONHAT_OPTIONS      =
@@ -954,70 +1048,6 @@ local function GetVanillaOptions()
         {
             description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
             hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ANTLIONHAT.HOVER_OPTIONS.ENABLED),
-            data                        = true
-        }
-    }
-
-    local TWEAK_ARMORMARBLE_LABEL       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.NAME)
-    local TWEAK_ARMORMARBLE_HOVER       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.HOVER)
-    local TWEAK_ARMORMARBLE_OPTIONS     =
-    {
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.HOVER_OPTIONS.DISABLED),
-            data                        = false
-        },
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.HOVER_OPTIONS.ENABLED),
-            data                        = true
-        }
-    }
-
-    local TWEAK_ARMORSLURPER_LABEL      = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSLURPER.NAME)
-    local TWEAK_ARMORSLURPER_HOVER      = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSLURPER.HOVER)
-    local TWEAK_ARMORSLURPER_OPTIONS    =
-    {
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSLURPER.HOVER_OPTIONS.DISABLED),
-            data                        = false
-        },
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSLURPER.HOVER_OPTIONS.ENABLED),
-            data                        = true
-        }
-    }
-
-    local TWEAK_ARMORSNURTLE_LABEL      = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSNURTLE.NAME)
-    local TWEAK_ARMORSNURTLE_HOVER      = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSNURTLE.HOVER)
-    local TWEAK_ARMORSNURTLE_OPTIONS    =
-    {
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSNURTLE.HOVER_OPTIONS.DISABLED),
-            data                        = false
-        },
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSNURTLE.HOVER_OPTIONS.ENABLED),
-            data                        = true
-        }
-    }
-
-    local TWEAK_BEARGERVEST_LABEL       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEARGERVEST.NAME)
-    local TWEAK_BEARGERVEST_HOVER       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEARGERVEST.HOVER)
-    local TWEAK_BEARGERVEST_OPTIONS     =
-    {
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEEHAT.HOVER_OPTIONS.DISABLED),
-            data                        = false
-        },
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEEHAT.HOVER_OPTIONS.ENABLED),
             data                        = true
         }
     }
@@ -1086,22 +1116,6 @@ local function GetVanillaOptions()
         }
     }
 
-    local TWEAK_HAWAIIANSHIRT_LABEL     = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_HAWAIIANSHIRT.NAME)
-    local TWEAK_HAWAIIANSHIRT_HOVER     = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_HAWAIIANSHIRT.HOVER)
-    local TWEAK_HAWAIIANSHIRT_OPTIONS   =
-    {
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_HAWAIIANSHIRT.HOVER_OPTIONS.DISABLED),
-            data                        = false
-        },
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_HAWAIIANSHIRT.HOVER_OPTIONS.ENABLED),
-            data                        = true
-        }
-    }
-
     local TWEAK_INSPECTACLESHAT_LABEL   = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_INSPECTACLESHAT.NAME)
     local TWEAK_INSPECTACLESHAT_HOVER   = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_INSPECTACLESHAT.HOVER)
     local TWEAK_INSPECTACLESHAT_OPTIONS =
@@ -1118,6 +1132,22 @@ local function GetVanillaOptions()
         }
     }
 
+    local TWEAK_MUSHROOMHAT_LABEL       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MUSHROOMHAT.NAME)
+    local TWEAK_MUSHROOMHAT_HOVER       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MUSHROOMHAT.HOVER)
+    local TWEAK_MUSHROOMHAT_OPTIONS     =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MUSHROOMHAT.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MUSHROOMHAT.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
     local TWEAK_RAINHAT_LABEL         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_RAINHAT.NAME)
     local TWEAK_RAINHAT_HOVER         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_RAINHAT.HOVER)
     local TWEAK_RAINHAT_OPTIONS       =
@@ -1130,22 +1160,6 @@ local function GetVanillaOptions()
         {
             description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
             hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_RAINHAT.HOVER_OPTIONS.ENABLED),
-            data                        = true
-        }
-    }
-
-    local TWEAK_REFLECTIVEVEST_LABEL    = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_REFLECTIVEVEST.NAME)
-    local TWEAK_REFLECTIVEVEST_HOVER    = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_REFLECTIVEVEST.HOVER)
-    local TWEAK_REFLECTIVEVEST_OPTIONS  =
-    {
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_REFLECTIVEVEST.HOVER_OPTIONS.DISABLED),
-            data                        = false
-        },
-        {
-            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_REFLECTIVEVEST.HOVER_OPTIONS.ENABLED),
             data                        = true
         }
     }
@@ -1178,6 +1192,103 @@ local function GetVanillaOptions()
         {
             description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
             hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_SPIDERHAT.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    local TWEAK_WINTERHAT_LABEL         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WINTERHAT.NAME)
+    local TWEAK_WINTERHAT_HOVER         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WINTERHAT.HOVER)
+    local TWEAK_WINTERHAT_OPTIONS       =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WINTERHAT.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WINTERHAT.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    -- CLOTHING
+    local TWEAK_ARMORSLURPER_LABEL      = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSLURPER.NAME)
+    local TWEAK_ARMORSLURPER_HOVER      = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSLURPER.HOVER)
+    local TWEAK_ARMORSLURPER_OPTIONS    =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSLURPER.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSLURPER.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    local TWEAK_ARMORSNURTLE_LABEL      = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSNURTLE.NAME)
+    local TWEAK_ARMORSNURTLE_HOVER      = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSNURTLE.HOVER)
+    local TWEAK_ARMORSNURTLE_OPTIONS    =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSNURTLE.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORSNURTLE.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    local TWEAK_BEARGERVEST_LABEL       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEARGERVEST.NAME)
+    local TWEAK_BEARGERVEST_HOVER       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEARGERVEST.HOVER)
+    local TWEAK_BEARGERVEST_OPTIONS     =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEEHAT.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_BEEHAT.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    local TWEAK_HAWAIIANSHIRT_LABEL     = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_HAWAIIANSHIRT.NAME)
+    local TWEAK_HAWAIIANSHIRT_HOVER     = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_HAWAIIANSHIRT.HOVER)
+    local TWEAK_HAWAIIANSHIRT_OPTIONS   =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_HAWAIIANSHIRT.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_HAWAIIANSHIRT.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    local TWEAK_REFLECTIVEVEST_LABEL    = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_REFLECTIVEVEST.NAME)
+    local TWEAK_REFLECTIVEVEST_HOVER    = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_REFLECTIVEVEST.HOVER)
+    local TWEAK_REFLECTIVEVEST_OPTIONS  =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_REFLECTIVEVEST.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_REFLECTIVEVEST.HOVER_OPTIONS.ENABLED),
             data                        = true
         }
     }
@@ -1230,23 +1341,57 @@ local function GetVanillaOptions()
         }
     }
 
-    local TWEAK_WINTERHAT_LABEL         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WINTERHAT.NAME)
-    local TWEAK_WINTERHAT_HOVER         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WINTERHAT.HOVER)
-    local TWEAK_WINTERHAT_OPTIONS       =
+    -- SET BONUS
+    local TWEAK_ARMORMARBLE_LABEL       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.NAME)
+    local TWEAK_ARMORMARBLE_HOVER       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.HOVER)
+    local TWEAK_ARMORMARBLE_OPTIONS     =
     {
         {
             description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WINTERHAT.HOVER_OPTIONS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.HOVER_OPTIONS.DISABLED),
             data                        = false
         },
         {
             description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
-            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WINTERHAT.HOVER_OPTIONS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORMARBLE.HOVER_OPTIONS.ENABLED),
             data                        = true
         }
     }
 
-    -- THIS OPTION IS BACKWARDS !!!
+    local TWEAK_ARMORRUINS_LABEL        = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORRUINS.NAME)
+    local TWEAK_ARMORRUINS_HOVER        = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORRUINS.HOVER)
+    local TWEAK_ARMORRUINS_OPTIONS      =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORRUINS.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_ARMORRUINS.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    -- MISC
+    -- THESE OPTION ARE BACKWARDS !!!
+    local TWEAK_FOLLOWER_LABEL         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_FOLLOWER.NAME)
+    local TWEAK_FOLLOWER_HOVER         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_FOLLOWER.HOVER)
+    local TWEAK_FOLLOWER_OPTIONS       =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_FOLLOWER.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_FOLLOWER.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
     local TWEAK_MANNEQUIN_LABEL         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MANNEQUIN.NAME)
     local TWEAK_MANNEQUIN_HOVER         = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MANNEQUIN.HOVER)
     local TWEAK_MANNEQUIN_OPTIONS       =
@@ -1298,6 +1443,13 @@ local function GetVanillaOptions()
             label                       = TWEAK_INSPECTACLESHAT_LABEL,
             hover                       = TWEAK_INSPECTACLESHAT_HOVER,
             options                     = TWEAK_INSPECTACLESHAT_OPTIONS,
+            default                     = true
+        },
+        {
+            name                        = "TWEAK_MUSHROOMHAT",
+            label                       = TWEAK_MUSHROOMHAT_LABEL,
+            hover                       = TWEAK_MUSHROOMHAT_HOVER,
+            options                     = TWEAK_MUSHROOMHAT_OPTIONS,
             default                     = true
         },
         {
@@ -1385,13 +1537,6 @@ local function GetVanillaOptions()
             default                     = true
         },
         {
-            name                        = "TWEAK_ARMORMARBLE",
-            label                       = TWEAK_ARMORMARBLE_LABEL,
-            hover                       = TWEAK_ARMORMARBLE_HOVER,
-            options                     = TWEAK_ARMORMARBLE_OPTIONS,
-            default                     = true
-        },
-        {
             name                        = "TWEAK_TRUNKVEST_W",
             label                       = TWEAK_TRUNKVEST_W_LABEL,
             hover                       = TWEAK_TRUNKVEST_W_HOVER,
@@ -1418,6 +1563,34 @@ local function GetVanillaOptions()
             hover                       = SEPARATOR_HOVER,
             options                     = NONE_OPTIONS,
             default                     = false
+        },
+        {
+            name                        = "TWEAK_ARMORMARBLE",
+            label                       = TWEAK_ARMORMARBLE_LABEL,
+            hover                       = TWEAK_ARMORMARBLE_HOVER,
+            options                     = TWEAK_ARMORMARBLE_OPTIONS,
+            default                     = true
+        },
+        {
+            name                        = "TWEAK_ARMORRUINS",
+            label                       = TWEAK_ARMORRUINS_LABEL,
+            hover                       = TWEAK_ARMORRUINS_HOVER,
+            options                     = TWEAK_ARMORRUINS_OPTIONS,
+            default                     = true
+        },
+        {
+            name                        = "SEPARATOR",
+            label                       = SEPARATOR_LABEL,
+            hover                       = SEPARATOR_HOVER,
+            options                     = NONE_OPTIONS,
+            default                     = false
+        },
+        {
+            name                        = "TWEAK_FOLLOWER",
+            label                       = TWEAK_FOLLOWER_LABEL,
+            hover                       = TWEAK_FOLLOWER_HOVER,
+            options                     = TWEAK_FOLLOWER_OPTIONS,
+            default                     = true
         },
         {
             name                        = "TWEAK_MANNEQUIN",

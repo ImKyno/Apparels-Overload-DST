@@ -51,6 +51,11 @@ This armor is durable but heavy, and slows its wearer.
 When paired with Marble Helmet damage taken becomes damage over time when health is below 50%.
 ]]
 
+SPECIALINFO.ARMOR_RUINS_TWEAK =
+[[
+When paired with Thulecite Crown increases Thulecite Club damage by 25% and allows it to perform a special attack.
+]]
+
 SPECIALINFO.ARMOR_SLURPER_TWEAK =
 [[
 Increases hunger by 100 points and hunger rate is slowed by 50% when worn.
@@ -264,6 +269,13 @@ SPECIALINFO.MINOTAURCROWNHAT =
 Increases movement speed by 10%, damage and attack speed by 25% when worn.
 ]]
 
+SPECIALINFO.MUSHROOMHAT_TWEAK =
+[[
+Reduces hunger by 25%. Periodically Spawns Mushroom Spores.
+
+Increases the yield of mushrooms collected.
+]]
+
 SPECIALINFO.OXHAT =
 [[
 Makes the wearer friendly to Beefalo in heat.
@@ -311,6 +323,16 @@ Can be waxed to last forever.
 SPECIALINFO.RAINHAT_TWEAK =
 [[
 Doubles the yield of fish when worn.
+]]
+
+SPECIALINFO.RUINS_BAT_TWEAK =
+[[
+When paired with Thulecite Suit and Thulecite Crown it's damage is increased by 25% and can perform a special attack.
+]]
+
+SPECIALINFO.RUINSHAT_TWEAK =
+[[
+When paired with Thulecite Suit increases Thulecite Club damage by 25% and allows it to perform a special attack.
 ]]
 
 SPECIALINFO.REFLECTIVEVEST_TWEAK =

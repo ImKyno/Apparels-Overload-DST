@@ -51,7 +51,7 @@ end
 
 local function ArmorMarblePostInit(inst)
     if not _G.TheWorld.ismastersim then
-        return
+        return inst
     end
 
     if inst.components.setbonus == nil then

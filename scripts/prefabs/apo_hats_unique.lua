@@ -825,6 +825,11 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.minotaurcrown_getsetbonusequip = function(inst, owner)
+        local body = owner.components.inventory ~= nil and owner.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY) or nil
+        return body ~= nil and body.prefab == "armorruins" and body or nil
+    end
+
     hat_fns.minotaurcrown_onequip = function(inst, owner)
         hat_fns.simple_onequip(inst, owner)
 
@@ -879,6 +884,9 @@ local function MakeHat(name)
 
         inst:AddComponent("shadowlevel")
         inst.components.shadowlevel:SetDefaultLevel(TUNING.APO_HATS.MINOTAURCROWN.SHADOWLEVEL)
+
+        inst:AddComponent("setbonus")
+        inst.components.setbonus:SetSetName(EQUIPMENTSETNAMES.THULECITE)
 
         return inst
     end
