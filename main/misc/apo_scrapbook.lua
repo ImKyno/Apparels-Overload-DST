@@ -54,18 +54,86 @@ local function RemoveScrapbookDeps(data, prefabs, deps)
 end
 
 -- Tweaks to Vanilla content.
+if TUNING.APO_TWEAK_ANTLIONHAT then
+    ScrapbookData.antlionhat.repairitems = { "townportaltalisman" }
+    ScrapbookData.antlionhat.finiteuses = TUNING.APO_HATS.ANTLION.USES
+end
+
 if TUNING.APO_TWEAK_ARMORMARBLE then
-    ScrapbookData.armormarble.specialinfo = "ARMOR_MARBLE"
+    ScrapbookData.armormarble.specialinfo = "ARMOR_MARBLE_TWEAK"
+end
+
+if TUNING.APO_TWEAK_ARMORSLURPER then
+    ScrapbookData.armorslurper.specialinfo = "ARMOR_SLURPER_TWEAK"
+end
+
+if TUNING.APO_TWEAK_ARMORSNURTLE then
+    ScrapbookData.armorsnurtleshell.specialinfo = "ARMOR_SNURTLE_TWEAK"
 end
 
 if TUNING.APO_TWEAK_BEEHAT then
-    ScrapbookData.beehat.specialinfo = "BEEHAT"
-    ScrapbookData.hivehat.specialinfo = "HIVEHAT"
+    ScrapbookData.beehat.specialinfo = "BEEHAT_TWEAK"
+    ScrapbookData.hivehat.specialinfo = "HIVEHAT_TWEAK"
+end
+
+if TUNING.APO_TWEAK_BEARGERVEST then
+    ScrapbookData.beargervest.specialinfo = "BEARGERVEST_TWEAK"
+end
+
+if TUNING.APO_TWEAK_CATCOONHAT then
+    ScrapbookData.catcoonhat.specialinfo = "CATCOONHAT_TWEAK"
+end
+
+if TUNING.APO_TWEAK_COOKIECUTTERHAT then
+    ScrapbookData.cookiecutterhat.damage = TUNING.ARMORBRAMBLE_DMG
+    ScrapbookData.cookiecutterhat.specialinfo = "COOKIECUTTERHAT_TWEAK"
+end
+
+if TUNING.APO_TWEAK_EARMUFFSHAT then
+    ScrapbookData.earmuffshat.specialinfo = "EARMUFFSHAT_TWEAK"
+end
+
+if TUNING.APO_TWEAK_HAWAIIANSHIRT then
+    ScrapbookData.hawaiianshirt.repairitems = { "cactus_flower" }
+    ScrapbookData.hawaiianshirt.specialinfo = "HAWAIIANSHIRT_TWEAK"
 end
 
 if TUNING.APO_TWEAK_INSPECTACLESHAT then
     RemoveScrapbookDeps(ScrapbookData, { "inspectacleshat" }, { "goggleshat" })
     AddScrapbookDeps(ScrapbookData, { "inspectacleshat" }, { "wagstaff_goggleshat" })
+end
+
+if TUNING.APO_TWEAK_RAINHAT then
+    ScrapbookData.rainhat.specialinfo = "RAINHAT_TWEAK"
+end
+
+if TUNING.APO_TWEAK_REFLECTIVEVEST then
+    ScrapbookData.reflectivevest.specialinfo = "REFLECTIVEVEST_TWEAK"
+end
+
+if TUNING.APO_TWEAK_SLURTLEHAT then
+    ScrapbookData.slurtlehat.specialinfo = "SLURTLEHAT_TWEAK"
+end
+
+if TUNING.APO_TWEAK_SPIDERHAT then
+    ScrapbookData.spiderhat.fueledmax = TUNING.APO_HATS.SPIDER.PERISHTIME
+    ScrapbookData.spiderhat.specialinfo = "SPIDERHAT_TWEAK"
+end
+
+if TUNING.APO_TWEAK_SWEATERVEST then
+    ScrapbookData.sweatervest.specialinfo = "SWEATERVEST_TWEAK"
+end
+
+if TUNING.APO_TWEAK_TRUNKVEST_S then
+    ScrapbookData.trunkvest_summer.specialinfo = "TRUNKVEST_TWEAK"
+end
+
+if TUNING.APO_TWEAK_TRUNKVEST_W then
+    ScrapbookData.trunkvest_winter.specialinfo = "TRUNKVEST_TWEAK"
+end
+
+if TUNING.APO_TWEAK_WINTERHAT then
+    ScrapbookData.winterhat.specialinfo = "WINTERHAT_TWEAK"
 end
 
 if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then

@@ -24,6 +24,54 @@ function APORecipeAlreadyExists(...)
     return false
 end
 
+function APOAddEquipCallbacks(inst, onequip_extra_pre_fn, onequip_extra_post_fn)
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    if inst.components.equippable ~= nil then
+        local _onequipfn = inst.components.equippable.onequipfn
+    
+        if _onequipfn ~= nil then
+            inst.components.equippable.onequipfn = function(inst, owner, ...)
+                if onequip_extra_pre_fn ~= nil then
+                    onequip_extra_pre_fn(inst, owner, ...)
+                end
+
+                _onequipfn(inst, owner, ...)
+
+                if onequip_extra_post_fn ~= nil then
+                    onequip_extra_post_fn(inst, owner, ...)
+                end
+            end
+        end
+    end
+end
+
+function APOAddUnequipCallbacks(inst, onunequip_extra_pre_fn, onunequip_extra_post_fn)
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    if inst.components.equippable ~= nil then
+        local _onunequipfn = inst.components.equippable.onunequipfn
+    
+        if _onunequipfn ~= nil then
+            inst.components.equippable.onunequipfn = function(inst, owner, ...)
+                if onunequip_extra_pre_fn ~= nil then
+                    onunequip_extra_pre_fn(inst, owner, ...)
+                end
+
+                _onunequipfn(inst, owner, ...)
+
+                if onunequip_extra_post_fn ~= nil then
+                    onunequip_extra_post_fn(inst, owner, ...)
+                end
+            end
+        end
+    end
+end
+
 function APOAbsorbTemperatureDamage(inst, damage, damage_per_use, tag)
     if damage <= 0 or damage_per_use == nil or damage_per_use <= 0 then
         return damage
@@ -67,13 +115,17 @@ function APOAbsorbTemperatureDamage(inst, damage, damage_per_use, tag)
                         item.components.finiteuses:Use(uses)
                         damage = damage - absorbed
                     end
-                elseif item.components.armor ~= nil
-                    and not item.components.armor:IsIndestructible() then
+                elseif item.components.armor ~= nil and not item.components.armor:IsIndestructible() then
+                    local absorbed = math.min(damage, item.components.armor.condition * item_damage_per_use)
 
-                    local armor = item.components.armor
-                    local absorbed = math.min(damage, armor.condition * item_damage_per_use)
+                    item.components.armor:TakeDamage(absorbed / item_damage_per_use)
+                    damage = damage - absorbed
+                elseif item.components.perishable ~= nil and item.components.perishable:IsPerishing() then
+                    local absorbed = math.min(damage, item_damage_per_use)
+                    local perish_damage = item.perish_damage or 0.01
+                    local perish_percent = absorbed / (item_damage_per_use) * perish_damage
 
-                    armor:TakeDamage(absorbed / item_damage_per_use)
+                    item.components.perishable:ReducePercent(perish_percent)
                     damage = damage - absorbed
                 end
             end

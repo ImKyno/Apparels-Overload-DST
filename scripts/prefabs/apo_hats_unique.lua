@@ -362,13 +362,10 @@ local function MakeHat(name)
 
         if inst.components.hunger ~= nil then
             local current_hunger = inst.hunger_percent or inst.components.hunger:GetPercent()
-            local modifier = TUNING.APO_HATS.FOODBASKET.HUNGER_MODIFIER
-
             inst.hunger_percent = nil
 
             inst.components.hunger:SetMax(inst.components.hunger.max + bonus)
             inst.components.hunger:SetPercent(current_hunger)
-            inst.components.hunger.burnratemodifiers:SetModifier(inst, modifier, "foodbaskethat")
         end
 
         return true
@@ -381,12 +378,10 @@ local function MakeHat(name)
 
         if inst.components.hunger ~= nil then
             local current_hunger = inst.hunger_percent or inst.components.hunger:GetPercent()
-
             inst.hunger_percent = nil
 
             inst.components.hunger:SetMax(inst.components.hunger.max - inst.foodbasket_bonushunger)
             inst.components.hunger:SetPercent(current_hunger)
-            inst.components.hunger.burnratemodifiers:RemoveModifier(inst, "foodbaskethat")
         end
 
         inst.foodbasket_bonushunger = nil
@@ -397,8 +392,13 @@ local function MakeHat(name)
 
         if owner ~= nil then
             local bonus = TUNING.APO_HATS.FOODBASKET.BONUS
+            local modifier = TUNING.APO_HATS.FOODBASKET.HUNGER_MODIFIER
  
             hat_fns.foodbasket_onapplybonus(owner, bonus)
+
+            if owner.components.hunger ~= nil then
+                owner.components.hunger.burnratemodifiers:SetModifier(inst, modifier, "foodbaskethat")
+            end
         end
     end
 
@@ -407,6 +407,10 @@ local function MakeHat(name)
 
         if owner ~= nil then
             hat_fns.foodbasket_onremovebonus(owner)
+
+            if owner.components.hunger ~= nil then
+                owner.components.hunger.burnratemodifiers:RemoveModifier(inst, "foodbaskethat")
+            end
         end
     end
 

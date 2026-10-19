@@ -106,7 +106,7 @@ APOAddRecipe(ABCEnabled or IASEnabled, "armor_obsidian",
 
 APOAddRecipe(ABCEnabled or IASEnabled, "armor_seashell",
     {
-        Ingredient("slurtle_shellpieces", 10),
+        Ingredient("slurtle_shellpieces", 6),
         Ingredient("kelp", 2),
         Ingredient("rope", 2),
     },

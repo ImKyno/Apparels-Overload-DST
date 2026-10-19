@@ -30,3 +30,9 @@ function USEITEM.fuel(inst, doer, target, actions, right, ...)
         end
     end
 end
+
+AddComponentAction("USEITEM", "inventoryitem", function(inst, doer, target, actions, right)
+    if inst:HasTag("townportaltalisman") and target:HasTag("turfhat") then
+        _G.RemoveByValue(actions, ACTIONS.STORE)
+    end
+end)

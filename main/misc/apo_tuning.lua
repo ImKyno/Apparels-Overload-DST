@@ -7,9 +7,27 @@ TUNING.APO_DEBUG_MODE = true -- Turn off on releases.
 TUNING.APO_DEFAULT_FLOATER = { "med", nil, 0.65 }
 
 TUNING.APO_SCRAPBOOK             = GetModConfigData("MOD_SCRAPBOOK")
+
+TUNING.APO_TWEAK_ANTLIONHAT      = GetModConfigData("TWEAK_ANTLIONHAT")
 TUNING.APO_TWEAK_ARMORMARBLE     = GetModConfigData("TWEAK_ARMORMARBLE")
+TUNING.APO_TWEAK_ARMORSLURPER    = GetModConfigData("TWEAK_ARMORSLURPER")
+TUNING.APO_TWEAK_ARMORSNURTLE    = GetModConfigData("TWEAK_ARMORSNURTLE")
+TUNING.APO_TWEAK_BEARGERVEST     = GetModConfigData("TWEAK_BEARGERVEST")
 TUNING.APO_TWEAK_BEEHAT          = GetModConfigData("TWEAK_BEEHAT")
+TUNING.APO_TWEAK_CATCOONHAT      = GetModConfigData("TWEAK_CATCOONHAT")
+TUNING.APO_TWEAK_COOKIECUTTERHAT = GetModConfigData("TWEAK_COOKIECUTTERHAT")
+TUNING.APO_TWEAK_EARMUFFSHAT     = GetModConfigData("TWEAK_EARMUFFSHAT")
+TUNING.APO_TWEAK_HAWAIIANSHIRT   = GetModConfigData("TWEAK_HAWAIIANSHIRT")
 TUNING.APO_TWEAK_INSPECTACLESHAT = GetModConfigData("TWEAK_INSPECTACLESHAT")
+TUNING.APO_TWEAK_RAINHAT         = GetModConfigData("TWEAK_RAINHAT")
+TUNING.APO_TWEAK_REFLECTIVEVEST  = GetModConfigData("TWEAK_REFLECTIVEVEST")
+TUNING.APO_TWEAK_SLURTLEHAT      = GetModConfigData("TWEAK_SLURTLEHAT")
+TUNING.APO_TWEAK_SPIDERHAT       = GetModConfigData("TWEAK_SPIDERHAT")
+TUNING.APO_TWEAK_SWEATERVEST     = GetModConfigData("TWEAK_SWEATERVEST")
+TUNING.APO_TWEAK_TRUNKVEST_S     = GetModConfigData("TWEAK_TRUNKVEST_S")
+TUNING.APO_TWEAK_TRUNKVEST_W     = GetModConfigData("TWEAK_TRUNKVEST_W")
+TUNING.APO_TWEAK_WINTERHAT       = GetModConfigData("TWEAK_WINTERHAT")
+
 TUNING.APO_TWEAK_FOLLOWER        = true -- GetModConfigData("CLOTHING_FOLLOWER")
 TUNING.APO_TWEAK_MANNEQUIN       = GetModConfigData("TWEAK_MANNEQUIN")
 
@@ -42,6 +60,11 @@ TUNING.APO_MISC =
             PIRATE = 1,
             NORMAL = 0.66,
         },
+    },
+
+    CACTUS_FLOWER =
+    {
+        REPAIR_VALUE = 0.50,
     },
 
     DAMAGEOVERTIME =
@@ -154,6 +177,11 @@ TUNING.APO_MISC =
         "multithrust_pre",
         "helmsplitter_pre",
     },
+
+    TOWNPORTALTALISMAN =
+    {
+        REPAIR_VALUE = 100, -- 100 Uses.
+    },
 }
 
 TUNING.APO_ARMORS =
@@ -168,6 +196,18 @@ TUNING.APO_ARMORS =
         TAGS =
         {
             "bee",
+        },
+    },
+
+    BEARGERVEST =
+    {
+        BONUS = 50,
+
+        SLEEPINGBAG =
+        {
+            HEALTH = 1.25,
+            HUNGER = 0.25,
+            SANITY = 1.25, 
         },
     },
 
@@ -187,6 +227,12 @@ TUNING.APO_ARMORS =
     {
         CONDITION = 250,
         ABSORPTION = 0.60,
+    },
+
+    HAWAIIANSHIRT =
+    {
+        OVERHEAT_DAMAGE = 5,
+        PERISH_DAMAGE = 0.03,
     },
 
     LIMESTONE =
@@ -223,11 +269,22 @@ TUNING.APO_ARMORS =
         HEAT = 15,
     },
 
+    REFLECTIVEVEST =
+    {
+        BONUS = 15,
+    },
+
     SEASHELL =
     {
         CONDITION = 625,
         ABSORPTION = 0.70,
-        DAMAGETYPE_RESIST = 0.85,
+        DAMAGETYPE_RESIST = 0.80,
+    },
+
+    SLURPER =
+    {
+        BONUS = 100,
+        HUNGER_MODIFIER = 0.50,
     },
 
     SNAKESKIN =
@@ -246,6 +303,16 @@ TUNING.APO_ARMORS =
         },
     },
 
+    SNURTLE =
+    {
+        DAMAGETYPE_RESIST = 0.95,
+    },
+
+    SWEATERVEST =
+    {
+        BONUS = 50,
+    },
+
     TAR =
     {
         CONDITION = 525,
@@ -253,6 +320,12 @@ TUNING.APO_ARMORS =
         PLANAR_ABSORPTION = 5,
         DAMAGETYPE_RESIST = 0.80,
         SHADOWLEVEL = 1,
+    },
+
+    TRUNKVEST =
+    {
+        WALKSPEEDMULT = 1.15,
+        HUNGER_MODIFIER = 0.85,
     },
 
     VORTEX =
@@ -302,6 +375,11 @@ TUNING.APO_HATS =
         WALKSPEEDMULT = 1.25,
     },
 
+    ANTLION =
+    {
+        USES = 1000,
+    },
+
     ANTMASK =
     {
         CONDITION = 450,
@@ -344,7 +422,7 @@ TUNING.APO_HATS =
     CAPTAIN =
     {
         PERISHTIME = 480 * 3,
-        HUNGER_MODIFIER = 0.70,
+        HUNGER_MODIFIER = 0.75,
     },
 
     CARNIVAL_HOST =
@@ -352,6 +430,11 @@ TUNING.APO_HATS =
         PERISHTIME = 480 * 5,
         WALKSPEEDMULT = 1.20,
         LUCK = 2,
+    },
+
+    CATCOON =
+    {
+        HUNGER_MODIFIER = 0.85,
     },
 
     DOUBLE_UMBRELLA =
@@ -369,7 +452,7 @@ TUNING.APO_HATS =
     FOODBASKET =
     {
         BONUS = 50,
-        HUNGER_MODIFIER = 0.25,
+        HUNGER_MODIFIER = 0.75,
     },
 
     FOODBONUS =
@@ -514,9 +597,24 @@ TUNING.APO_HATS =
         LUCK = 2.0,
     },
 
+    SLURTLE =
+    {
+        DAMAGETYPE_RESIST = 0.95,
+    },
+
     SNAKESKIN =
     {
         PERISHTIME = 480 * 8,
+    },
+
+    SPIDER =
+    {
+        PERISHTIME = 360,
+
+        MODIFIERS =
+        {
+            DAMAGE = 1.25,
+        },
     },
 
     THUNDER =
@@ -615,6 +713,11 @@ TUNING.APO_HATS =
             DAMAGE = 1.25,
             HEALTH = 1.25,
         },
+    },
+
+    WINTER =
+    {
+        BONUS = 15,
     },
 }
 
