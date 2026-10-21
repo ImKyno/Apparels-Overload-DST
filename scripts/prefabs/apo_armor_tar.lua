@@ -45,6 +45,12 @@ local function OnUnequip(inst, owner)
     end
 end
 
+local function OnRepaired(inst, doer, repair_item)
+    if doer ~= nil then
+        doer:PushEvent("repair")
+    end
+end
+
 local function fn()
     local inst = CreateEntity()
 
@@ -81,9 +87,6 @@ local function fn()
     inst:AddComponent("shadowlevel")
     inst.components.shadowlevel:SetDefaultLevel(TUNING.APO_ARMORS.TAR.SHADOWLEVEL)
 
-    inst:AddComponent("insulator")
-    inst.components.insulator:SetInsulation(TUNING.INSULATION_MED)
-
     inst:AddComponent("armor")
     inst.components.armor:InitCondition(TUNING.APO_ARMORS.TAR.CONDITION, TUNING.APO_ARMORS.TAR.ABSORPTION)
 
@@ -97,7 +100,6 @@ local function fn()
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
-    inst.components.equippable.insulated = true
 
     MakeHauntableLaunch(inst)
     MakeCraftingMaterialRecycler(inst, { gelblob_bottle = "messagebottleempty" })

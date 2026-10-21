@@ -1,7 +1,85 @@
 local _G = GLOBAL
 
+-- Spectoggles Warnings, this should apply to all wagstaff goggles.
+local function OnResetGogglesWarnings(inst)
+    for _, warning in pairs(inst.active_goggles_warnings) do
+        if warning:IsValid() then
+            warning:Remove()
+        end
+    end
+
+    inst.active_goggles_warnings = {}
+end
+
+local function OnUpdateGogglesWarnings(inst)
+    local disable = inst.replica.inventory ~= nil and not inst.replica.inventory:IsVisible()
+
+    if not disable and inst.replica.inventory ~= nil and inst.replica.inventory:EquipHasTag("goggles_wagstaff") then
+        local old_warnings = {}
+
+        for danger, warning in pairs(inst.active_goggles_warnings) do
+            old_warnings[danger] = warning
+        end
+
+        local x, y, z = inst.Transform:GetWorldPosition()
+
+        local CANT_TAGS = TUNING.APO_HATS.WAGSTAFF_GOGGLES.DANGER.CANT_TAGS
+        local MUST_TAGS = TUNING.APO_HATS.WAGSTAFF_GOGGLES.DANGER.MUST_TAGS
+        local MUST_ONEOF_TAGS = TUNING.APO_HATS.WAGSTAFF_GOGGLES.DANGER.MUST_ONEOF_TAGS
+
+        local dangers = _G.TheSim:FindEntities(x, y, z, 30, MUST_TAGS, CANT_TAGS, MUST_ONEOF_TAGS)
+
+        for _, danger in ipairs(dangers) do
+            if not _G.IsEntityDead(danger, true) then
+                if inst.active_goggles_warnings[danger] == nil then
+                    local fx = _G.SpawnPrefab("wagstaff_goggleshat_danger")
+
+                    if fx ~= nil then
+                        fx.entity:SetParent(danger.entity)
+                        inst.active_goggles_warnings[danger] = fx
+                    end
+                else
+                    old_warnings[danger] = nil
+                end
+            end
+        end
+
+        for danger, warning in pairs(old_warnings) do
+            inst.active_goggles_warnings[danger] = nil
+
+            if warning:IsValid() then
+                _G.ErodeAway(warning, 0.5)
+            end
+        end
+    elseif _G.next(inst.active_goggles_warnings) ~= nil then
+        OnResetGogglesWarnings(inst)
+    end
+end
+
+local function OnDisableGogglesWarnings(inst)
+    if inst.goggles_warnings_task ~= nil then
+        inst.goggles_warnings_task:Cancel()
+        inst.goggles_warnings_task = nil
+    end
+
+    OnResetGogglesWarnings(inst)
+end
+
+local function OnEnableGogglesWarnings(inst)
+    if inst.player_classified ~= nil then
+        inst:ListenForEvent("playerdeactivated", OnDisableGogglesWarnings)
+
+        if inst.goggles_warnings_task == nil then
+            inst.goggles_warnings_task = inst:DoPeriodicTask(0.1, OnUpdateGogglesWarnings)
+        end
+    else
+        inst:RemoveEventCallback("playeractivated", OnEnableGogglesWarnings)
+    end
+end
+
+-- Infroggles Vision.
 local function OnApplyHeatVision(ent)
-    if ent == _G.TheWorld then
+    if ent == _G.TheWorld or ent:HasAnyTag("noheatvision") then
         return
     end
 
@@ -88,7 +166,10 @@ local function PlayerPostInit(inst)
     inst.healthregenactive:set(false)
 
     if not _G.TheNet:IsDedicated() then
+        inst.active_goggles_warnings = {}
+
         inst:ListenForEvent("playeractivated", OnPlayerActivated)
+        inst:ListenForEvent("playeractivated", OnEnableGogglesWarnings)
         inst:ListenForEvent("playeractivated", OnEnableHeatVision)
     end
 
@@ -96,3 +177,6 @@ local function PlayerPostInit(inst)
 end
 
 AddPlayerPostInit(PlayerPostInit)
+
+-- Winona starts the game with the Spectoggles.
+table.insert(TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.WINONA, 2, "wagstaff_goggleshat")

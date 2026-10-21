@@ -90,9 +90,8 @@ local function fn()
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
-    inst.components.equippable.insulated = true
 
-    MakeSmallBurnable(inst, TUNING.LARGE_BURNTIME)
+    MakeSmallBurnable(inst, TUNING.SMALL_BURNTIME)
     MakeSmallPropagator(inst)
 
     MakeHauntableLaunch(inst)

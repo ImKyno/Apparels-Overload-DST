@@ -71,6 +71,7 @@ local INIT_POSTINIT_PREFABS =
     "sleepcloud",
     "sporecloud",
     "sweatervest",
+    "tentacle",
     "townportaltalisman",
     "trunkvest",
     "weaponlowpriority",

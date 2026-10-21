@@ -23,6 +23,24 @@ local function OnBlocked(owner)
     end
 end
 
+local function OnUpdate(inst)
+    if inst.components.armor ~= nil then
+        inst.components.armor:SetPercent(inst.components.fueled:GetPercent())
+    end
+end
+
+local function OnTakeDamage(inst, damage_amount, absorbed, leftover)
+    if inst.components.armor ~= nil and inst.components.fueled ~= nil then
+        local absorbed = damage_amount * TUNING.APO_ARMORS.WEEVOLE.ABSORPTION
+        local absorbed_dmg = absorbed / inst.components.armor.maxcondition
+
+        local percent = inst.components.fueled:GetPercent()
+        local newpercent = percent - absorbed_dmg
+
+        inst.components.fueled:SetPercent(newpercent)
+    end
+end
+
 local function OnKilled(owner, data)
     if owner ~= nil and data ~= nil then
         local victim = data.victim
@@ -56,6 +74,10 @@ local function OnEquip(inst, owner)
         inst:ListenForEvent("blocked", OnBlocked, owner)
 
         owner:ListenForEvent("killed", OnKilled)
+
+        if inst.components.fueled ~= nil then
+            inst.components.fueled:StartConsuming()
+        end
     end
 end
 
@@ -72,6 +94,18 @@ local function OnUnequip(inst, owner)
         inst:RemoveEventCallback("blocked", OnBlocked, owner)
 
         owner:RemoveEventCallback("killed", OnKilled)
+
+        if inst.components.fueled ~= nil then
+            inst.components.fueled:StopConsuming()
+        end
+    end
+end
+
+local function OnEquipToModel(inst, owner, from_ground)
+    if owner ~= nil then
+        if inst.components.fueled ~= nil then
+            inst.components.fueled:StopConsuming()
+        end
     end
 end
 
@@ -107,16 +141,22 @@ local function fn()
     inst:AddComponent("waterproofer")
     inst.components.waterproofer.effectiveness = TUNING.WATERPROOFNESS_MED
 
-    inst:AddComponent("fuel")
-    inst.components.fuel.fuelvalue = TUNING.LARGE_FUEL
-
     inst:AddComponent("armor")
     inst.components.armor:InitCondition(TUNING.APO_ARMORS.WEEVOLE.CONDITION, TUNING.APO_ARMORS.WEEVOLE.ABSORPTION)
+    inst.components.armor.ontakedamage = OnTakeDamage
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
+    inst.components.equippable:SetOnEquipToModel(OnEquipToModel)
+
+    inst:AddComponent("fueled")
+    inst.components.fueled.fueltype = FUELTYPE.USAGE
+    inst.components.fueled:InitializeFuelLevel(TUNING.APO_ARMORS.WEEVOLE.PERISHTIME)
+    inst.components.fueled:SetFirstPeriod(TUNING.TURNON_FUELED_CONSUMPTION, TUNING.TURNON_FULL_FUELED_CONSUMPTION)
+    inst.components.fueled:SetUpdateFn(OnUpdate)
+    inst.components.fueled:SetDepletedFn(inst.Remove)
 
     MakeHauntableLaunch(inst)
 

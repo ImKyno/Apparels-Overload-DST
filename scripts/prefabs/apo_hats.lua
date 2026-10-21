@@ -2049,9 +2049,47 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.wagstaff_goggles_onsetup = function(inst)
+        inst:AddComponent("equippable")
+        inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
+        inst.components.equippable:SetOnEquip(hat_fns.opentop_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.simple_onunequip)
+    end
+
+    hat_fns.wagstaff_goggles_onbroken = function(inst)
+        if inst.components.equippable ~= nil then
+            inst:RemoveComponent("equippable")
+
+            inst:AddTag("broken")
+
+            if inst.components.inspectable ~= nil then
+                inst.components.inspectable.nameoverride = "BROKEN_FORGEDITEM"
+            end
+        end
+    end
+
+    hat_fns.wagstaff_goggles_onrepaired = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+        if owner ~= nil then
+            owner:PushEvent("repair")
+        end
+
+        if inst.components.equippable == nil then
+            hat_fns.wagstaff_goggles_onsetup(inst)
+
+            inst:RemoveTag("broken")
+
+            if inst.components.inspectable ~= nil then
+                inst.components.inspectable.nameoverride = nil
+            end
+        end
+    end
+
     hat_fns.wagstaff_goggles_custom_init = function(inst)
         inst:AddTag("goggles")
         inst:AddTag("goggles_wagstaff")
+        inst:AddTag("show_broken_ui")
         inst:AddTag("open_top_hat")
     end
 
@@ -2068,6 +2106,11 @@ local function MakeHat(name)
         inst.components.fueled.fueltype = FUELTYPE.MAGIC
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.WAGSTAFF_GOGGLES.PERISHTIME)
         inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
+
+        local OnBroken = hat_fns.wagstaff_goggles_onbroken
+        local OnRepaired = hat_fns.wagstaff_goggles_onrepaired
+
+        MakeForgeRepairable(inst, FORGEMATERIALS.WAGPUNKBITS, OnBroken, OnRepaired)
 
         return inst
     end

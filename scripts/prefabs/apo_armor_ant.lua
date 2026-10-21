@@ -46,6 +46,10 @@ local function OnEquip(inst, owner)
         end
 
         inst:ListenForEvent("blocked", OnBlocked, owner)
+
+        if inst.components.fueled ~= nil then
+            inst.components.fueled:StartConsuming()
+        end
     end
 end
 
@@ -60,6 +64,18 @@ local function OnUnequip(inst, owner)
         owner.AnimState:ClearOverrideSymbol("swap_body")
 
         inst:RemoveEventCallback("blocked", OnBlocked, owner)
+
+        if inst.components.fueled ~= nil then
+            inst.components.fueled:StopConsuming()
+        end
+    end
+end
+
+local function OnEquipToModel(inst, owner, from_ground)
+    if owner ~= nil then
+        if inst.components.fueled ~= nil then
+            inst.components.fueled:StopConsuming()
+        end
     end
 end
 
@@ -103,6 +119,7 @@ local function fn()
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
+    inst.components.equippable:SetOnEquipToModel(OnEquipToModel)
 
     inst:AddComponent("fueled")
     inst.components.fueled.fueltype = FUELTYPE.USAGE
@@ -111,7 +128,7 @@ local function fn()
     inst.components.fueled:SetUpdateFn(OnUpdate)
     inst.components.fueled:SetDepletedFn(inst.Remove)
 
-    MakeSmallBurnable(inst)
+    MakeSmallBurnable(inst, TUNING.SMALL_BURNTIME)
     MakeSmallPropagator(inst)
 
     MakeHauntableLaunch(inst)

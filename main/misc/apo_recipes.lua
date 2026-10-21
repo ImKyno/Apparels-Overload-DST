@@ -38,7 +38,7 @@ APOAddRecipe(ABCEnabled or IASEnabled, "armor_ant",
 APOAddRecipe(ABCEnabled or IASEnabled, "armor_blubber",
     {
         Ingredient("fishmeat", 4),
-        Ingredient("glommerfuel", 1),
+        Ingredient("glommerfuel", 4),
         Ingredient("armorwood", 1),
     },
 
@@ -77,7 +77,7 @@ APOAddRecipe(ABCEnabled or IASEnabled, "armor_lifejacket",
 APOAddRecipe(ABCEnabled or IASEnabled, "armor_limestone",
     {
         Ingredient("marble", 6),
-        Ingredient("cutreeds", 4),
+        Ingredient("kelp", 4),
         Ingredient("rope", 2),
     },
 
@@ -526,11 +526,10 @@ AddRecipe2("volcanohat",
 APOAddCharacterRecipe(ABCEnabled or IASEnabled, "wagstaff_goggleshat",
     {
         Ingredient("goggleshat", 1),
-        Ingredient("wagpunk_bits", 2),
-        Ingredient("moonglass", 2),
+        Ingredient("wagpunk_bits", 1),
     },
 
-    TECH.LOST, { builder_tag = "portableengineer" }, { "CHARACTER", "CLOTHING" }
+    TECH.NONE, { builder_tag = "portableengineer" }, { "CHARACTER", "CLOTHING" }
 )
 
 APOAddCharacterRecipe(ABCEnabled or IASEnabled, "wagstaff_goggles_armorhat",

@@ -79,7 +79,7 @@ Increases temperature by 15 degrees when worn.
 
 SPECIALINFO.ARMOR_SEASHELL =
 [[
-This armor can protect the wearer against explosive damage.
+This armor can protect the wearer against explosion damage.
 ]]
 
 SPECIALINFO.ARMOR_SNAKESKIN =
@@ -91,17 +91,17 @@ SPECIALINFO.ARMOR_SNURTLE_TWEAK =
 [[
 One can tuck inside this hard shell to survive any assault.
 
-This armor can protect the wearer against explosive damage.
+This armor can protect the wearer against explosion damage.
 ]]
 
 SPECIALINFO.ARMOR_VORTEX =
 [[
-"Every 5 seconds, one incoming hit will be completely ignored.
+Every 5 seconds, one incoming hit will be completely ignored.
 ]]
 
 SPECIALINFO.ARMOR_WEEVOLE =
 [[
-Killing creatures restores health.
+Killing living creatures restores health.
 ]]
 
 SPECIALINFO.ARMOR_WINDBREAKER =
@@ -267,6 +267,8 @@ When paired with Fancy Suit increases damage by 10% and decreases damage taken b
 SPECIALINFO.MINOTAURCROWNHAT =
 [[
 Increases movement speed by 10%, damage and attack speed by 25% when worn.
+
+When paired with Thulecite Suit increases Thulecite Club damage by 25% and allows it to perform a special attack.
 ]]
 
 SPECIALINFO.MUSHROOMHAT_TWEAK =
@@ -280,7 +282,7 @@ SPECIALINFO.OXHAT =
 [[
 Makes the wearer friendly to Beefalo in heat.
 
-This helm can protect the wearer against explosive damage.
+This helm can protect the wearer against explosion damage.
 ]]
 
 SPECIALINFO.PEAGAWKFEATHERHAT =
@@ -352,7 +354,7 @@ Increases luck by 2 points when worn.
 
 SPECIALINFO.SLURTLEHAT_TWEAK =
 [[
-This helm can protect the wearer against explosive damage.
+This helm can protect the wearer against explosion damage.
 ]]
 
 SPECIALINFO.SNAKESKINHAT =
@@ -413,26 +415,26 @@ Can be repaired with Red Gems.
 
 SPECIALINFO.WAGSTAFF_GOGGLESHAT =
 [[
-Improves vision in a storm.
+Improves vision in a storm and reveals hidden danger sources near the wearer.
 ]]
 
 SPECIALINFO.WAGSTAFF_GOGGLES_ARMORHAT =
 [[
-Improves vision in a storm, but reduces area of view.
+Improves vision in a storm and reveals hidden danger sources near the wearer.
 
-This helm is durable but heavy, and slows its wearer.
+This helm is durable but heavy, and slows its wearer and reduces area of view.
 ]]
 
 SPECIALINFO.WAGSTAFF_GOGGLES_HEATHAT =
 [[
-Improves vision in a storm.
+Improves vision in a storm and reveals hidden danger sources near the wearer.
 
 Allows wearer to view the world in a infrared vision mode that can see in the dark, highlighting all living things.
 ]]
 
 SPECIALINFO.WAGSTAFF_GOGGLES_SHOOTHAT =
 [[
-Improves vision in a storm.
+Improves vision in a storm and reveals hidden danger sources near the wearer.
 
 Allows the wearer to view the world in a night vision mode that can see in the dark.
 

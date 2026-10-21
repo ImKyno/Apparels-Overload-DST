@@ -66,7 +66,7 @@ WOLFGANG.DESCRIBE.GASMASKHAT = "Is good for Wolfgang lungs."
 
 WOLFGANG.DESCRIBE.HEALINGBONUSHAT = "It would make Wolfgang look nice."
 
-WOLFGANG.DESCRIBE.JIAOLIANHAT = "Hehe. Is funny spook mask."
+WOLFGANG.DESCRIBE.JIAOLIANHAT = "Hehe. Is funny spooky mask."
 
 WOLFGANG.DESCRIBE.LANTERNBOTTLE = "Is good way to keep darkness back."
 

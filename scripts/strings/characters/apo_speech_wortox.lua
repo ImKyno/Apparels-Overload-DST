@@ -4,7 +4,7 @@ WORTOX.ANNOUNCE_BURIEDTREASURECHEST_FOUND = "Something tells me there's a buried
 
 WORTOX.DESCRIBE.AERODYNAMICHAT = "Cuts the walking a half!"
 
-WORTOX.DESCRIBE.ANTMASKHAT = "Mask of a ugly bug!"
+WORTOX.DESCRIBE.ANTMASKHAT = "Mask of an ugly bug!"
 
 WORTOX.DESCRIBE.ARMOR_ANT = "Unpleasant suit."
 

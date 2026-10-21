@@ -15,15 +15,35 @@ local STRINGS =
 [[
 󰀖 Travel The Constant with style using brand new clothing and headwear accessories. Unleash your inner stylish skills!
 
+󰀏 Featuring the Retailored! Update:
+New clothing, headwear and many more changes! 
+
+The Mod has been completely rewritten from scratch to improve performance and compatibility with future updates and other Mods.
+
+It also includes changes to some Vanilla items as well!
+
+󰀏 Client-side Configuration is available through:
+Main Menu - Mods - Server Mods - Apparels Overload
+
 󰀌 Mod Version: 2.9-B
-󰀧 Update: Rebranded!
+󰀧 Update: Retailored!
 ]],
         pt  =
 [[
 󰀖 Atravesse o Constante com estilo usando novas roupas, chapéus e acessórios. Desperte suas habilidades de moda!
 
+󰀏 Apresentando a Atualização Repaginada!:
+Novas roupas, chapéus e muitas mudanças!
+
+O Mod foi completamente reescrito do zero para melhorar performance e compatibilidade com atualizações futuras e outros Mods.
+
+Também inclui mudanças para alguns itens do Vanilla!
+
+󰀏 Configurações Cliente estão disponívels em:
+Menu Principal - Mods - Mods de Servidor - Amontoado de Roupas
+
 󰀌 Mod Version: 2.9-B
-󰀧 Update: Repaginado!
+󰀧 Update: Repaginada!
 ]],
     },
 

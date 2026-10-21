@@ -267,7 +267,7 @@ local function MakeHat(name)
         inst.components.resistance:AddResistance("lunarhaildebris")
         inst.components.resistance:SetOnResistDamageFn(hat_fns.bucket_onresistdamage)
 
-        MakeSmallBurnable(inst)
+        MakeSmallBurnable(inst, TUNING.SMALL_BURNTIME)
         MakeSmallPropagator(inst)
 
         return inst
@@ -717,7 +717,7 @@ local function MakeHat(name)
         inst.components.armor:InitCondition(TUNING.APO_HATS.JIAOLIAN.CONDITION, TUNING.APO_HATS.JIAOLIAN.ABSORPTION)
         inst.components.armor:SetTags(TUNING.APO_HATS.JIAOLIAN.TAGS)
 
-        MakeSmallBurnable(inst)
+        MakeSmallBurnable(inst, TUNING.SMALL_BURNTIME)
         MakeSmallPropagator(inst)
 
         return inst

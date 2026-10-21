@@ -129,8 +129,8 @@ local function HatFootballPostInit(inst)
     inst.SCANNABLE_RECIPENAME = "wagstaff_goggles_armorhat"
 end
 
-local function HatGogglesPostInit(inst)
-    inst.SCANNABLE_RECIPENAME = "wagstaff_goggleshat"
+local function HatInspectaclesPostInit(inst)
+    inst:AddTag("goggles_wagstaff")
 end
 
 local function HatMolePostInit(inst)
@@ -329,6 +329,10 @@ if TUNING.APO_TWEAK_EARMUFFSHAT then
     AddPrefabPostInit("earmuffshat", HatEarmuffsPostInit)
 end
 
+if TUNING.APO_TWEAK_INSPECTACLESHAT then
+    AddPrefabPostInit("inspectacleshat", HatInspectaclesPostInit)
+end
+
 if TUNING.APO_TWEAK_MUSHROOMHAT then
     for k, v in pairs(HATS_MUSHROOM) do
         AddPrefabPostInit(v, HatMushroomPostInit)
@@ -352,7 +356,6 @@ if TUNING.APO_TWEAK_WINTERHAT then
 end
 
 AddPrefabPostInit("footballhat",          HatFootballPostInit)
-AddPrefabPostInit("goggleshat",           HatGogglesPostInit)
 AddPrefabPostInit("molehat",              HatMolePostInit)
 AddPrefabPostInit("moonstorm_goggleshat", HatMoonstormGogglesPostInit)
 AddPrefabPostInit("ruinshat",             HatRuinsPostInit)

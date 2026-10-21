@@ -10,19 +10,14 @@ local APO_PRESETS =
     {
         guaranteed_loot =
         {
+            cutless             = 1,
             boatpatch           = { 3, 6 },
             lanternbottle       = 1,
             messagebottle       = { 1, 3 },
             oar_monkey          = 1,
             piratehat           = 1,
-            slurtle_shellpieces = { 2, 4 },
+            piratepack          = 1,
             stash_map           = 1,
-        },
-
-        randomly_selected_loot =
-        {
-            { cutless    = 0.50 },
-            { piratepack = 0.20 },
         },
 
         preset_weight = 1,

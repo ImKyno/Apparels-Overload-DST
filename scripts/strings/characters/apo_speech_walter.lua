@@ -66,7 +66,7 @@ WALTER.DESCRIBE.GASMASKHAT = "Could be useful for exploring zones filled with ga
 
 WALTER.DESCRIBE.HEALINGBONUSHAT = "Woah! This flower has some nice healing properties!"
 
-WALTER.DESCRIBE.JIAOLIANHAT = "A mask to fight ghosts!"
+WALTER.DESCRIBE.JIAOLIANHAT = "A mask to hunt ghosts!"
 
 WALTER.DESCRIBE.LANTERNBOTTLE = "I'm sure they love it in there."
 

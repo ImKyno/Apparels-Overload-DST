@@ -5,6 +5,7 @@ local assets =
     Asset("ANIM", "anim/wx78_taser_blast_fx.zip"),
 
     Asset("ANIM", "anim/hat_propeller_fan.zip"),
+    Asset("ANIM", "anim/hat_wagstaff_goggles_markers.zip"),
     Asset("ANIM", "anim/hat_wagstaff_goggles_shoot_projectile.zip"),
 
     Asset("SOUND", "sound/chess.fsb"),
@@ -227,6 +228,31 @@ local function volcanohat_lightfn()
         return inst
     end
 
+    inst.persists = false
+
+    return inst
+end
+
+-- Spectoggles FXs.
+local function wagstaff_goggleshat_dangerfn()
+    local inst = CreateEntity()
+
+    inst.entity:AddTransform()
+    inst.entity:AddAnimState()
+
+    inst.AnimState:SetBank("hat_wagstaff_goggles_markers")
+    inst.AnimState:SetBuild("hat_wagstaff_goggles_markers")
+    inst.AnimState:PlayAnimation("danger", true)
+
+    inst.AnimState:SetTime(math.random() * 3)
+    inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
+
+    inst:AddTag("DECOR")
+    inst:AddTag("CLASSIFIED")
+    inst:AddTag("NOCLICK")
+    inst:AddTag("noheatvision") -- Does not apply to Infroggles.
+
+    inst.entity:SetCanSleep(false)
     inst.persists = false
 
     return inst
@@ -582,5 +608,6 @@ return Prefab("propellerhat_fan", propellerhat_fanfn, assets),
 Prefab("thunderhat_light", thunderhat_lightfn),
 Prefab("volcanocoldhat_light", volcanocoldhat_lightfn),
 Prefab("volcanohat_light", volcanohat_lightfn),
+Prefab("wagstaff_goggleshat_danger", wagstaff_goggleshat_dangerfn, assets),
 Prefab("wagstaff_goggles_shoothat_charge", wagstaff_goggles_shoothat_chargefn, assets),
 Prefab("wagstaff_goggles_shoothat_projectile", wagstaff_goggles_shoothat_projectilefn, assets)

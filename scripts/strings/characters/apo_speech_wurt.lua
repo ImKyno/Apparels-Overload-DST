@@ -12,7 +12,7 @@ WURT.DESCRIBE.ARMOR_BLUBBER = "Squishy, glorp..."
 
 WURT.DESCRIBE.ARMOR_CACTUS = "Pricking armor, flort."
 
-WURT.DESCRIBE.ARMOR_FLOWERS = "Pretty flowers keep bees away, florp."
+WURT.DESCRIBE.ARMOR_FLOWERS = "Ewwww, flower no good!"
 
 WURT.DESCRIBE.ARMOR_LIFEJACKET = "I know how to swim, florp."
 
@@ -88,7 +88,7 @@ WURT.DESCRIBE.PEAGAWKFEATHERHAT = "Look like bird, think like bird."
 
 WURT.DESCRIBE.PIGCROWNHAT = "I am the queen!!!"
 
-WURT.DESCRIBE.PIGSKIN_DRIED = "Take this, pigs!"
+WURT.DESCRIBE.PIGSKIN_DRIED = "Take this, pig!"
 
 WURT.DESCRIBE.PIRATEHAT = "Arrgh!"
 

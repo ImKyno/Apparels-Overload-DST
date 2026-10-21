@@ -122,7 +122,7 @@ local function fn()
     inst.components.equippable.dapperness = TUNING.DAPPERNESS_TINY
     inst.components.equippable.flipdapperonmerms = true
 
-    MakeSmallBurnable(inst)
+    MakeSmallBurnable(inst, TUNING.SMALL_BURNTIME)
     MakeSmallPropagator(inst)
 
     MakeHauntableLaunchAndPerish(inst)

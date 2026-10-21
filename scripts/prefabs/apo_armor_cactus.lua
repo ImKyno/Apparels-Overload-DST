@@ -19,10 +19,6 @@ end
 local function OnThorns(inst, owner)
     inst._cdtask = inst:DoTaskInTime(0.3, OnCooldown)
 
-    if inst._hitcount then
-        inst._hitcount = 0
-    end
-
     SpawnPrefab("bramblefx_armor"):SetFXOwner(owner)
 
     if owner ~= nil then
@@ -33,19 +29,6 @@ end
 local function OnBlocked(owner, data, inst)
     if inst._cdtask == nil and data ~= nil and not data.redirected then
         OnThorns(inst, owner)
-    end
-end
-
-local function OnAttackOther(owner, data, inst)
-    if inst._cdtask == nil and owner.components.skilltreeupdater
-    and owner.components.skilltreeupdater:IsActivated("wormwood_armor_bramble") then
-        inst._hitcount = inst._hitcount + 1
-
-        if inst._hitcount >= TUNING.WORMWOOD_ARMOR_BRAMBLE_RELEASE_SPIKES_HITCOUNT then
-            DoThorns(inst, owner)
-        end
-    else
-        inst._hitcount = 0
     end
 end
 
@@ -85,12 +68,6 @@ local function OnEquip(inst, owner)
         inst:ListenForEvent("armordamaged", OnArmorDamaged)
         inst:ListenForEvent("blocked", inst._onblocked, owner)
         inst:ListenForEvent("attacked", inst._onblocked, owner)
-
-        if owner:HasTag("plantkin") then
-            inst:ListenForEvent("onattackother", inst._onattackother, owner)
-        end
-
-        inst._hitcount = 0
     end
 end
 
@@ -107,10 +84,7 @@ local function OnUnequip(inst, owner)
         inst:RemoveEventCallback("armordamaged", OnArmorDamaged)
         inst:RemoveEventCallback("blocked", inst._onblocked, owner)
         inst:RemoveEventCallback("attacked", inst._onblocked, owner)
-        inst:RemoveEventCallback("onattackother", inst._onattackother, owner)
     end
-
-    inst._hitcount = nil
 end
 
 local function fn()
@@ -140,8 +114,6 @@ local function fn()
         return inst
     end
 
-    inst._hitcount = nil
-
     inst:AddComponent("inspectable")
     inst:AddComponent("inventoryitem")
 
@@ -166,11 +138,7 @@ local function fn()
         OnBlocked(owner, data, inst)
     end
 
-    inst._onattackother = function(owner, data)
-        OnAttackOther(owner, data, inst)
-    end
-
-    MakeSmallBurnable(inst)
+    MakeSmallBurnable(inst, TUNING.SMALL_BURNTIME)
     MakeSmallPropagator(inst)
 
     MakeHauntableLaunch(inst)

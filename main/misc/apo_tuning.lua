@@ -275,8 +275,7 @@ TUNING.APO_ARMORS =
         CONDITION = 550,
         ABSORPTION = 0.85,
         WALKSPEEDMULT = 0.85,
-        THRESHOLD = 0.50,
-        MODIFIER = 1.20,
+        MODIFIER = 1.10,
     },
 
     OBSIDIAN =
@@ -299,7 +298,7 @@ TUNING.APO_ARMORS =
     {
         CONDITION = 625,
         ABSORPTION = 0.70,
-        DAMAGETYPE_RESIST = 0.80,
+        DAMAGETYPE_RESIST = 0.20,
     },
 
     SLURPER =
@@ -326,7 +325,7 @@ TUNING.APO_ARMORS =
 
     SNURTLE =
     {
-        DAMAGETYPE_RESIST = 0.95,
+        DAMAGETYPE_RESIST = 0.10,
     },
 
     SWEATERVEST =
@@ -339,8 +338,8 @@ TUNING.APO_ARMORS =
         CONDITION = 525,
         ABSORPTION = 0.80,
         PLANAR_ABSORPTION = 5,
-        DAMAGETYPE_RESIST = 0.80,
-        SHADOWLEVEL = 1,
+        DAMAGETYPE_RESIST = 0.95,
+        SHADOWLEVEL = 2,
     },
 
     THULECITE =
@@ -371,13 +370,14 @@ TUNING.APO_ARMORS =
 
     WEEVOLE =
     {
-        CONDITION = 450,
-        ABSORPTION = 0.60,
+        CONDITION = 315,
+        ABSORPTION = 0.65,
+        PERISHTIME = 480 * 3,
 
         HEALTH =
         {
             MIN = 1,
-            MAX = 2,
+            MAX = 3,
         },
     },
 
@@ -584,7 +584,7 @@ TUNING.APO_HATS =
     {
         CONDITION = 500,
         ABSORPTION = 0.80,
-        DAMAGETYPE_RESIST = 0.45,
+        DAMAGETYPE_RESIST = 0.60,
     },
 
     PIGCROWN =
@@ -626,7 +626,7 @@ TUNING.APO_HATS =
 
     SLURTLE =
     {
-        DAMAGETYPE_RESIST = 0.95,
+        DAMAGETYPE_RESIST = 0.10,
     },
 
     SNAKESKIN =
@@ -704,6 +704,27 @@ TUNING.APO_HATS =
     WAGSTAFF_GOGGLES =
     {
         PERISHTIME = 480 * 12,
+
+        DANGER =
+        {
+            CANT_TAGS =
+            {
+                "FX",
+                "DECOR",
+                "INLIMBO",
+            },
+
+            MUST_TAGS =
+            {
+                "invisible",
+            },
+
+            ONEOF_TAGS =
+            {
+                "tentacle",
+                "hidden_danger",
+            },
+        },
     },
 
     WAGSTAFF_GOGGLES_ARMOR =
@@ -807,9 +828,9 @@ TUNING.PIRATEPACK =
         RARE =
         {
             "bluegem",
+            "feather_canary",
             "feather_robin_winter",
             "livinglog",
-            "malbatross_feather",
             "redgem",
             "stash_map",
             "thulecite_pieces",
@@ -817,8 +838,8 @@ TUNING.PIRATEPACK =
 
         ULTRA_RARE =
         {
-            "feather_canary",
             "greengem",
+            "malbatross_feather",
             "nightmarefuel",
             "orangegem",
             "purplegem",

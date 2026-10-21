@@ -88,7 +88,7 @@ WATHGRITHR.DESCRIBE.PEAGAWKFEATHERHAT = "Seems a bit flashy for battle."
 
 WATHGRITHR.DESCRIBE.PIGCROWNHAT = "Power gifted by the gods."
 
-WATHGRITHR.DESCRIBE.PIGSKIN_DRIED = "Deceit is the tactic of cowards."
+WATHGRITHR.DESCRIBE.PIGSKIN_DRIED = "Animal hide."
 
 WATHGRITHR.DESCRIBE.PIRATEHAT = "This hat confuses my character... I mean, my soul."
 
