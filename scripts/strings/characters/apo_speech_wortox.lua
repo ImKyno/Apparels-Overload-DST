@@ -32,7 +32,7 @@ WORTOX.DESCRIBE.ARMOR_VORTEX = "Staring into the abyss."
 
 WORTOX.DESCRIBE.ARMOR_WEEVOLE = "A fine armor made of mosquito skin."
 
-WORTOX.DESCRIBE.ARMOR_WINDBREAKER = "I'm a expert windbreaker!"
+WORTOX.DESCRIBE.ARMOR_WINDBREAKER = "I love running in the rain!"
 
 WORTOX.DESCRIBE.BANDITHAT = "A sneaky hat. Hyuyu!"
 

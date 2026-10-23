@@ -32,7 +32,7 @@ WOLFGANG.DESCRIBE.ARMOR_VORTEX = "Scary cloak! Wolfgang wear it anyway."
 
 WOLFGANG.DESCRIBE.ARMOR_WEEVOLE = "Wolfgang win!"
 
-WOLFGANG.DESCRIBE.ARMOR_WINDBREAKER = "Wolfgang master of breaking wind!"
+WOLFGANG.DESCRIBE.ARMOR_WINDBREAKER = "Wolfgang master of breaking rain!"
 
 WOLFGANG.DESCRIBE.BANDITHAT = "Wolfgang win at hide-and-seek now."
 

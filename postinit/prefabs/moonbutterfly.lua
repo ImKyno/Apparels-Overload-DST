@@ -20,7 +20,7 @@ local function MoonButterflyPostInit(inst)
             inst.components.fuel.secondaryfueltype = _G.FUELTYPE.MOONBUTTERFLY
         end
 
-        inst.components.fuel.fuelvalue = TUNING.HUGE_FUEL * 3.33
+        inst.components.fuel.fuelvalue = TUNING.HUGE_FUEL * 2.22
     end
 end
 

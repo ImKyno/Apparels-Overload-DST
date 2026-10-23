@@ -32,7 +32,7 @@ WICKERBOTTOM.DESCRIBE.ARMOR_VORTEX = "So roomy. I can fit all my books in here."
 
 WICKERBOTTOM.DESCRIBE.ARMOR_WEEVOLE = "Armour made from mosquitos."
 
-WICKERBOTTOM.DESCRIBE.ARMOR_WINDBREAKER = "Pink is not really my color."
+WICKERBOTTOM.DESCRIBE.ARMOR_WINDBREAKER = "A proper clothing for running in the rain."
 
 WICKERBOTTOM.DESCRIBE.BANDITHAT = "Perhaps it has hidden strengths."
 

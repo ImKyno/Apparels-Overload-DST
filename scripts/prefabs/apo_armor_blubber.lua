@@ -74,7 +74,7 @@ local function fn()
     inst:AddComponent("inventoryitem")
 
     inst:AddComponent("waterproofer")
-    inst.components.waterproofer.effectiveness = TUNING.WATERPROOFNESS_ABSOLUTE
+    inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_ABSOLUTE)
 
     inst:AddComponent("fuel")
     inst.components.fuel.fuelvalue = TUNING.LARGE_FUEL

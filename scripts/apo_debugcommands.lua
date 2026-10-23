@@ -1,10 +1,29 @@
-if not TUNING.APO_DEBUG_MODE then
-    return
-end
-
 local BuriedTreasureChestLoot = require("apo_buriedtreasurechestloot")
 
-function c_spawnburiedtreasurechest(name, player)
+-- Spawns a random buried treasure near the player.
+function c_generateburiedtreasure(player)
+    local player = ConsoleCommandPlayer()
+
+    if player ~= nil then
+        if player.components.buriedtreasurefinder ~= nil then
+            player.components.buriedtreasurefinder:GenerateTreasure()
+        end
+    end
+end
+
+-- Spawns a random buried treasure at the point.
+function c_generateburiedtreasureatpoint(player)
+    local player = ConsoleCommandPlayer()
+
+    if player ~= nil then
+        if player.components.buriedtreasurefinder ~= nil then
+            player.components.buriedtreasurefinder:GenerateTreasureAtPoint()
+        end
+    end
+end
+
+-- Spawns a specific buried treasure.
+function c_generatespecificburiedtreasurechest(name, player)
     local player = ConsoleCommandPlayer()
 
     if player ~= nil then
@@ -15,7 +34,8 @@ function c_spawnburiedtreasurechest(name, player)
     end
 end
 
-function c_spawnallburiedtreasurechests(player)
+-- Spawns all buried treasures.
+function c_generateallburiedtreasurechests(player)
     local player = ConsoleCommandPlayer()
 
     if player ~= nil then

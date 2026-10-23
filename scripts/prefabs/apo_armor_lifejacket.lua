@@ -76,13 +76,6 @@ local function fn()
     inst:AddComponent("flotationdevice")
     inst.components.flotationdevice.onpreventdrowningdamagefn = OnPreventDrowningDamage
 
-    inst:AddComponent("waterproofer")
-    inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
-
-    inst:AddComponent("insulator")
-    inst.components.insulator:SetInsulation(TUNING.INSULATION_SMALL)
-    inst.components.insulator:SetSummer()
-
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(OnEquip)

@@ -45,7 +45,7 @@ local function fn()
     inst:AddComponent("inventoryitem")
 
     inst:AddComponent("stackable")
-    inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
+    inst.components.stackable.maxsize = TUNING.STACK_SIZE_MEDITEM
 
     inst:AddComponent("perishable")
     inst.components.perishable:SetPerishTime(TUNING.PERISH_FAST)
@@ -64,7 +64,7 @@ local function fn()
     inst.components.dryable:SetBuildFile("meat_rack_food_leif")
     inst.components.dryable:SetDriedBuildFile("meat_rack_food_leif")
 
-    MakeSmallBurnable(inst)
+    MakeSmallBurnable(inst, TUNING.SMALL_BURNTIME)
     MakeSmallPropagator(inst)
 
     MakeHauntableLaunchAndPerish(inst)

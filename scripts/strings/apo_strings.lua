@@ -45,8 +45,8 @@ STRINGS.RECIPE_DESC.ARMOR_VORTEX = "Pockets, dimensions deep."
 STRINGS.NAMES.ARMOR_WEEVOLE = "Mosquito Mantle"
 STRINGS.RECIPE_DESC.ARMOR_WEEVOLE = "Draw vitality from the fallen."
 
-STRINGS.NAMES.ARMOR_WINDBREAKER = "Windbreaker"
-STRINGS.RECIPE_DESC.ARMOR_WINDBREAKER = "Break some wind!"
+STRINGS.NAMES.ARMOR_WINDBREAKER = "Rainbreaker"
+STRINGS.RECIPE_DESC.ARMOR_WINDBREAKER = "Break some rain!"
 
 STRINGS.NAMES.BANDITHAT = "Swashy Hat"
 STRINGS.RECIPE_DESC.BANDITHAT = "Take the spoils from the rich!"
@@ -139,7 +139,7 @@ STRINGS.NAMES.PROPELLERHAT = "Propeller Hat"
 STRINGS.RECIPE_DESC.PROPELLERHAT = "Running around has never been so refreshing!"
 
 STRINGS.NAMES.PUMPKINHEADHAT = "Jack o' Head"
-STRINGS.RECIPE_DESC.PUMPKINHEADHAT = "Better wax before it spoils!"
+STRINGS.RECIPE_DESC.PUMPKINHEADHAT = "Scare away what scares you."
 
 STRINGS.NAMES.SANITYDAMAGEHAT = "Lunar Crystal Tiara"
 STRINGS.RECIPE_DESC.SANITYDAMAGEHAT = "Share the pain of your body with your mind."
@@ -162,7 +162,7 @@ STRINGS.NAMES.VOLCANOCOLDHAT = "Chilled Volcano"
 STRINGS.RECIPE_DESC.VOLCANOCOLDHAT = "The air is getting colder around you."
 
 STRINGS.NAMES.VOLCANOHAT = "Mini Volcano"
-STRINGS.RECIPE_DESC.VOLCANOHAT = "The air is getting warmer around you."
+STRINGS.RECIPE_DESC.VOLCANOHAT = "Is it hot in here or is it just me?!"
 
 STRINGS.NAMES.WAGSTAFF_GOGGLESHAT = "Spectoggles"
 STRINGS.RECIPE_DESC.WAGSTAFF_GOGGLESHAT = "Basic super goggles. Reveals hidden danger sources."

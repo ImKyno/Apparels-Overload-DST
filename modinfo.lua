@@ -344,6 +344,36 @@ Menu Principal - Mods - Mods de Servidor - Amontoado de Roupas
             },
         },
 
+        TWEAK_MERMHAT =
+        {
+            NAME =
+            {
+                "Clever Disguise - Tweaks",
+                pt  = "Disfarçe Esperto - Mudanças",
+            },
+
+            HOVER =
+            {
+                "Should the Clever Disguise have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que o Disfarçe Esperto tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Clever Disguise.",
+                    pt  = "Disfarçe Esperto Padrão",
+                },
+
+                ENABLED =
+                {
+                    "Clever Disguise will have some new features.",
+                    pt  = "O Disfarçe Esperto terá novos recursos.",
+                },
+            },
+        },
+
         TWEAK_MUSHROOMHAT =
         {
             NAME =
@@ -460,6 +490,36 @@ Menu Principal - Mods - Mods de Servidor - Amontoado de Roupas
                 {
                     "Spiderhat will have some new features.",
                     pt  = "O Chapéu de Aranha terá novos recursos.",
+                },
+            },
+        },
+
+        TWEAK_WATERMELONHAT =
+        {
+            NAME =
+            {
+                "Fashion Melon - Tweaks",
+                pt  = "Melancia Elegante - Mudanças",
+            },
+
+            HOVER =
+            {
+                "Should the Fashion Melon have new features?\nVisit the Mod's Wiki for more information.",
+                pt  = "Permitir que a Melancia Elegante tenha novos recursos?\nVisite a Wiki do Mod para mais informações.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                DISABLED =
+                {
+                    "Default Fashion Melon.",
+                    pt  = "Melancia Elegante Padrão",
+                },
+
+                ENABLED =
+                {
+                    "Fashion Melon will have some new features.",
+                    pt  = "A Melancia Elegante terá novos recursos.",
                 },
             },
         },
@@ -1152,6 +1212,22 @@ local function GetVanillaOptions()
         }
     }
 
+    local TWEAK_MERMHAT_LABEL           = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MERMHAT.NAME)
+    local TWEAK_MERMHAT_HOVER           = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MERMHAT.HOVER)
+    local TWEAK_MERMHAT_OPTIONS         =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MERMHAT.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MERMHAT.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
     local TWEAK_MUSHROOMHAT_LABEL       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MUSHROOMHAT.NAME)
     local TWEAK_MUSHROOMHAT_HOVER       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_MUSHROOMHAT.HOVER)
     local TWEAK_MUSHROOMHAT_OPTIONS     =
@@ -1212,6 +1288,22 @@ local function GetVanillaOptions()
         {
             description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
             hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_SPIDERHAT.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
+    local TWEAK_WATERMELONHAT_LABEL     = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WATERMELONHAT.NAME)
+    local TWEAK_WATERMELONHAT_HOVER     = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WATERMELONHAT.HOVER)
+    local TWEAK_WATERMELONHAT_OPTIONS   =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WATERMELONHAT.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_WATERMELONHAT.HOVER_OPTIONS.ENABLED),
             data                        = true
         }
     }
@@ -1452,10 +1544,24 @@ local function GetVanillaOptions()
             default                     = true
         },
         {
+            name                        = "TWEAK_MERMHAT",
+            label                       = TWEAK_MERMHAT_LABEL,
+            hover                       = TWEAK_MERMHAT_HOVER,
+            options                     = TWEAK_MERMHAT_OPTIONS,
+            default                     = true
+        },
+        {
             name                        = "TWEAK_COOKIECUTTERHAT",
             label                       = TWEAK_COOKIECUTTERHAT_LABEL,
             hover                       = TWEAK_COOKIECUTTERHAT_HOVER,
             options                     = TWEAK_COOKIECUTTERHAT_OPTIONS,
+            default                     = true
+        },
+        {
+            name                        = "TWEAK_WATERMELONHAT",
+            label                       = TWEAK_WATERMELONHAT_LABEL,
+            hover                       = TWEAK_WATERMELONHAT_HOVER,
+            options                     = TWEAK_WATERMELONHAT_OPTIONS,
             default                     = true
         },
         {

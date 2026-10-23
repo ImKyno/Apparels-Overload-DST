@@ -52,7 +52,7 @@ WURT.DESCRIBE.CARNIVAL_HOSTHAT = "Needed lots of tickets for this!"
 
 WURT.DESCRIBE.DISGUISEHAT = "Spider boy can fool pigfolk, but not me!"
 
-WURT.DESCRIBE.DOUBLE_UMBRELLAHAT = "Twice the fancy!"
+WURT.DESCRIBE.DOUBLE_UMBRELLAHAT = "Keeps rain out, florp."
 
 WURT.DESCRIBE.EXTRAHEAVYHAT = "Keeps head safe, glorp!"
 
@@ -68,7 +68,7 @@ WURT.DESCRIBE.HEALINGBONUSHAT = "Blegh... have to wear it...?"
 
 WURT.DESCRIBE.JIAOLIANHAT = "Scary pigfolk mask... Glurp..."
 
-WURT.DESCRIBE.LANTERNBOTTLE = "Awww... Bottled buddies!"
+WURT.DESCRIBE.LANTERNBOTTLE = "Awww... bottled buddies!"
 
 WURT.DESCRIBE.LEIF_STALK = "Glorrp... can't think a use for it."
 

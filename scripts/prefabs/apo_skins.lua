@@ -52,6 +52,23 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         skin_tags = { "ARMOR_SNAKESKIN" },
     }))
 
+    -- Flashy Rainbreaker Skin for the Rainbreaker.
+    table.insert(prefabs, CreatePrefabSkin("ms_armor_windbreaker_tropical",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_armor_windbreaker_tropical.zip"),
+        },
+
+        base_prefab = "armor_windbreaker",
+        build_name_override = "ms_armor_windbreaker_tropical",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "ARMOR_WINDBREAKER" },
+    }))
+
     -- Viridian Lantern Skin for the Bottle Lantern.
     table.insert(prefabs, CreatePrefabSkin("ms_lanternbottle_green",
     {

@@ -32,7 +32,7 @@ WENDY.DESCRIBE.ARMOR_VORTEX = "The depths of its darkness is unending."
 
 WENDY.DESCRIBE.ARMOR_WEEVOLE = "Something died so that this armor may exist."
 
-WENDY.DESCRIBE.ARMOR_WINDBREAKER = "The wind's tendrils cannot hold me!"
+WENDY.DESCRIBE.ARMOR_WINDBREAKER = "The rain's tendrils cannot hold me!"
 
 WENDY.DESCRIBE.BANDITHAT = "A big hat to hide from the world."
 

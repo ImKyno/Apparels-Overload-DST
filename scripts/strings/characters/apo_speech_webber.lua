@@ -32,7 +32,7 @@ WEBBER.DESCRIBE.ARMOR_VORTEX = "Kinda like a security blanket. But also kinda sc
 
 WEBBER.DESCRIBE.ARMOR_WEEVOLE = "For when we need protection."
 
-WEBBER.DESCRIBE.ARMOR_WINDBREAKER = "Wind can't hold us back!"
+WEBBER.DESCRIBE.ARMOR_WINDBREAKER = "Rain can't hold us back!"
 
 WEBBER.DESCRIBE.BANDITHAT = "This would be great for hide and seek."
 
@@ -48,7 +48,7 @@ WEBBER.DESCRIBE.CANDLEHAT = "Cool hat! Now our hands are free."
 
 WEBBER.DESCRIBE.CAPTAINHAT = "Just like a real boatguy!"
 
-WEBBER.DESCRIBE.CARNIVAL_HOSTHAT = "We look just like the fancy bird who runs the Carnival!"
+WEBBER.DESCRIBE.CARNIVAL_HOSTHAT = "We look just like the fancy bird who runs the carnival!"
 
 WEBBER.DESCRIBE.DISGUISEHAT = "I bet we can fool those pigs with this!"
 

@@ -32,7 +32,7 @@ WILSON.DESCRIBE.ARMOR_VORTEX = "Haha! Take that nightmares!"
 
 WILSON.DESCRIBE.ARMOR_WEEVOLE = "Yeesh. This is kinda creepy."
 
-WILSON.DESCRIBE.ARMOR_WINDBREAKER = "The wind doesn't stand a chance!"
+WILSON.DESCRIBE.ARMOR_WINDBREAKER = "The rain doesn't stand a chance!"
 
 WILSON.DESCRIBE.BANDITHAT = "A shadowy chapeau."
 

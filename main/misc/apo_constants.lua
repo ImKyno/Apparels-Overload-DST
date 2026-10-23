@@ -1,10 +1,27 @@
-local _G         = GLOBAL
-local require    = _G.require
-local TECH       = _G.TECH
-local RECIPETABS = _G.RECIPETABS
+local _G             = GLOBAL
+local require        = _G.require
+local TECH           = _G.TECH
+local RECIPETABS     = _G.RECIPETABS
+local SPECIAL_EVENTS = _G.SPECIAL_EVENTS
 
 -- Brain of Thought.
 _G.BRAINJELLY_TECH_BLACKLIST = {}
+
+_G.BRAINJELLY_SPECIAL_EVENTS =
+{
+    NEEDSHALLOWED_NIGHTS = SPECIAL_EVENTS.HALLOWED_NIGHTS,
+    NEEDSWINTERS_FEAST   = SPECIAL_EVENTS.WINTERS_FEAST,
+    NEEDSYOTG            = SPECIAL_EVENTS.YOTG,
+    NEEDSYOTV            = SPECIAL_EVENTS.YOTV,
+    NEEDSYOTP            = SPECIAL_EVENTS.YOTP,
+    NEEDSYOTC            = SPECIAL_EVENTS.YOTC,
+    NEEDSYOTB            = SPECIAL_EVENTS.YOTB,
+    NEEDSYOTCATCOON      = SPECIAL_EVENTS.YOT_CATCOON,
+    NEEDSYOTR            = SPECIAL_EVENTS.YOTR,
+    NEEDSYOTD            = SPECIAL_EVENTS.YOTD,
+    NEEDSYOTS            = SPECIAL_EVENTS.YOTS,
+    NEEDSYOTH            = SPECIAL_EVENTS.YOTH,
+}
 
 if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
     for techname, data in pairs(RECIPETABS) do

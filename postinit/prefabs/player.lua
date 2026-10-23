@@ -88,7 +88,7 @@ local function OnApplyHeatVision(ent)
 
         -- Should we include soulless tag in here?
         if not ent:HasAnyTag("shadow", "shadowcreature", "chess", "wagstaff_npc")
-        and (ent:HasAnyTag("monster", "animal", "character", "smallcreature", "seacreature", "oceanfish")) then
+        and (ent:HasAnyTag("monster", "animal", "character", "smallcreature", "seacreature", "oceanfish", "hotblood")) then
             HEAT_MODE = TUNING.APO_MISC.HEATVISION.COLORS.HOT
         else
             HEAT_MODE = TUNING.APO_MISC.HEATVISION.COLORS.COLD

@@ -133,6 +133,100 @@ local function HatInspectaclesPostInit(inst)
     inst:AddTag("goggles_wagstaff")
 end
 
+local function HatMermPostInit(inst)
+    local function OnWaxedDirty(inst)
+        if inst.waxed:value() then
+            inst.displayadjectivefn = function()
+                return STRINGS.UI.HUD.WAXED
+            end
+
+            if not TheNet:IsDedicated() then
+                inst:PushEvent("hide_spoilage")
+            end
+        end
+    end
+
+    local function OnWaxed(inst)
+        if not inst.waxed:value() then
+            inst:RemoveComponent("perishable")
+            inst:RemoveComponent("waxable")
+
+            inst:RemoveTag("show_spoilage")
+
+            inst.waxed:set(true)
+
+            OnWaxedDirty(inst)
+
+            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+            if owner ~= nil then
+                local inventory = owner.components.inventory or owner.components.container
+
+                if inventory ~= nil and not inventory:CanTakeItemInSlot(inst) then
+                    inventory:DropItem(inst, true, true)
+                end
+            end
+
+            if inst.components.equippable ~= nil then
+                inst.components.equippable.dapperness = 0
+            end
+        end
+    end
+
+    local function OnWax(inst, doer, item)
+        OnWaxed(inst)
+
+        return true
+    end
+
+    local function OnSave(inst, data)
+        data.waxed = inst.waxed:value() or nil
+    end
+
+    local function OnLoad(inst, data)
+        if data ~= nil and data.waxed then
+            OnWaxed(inst)
+
+            inst.waxed:set(true)
+
+            OnWaxedDirty(inst)
+        end
+    end
+
+    inst:AddTag("waxable")
+
+    inst.waxed = net_bool(inst.GUID, "merm.waxed", "mermwaxeddirty")
+
+    if not _G.TheWorld.ismastersim then
+        inst:ListenForEvent("mermwaxeddirty", OnWaxedDirty)
+
+        return inst
+    end
+
+    inst:AddComponent("waxable")
+    inst.components.waxable:SetWaxfn(OnWax)
+
+    local _OnSave = inst.OnSave
+
+    inst.OnSave = function(inst, data, ...)
+        if _OnSave ~= nil then
+            _OnSave(inst, data, ...)
+        end
+
+        OnSave(inst, data)
+    end
+
+    local _OnLoad = inst.OnLoad
+
+    inst.OnLoad = function(inst, data, ...)
+        if _OnLoad ~= nil then
+            _OnLoad(inst, data, ...)
+        end
+
+        OnLoad(inst, data)
+    end
+end
+
 local function HatMolePostInit(inst)
     inst.SCANNABLE_RECIPENAME = "wagstaff_goggles_heathat"
 end
@@ -213,6 +307,102 @@ local function HatSlurtlePostInit(inst)
 
     inst:AddComponent("damagetyperesist")
     inst.components.damagetyperesist:AddResist("explosive", inst, TUNING.APO_HATS.SLURTLE.DAMAGETYPE_RESIST)
+end
+
+local function HatWatermelonPostInit(inst)
+    local function OnWaxedDirty(inst)
+        if inst.waxed:value() then
+            inst.displayadjectivefn = function()
+                return STRINGS.UI.HUD.WAXED
+            end
+
+            if not TheNet:IsDedicated() then
+                inst:PushEvent("hide_spoilage")
+            end
+        end
+    end
+
+    local function OnWaxed(inst)
+        if not inst.waxed:value() then
+            inst:RemoveComponent("perishable")
+            inst:RemoveComponent("waxable")
+
+            inst:RemoveTag("show_spoilage")
+
+            inst.waxed:set(true)
+
+            OnWaxedDirty(inst)
+
+            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+            if owner ~= nil then
+                local inventory = owner.components.inventory or owner.components.container
+
+                if inventory ~= nil and not inventory:CanTakeItemInSlot(inst) then
+                    inventory:DropItem(inst, true, true)
+                end
+            end
+
+            if inst.components.equippable ~= nil then
+                inst.components.equippable.dapperness = 0
+                inst.components.equippable.equippedmoisture = 0
+                inst.components.equippable.maxequippedmoisture = 0
+            end
+        end
+    end
+
+    local function OnWax(inst, doer, item)
+        OnWaxed(inst)
+
+        return true
+    end
+
+    local function OnSave(inst, data)
+        data.waxed = inst.waxed:value() or nil
+    end
+
+    local function OnLoad(inst, data)
+        if data ~= nil and data.waxed then
+            OnWaxed(inst)
+
+            inst.waxed:set(true)
+
+            OnWaxedDirty(inst)
+        end
+    end
+
+    inst:AddTag("waxable")
+
+    inst.waxed = net_bool(inst.GUID, "watermelon.waxed", "watermelonwaxeddirty")
+
+    if not _G.TheWorld.ismastersim then
+        inst:ListenForEvent("watermelonwaxeddirty", OnWaxedDirty)
+
+        return inst
+    end
+
+    inst:AddComponent("waxable")
+    inst.components.waxable:SetWaxfn(OnWax)
+
+    local _OnSave = inst.OnSave
+
+    inst.OnSave = function(inst, data, ...)
+        if _OnSave ~= nil then
+            _OnSave(inst, data, ...)
+        end
+
+        OnSave(inst, data)
+    end
+
+    local _OnLoad = inst.OnLoad
+
+    inst.OnLoad = function(inst, data, ...)
+        if _OnLoad ~= nil then
+            _OnLoad(inst, data, ...)
+        end
+
+        OnLoad(inst, data)
+    end
 end
 
 local function HatWinterPostInit(inst)
@@ -333,6 +523,10 @@ if TUNING.APO_TWEAK_INSPECTACLESHAT then
     AddPrefabPostInit("inspectacleshat", HatInspectaclesPostInit)
 end
 
+if TUNING.APO_TWEAK_MERMHAT then
+    AddPrefabPostInit("mermhat", HatMermPostInit)
+end
+
 if TUNING.APO_TWEAK_MUSHROOMHAT then
     for k, v in pairs(HATS_MUSHROOM) do
         AddPrefabPostInit(v, HatMushroomPostInit)
@@ -349,6 +543,10 @@ end
 
 if TUNING.APO_TWEAK_SPIDERHAT then
     AddPrefabPostInit("spiderhat", HatSpiderPostInit)
+end
+
+if TUNING.APO_TWEAK_WATERMELONHAT then
+    AddPrefabPostInit("watermelonhat", HatWatermelonPostInit)
 end
 
 if TUNING.APO_TWEAK_WINTERHAT then

@@ -32,7 +32,7 @@ WINONA.DESCRIBE.ARMOR_VORTEX = "Keeps the shadow from harshin' my mellow."
 
 WINONA.DESCRIBE.ARMOR_WEEVOLE = "Ew. It's all creepy-crawly."
 
-WINONA.DESCRIBE.ARMOR_WINDBREAKER = "The wind slips right around me!"
+WINONA.DESCRIBE.ARMOR_WINDBREAKER = "The rain slips right around me!"
 
 WINONA.DESCRIBE.BANDITHAT = "I look a little too shady in this."
 
@@ -68,7 +68,7 @@ WINONA.DESCRIBE.HEALINGBONUSHAT = "That hat'll help you feel right as rain."
 
 WINONA.DESCRIBE.JIAOLIANHAT = "Ha! It's kinda scary!"
 
-WINONA.DESCRIBE.LANTERNBOTTLE = "This will keep the dark at bay."
+WINONA.DESCRIBE.LANTERNBOTTLE = "This will keep the darkness at bay."
 
 WINONA.DESCRIBE.LEIF_STALK = "Gnarly."
 

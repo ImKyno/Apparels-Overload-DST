@@ -139,7 +139,7 @@ local function fn()
     inst:AddComponent("inventoryitem")
 
     inst:AddComponent("waterproofer")
-    inst.components.waterproofer.effectiveness = TUNING.WATERPROOFNESS_MED
+    inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_MED)
 
     inst:AddComponent("armor")
     inst.components.armor:InitCondition(TUNING.APO_ARMORS.WEEVOLE.CONDITION, TUNING.APO_ARMORS.WEEVOLE.ABSORPTION)

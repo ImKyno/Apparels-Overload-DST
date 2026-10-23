@@ -32,7 +32,7 @@ WANDA.DESCRIBE.ARMOR_VORTEX = "It vanishes my watches into it."
 
 WANDA.DESCRIBE.ARMOR_WEEVOLE = "Kinda disgusting."
 
-WANDA.DESCRIBE.ARMOR_WINDBREAKER = "I'll never get blown off course with this jacket."
+WANDA.DESCRIBE.ARMOR_WINDBREAKER = "This makes it easy to walk when it's raining."
 
 WANDA.DESCRIBE.BANDITHAT = "I shall become one with the shadows."
 
@@ -46,7 +46,7 @@ WANDA.DESCRIBE.BURIEDTREASURECHEST = "It's time for some treasure hunting."
 
 WANDA.DESCRIBE.CANDLEHAT = "For seeing in the dark."
 
-WANDA.DESCRIBE.CAPTAINHAT = "I am the captain of the time!"
+WANDA.DESCRIBE.CAPTAINHAT = "I am the captain of time!"
 
 WANDA.DESCRIBE.CARNIVAL_HOSTHAT = "All those tickets for a hat. I certainly hope it never goes out of style."
 

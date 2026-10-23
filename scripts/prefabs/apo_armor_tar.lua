@@ -82,7 +82,7 @@ local function fn()
     inst:AddComponent("inventoryitem")
 
     inst:AddComponent("waterproofer")
-    inst.components.waterproofer.effectiveness = TUNING.WATERPROOFNESS_ABSOLUTE
+    inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_ABSOLUTE)
 
     inst:AddComponent("shadowlevel")
     inst.components.shadowlevel:SetDefaultLevel(TUNING.APO_ARMORS.TAR.SHADOWLEVEL)

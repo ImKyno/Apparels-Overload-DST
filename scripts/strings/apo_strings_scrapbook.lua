@@ -106,7 +106,7 @@ Killing living creatures restores health.
 
 SPECIALINFO.ARMOR_WINDBREAKER =
 [[
-Increases movement speed by 25% when worn, up to 50% when it's raining or the wearer's moisture is above 50%.
+Increases movement speed by 25% when worn, up to 50% when it's raining or the wearer's wetness is above 50%.
 ]]
 
 SPECIALINFO.BANDITHAT =
@@ -319,6 +319,8 @@ Can be repaired with Gears.
 
 SPECIALINFO.PUMPKINHEADHAT =
 [[
+Prevents sanity drain from darkness and spooky things.
+
 Can be waxed to last forever.
 ]]
 
@@ -400,7 +402,7 @@ Increases movement speed by 15% when worn and it's snowing.
 SPECIALINFO.VOLCANOCOLDHAT =
 [[
 Provides light for its duration.
-Cools the wearer and provides constant cold when worn.
+Cools the wearer and provides constant coldness when worn.
 
 Can be repaired with Blue Gems.
 ]]
@@ -438,7 +440,7 @@ Improves vision in a storm and reveals hidden danger sources near the wearer.
 
 Allows the wearer to view the world in a night vision mode that can see in the dark.
 
-Shoots a high-energy projectile that causes an electric blast causing electric damage to nearby creatures.
+Shoots a high-energy projectile that creates an electric blast causing electric damage to nearby creatures.
 ]]
 
 SPECIALINFO.WILLOWOLDHAT =

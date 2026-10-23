@@ -66,12 +66,12 @@ AddRecipe2("armor_flowers",
 
 APOAddRecipe(ABCEnabled or IASEnabled, "armor_lifejacket",
     {
-        Ingredient("silk", 1),
+        Ingredient("silk", 2),
         Ingredient("mosquitosack", 1),
         Ingredient("rope", 1),
     },
 
-    TECH.SEAFARING_ONE, {}, { "RAIN", "SEAFARING", "SUMMER" }
+    TECH.SEAFARING_ONE, {}, { "SEAFARING" }
 )
 
 APOAddRecipe(ABCEnabled or IASEnabled, "armor_limestone",
@@ -156,7 +156,7 @@ APOAddRecipe(ABCEnabled or IASEnabled, "armor_weevole",
 APOAddRecipe(ABCEnabled or IASEnabled, "armor_windbreaker",
     {
         Ingredient("pigskin_dried", 3),
-        Ingredient("rope", 1),
+        Ingredient("rope", 2),
     },
 
     TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
@@ -219,8 +219,8 @@ APOAddRecipe(ABCEnabled or IASEnabled, "brainjellyhat",
     }
     or
     {
+        Ingredient("oceanfish_small_7_inv", 1),
         Ingredient("barnacle", 6),
-        Ingredient("kelp", 3),
         Ingredient("rope", 2),
     },
 
@@ -254,7 +254,7 @@ APOAddRecipe(ABCEnabled or IASEnabled, "captainhat",
         Ingredient("strawhat", 1),
     },
 
-    TECH.SEAFARING_ONE, {}, { "SEAFARING", "CLOTHING" }
+    TECH.SEAFARING_ONE, {}, { "CLOTHING", "SEAFARING" }
 )
 
 AddRecipe2("carnival_hosthat",

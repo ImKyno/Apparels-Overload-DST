@@ -32,7 +32,7 @@ WILLOW.DESCRIBE.ARMOR_VORTEX = "Reminds me of my lighter. It keeps away the dark
 
 WILLOW.DESCRIBE.ARMOR_WEEVOLE = "This feels gross. I hope it works."
 
-WILLOW.DESCRIBE.ARMOR_WINDBREAKER = "Wind is the enemy of fire."
+WILLOW.DESCRIBE.ARMOR_WINDBREAKER = "Rain is the enemy of fire."
 
 WILLOW.DESCRIBE.BANDITHAT = "Sneaky!"
 

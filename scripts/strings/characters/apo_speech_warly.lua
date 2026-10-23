@@ -32,7 +32,7 @@ WARLY.DESCRIBE.ARMOR_VORTEX = "Marinated in darkness."
 
 WARLY.DESCRIBE.ARMOR_WEEVOLE = "It still smells of wetness."
 
-WARLY.DESCRIBE.ARMOR_WINDBREAKER = "While it is rude to break wind in public, I will make an exception."
+WARLY.DESCRIBE.ARMOR_WINDBREAKER = "While it is rude to break rain in public, I will make an exception."
 
 WARLY.DESCRIBE.BANDITHAT = "A mysterious hat."
 

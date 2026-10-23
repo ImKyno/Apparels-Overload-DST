@@ -48,7 +48,7 @@ WALTER.DESCRIBE.CANDLEHAT = "This could be useful during the night!"
 
 WALTER.DESCRIBE.CAPTAINHAT = "Captain Walter at your disposal!"
 
-WALTER.DESCRIBE.CARNIVAL_HOSTHAT = "Just like Corvus Goodfeather's hat! Must be a pretty rare prize."
+WALTER.DESCRIBE.CARNIVAL_HOSTHAT = "Just like that big crow's hat! Must be a pretty rare prize."
 
 WALTER.DESCRIBE.DISGUISEHAT = "A disguise sneaky enough to fool those pigs."
 

@@ -235,24 +235,24 @@ local CHEST_LOOTS = -- Do not modify this table directly.
     {
         { item = "goldnugget",    count = 2 },
         { item = "pigskin_dried", count = 3 },
-        { item = "strawhat"                 },
+        { item = "footballhat"              },
         { item = "boomerang"                },
     },
 
     chest_explosives =
     {
         { item = "goldnugget", count = 3                 },
-        { item = "armor_seashell"                        },
         { item = "gunpowder",  count = math.random(3, 6) },
-        { item = "rope",       count = 2                 },
+        { item = "armor_seashell"                        },
+        { item = "torch"                                 },
     },
 
     chest_dapper =
     {
         { item = "goldnugget", count = 5 },
-        { item = "rope",       count = 2 },
-        { item = "cane"                  },
         { item = "tophat"                },
+        { item = "sweatervest"           },
+        { item = "cane"                  },
     },
 
     chest_combat =
@@ -355,9 +355,9 @@ local CHEST_LOOTS = -- Do not modify this table directly.
     chest_showdown =
     {
         { item = "goldnugget", count = 3                 },
-        { item = "torch"                                 },
         { item = "miniflare",  count = math.random(1, 3) },
         { item = "megaflare",  count = math.random(1, 3) },
+        { item = "torch"                                 },
     },
 
     chest_cooking =
@@ -385,9 +385,9 @@ local CHEST_LOOTS = -- Do not modify this table directly.
     chest_nightwalk =
     {
         { item = "goldnugget", count = 3 },
+        { item = "transistor", count = 2 },
         { item = "nightstick"            },
         { item = "molehat"               },
-        { item = "transistor", count = 2 },
     },
 
     chest_captain =
@@ -436,6 +436,7 @@ local CHEST_LOOTS = -- Do not modify this table directly.
         { item = "feather_robin",        count = math.random(2, 5) },
         { item = "feather_robin_winter", count = math.random(2, 5) },
         { item = "feather_canary",       count = math.random(2, 5) },
+        { item = "malbatross_feather",   count = math.random(2, 5) },
     },
 
     chest_minerals =
@@ -448,6 +449,10 @@ local CHEST_LOOTS = -- Do not modify this table directly.
 
     chest_trinkets =
     {
+        { item = "goldnugget",     count = 10                },
+        { item = GetRandomTrinket, count = math.random(1, 3) },
+        { item = GetRandomTrinket, count = math.random(1, 3) },
+        { item = GetRandomTrinket, count = math.random(1, 3) },
         { item = GetRandomTrinket, count = math.random(1, 3) },
         { item = GetRandomTrinket, count = math.random(1, 3) },
         { item = GetRandomTrinket, count = math.random(1, 3) },

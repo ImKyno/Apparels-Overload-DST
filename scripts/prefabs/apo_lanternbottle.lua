@@ -317,6 +317,7 @@ local function fn()
     inst:AddComponent("fueled")
     inst.components.fueled.fueltype = FUELTYPE.CAVE
     inst.components.fueled.secondaryfueltype = FUELTYPE.MOONBUTTERFLY
+    inst.components.fueled.bonusmult = TUNING.APO_LANTERNBOTTLE.FUEL_BONUS_MULT
     inst.components.fueled:InitializeFuelLevel(TUNING.APO_LANTERNBOTTLE.PERISHTIME)
     inst.components.fueled:SetFirstPeriod(TUNING.TURNON_FUELED_CONSUMPTION, TUNING.TURNON_FULL_FUELED_CONSUMPTION)
     inst.components.fueled:SetUpdateFn(OnFuelUpdate)

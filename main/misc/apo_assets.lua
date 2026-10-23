@@ -60,6 +60,7 @@ local APO_ICONS =
     "ms_aerodynamichat_tropical",
     "ms_armor_cactus_tropical",
     "ms_armor_snakeskin_scaly",
+    "ms_armor_windbreaker_tropical",
     "ms_double_umbrellahat_black",
     "ms_double_umbrellahat_cyan",
     "ms_double_umbrellahat_red",

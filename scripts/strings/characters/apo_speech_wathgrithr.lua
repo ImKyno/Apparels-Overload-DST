@@ -32,7 +32,7 @@ WATHGRITHR.DESCRIBE.ARMOR_VORTEX = "A cloak worthy of a warrior!"
 
 WATHGRITHR.DESCRIBE.ARMOR_WEEVOLE = "Armor made from the skin of mine enemy."
 
-WATHGRITHR.DESCRIBE.ARMOR_WINDBREAKER = "I shall break the wind with every step!"
+WATHGRITHR.DESCRIBE.ARMOR_WINDBREAKER = "I shall break the rain with every step!"
 
 WATHGRITHR.DESCRIBE.BANDITHAT = "'Tis full of Loki's trickery."
 
@@ -106,7 +106,7 @@ WATHGRITHR.DESCRIBE.SHARK_FIN = "A token from a fallen warrior."
 
 WATHGRITHR.DESCRIBE.SHARK_TEETHHAT = "A helm after my warriors heart!"
 
-WATHGRITHR.DESCRIBE.SNAKESKINHAT = "Shall I wear the serpent?"
+WATHGRITHR.DESCRIBE.SNAKESKINHAT = "Shall I wear it?"
 
 WATHGRITHR.DESCRIBE.THATCHSACK = "I hope my spear doesn't poke a hole in it."
 

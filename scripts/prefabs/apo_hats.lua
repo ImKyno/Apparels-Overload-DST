@@ -548,6 +548,10 @@ local function MakeHat(name)
                 if not owner.components.builder.current_prototyper or not CanPrototypeRecipe(data.recipe.level,
                 owner.components.builder.current_prototyper.components.prototyper.trees) then
                     inst.components.finiteuses:Use(1)
+
+                    if owner.components.sanity ~= nil then
+                        owner.components.sanity:DoDelta(-owner.components.sanity.max * TUNING.APO_HATS.BRAINJELLY.SANITY_COST)
+                    end
                 else
                     owner.components.builder:UnlockRecipe(data.recipe.name)
                     owner.components.builder:ActivateCurrentResearchMachine()
@@ -1623,7 +1627,7 @@ local function MakeHat(name)
         inst.components.equippable.insulated = true
 
         inst:AddComponent("waterproofer")
-        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_LARGE)
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_HUGE)
 
         inst:AddComponent("setbonus")
         inst.components.setbonus:SetSetName(EQUIPMENTSETNAMES.SNAKESKIN)
@@ -2054,6 +2058,7 @@ local function MakeHat(name)
         inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
         inst.components.equippable:SetOnEquip(hat_fns.opentop_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.simple_onunequip)
+        inst.components.equippable.restrictedtag = "portableengineer"
     end
 
     hat_fns.wagstaff_goggles_onbroken = function(inst)
@@ -2101,6 +2106,7 @@ local function MakeHat(name)
         end
 
         inst.components.equippable:SetOnEquip(hat_fns.opentop_onequip)
+        inst.components.equippable.restrictedtag = "portableengineer"
 
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.MAGIC
@@ -2136,6 +2142,7 @@ local function MakeHat(name)
         inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_armor_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_armor_onunequip)
+        inst.components.equippable.restrictedtag = "portableengineer"
     end
 
     hat_fns.wagstaff_goggles_armor_onbroken = function(inst)
@@ -2189,6 +2196,7 @@ local function MakeHat(name)
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_armor_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_armor_onunequip)
         inst.components.equippable.walkspeedmult = TUNING.APO_HATS.WAGSTAFF_GOGGLES_ARMOR.WALKSPEEDMULT
+        inst.components.equippable.restrictedtag = "portableengineer"
 
         inst:AddComponent("waterproofer")
         inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_MED)
@@ -2246,6 +2254,7 @@ local function MakeHat(name)
         inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_heat_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_heat_onunequip)
+        inst.components.equippable.restrictedtag = "portableengineer"
     end
 
     hat_fns.wagstaff_goggles_heat_onbroken = function(inst)
@@ -2298,6 +2307,7 @@ local function MakeHat(name)
 
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_heat_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_heat_onunequip)
+        inst.components.equippable.restrictedtag = "portableengineer"
 
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.MAGIC
@@ -2356,6 +2366,7 @@ local function MakeHat(name)
         inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_shoot_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_shoot_onunequip)
+        inst.components.equippable.restrictedtag = "portableengineer"
     end
 
     hat_fns.wagstaff_goggles_shoot_onbroken = function(inst)
@@ -2413,6 +2424,7 @@ local function MakeHat(name)
 
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_shoot_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_shoot_onunequip)
+        inst.components.equippable.restrictedtag = "portableengineer"
 
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.MAGIC

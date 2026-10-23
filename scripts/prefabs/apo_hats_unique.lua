@@ -1071,13 +1071,36 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.pumpkinhead_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            if owner.components.sanity ~= nil then
+                owner.components.sanity:SetLightDrainImmune(true, inst)
+                owner.components.sanity:SetPlayerGhostImmunity(true, inst)
+                owner.components.sanity:AddSanityAuraImmunity("ghost", inst)
+            end
+        end
+    end
+
+    hat_fns.pumpkinhead_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            if owner.components.sanity ~= nil then
+                owner.components.sanity:SetLightDrainImmune(false, inst)
+                owner.components.sanity:SetPlayerGhostImmunity(false, inst)
+                owner.components.sanity:RemoveSanityAuraImmunity("ghost", inst)
+            end
+        end
+    end
+
     hat_fns.pumpkinhead_onwaxed = function(inst)
         if not inst.waxed:value() then
             inst:RemoveComponent("perishable")
             inst:RemoveComponent("waxable")
 
             inst:RemoveTag("show_spoilage")
-            inst:RemoveTag("icebox_valid")
 
             inst.waxed:set(true)
 
@@ -1135,7 +1158,6 @@ local function MakeHat(name)
         inst:AddTag("fullhelm_hat")
         inst:AddTag("spook_protection")
         inst:AddTag("show_spoilage")
-        inst:AddTag("icebox_valid")
         inst:AddTag("waxable")
 
         inst.waxed = net_bool(inst.GUID, "pumpkinhead.waxed", "pumpkinheadwaxeddirty")
@@ -1150,6 +1172,8 @@ local function MakeHat(name)
             return inst
         end
 
+        inst.components.equippable:SetOnEquip(hat_fns.pumpkinhead_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.pumpkinhead_onunequip)
         inst.components.equippable.dapperness = TUNING.CRAZINESS_SMALL
 
         inst:AddComponent("waxable")

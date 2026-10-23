@@ -139,8 +139,41 @@ function APOAbsorbTemperatureDamage(inst, damage, damage_per_use, tag)
     return damage
 end
 
+function APOIsLostTechRecipe(recipe)
+    for techname, level in pairs(TECH.LOST) do
+        if recipe.level[techname] ~= level then
+            return false
+        end
+    end
+
+    for techname, level in pairs(recipe.level) do
+        if TECH.LOST[techname] ~= level then
+            return false
+        end
+    end
+
+    return true
+end
+
+function APOIsSpecialEventTech(recipe)
+    if recipe.hint_msg == nil then
+        return false
+    end
+
+    local event = BRAINJELLY_SPECIAL_EVENTS[recipe.hint_msg]
+    return event ~= nil and not IsSpecialEventActive(event)
+end
+
 function APOCanBrainJellyHatUnlockRecipe(builder, recipe)
-    if recipe.nobrainjelly then
+    if APOIsLostTechRecipe(recipe) then
+        return false -- Blocks recipes that requires Blueprint.
+    end
+
+    if APOIsSpecialEventTech(recipe) then
+        return false -- Blocks recipes from inactive Special Events.
+    end
+
+    if recipe.nobrainjellyhat then
         return false
     end
 
