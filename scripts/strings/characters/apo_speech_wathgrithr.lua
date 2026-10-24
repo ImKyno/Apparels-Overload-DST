@@ -60,7 +60,7 @@ WATHGRITHR.DESCRIBE.FOODBASKETHAT = "Not a proper hat for a warrior!"
 
 WATHGRITHR.DESCRIBE.FOODBONUSHAT = "'Twas not made for a warrior."
 
-WATHGRITHR.DESCRIBE.GASHAT = "Armor of sorts for my nose and throat!"
+WATHGRITHR.DESCRIBE.GASHAT = "Armor of sorts for my head!"
 
 WATHGRITHR.DESCRIBE.GASMASKHAT = "Poisonous air shall not consume me!"
 

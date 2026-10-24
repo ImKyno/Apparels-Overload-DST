@@ -96,7 +96,7 @@ WAXWELL.DESCRIBE.PIRATEPACK = "I suppose it will do."
 
 WAXWELL.DESCRIBE.PITHHAT = "Protects my most important part."
 
-WAXWELL.DESCRIBE.PROPELLERHAT = "Higgsbury, this is a ridiculous contraption."
+WAXWELL.DESCRIBE.PROPELLERHAT = "Higgsbury, this is a ridiculous invention."
 
 WAXWELL.DESCRIBE.PUMPKINHEADHAT = "Why hello, Mr. Crane."
 

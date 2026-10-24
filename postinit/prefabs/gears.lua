@@ -14,7 +14,7 @@ local function GearsPostInit(inst)
             inst.components.fuel.secondaryfueltype = _G.FUELTYPE.GEARS
         end
 
-        inst.components.fuel.fuelvalue = TUNING.HUGE_FUEL
+        inst.components.fuel.fuelvalue = TUNING.HUGE_FUEL * 3.33
     end
 end
 

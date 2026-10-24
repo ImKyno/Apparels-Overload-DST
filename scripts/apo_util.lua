@@ -127,6 +127,17 @@ function APOAbsorbTemperatureDamage(inst, damage, damage_per_use, tag)
 
                     item.components.perishable:ReducePercent(perish_percent)
                     damage = damage - absorbed
+                elseif item.components.fueled ~= nil then
+                    local uses_available = item.components.fueled.currentfuel
+                    local fuel_per_damage = item.components.fueled.maxfuel * 0.01
+
+                    if uses_available > 0 then
+                        local uses = math.min(damage / item_damage_per_use * fuel_per_damage, uses_available)
+                        local absorbed = uses / fuel_per_damage * item_damage_per_use
+
+                        item.components.fueled:DoDelta(-uses)
+                        damage = damage - absorbed
+                    end
                 end
             end
 

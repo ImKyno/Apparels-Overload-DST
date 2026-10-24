@@ -60,7 +60,7 @@ WENDY.DESCRIBE.FOODBASKETHAT = "A hat worn during pieces and films."
 
 WENDY.DESCRIBE.FOODBONUSHAT = "The wearer shall eat for good."
 
-WENDY.DESCRIBE.GASHAT = "This hat prevents me from breathing in death."
+WENDY.DESCRIBE.GASHAT = "This hat prevents me from death raindrops."
 
 WENDY.DESCRIBE.GASMASKHAT = "It keeps out the gas, but no the despair."
 

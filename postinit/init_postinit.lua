@@ -49,6 +49,7 @@ local INIT_POSTINIT_PREFABS =
     "beequeen",
     "bernie_active",
     "cactus_flower",
+    "characters",
     "crabking",
     "daywalker",
     "dragonfly",

@@ -37,6 +37,48 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         _G.basic_clear_fn(inst, "armor_windbreaker")
     end
 
+    -- Dumbrella.
+    _G.double_umbrellahat_init_fn = function(inst, build_name)
+        _G.basic_init_fn(inst, build_name, "hat_double_umbrella")
+    end
+
+    _G.double_umbrellahat_clear_fn = function(inst)
+        _G.basic_clear_fn(inst, "hat_double_umbrella")
+    end
+
+    -- Lune Woven Garland
+    _G.foodbonushat_init_fn = function(inst, build_name)
+        _G.basic_init_fn(inst, build_name, "hat_foodbonus")
+    end
+
+    _G.foodbonushat_clear_fn = function(inst)
+        _G.basic_clear_fn(inst, "hat_foodbonus")
+    end
+
+    -- Gas Mask.
+    _G.gasmaskhat_init_fn = function(inst, build_name)
+        _G.basic_init_fn(inst, build_name, "hat_gasmask")
+
+        if build_name == "ms_hat_gasmask_hazard" then
+            inst:AddTag("mufflehat")
+        end
+    end
+
+    _G.gasmaskhat_clear_fn = function(inst)
+        _G.basic_clear_fn(inst, "hat_gasmask")
+
+        inst:RemoveTag("mufflehat")
+    end
+
+    -- Lune Blossom Headband
+    _G.healingbonushat_init_fn = function(inst, build_name)
+        _G.basic_init_fn(inst, build_name, "hat_healingbonus")
+    end
+
+    _G.healingbonushat_clear_fn = function(inst)
+        _G.basic_clear_fn(inst, "hat_healingbonus")
+    end
+
     -- Bottle Lantern.
     _G.lanternbottle_init_fn = function(inst, build_name)
         _G.basic_init_fn(inst, build_name, "lanternbottle")
@@ -54,28 +96,31 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         end
     end
 
-    -- Dumbrella.
-    _G.double_umbrellahat_init_fn = function(inst, build_name)
-        _G.basic_init_fn(inst, build_name, "hat_double_umbrella")
+    -- Soulstealer's Crown
+    _G.lifestealhat_init_fn = function(inst, build_name)
+        _G.basic_init_fn(inst, build_name, "hat_lifesteal")
     end
 
-    _G.double_umbrellahat_clear_fn = function(inst)
-        _G.basic_clear_fn(inst, "hat_double_umbrella")
+    _G.lifestealhat_clear_fn = function(inst)
+        _G.basic_clear_fn(inst, "hat_lifesteal")
     end
 
-    -- Gas Mask.
-    _G.gasmaskhat_init_fn = function(inst, build_name)
-        _G.basic_init_fn(inst, build_name, "hat_gasmask")
-
-        if build_name == "ms_hat_gasmask_hazard" then
-            inst:AddTag("mufflehat")
-        end
+    -- Respledent Guardian Helm
+    _G.minotaurcrownhat_init_fn = function(inst, build_name)
+        _G.basic_init_fn(inst, build_name, "hat_minotaurcrown")
     end
 
-    _G.gasmaskhat_clear_fn = function(inst)
-        _G.basic_clear_fn(inst, "hat_gasmask")
+    _G.minotaurcrownhat_clear_fn = function(inst)
+        _G.basic_clear_fn(inst, "hat_minotaurcrown")
+    end
 
-        inst:RemoveTag("mufflehat")
+    -- Lunar Crystal Tiara
+    _G.sanitydamagehat_init_fn = function(inst, build_name)
+        _G.basic_init_fn(inst, build_name, "hat_sanitydamage")
+    end
+
+    _G.sanitydamagehat_clear_fn = function(inst)
+        _G.basic_clear_fn(inst, "hat_sanitydamage")
     end
 
     -- Leather Hat

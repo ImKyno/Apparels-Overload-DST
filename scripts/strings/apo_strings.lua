@@ -92,7 +92,7 @@ STRINGS.RECIPE_DESC.GASHAT = "Keep nasty airborne particulates away!"
 STRINGS.NAMES.GASMASKHAT = "Gas Mask"
 STRINGS.RECIPE_DESC.GASMASKHAT = "Makes everything smell like bird."
 
-STRINGS.NAMES.HEALINGBONUSHAT = "Lunar Blossom Headband"
+STRINGS.NAMES.HEALINGBONUSHAT = "Lune Blossom Headband"
 STRINGS.RECIPE_DESC.HEALINGBONUSHAT = "Let nature mend what ails you."
 
 STRINGS.NAMES.JIAOLIANHAT = "Jiaolian's Mask"

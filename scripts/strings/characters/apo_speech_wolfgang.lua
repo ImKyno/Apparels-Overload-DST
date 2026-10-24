@@ -58,7 +58,7 @@ WOLFGANG.DESCRIBE.EXTRAHEAVYHAT = "Wolfgang's head is strong enough!"
 
 WOLFGANG.DESCRIBE.FOODBASKETHAT = "Hat has lot of food, could eat it later."
 
-WOLFGANG.DESCRIBE.FOODBONUSHAT = "Is useless leaf hat."
+WOLFGANG.DESCRIBE.FOODBONUSHAT = "Wolfgang feeling hungry..."
 
 WOLFGANG.DESCRIBE.GASHAT = "Little hat is very colorful."
 

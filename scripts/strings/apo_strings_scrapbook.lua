@@ -3,7 +3,7 @@ local SPECIALINFO = STRINGS.SCRAPBOOK.SPECIALINFO
 
 SPECIALINFO.AERODYNAMICHAT =
 [[
-Increases movement speed by 25% when worn.
+Decreases luck by 2 points and increases movement speed by 25% when worn.
 ]]
 
 SPECIALINFO.ANTMASKHAT =
@@ -11,6 +11,8 @@ SPECIALINFO.ANTMASKHAT =
 The protection this helm offers only really works on Bees and Bee-like creatures. It also pacifies them.
 
 Allows the wearer to safely harvest bee boxes.
+
+When paired with Mant Suit increases damage against Bee-like creatures by 25%.
 ]]
 
 SPECIALINFO.ARMOR_ANT =
@@ -18,6 +20,8 @@ SPECIALINFO.ARMOR_ANT =
 The protection this armor offers only really works on Bees and Bee-like creatures. It also pacifies them.
 
 Allows the wearer to safely harvest bee boxes.
+
+When paired with Mant Mask increases damage against Bee-like creatures by 25%.
 ]]
 
 SPECIALINFO.ARMOR_CACTUS =
@@ -92,6 +96,8 @@ SPECIALINFO.ARMOR_SNURTLE_TWEAK =
 One can tuck inside this hard shell to survive any assault.
 
 This armor can protect the wearer against explosion damage.
+
+When paired with Shelmet regenerates 2 health per second while tucked inside the shell, when below 65% health.
 ]]
 
 SPECIALINFO.ARMOR_VORTEX =
@@ -145,7 +151,9 @@ Protects the wearer against falling debris.
 
 SPECIALINFO.CANDLEHAT =
 [[
-Creates light when worn.
+This item creates light for its duration.
+
+It does not break when its duration is finished and can be refuled.
 ]]
 
 SPECIALINFO.CAPTAINHAT =
@@ -196,7 +204,7 @@ Increases hunger by 50 points and hunger rate is slowed by 25% when worn.
 
 SPECIALINFO.FOODBONUSHAT =
 [[
-Increases stats gained from food by 20%.
+Increases positive stats gained from food by 20%.
 ]]
 
 SPECIALINFO.GASHAT =
@@ -271,6 +279,13 @@ Increases movement speed by 10%, damage and attack speed by 25% when worn.
 When paired with Thulecite Suit increases Thulecite Club damage by 25% and allows it to perform a special attack.
 ]]
 
+SPECIALINFO.MERMHAT_TWEAK =
+[[
+Merm will treat the wearer like a merm.
+
+Can be waxed to last forever and prevent sanity loss.
+]]
+
 SPECIALINFO.MUSHROOMHAT_TWEAK =
 [[
 Reduces hunger by 25%. Periodically Spawns Mushroom Spores.
@@ -307,12 +322,12 @@ A 12 slot container that drops a random reward every 3 days.
 
 SPECIALINFO.PITHHAT =
 [[
-Decreases slowness by 25% when worn. 
+Decreases slowness by 25% when worn.
 ]]
 
 SPECIALINFO.PROPELLERHAT =
 [[
-Cools the wearer and provides constant cold when worn.
+Cools the wearer and provides constant coldness when worn.
 
 Can be repaired with Gears.
 ]]
@@ -321,7 +336,7 @@ SPECIALINFO.PUMPKINHEADHAT =
 [[
 Prevents sanity drain from darkness and spooky things.
 
-Can be waxed to last forever.
+Can be waxed to last forever and prevent sanity loss.
 ]]
 
 SPECIALINFO.RAINHAT_TWEAK =
@@ -357,6 +372,8 @@ Increases luck by 2 points when worn.
 SPECIALINFO.SLURTLEHAT_TWEAK =
 [[
 This helm can protect the wearer against explosion damage.
+
+When paired with Snurtle Shell Armor regenerates 2 health per second while tucked inside the shell, when below 65% health.
 ]]
 
 SPECIALINFO.SNAKESKINHAT =
@@ -443,9 +460,16 @@ Allows the wearer to view the world in a night vision mode that can see in the d
 Shoots a high-energy projectile that creates an electric blast causing electric damage to nearby creatures.
 ]]
 
+SPECIALINFO.WATERMELONHAT_TWEAK =
+[[
+Wearer's wetness will slowly rise up to 33%.
+
+Can be waxed to last forever and prevent sanity loss.
+]]
+
 SPECIALINFO.WILLOWOLDHAT =
 [[
-Increases Bernie's health and damage by 25% when worn.
+Increases BERNIE! health and damage by 25% when worn.
 ]]
 
 SPECIALINFO.WINTERHAT_TWEAK =

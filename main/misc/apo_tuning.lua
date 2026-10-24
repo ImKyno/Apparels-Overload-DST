@@ -34,6 +34,7 @@ TUNING.APO_TWEAK_WINTERHAT       = GetModConfigData("TWEAK_WINTERHAT")
 
 TUNING.APO_TWEAK_FOLLOWER        = GetModConfigData("TWEAK_FOLLOWER")
 TUNING.APO_TWEAK_MANNEQUIN       = GetModConfigData("TWEAK_MANNEQUIN")
+TUNING.APO_TWEAK_RESTRICTED      = GetModConfigData("TWEAK_RESTRICTED")
 
 TUNING.APO_IS_ABC_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-3322803908") -- Above the Clouds.
 TUNING.APO_IS_HOF_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-2334209327") or _G.KnownModIndex:IsModEnabled("Heap-of-Foods-Workshop-Main") -- Heap of Foods.
@@ -90,6 +91,7 @@ TUNING.APO_MISC =
     {
         TAGS_BLACKLIST =
         {
+            "noextraloot",
             "irreplaceable",
             "sketch", -- Uh, I don't think people would want extra sketches...?
         },
@@ -216,6 +218,11 @@ TUNING.APO_ARMORS =
         CONSUPTION = 0.05, -- For Bee Box.
         PERISHTIME = 480 * 10,
 
+        MODIFIERS =
+        {
+            DAMAGE = 1.25,
+        },
+
         TAGS =
         {
             "bee",
@@ -225,6 +232,7 @@ TUNING.APO_ARMORS =
     BEARGERVEST =
     {
         BONUS = 50,
+        FREEZING_DAMAGE = 10,
 
         SLEEPINGBAG =
         {
@@ -328,6 +336,9 @@ TUNING.APO_ARMORS =
     SNURTLE =
     {
         DAMAGETYPE_RESIST = 0.10,
+        THRESHOLD = 0.65,
+        INTERVAL = 1.5,
+        AMOUNT = 2,
     },
 
     SWEATERVEST =
@@ -400,8 +411,9 @@ TUNING.APO_HATS =
 {
     AERODYNAMIC =
     {
-        PERISHTIME = 480 * 3,
+        PERISHTIME = 480 * 4,
         WALKSPEEDMULT = 1.25,
+        LUCK = -2,
     },
 
     ANTLION =
@@ -447,6 +459,7 @@ TUNING.APO_HATS =
     CANDLE =
     {
         PERISHTIME = 200,
+        RAIN_RATE = 1.5,
     },
 
     CAPTAIN =
@@ -758,6 +771,12 @@ TUNING.APO_HATS =
     WILLOWOLD =
     {
         PERISHTIME = 480 * 4,
+
+        START =
+        {
+            MIN = 20,
+            MAX = 40,
+        },
 
         MODIFIERS =
         {

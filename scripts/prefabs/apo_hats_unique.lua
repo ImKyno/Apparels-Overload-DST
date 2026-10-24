@@ -1803,6 +1803,10 @@ local function MakeHat(name)
         inst.components.equippable:SetOnUnequip(hat_fns.willowold_onunequip)
         inst.components.equippable.dapperness = 0
 
+        if TUNING.APO_TWEAK_RESTRICTED then
+            inst.components.equippable.restrictedtag = "bernieowner"
+        end
+
         inst:AddComponent("waterproofer")
         inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
 

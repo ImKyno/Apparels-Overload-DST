@@ -248,6 +248,30 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.aerodynamic_onequip = function(inst, owner)
+        hat_fns.simple_onequip(inst, owner)
+
+        if owner ~= nil then
+            inst:AddTag("luckysource")
+
+            if owner.components.luckuser ~= nil then
+                owner.components.luckuser:SetLuckSource(TUNING.APO_HATS.AERODYNAMIC.LUCK, inst)
+            end
+        end
+    end
+
+    hat_fns.aerodynamic_onunequip = function(inst, owner)
+        hat_fns.simple_onunequip(inst, owner)
+
+        if owner ~= nil then
+            inst:RemoveTag("luckysource")
+
+            if owner.components.luckuser ~= nil then
+                owner.components.luckuser:RemoveLuckSource(inst)
+            end
+        end
+    end
+
     hat_fns.aerodynamic_custom_init = function(inst)
         inst.AnimState:SetRayTestOnBB(true)
     end
@@ -259,6 +283,8 @@ local function MakeHat(name)
             return inst
         end
 
+        inst.components.equippable:SetOnEquip(hat_fns.aerodynamic_onequip)
+        inst.components.equippable:SetOnUnequip(hat_fns.aerodynamic_onunequip)
         inst.components.equippable.dapperness = TUNING.DAPPERNESS_SMALL
         inst.components.equippable.walkspeedmult = TUNING.APO_HATS.AERODYNAMIC.WALKSPEEDMULT
 
@@ -268,6 +294,11 @@ local function MakeHat(name)
         inst.components.fueled:SetDepletedFn(hat_fns.simple_onperish)
 
         return inst
+    end
+
+    hat_fns.antmask_getsetbonusequip = function(inst, owner)
+        local body = owner.components.inventory ~= nil and owner.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY) or nil
+        return body ~= nil and body.prefab == "armor_ant" and body or nil
     end
 
     hat_fns.antmask_onupdate = function(inst)
@@ -313,6 +344,9 @@ local function MakeHat(name)
         inst.components.armor:InitCondition(TUNING.APO_HATS.ANTMASK.CONDITION, TUNING.APO_HATS.ANTMASK.ABSORPTION)
         inst.components.armor:SetTags(TUNING.APO_HATS.ANTMASK.TAGS)
         inst.components.armor.ontakedamage = hat_fns.antmask_ontakedamage
+
+        inst:AddComponent("setbonus")
+        inst.components.setbonus:SetSetName(EQUIPMENTSETNAMES.ANT)
 
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.USAGE
@@ -386,7 +420,6 @@ local function MakeHat(name)
 
     hat_fns.bandit_custom_init = function(inst)
         inst:AddTag("extralootsource")
-        inst:AddTag("waterproofer")
     end
 
     hat_fns.bandit = function()
@@ -406,13 +439,11 @@ local function MakeHat(name)
 
         inst:AddComponent("extralootdropper")
 
-        inst:AddComponent("waterproofer")
-        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
-
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.USAGE
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.BANDIT.PERISHTIME)
         inst.components.fueled:SetDepletedFn(inst.Remove)
+        inst.components.fueled.no_sewing = true
 
         return inst
     end
@@ -570,11 +601,74 @@ local function MakeHat(name)
         return inst
     end
 
+    hat_fns.candle_onapplyskillbrightness = function(inst, value)
+        if inst.candlefire then
+            for i, fx in ipairs(inst.candlefire) do
+                fx:SetLightRange(value)
+            end
+        end
+    end
+
+    hat_fns.candle_onapplyskillfueleffect = function(inst, value)
+        if inst.components.fueled ~= nil then
+            if value ~= 1 then
+                inst.components.fueled.rate_modifiers:SetModifier(inst, value, "wilsonskill")
+            else
+                inst.components.fueled.rate_modifiers:RemoveModifier(inst, "wilsonskill")
+            end
+        end
+    end
+
+    hat_fns.candle_ongetskillfueleffectmodifier = function(skilltreeupdater)
+        return (skilltreeupdater:IsActivated("wilson_torch_3") and TUNING.SKILLS.WILSON_TORCH_3)
+        or (skilltreeupdater:IsActivated("wilson_torch_2") and TUNING.SKILLS.WILSON_TORCH_2)
+        or (skilltreeupdater:IsActivated("wilson_torch_1") and TUNING.SKILLS.WILSON_TORCH_1)
+        or 1
+    end
+
+    hat_fns.candle_ongetskillbrightnesseffectmodifier = function(skilltreeupdater)
+        return (skilltreeupdater:IsActivated("wilson_torch_6") and TUNING.SKILLS.WILSON_TORCH_6)
+        or (skilltreeupdater:IsActivated("wilson_torch_5") and TUNING.SKILLS.WILSON_TORCH_5)
+        or (skilltreeupdater:IsActivated("wilson_torch_4") and TUNING.SKILLS.WILSON_TORCH_4)
+        or 1
+    end
+
+    hat_fns.candle_onskillrefresh = function(inst, owner)
+        local skilltreeupdater = owner ~= nil and owner.components.skilltreeupdater or nil
+
+        if skilltreeupdater ~= nil then
+            hat_fns.candle_onapplyskillbrightness(inst, hat_fns.candle_ongetskillbrightnesseffectmodifier(skilltreeupdater))
+            hat_fns.candle_onapplyskillfueleffect(inst, hat_fns.candle_ongetskillfueleffectmodifier(skilltreeupdater))
+        else
+            hat_fns.candle_onapplyskillbrightness(inst, 1)
+            hat_fns.candle_onapplyskillfueleffect(inst, 1)
+        end
+    end
+
+    hat_fns.candle_onwatchskillrefresh = function(inst, owner)
+        if inst.candle_owner then
+            inst:RemoveEventCallback("onactivateskill_server", inst.candle_onskillrefresh, inst.candle_owner)
+            inst:RemoveEventCallback("ondeactivateskill_server", inst.candle_onskillrefresh, inst.candle_owner)
+        end
+
+        inst.candle_owner = owner
+
+        if owner then
+            inst:ListenForEvent("onactivateskill_server", inst.candle_onskillrefresh, owner)
+            inst:ListenForEvent("ondeactivateskill_server", inst.candle_onskillrefresh, owner)
+        end
+    end
+
     hat_fns.candle_onturnon = function(inst, owner)
         if owner ~= nil then
             if inst.components.fueled ~= nil then
                 if not inst.components.fueled:IsEmpty() then
                     inst.components.fueled:StartConsuming()
+
+                    if inst.components.lighter == nil then
+                        inst:AddTag("lighter")
+                        inst:AddComponent("lighter")
+                    end
 
                     inst.SoundEmitter:PlaySound("dontstarve/wilson/torch_LP", "torch")
                     inst.SoundEmitter:SetParameter("torch", "intensity", 1)
@@ -582,8 +676,12 @@ local function MakeHat(name)
                     if not inst.candlefire then
                         inst.candlefire = SpawnPrefab("torchfire_rag")
 
-                        local follower = inst.candlefire.entity:AddFollower()
-                        follower:FollowSymbol(owner.GUID, "swap_hat", 0, -250, 0)
+                        if inst.candlefire then
+                            local follower = inst.candlefire.entity:AddFollower()
+                            follower:FollowSymbol(owner.GUID, "swap_hat", 0, -250, 0)
+
+                            inst.candlefire:AddTag("fire")
+                        end
                     end
                 end
             end
@@ -601,7 +699,15 @@ local function MakeHat(name)
                 end
 
                 inst.SoundEmitter:KillSound("torch")
-                inst.SoundEmitter:PlaySound("dontstarve/common/fireOut")
+
+                if inst.components.lighter ~= nil then
+                    inst:RemoveTag("lighter")
+                    inst:RemoveComponent("lighter")
+                end
+
+                if not inst.components.fueled:IsEmpty() then
+                    inst.SoundEmitter:PlaySound("dontstarve/common/fireOut")
+                end
             end
         end
     end
@@ -609,40 +715,94 @@ local function MakeHat(name)
     hat_fns.candle_onequip = function(inst, owner)
         hat_fns.simple_onequip(inst, owner)
         hat_fns.candle_onturnon(inst, owner)
+
+        hat_fns.candle_onwatchskillrefresh(inst, owner)
+        hat_fns.candle_onskillrefresh(inst, owner)
     end
 
     hat_fns.candle_onunequip = function(inst, owner)
         hat_fns.simple_onunequip(inst, owner)
         hat_fns.candle_onturnoff(inst, owner)
+
+        hat_fns.candle_onwatchskillrefresh(inst, nil)
+        hat_fns.candle_onskillrefresh(inst, nil)
     end
 
     hat_fns.candle_onequiptomodel = function(inst, owner, from_ground)
         hat_fns.simple_onequiptomodel(inst, owner, from_ground)
         hat_fns.candle_onturnoff(inst, owner)
+
+        hat_fns.candle_onwatchskillrefresh(inst, nil)
+        hat_fns.candle_onskillrefresh(inst, nil)
     end
 
     hat_fns.candle_onperish = function(inst)
-        if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
-            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+        local equipped = inst.components.equippable ~= nil and inst.components.equippable:IsEquipped()
 
-            if owner ~= nil then
-                hat_fns.candle_onturnoff(inst, owner)
-                owner:PushEvent("torchranout", { torch = inst })
-            end
+        if equipped and owner ~= nil then
+            hat_fns.candle_onturnoff(inst, owner)
+
+            inst.SoundEmitter:PlaySound("dontstarve/common/fireOut")
+
+            local data =
+            {
+                prefab = inst.prefab,
+                equipslot = inst.components.equippable.equipslot,
+                announce = "ANNOUNCE_TORCH_OUT",
+            }
+
+            owner:PushEvent("itemranout", data)
         end
-
-        hat_fns.simple_onperish(inst)
     end
 
     hat_fns.candle_ondropped = function(inst, owner)
         hat_fns.candle_onturnoff(inst, owner)
     end
 
-    hat_fns.candle_ontakefuel = function(inst, owner)
-        inst.SoundEmitter:PlaySound("dontstarve/common/fireAddFuel")
+    hat_fns.candle_ontakefuel = function(inst)
+        inst.SoundEmitter:KillSound("addfuel")
+        inst.SoundEmitter:PlaySound("dontstarve/common/fireAddFuel", "addfuel", 0.5)
 
         if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
-            hat_fns.candle_onturnon(inst, owner)
+            local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+            if owner ~= nil then
+                hat_fns.candle_onturnon(inst, owner)
+            end
+        end
+    end
+
+    hat_fns.candle_onupdatefuel = function(inst)
+        local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+        local owner_protected = owner ~= nil and
+        (owner.components.sheltered ~= nil and owner.components.sheltered.sheltered or owner.components.rainimmunity ~= nil)
+
+        if inst.components.fueled ~= nil then
+            inst.components.fueled.rate = (owner_protected or inst.components.rainimmunity ~= nil)
+            and (inst.candle_fuelratemult or 1) or (1 + TUNING.APO_HATS.CANDLE.RAIN_RATE * TheWorld.state.precipitationrate)
+            * (inst.candle_fuelratemult or 1)
+        end
+    end
+
+    hat_fns.candle_onisraining = function(inst, israining)
+        if inst.components.fueled ~= nil then
+            if israining then
+                inst.components.fueled:SetUpdateFn(hat_fns.candle_onupdatefuel)
+                hat_fns.candle_onupdatefuel(inst)
+            else
+                inst.components.fueled:SetUpdateFn()
+                inst.components.fueled.rate = inst.candle_fuelratemult or 1
+            end
+        end
+    end
+
+    hat_fns.candle_onfuelratemult = function(inst, mult)
+        mult = mult ~= 1 and mult or nil
+
+        if inst.candle_fuelratemult ~= mult then
+            inst.candle_fuelratemult = mult
+            hat_fns.candle_onisraining(inst, TheWorld.state.israining)
         end
     end
 
@@ -650,6 +810,7 @@ local function MakeHat(name)
         inst.entity:AddSoundEmitter()
 
         inst:AddTag("torch")
+        inst:AddTag("wildfireprotected")
         inst:AddTag("waterproofer")
     end
 
@@ -669,12 +830,26 @@ local function MakeHat(name)
         inst:AddComponent("waterproofer")
         inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
 
+        inst:AddComponent("burnable")
+        inst.components.burnable.canlight = false
+        inst.components.burnable.fxprefab = nil
+
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.BURNABLE
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.CANDLE.PERISHTIME)
         inst.components.fueled:SetDepletedFn(hat_fns.candle_onperish)
         inst.components.fueled.ontakefuelfn = hat_fns.candle_ontakefuel
         inst.components.fueled.accepting = true
+
+        inst.candle_onskillrefresh = function(owner)
+            hat_fns.candle_onskillrefresh(inst, owner)
+        end
+
+        inst:WatchWorldState("israining", hat_fns.candle_onisraining)
+        hat_fns.candle_onisraining(inst, TheWorld.state.israining)
+
+        inst.candle_fuelratemult = nil
+        inst.candle_onfuelratemult = hat_fns.candle_onfuelratemult
 
         return inst
     end
@@ -880,6 +1055,10 @@ local function MakeHat(name)
         inst.components.equippable:SetOnEquip(hat_fns.disguise_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.disguise_onunequip)
         inst.components.equippable:SetOnEquipToModel(hat_fns.disguise_onequiptomodel)
+
+        if TUNING.APO_TWEAK_RESTRICTED then
+            inst.components.equippable.restrictedtag = "spiderwhisperer"
+        end
 
         return inst
     end
@@ -1261,7 +1440,7 @@ local function MakeHat(name)
     hat_fns.pigcrown_onapplyfollowerbuff = function(follower)
         local MODIFIER = TUNING.APO_HATS.PIGCROWN.MODIFIERS.DAMAGE
 
-        if follower.components.combat ~= nil then
+        if follower.components.combat ~= nil and not follower:HasAnyTag("abigail", "nofolloweramplifier") then
             follower.components.combat.externaldamagemultipliers:SetModifier(follower, MODIFIER, "pigcrownhat")
         end
 
@@ -1603,7 +1782,7 @@ local function MakeHat(name)
         inst.components.fueled:InitializeFuelLevel(TUNING.APO_HATS.SHARK_TEETH.PERISHTIME)
         inst.components.fueled:SetDepletedFn(inst.Remove)
 
-        inst:DoTaskInTime(1, OnSparkle)
+        inst:DoTaskInTime(1, hat_fns.shark_teeth_onspark)
 
         return inst
     end
@@ -1662,7 +1841,7 @@ local function MakeHat(name)
                 else
                     owner.AnimState:ClearBloomEffectHandle()
                 end
-            end            
+            end
         end
 
         if (inst.thunder_charge_time or 0) > 0 then
@@ -2058,7 +2237,10 @@ local function MakeHat(name)
         inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
         inst.components.equippable:SetOnEquip(hat_fns.opentop_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.simple_onunequip)
-        inst.components.equippable.restrictedtag = "portableengineer"
+
+        if TUNING.APO_TWEAK_RESTRICTED then
+            inst.components.equippable.restrictedtag = "portableengineer"
+        end
     end
 
     hat_fns.wagstaff_goggles_onbroken = function(inst)
@@ -2106,7 +2288,10 @@ local function MakeHat(name)
         end
 
         inst.components.equippable:SetOnEquip(hat_fns.opentop_onequip)
-        inst.components.equippable.restrictedtag = "portableengineer"
+
+        if TUNING.APO_TWEAK_RESTRICTED then
+            inst.components.equippable.restrictedtag = "portableengineer"
+        end
 
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.MAGIC
@@ -2142,7 +2327,10 @@ local function MakeHat(name)
         inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_armor_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_armor_onunequip)
-        inst.components.equippable.restrictedtag = "portableengineer"
+
+        if TUNING.APO_TWEAK_RESTRICTED then
+            inst.components.equippable.restrictedtag = "portableengineer"
+        end
     end
 
     hat_fns.wagstaff_goggles_armor_onbroken = function(inst)
@@ -2196,7 +2384,10 @@ local function MakeHat(name)
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_armor_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_armor_onunequip)
         inst.components.equippable.walkspeedmult = TUNING.APO_HATS.WAGSTAFF_GOGGLES_ARMOR.WALKSPEEDMULT
-        inst.components.equippable.restrictedtag = "portableengineer"
+
+        if TUNING.APO_TWEAK_RESTRICTED then
+            inst.components.equippable.restrictedtag = "portableengineer"
+        end
 
         inst:AddComponent("waterproofer")
         inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_MED)
@@ -2254,7 +2445,10 @@ local function MakeHat(name)
         inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_heat_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_heat_onunequip)
-        inst.components.equippable.restrictedtag = "portableengineer"
+
+        if TUNING.APO_TWEAK_RESTRICTED then
+            inst.components.equippable.restrictedtag = "portableengineer"
+        end
     end
 
     hat_fns.wagstaff_goggles_heat_onbroken = function(inst)
@@ -2307,7 +2501,10 @@ local function MakeHat(name)
 
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_heat_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_heat_onunequip)
-        inst.components.equippable.restrictedtag = "portableengineer"
+
+        if TUNING.APO_TWEAK_RESTRICTED then
+            inst.components.equippable.restrictedtag = "portableengineer"
+        end
 
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.MAGIC
@@ -2366,7 +2563,10 @@ local function MakeHat(name)
         inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_shoot_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_shoot_onunequip)
-        inst.components.equippable.restrictedtag = "portableengineer"
+
+        if TUNING.APO_TWEAK_RESTRICTED then
+            inst.components.equippable.restrictedtag = "portableengineer"
+        end
     end
 
     hat_fns.wagstaff_goggles_shoot_onbroken = function(inst)
@@ -2424,7 +2624,10 @@ local function MakeHat(name)
 
         inst.components.equippable:SetOnEquip(hat_fns.wagstaff_goggles_shoot_onequip)
         inst.components.equippable:SetOnUnequip(hat_fns.wagstaff_goggles_shoot_onunequip)
-        inst.components.equippable.restrictedtag = "portableengineer"
+
+        if TUNING.APO_TWEAK_RESTRICTED then
+            inst.components.equippable.restrictedtag = "portableengineer"
+        end
 
         inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.MAGIC

@@ -58,9 +58,9 @@ WURT.DESCRIBE.EXTRAHEAVYHAT = "Keeps head safe, glorp!"
 
 WURT.DESCRIBE.FOODBASKETHAT = "Want to eat it, flort!"
 
-WURT.DESCRIBE.FOODBONUSHAT = "It fill head with food learning!"
+WURT.DESCRIBE.FOODBONUSHAT = "Meh, it no good but makes eating good..."
 
-WURT.DESCRIBE.GASHAT = "Keeps nasty smell out!"
+WURT.DESCRIBE.GASHAT = "Keeps nasty rain out!"
 
 WURT.DESCRIBE.GASMASKHAT = "It's weird, florp."
 
@@ -94,7 +94,7 @@ WURT.DESCRIBE.PIRATEHAT = "Arrgh!"
 
 WURT.DESCRIBE.PIRATEPACK = "Must been bag from pirates, flort!"
 
-WURT.DESCRIBE.PITHHAT = "Helps walking a bit faster, florp."
+WURT.DESCRIBE.PITHHAT = "Helps walking a bit, florp."
 
 WURT.DESCRIBE.PROPELLERHAT = "Spinny hat make cool breeze when running, flort."
 

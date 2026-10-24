@@ -177,6 +177,3 @@ local function PlayerPostInit(inst)
 end
 
 AddPlayerPostInit(PlayerPostInit)
-
--- Winona starts the game with the Spectoggles.
-table.insert(TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.WINONA, 2, "wagstaff_goggleshat")

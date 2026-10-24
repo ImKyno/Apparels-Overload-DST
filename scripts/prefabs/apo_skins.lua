@@ -69,6 +69,108 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         skin_tags = { "ARMOR_WINDBREAKER" },
     }))
 
+    -- Noir Dumbrella Skin for the Dumbrella.
+    table.insert(prefabs, CreatePrefabSkin("ms_double_umbrellahat_black",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_hat_double_umbrella_black.zip"),
+        },
+
+        base_prefab = "double_umbrellahat",
+        build_name_override = "ms_hat_double_umbrella_black",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "DOUBLE_UMBRELLAHAT" },
+    }))
+
+    -- Cerulean Dumbrella Skin for the Dumbrella.
+    table.insert(prefabs, CreatePrefabSkin("ms_double_umbrellahat_cyan",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_hat_double_umbrella_cyan.zip"),
+        },
+
+        base_prefab = "double_umbrellahat",
+        build_name_override = "ms_hat_double_umbrella_cyan",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "DOUBLE_UMBRELLAHAT" },
+    }))
+
+    -- Scarlet Dumbrella Skin for the Dumbrella.
+    table.insert(prefabs, CreatePrefabSkin("ms_double_umbrellahat_red",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_hat_double_umbrella_red.zip"),
+        },
+
+        base_prefab = "double_umbrellahat",
+        build_name_override = "ms_hat_double_umbrella_red",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "DOUBLE_UMBRELLAHAT" },
+    }))
+
+    -- Lobelia Woven Garland Skin for the Lune Woven Garland.
+    table.insert(prefabs, CreatePrefabSkin("ms_foodbonushat_lavaarena",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_hat_foodbonus_lavaarena.zip"),
+        },
+
+        base_prefab = "foodbonushat",
+        build_name_override = "ms_hat_foodbonus_lavaarena",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "FOODBONUSHAT" },
+    }))
+
+    -- Hazard Mask Skin for the Gas Mask.
+    table.insert(prefabs, CreatePrefabSkin("ms_gasmaskhat_hazard",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_hat_gasmask_hazard.zip"),
+        },
+
+        base_prefab = "gasmaskhat",
+        build_name_override = "ms_hat_gasmask_hazard",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "GASMASKHAT" },
+    }))
+
+    -- Flax Blossom Headband Skin for the Lune Blossom Headband.
+    table.insert(prefabs, CreatePrefabSkin("ms_healingbonushat_lavaarena",
+    {
+        assets =
+        {
+            Asset("ANIM", "anim/dynamic/ms_hat_healingbonus_lavaarena.zip"),
+        },
+
+        base_prefab = "healingbonushat",
+        build_name_override = "ms_hat_healingbonus_lavaarena",
+
+        type = "item",
+        rarity = "ModMade",
+
+        skin_tags = { "HEALINGBONUSHAT" },
+    }))
+
     -- Viridian Lantern Skin for the Bottle Lantern.
     table.insert(prefabs, CreatePrefabSkin("ms_lanternbottle_green",
     {
@@ -195,72 +297,55 @@ if not TUNING.APO_IS_ABC_ENABLED or TUNING.APO_IS_IAS_ENABLED then
         skin_tags = { "LANTERNBOTTLE" },
     }))
 
-    -- Noir Dumbrella Skin for the Dumbrella.
-    table.insert(prefabs, CreatePrefabSkin("ms_double_umbrellahat_black",
+    -- Molten Soulstealer's Crown Skin for the Soulstealer's Crown.
+    table.insert(prefabs, CreatePrefabSkin("ms_lifestealhat_lavaarena",
     {
         assets =
         {
-            Asset("ANIM", "anim/dynamic/ms_hat_double_umbrella_black.zip"),
+            Asset("ANIM", "anim/dynamic/ms_hat_lifesteal_lavaarena.zip"),
         },
 
-        base_prefab = "double_umbrellahat",
-        build_name_override = "ms_hat_double_umbrella_black",
+        base_prefab = "lifestealhat",
+        build_name_override = "ms_hat_lifesteal_lavaarena",
 
         type = "item",
         rarity = "ModMade",
 
-        skin_tags = { "DOUBLE_UMBRELLAHAT" },
+        skin_tags = { "LIFESTEALHAT" },
     }))
 
-    -- Cerulean Dumbrella Skin for the Dumbrella.
-    table.insert(prefabs, CreatePrefabSkin("ms_double_umbrellahat_cyan",
+    -- Molten Conqueror Helm Skin for the Resplendent Guardian Helm.
+    table.insert(prefabs, CreatePrefabSkin("ms_minotaurcrownhat_lavaarena",
     {
         assets =
         {
-            Asset("ANIM", "anim/dynamic/ms_hat_double_umbrella_cyan.zip"),
+            Asset("ANIM", "anim/dynamic/ms_hat_minotaurcrown_lavaarena.zip"),
         },
 
-        base_prefab = "double_umbrellahat",
-        build_name_override = "ms_hat_double_umbrella_cyan",
+        base_prefab = "minotaurcrownhat",
+        build_name_override = "ms_hat_minotaurcrown_lavaarena",
 
         type = "item",
         rarity = "ModMade",
 
-        skin_tags = { "DOUBLE_UMBRELLAHAT" },
+        skin_tags = { "MINOTAURCROWNHAT" },
     }))
 
-    -- Scarlet Dumbrella Skin for the Dumbrella.
-    table.insert(prefabs, CreatePrefabSkin("ms_double_umbrellahat_red",
+    -- Tundra Crystal Tiara Skin for the Lunar Crystal Tiara.
+    table.insert(prefabs, CreatePrefabSkin("ms_sanitydamagehat_lavaarena",
     {
         assets =
         {
-            Asset("ANIM", "anim/dynamic/ms_hat_double_umbrella_red.zip"),
+            Asset("ANIM", "anim/dynamic/ms_hat_sanitydamage_lavaarena.zip"),
         },
 
-        base_prefab = "double_umbrellahat",
-        build_name_override = "ms_hat_double_umbrella_red",
+        base_prefab = "sanitydamagehat",
+        build_name_override = "ms_hat_sanitydamage_lavaarena",
 
         type = "item",
         rarity = "ModMade",
 
-        skin_tags = { "DOUBLE_UMBRELLAHAT" },
-    }))
-
-    -- Hazard Mask Skin for the Gas Mask.
-    table.insert(prefabs, CreatePrefabSkin("ms_gasmaskhat_hazard",
-    {
-        assets =
-        {
-            Asset("ANIM", "anim/dynamic/ms_hat_gasmask_hazard.zip"),
-        },
-
-        base_prefab = "gasmaskhat",
-        build_name_override = "ms_hat_gasmask_hazard",
-
-        type = "item",
-        rarity = "ModMade",
-
-        skin_tags = { "GASMASKHAT" },
+        skin_tags = { "SANITYDAMAGEHAT" },
     }))
 
     -- Scaly Leather Hat Skin for the Leather Hat.

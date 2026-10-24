@@ -169,7 +169,7 @@ APOAddRecipe(ABCEnabled or IASEnabled, "bandithat",
         Ingredient("feather_crow", 1),
     },
 
-    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
+    TECH.SCIENCE_TWO, {}, { "CLOTHING" }
 )
 
 -- Hats.
@@ -442,7 +442,7 @@ APOAddRecipe(ABCEnabled or IASEnabled, "pithhat",
         Ingredient("rope", 1),
     },
 
-    TECH.SCIENCE_TWO, {}, { "CLOTHING" }
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN" }
 )
 
 AddRecipe2("propellerhat",
@@ -452,7 +452,7 @@ AddRecipe2("propellerhat",
         Ingredient("transistor", 2),
     },
 
-    TECH.SCIENCE_TWO, {}, { "CLOTHING", "SUMMER" }
+    TECH.SCIENCE_TWO, {}, { "CLOTHING", "RAIN", "SUMMER" }
 )
 
 AddRecipe2("pumpkinheadhat",

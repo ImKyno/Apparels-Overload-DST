@@ -48,7 +48,8 @@ function Extralootdropper:OnLootStart(target, killer)
     data.listener = function(_, event)
         local loot = event ~= nil and event.loot or nil
 
-        if target.components.lootdropper ~= nil and target.components.combat ~= nil then
+        if target.components.lootdropper ~= nil and target.components.combat ~= nil
+        and not target:HasAnyTag("noextralootdropper") then
             if target.components.lootdropper:IsValidExtraLootDropper(loot) then
                 table.insert(data.candidates, { prefab = loot.prefab, recipetouse = loot.recipetouse })
             end

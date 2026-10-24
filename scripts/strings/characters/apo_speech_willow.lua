@@ -124,4 +124,4 @@ WILLOW.DESCRIBE.WAGSTAFF_GOGGLES_HEATHAT = "Everything alive lights up!"
 
 WILLOW.DESCRIBE.WAGSTAFF_GOGGLES_SHOOTHAT = "Finally, something with a little spark!"
 
-WILLOW.DESCRIBE.WILLOWOLDHAT = "Aahh... you're still with me, friend."
+WILLOW.DESCRIBE.WILLOWOLDHAT = "Ahh... you're still with me, old friend."

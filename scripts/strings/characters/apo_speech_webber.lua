@@ -60,7 +60,7 @@ WEBBER.DESCRIBE.FOODBASKETHAT = "Very tropical!"
 
 WEBBER.DESCRIBE.FOODBONUSHAT = "Feeling hungry already."
 
-WEBBER.DESCRIBE.GASHAT = "We are protected from sick smells."
+WEBBER.DESCRIBE.GASHAT = "We are protected from acid."
 
 WEBBER.DESCRIBE.GASMASKHAT = "Now that gas won't make us cough."
 

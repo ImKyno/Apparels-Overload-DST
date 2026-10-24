@@ -58,7 +58,7 @@ WOODIE.DESCRIBE.EXTRAHEAVYHAT = "That's a lot of rock to have on yer noggin."
 
 WOODIE.DESCRIBE.FOODBASKETHAT = "Mhm... Can I get a piece of the fruit?"
 
-WOODIE.DESCRIBE.FOODBONUSHAT = "I oughta leave that for someone else."
+WOODIE.DESCRIBE.FOODBONUSHAT = "Dunno why but I could eat something right about now."
 
 WOODIE.DESCRIBE.GASHAT = "Nothin' stinks when I got this on."
 

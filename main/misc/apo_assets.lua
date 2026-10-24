@@ -64,7 +64,9 @@ local APO_ICONS =
     "ms_double_umbrellahat_black",
     "ms_double_umbrellahat_cyan",
     "ms_double_umbrellahat_red",
+    "ms_foodbonushat_lavaarena",
     "ms_gasmaskhat_hazard",
+    "ms_healingbonushat_lavaarena",
     "ms_lanternbottle_green",
     "ms_lanternbottle_green_lit",
     "ms_lanternbottle_orange",
@@ -79,6 +81,9 @@ local APO_ICONS =
     "ms_lanternbottle_turquoise_lit",
     "ms_lanternbottle_yellow",
     "ms_lanternbottle_yellow_lit",
+    "ms_lifestealhat_lavaarena",
+    "ms_minotaurcrownhat_lavaarena",
+    "ms_sanitydamagehat_lavaarena",
     "ms_snakeskinhat_scaly",
 }
 

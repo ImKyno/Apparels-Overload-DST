@@ -917,6 +917,36 @@ Menu Principal - Mods - Mods de Servidor - Amontoado de Roupas
             },
         },
 
+        TWEAK_RESTRICTED =
+        {
+            NAME =
+            {
+                "Clothing - Restriction",
+                pt  = "Roupas - Restrição",
+            },
+
+            HOVER =
+            {
+                "Should Character exclusive Clothing and Headwear be restricted to them?",
+                pt  = "Permitir que Roupas e Chapéus exclusivos de personagem sejam restritos a eles?",
+            },
+
+            HOVER_OPTIONS = -- THIS OPTION IS BACKWARDS !!!
+            {
+                DISABLED =
+                {
+                    "Character exclusive Clothing and Headwear can be equipped by any character.",
+                    pt  = "Roupas e Chapéus exclusivas de personagem podem ser equipadas por qualquer personagem.",
+                },
+
+                ENABLED =
+                {
+                    "Character exclusive Clothing and Headwear can only be equipped by them.",
+                    pt  = "Roupas e Chapéus exclusivas de personagem só podem ser equipadas por eles.",
+                },
+            },
+        },
+
         -- Client Options.
         BATVISION_CC =
         {
@@ -1520,6 +1550,22 @@ local function GetVanillaOptions()
         }
     }
 
+    local TWEAK_RESTRICTED_LABEL        = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_RESTRICTED.NAME)
+    local TWEAK_RESTRICTED_HOVER        = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_RESTRICTED.HOVER)
+    local TWEAK_RESTRICTED_OPTIONS      =
+    {
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.DISABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_RESTRICTED.HOVER_OPTIONS.DISABLED),
+            data                        = false
+        },
+        {
+            description                 = ChooseTranslationTable(STRINGS.SETTINGS.ENABLED),
+            hover                       = ChooseTranslationTable(STRINGS.SETTINGS.TWEAK_RESTRICTED.HOVER_OPTIONS.ENABLED),
+            data                        = true
+        }
+    }
+
     return
     {
         {
@@ -1710,6 +1756,13 @@ local function GetVanillaOptions()
             hover                       = SEPARATOR_HOVER,
             options                     = NONE_OPTIONS,
             default                     = false
+        },
+        {
+            name                        = "TWEAK_RESTRICTED",
+            label                       = TWEAK_RESTRICTED_LABEL,
+            hover                       = TWEAK_RESTRICTED_HOVER,
+            options                     = TWEAK_RESTRICTED_OPTIONS,
+            default                     = true
         },
         {
             name                        = "TWEAK_FOLLOWER",

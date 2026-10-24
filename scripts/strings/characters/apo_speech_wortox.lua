@@ -54,7 +54,7 @@ WORTOX.DESCRIBE.DISGUISEHAT = "For fooling the pigs. Hyuyu!"
 
 WORTOX.DESCRIBE.DOUBLE_UMBRELLAHAT = "Work of a madman."
 
-WORTOX.DESCRIBE.EXTRAHEAVYHAT = "Heavy is the crown!"
+WORTOX.DESCRIBE.EXTRAHEAVYHAT = "This might break my neck."
 
 WORTOX.DESCRIBE.FOODBASKETHAT = "Mortals have a funny taste for head pieces."
 
@@ -86,7 +86,7 @@ WORTOX.DESCRIBE.OXHAT = "Hat of an ox."
 
 WORTOX.DESCRIBE.PEAGAWKFEATHERHAT = "Feathers and horns go well together."
 
-WORTOX.DESCRIBE.PIGCROWNHAT = "Heavy is the crown."
+WORTOX.DESCRIBE.PIGCROWNHAT = "Heavy is the crown!"
 
 WORTOX.DESCRIBE.PIGSKIN_DRIED = "A little more than skin, a little less than hide! Hyuyu!"
 

@@ -84,6 +84,8 @@ local function OnRemoveStatus(inst)
 end
 
 local function BeargerVestPostInit(inst)
+    inst:AddTag("absorbsfreezing")
+
     _G.APOAddEquipCallbacks(inst, function(inst, owner)
         if owner ~= nil then
             OnApplySleepingBagBonus(owner)
@@ -97,6 +99,12 @@ local function BeargerVestPostInit(inst)
             OnRemoveStatus(owner)
         end
     end)
+
+    if not _G.TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.freezing_damage = TUNING.APO_ARMORS.BEARGERVEST.FREEZING_DAMAGE
 end
 
 if TUNING.APO_TWEAK_BEARGERVEST then

@@ -34,6 +34,30 @@ local function OnTakeDamage(inst, damage_amount, absorbed, leftover)
     end
 end
 
+local function OnGetSetBonusDamage(inst, target)
+    return (target:HasTag("bee") and TUNING.APO_ARMORS.ANT.MODIFIERS.DAMAGE) or 1
+end
+
+local function OnEnabledSetBonus(inst)
+    local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+    if owner ~= nil then
+        if owner.components.damagetypebonus ~= nil then
+            owner.components.damagetypebonus:AddBonusCallback(OnGetSetBonusDamage)
+        end
+    end
+end
+
+local function OnDisabledSetBonus(inst)
+    local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+
+    if owner ~= nil then
+        if owner.components.damagetypebonus ~= nil then
+            owner.components.damagetypebonus:RemoveBonusCallback(OnGetSetBonusDamage)
+        end
+    end
+end
+
 local function OnEquip(inst, owner)
     if owner ~= nil then
         local skin_build = inst:GetSkinBuild()
@@ -114,6 +138,11 @@ local function fn()
     inst.components.armor:InitCondition(TUNING.APO_ARMORS.ANT.CONDITION, TUNING.APO_ARMORS.ANT.ABSORPTION)
     inst.components.armor:SetTags(TUNING.APO_ARMORS.ANT.TAGS)
     inst.components.armor.ontakedamage = OnTakeDamage
+
+    inst:AddComponent("setbonus")
+    inst.components.setbonus:SetSetName(EQUIPMENTSETNAMES.ANT)
+    inst.components.setbonus:SetOnEnabledFn(OnEnabledSetBonus)
+    inst.components.setbonus:SetOnDisabledFn(OnDisabledSetBonus)
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY

@@ -109,6 +109,10 @@ if TUNING.APO_TWEAK_INSPECTACLESHAT then
     AddScrapbookDeps(ScrapbookData, { "inspectacleshat" }, { "wagstaff_goggleshat" })
 end
 
+if TUNING.APO_TWEAK_MERMHAT then
+    ScrapbookData.mermhat.specialinfo = "MERMHAT_TWEAK"
+end
+
 if TUNING.APO_TWEAK_MUSHROOMHAT then
     ScrapbookData.blue_mushroomhat.specialinfo = "MUSHROOMHAT_TWEAK"
     ScrapbookData.green_mushroomhat.specialinfo = "MUSHROOMHAT_TWEAK"
@@ -143,6 +147,10 @@ end
 
 if TUNING.APO_TWEAK_TRUNKVEST_W then
     ScrapbookData.trunkvest_winter.specialinfo = "TRUNKVEST_TWEAK"
+end
+
+if TUNING.APO_TWEAK_WATERMELONHAT then
+    ScrapbookData.watermelonhat.specialinfo = "WATERMELONHAT_TWEAK"
 end
 
 if TUNING.APO_TWEAK_WINTERHAT then
@@ -602,7 +610,6 @@ local APO_SCRAPBOOK_HEAD =
         fueledrate          = 1,
         fueledtype1         = "USAGE",
         dapperness          = TUNING.DAPPERNESS_SMALL,
-        waterproofer        = TUNING.WATERPROOFNESS_SMALL,
         sewable             = true,
         snowmandecor        = true,
         bank                = "bandithat",

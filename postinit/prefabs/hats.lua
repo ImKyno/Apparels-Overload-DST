@@ -307,6 +307,11 @@ local function HatSlurtlePostInit(inst)
 
     inst:AddComponent("damagetyperesist")
     inst.components.damagetyperesist:AddResist("explosive", inst, TUNING.APO_HATS.SLURTLE.DAMAGETYPE_RESIST)
+
+    if inst.components.setbonus == nil then
+        inst:AddComponent("setbonus")
+        inst.components.setbonus:SetSetName(_G.EQUIPMENTSETNAMES.SNURTLE)
+    end
 end
 
 local function HatWatermelonPostInit(inst)
