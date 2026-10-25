@@ -1000,7 +1000,7 @@ local function MakeHat(name)
             inst.propeller_fan = SpawnPrefab("propellerhat_fan")
             inst.propeller_fan.entity:SetParent(owner.entity)
 
-            inst.propeller_fan:OnSetSpinning(true) -- Set to false?
+            inst.propeller_fan:OnSetSpinning(false)
 
             if inst.components.fueled ~= nil then
                 inst.components.fueled:StopConsuming()
@@ -1237,10 +1237,6 @@ local function MakeHat(name)
         end
 
         inst.AnimState:PlayAnimation(hasfuel and "anim_on" or "anim_off", true)
-
-        if equipped and owner ~= nil then
-            _onequip(inst, owner, hasfuel and "swap_hat" or "swap_hat_off")
-        end
     end
 
     hat_fns.volcanocold_onturnon = function(inst)
@@ -1252,7 +1248,10 @@ local function MakeHat(name)
             return
         end
 
-        _onequip(inst, owner, "swap_hat")
+        if owner ~= nil then
+            _onequip(inst, owner, "swap_hat")
+        end
+
         inst.AnimState:PlayAnimation("anim_on", true)
 
         if inst.components.inventoryitem ~= nil then
@@ -1469,10 +1468,6 @@ local function MakeHat(name)
         end
 
         inst.AnimState:PlayAnimation(hasfuel and "anim_on" or "anim_off", true)
-
-        if equipped and owner ~= nil then
-            _onequip(inst, owner, hasfuel and "swap_hat" or "swap_hat_off")
-        end
     end
 
     hat_fns.volcano_onturnon = function(inst)
@@ -1484,7 +1479,10 @@ local function MakeHat(name)
             return
         end
 
-        _onequip(inst, owner, "swap_hat")
+        if owner ~= nil then
+            _onequip(inst, owner, "swap_hat")
+        end
+
         inst.AnimState:PlayAnimation("anim_on", true)
 
         if inst.components.inventoryitem ~= nil then

@@ -2127,7 +2127,8 @@ local function MakeHat(name)
         hat_fns.thunder_onstopspark(inst)
 
         if (inst.thunder_charge_time and inst.thunder_charge_time > 0) and inst:HasTag("charged") and guy ~= nil
-        and guy.components.combat ~= nil and guy.components.inventory ~= nil and not guy.components.inventory:IsInsulated() then
+        and guy.components.combat ~= nil and guy.components.inventory ~= nil and not guy.components.inventory:IsInsulated()
+        and guy.components.health ~= nil and guy.sg ~= nil then
             if not guy:HasAnyTag("shadowminion", "electricdamageimmune") then
                 guy.components.health:DoDelta(-TUNING.APO_HATS.THUNDER.CHARGE.DAMAGE.PICKUP, nil, inst.prefab, nil, inst)
                 guy.sg:HandleEvent("electrocute")

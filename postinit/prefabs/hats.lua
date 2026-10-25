@@ -195,7 +195,7 @@ local function HatMermPostInit(inst)
 
     inst:AddTag("waxable")
 
-    inst.waxed = net_bool(inst.GUID, "merm.waxed", "mermwaxeddirty")
+    inst.waxed = _G.net_bool(inst.GUID, "merm.waxed", "mermwaxeddirty")
 
     if not _G.TheWorld.ismastersim then
         inst:ListenForEvent("mermwaxeddirty", OnWaxedDirty)
@@ -378,7 +378,7 @@ local function HatWatermelonPostInit(inst)
 
     inst:AddTag("waxable")
 
-    inst.waxed = net_bool(inst.GUID, "watermelon.waxed", "watermelonwaxeddirty")
+    inst.waxed = _G.net_bool(inst.GUID, "watermelon.waxed", "watermelonwaxeddirty")
 
     if not _G.TheWorld.ismastersim then
         inst:ListenForEvent("watermelonwaxeddirty", OnWaxedDirty)

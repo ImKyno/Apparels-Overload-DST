@@ -32,6 +32,16 @@ local function OnToggleSpin(inst, spin)
     end
 end
 
+local function OnUpdateFollowSymbol(inst, parent)
+    local x, y, z = 0, -80, 0
+
+    if parent.prefab == "punchingbag" or parent.prefab == "punchingbag_shadow" or parent.prefab == "punchingbag_lunar" then
+        x = 55
+    end
+
+    inst.Follower:FollowSymbol(parent.GUID, "swap_hat", x, y, z, true)
+end
+
 local function CreateFanWheelFX(proxy)
     local parent = proxy.entity:GetParent()
 
@@ -58,7 +68,7 @@ local function CreateFanWheelFX(proxy)
     inst.persists = false
 
     inst.entity:SetParent(parent.entity)
-    inst.Follower:FollowSymbol(parent.GUID, "swap_hat", 0, -80, 0, true)
+    OnUpdateFollowSymbol(inst, parent)
 
     inst:DoPeriodicTask(0, OnAlignToTarget, nil, parent)
 
