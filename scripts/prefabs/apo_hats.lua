@@ -1940,13 +1940,15 @@ local function MakeHat(name)
     end
 
     hat_fns.thunder_onstopattack = function(inst, owner)
-        if owner.components.electricattacks ~= nil then
-            owner.components.electricattacks:RemoveSource(inst)
-        end
+        if owner ~= nil then
+            if owner.components.electricattacks ~= nil then
+                owner.components.electricattacks:RemoveSource(inst)
+            end
 
-        if inst._onattackother ~= nil then
-            inst:RemoveEventCallback("onattackother", inst._onattackother, owner)
-            inst._onattackother = nil
+            if inst._onattackother ~= nil then
+                inst:RemoveEventCallback("onattackother", inst._onattackother, owner)
+                inst._onattackother = nil
+            end
         end
     end
 

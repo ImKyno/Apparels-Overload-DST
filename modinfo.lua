@@ -25,7 +25,7 @@ It also includes changes to some Vanilla items as well!
 󰀏 Client-side Configuration is available through:
 Main Menu - Mods - Server Mods - Apparels Overload
 
-󰀌 Mod Version: 3.0-B
+󰀌 Mod Version: 3.1-B
 󰀧 Update: Retailored!
 ]],
         pt  =
@@ -42,7 +42,7 @@ Também inclui mudanças para alguns itens do Vanilla!
 󰀏 Configurações Cliente estão disponívels em:
 Menu Principal - Mods - Mods de Servidor - Amontoado de Roupas
 
-󰀌 Mod Version: 3.0-B
+󰀌 Mod Version: 3.1-B
 󰀧 Update: Repaginada!
 ]],
     },
@@ -1041,7 +1041,7 @@ Menu Principal - Mods - Mods de Servidor - Amontoado de Roupas
 }
 
 name                    = ChooseTranslationTable(STRINGS.NAME)
-version                 = "3.0-B"
+version                 = "3.1-B"
 
 description             = ChooseTranslationTable(STRINGS.DESCRIPTION)
 
