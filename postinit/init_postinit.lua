@@ -77,6 +77,7 @@ local INIT_POSTINIT_PREFABS =
     "tentacle",
     "townportaltalisman",
     "trunkvest",
+    "wasphive",
     "weaponlowpriority",
 }
 

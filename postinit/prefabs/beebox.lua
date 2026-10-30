@@ -7,11 +7,15 @@ local function IsFriendlyBee(inst)
         return false
     end
 
+    if inst ~= nil and inst:HasTag("beefriendly") then
+        return true
+    end
+
     if inst ~= nil and inst.components.inventory ~= nil then
         for _, slot in ipairs({ _G.EQUIPSLOTS.HEAD, _G.EQUIPSLOTS.BODY }) do
             local item = inst.components.inventory:GetEquippedItem(slot)
 
-            if item ~= nil and item:HasTag("beefriend") then
+            if item ~= nil and item:HasAnyTag("flowered", "beefriend") then
                 return true
             end
         end

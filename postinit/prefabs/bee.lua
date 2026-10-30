@@ -9,6 +9,10 @@ local BEES =
 }
 
 local function IsBeeProtected(target)
+    if target ~= nil and target:HasTag("beefriendly") then
+        return true
+    end
+
     if target ~= nil and target.components.inventory ~= nil then
         local body = target.components.inventory:GetEquippedItem(_G.EQUIPSLOTS.BODY)
         local head = target.components.inventory:GetEquippedItem(_G.EQUIPSLOTS.HEAD)
